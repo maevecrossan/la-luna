@@ -1,0 +1,48 @@
+header {
+    background-color: red;
+}
+
+body {
+    background: orange;
+}
+
+footer {
+    background-color: yellow;
+}
+
+.navbar {
+    margin-bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .25);
+    border: 0;
+}
+
+#callout-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.callout-column-left {
+    background: pink;
+    height: 100vh;
+}
+
+.callout-column-right {
+    background: rgb(116, 214, 116);
+    height: 100vh;
+}
+
+.callout-full-image {
+    height: 200px;
+    background-color: aqua;
+}
+
+.callout-half-image-1 {
+    background-color: rgb(238, 99, 238);
+    width: 100%;
+}
+
+.callout-half-image-2 {
+    background-color: rgb(233, 24, 233);
+    width: 100%;
+}
