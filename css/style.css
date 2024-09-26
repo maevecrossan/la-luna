@@ -1,19 +1,23 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+
 * {
     box-sizing: border-box;
 }
 
 header {
-    background-color: red;
+    margin-top: 20px;
+    background-color: none;
 }
 
 body {
-    background: orange;
+    background-color: #592828;
+    min-height: 100vh;
     /* ADD PATTERN BG HERE */
 }
 
-footer {
-    background-color: yellow;
-}
 
 /* General Styles */
 
@@ -23,17 +27,23 @@ footer {
     justify-content: center;
 }
 
+.upper {
+    text-transform: uppercase;
+}
+
 /*------------------------------------------------------------ Header */
 /*------------------------------ Logo */
 h1 {
     font-size: 50px;
+    color: #d8d7d9;
+    font-family: "Italiana", serif;
 }
 
 /*------------------------------ Nav */
 .navbar {
     margin-bottom: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, .25);
+    background-color: none;
     border: 0;
     list-style-type: none;
 }
@@ -43,11 +53,16 @@ a {
     text-decoration: none;
 }
 
-/*------------------------------------------------------------ Callout */
+/*------------------------------------------------------------ Callout Jumbotron */
 .callout-container {
     height: 100vh;
     background-size: cover;
     position: relative;
+}
+
+.jumbotron {
+    padding-top: 60px;
+    height: 70vh;
 }
 
 /*------------------------------------------------------------ Mini Gallery */
@@ -87,9 +102,7 @@ a {
     letter-spacing: 0.02em;
 
     @media all and (min-width:40em) {
-
         font-size: 4.75em;
-
     }
 }
 
@@ -106,11 +119,9 @@ a {
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: #fff;
-
+    
     @media all and (min-width:40em) {
-
         font-size: 2.5em;
-
     }
 }
 
@@ -124,7 +135,6 @@ a {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-
     padding-left: 1em;
     padding-right: 1em;
 
@@ -137,7 +147,7 @@ a {
 
 .our-story-list {
 
-    border-left: 5px solid #ccc;
+    border-left: 5px solid #bf7b75;
     padding-bottom: 1em;
     position: relative;
     max-width: 700px;
@@ -146,7 +156,7 @@ a {
 
 .our-story-list:before {
     content: "";
-    border-left: 5px solid #CCC;
+    border-left: 5px solid #bf7b75;
     left: -0.25em;
     top: 2em;
     height: 100%;
@@ -166,27 +176,24 @@ a {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: none repeat scroll 0% 0% #DDD;
-    border: 5px solid #DDD;
+    background: none repeat scroll 0% 0% #d8b8b8;
+    border: 5px solid #d8b8b8;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
     animation: revealScaleUp 0.75s 2.82s ease both 1;
 }
 
 
-.t-block-teal {
-    background: #02aa9d;
+.t-block-red {
+    background-color: #592828;
 }
 
-.t-block-teal h2 {
-    color: #fff;
+.t-block-red h3,
+.t-block-red h4 {
+    color: #d8b8b8;
 }
 
-.t-block-teal h3 {
-    color: #034944;
-}
-
-.t-block-teal p {
-    color: #034944;
+.t-block-red p {
+    color: #d9d9d9;
 }
 
 /*list animation */
@@ -207,8 +214,8 @@ a {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: none repeat scroll 0% 0% #02aa9d;
-    border: 5px solid #fff;
+    background: none repeat scroll 0% 0% #d8b8b8;
+    border: 5px solid #d8d7d9;
     animation: revealScaleUp 0.75s 0s ease both 1;
 }
 
@@ -308,6 +315,10 @@ a {
 
 /*------------------------------------------------------------ Footer */
 
+footer .col {
+    height: 230px;
+    margin-top: 30px;
+}
 
 /* 
 Media query to offset third image in gallery on md and sm sizes
