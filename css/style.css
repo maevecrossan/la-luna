@@ -76,73 +76,76 @@ a {
 /*------------------------------------------------------------ Our Story */
 
 .our-story-section {
-  min-height:100vh;
+    min-height: 100vh;
 }
 
 .our-story-title {
-	text-align:center;
-	margin:1em 0 0 0;
-	font-size:2.5em;
-	line-height:1;
-	letter-spacing:0.02em;
+    text-align: center;
+    margin: 1em 0 0 0;
+    font-size: 2.5em;
+    line-height: 1;
+    letter-spacing: 0.02em;
 
-	@media all and (min-width:40em) {
+    @media all and (min-width:40em) {
 
-	font-size: 4.75em;
+        font-size: 4.75em;
 
-	}
+    }
 }
+
 .subtitle {
-	font-weight:300;
-	text-transform:uppercase;
-	text-align:center;
-	font-size:1em;
-	margin:0.5em 0;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1em;
+    margin: 0.5em 0;
 }
 
 .content h3 {
-	font-size: 1.2em;
-	line-height:1.2;
-	letter-spacing:0.02em;
-    color:#fff;
+    font-size: 1.2em;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #fff;
 
-	@media all and (min-width:40em) {
+    @media all and (min-width:40em) {
 
-	font-size: 2.5em;
+        font-size: 2.5em;
 
-	}
+    }
 }
 
 .l-block-spacing {
-	min-height:80vh;
-	padding:2em 0 4em 0;
+    min-height: 80vh;
+    padding: 2em 0 4em 0;
 }
 
 .l-contained {
 
-	max-width:1000px;
-	margin-left:auto;
-	margin-right:auto;
-	
-	padding-left:1em;
-	padding-right:1em;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 
-	@media all and (min-width:40em) {
+    padding-left: 1em;
+    padding-right: 1em;
 
-		padding-left:2em;
-		padding-right:2em;
-	}
+    @media all and (min-width:40em) {
+
+        padding-left: 2em;
+        padding-right: 2em;
+    }
 }
+
 .our-story-list {
 
-	border-left: 5px solid #ccc;
-	padding-bottom: 1em;
-	position: relative;
-	max-width:700px;
-	margin:0 auto;
- 
-  &:before {
-	content: "";
+    border-left: 5px solid #ccc;
+    padding-bottom: 1em;
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.our-story-list:before {
+    content: "";
     border-left: 5px solid #CCC;
     left: -0.25em;
     top: 2em;
@@ -150,132 +153,156 @@ a {
     position: absolute;
     bottom: 0;
     top: 0;
-    transform-origin:0 0;
-    animation:scaleVertical 3s 1s ease both 1;
-	}
-
-	&:after {
-	    content: "";
-        clear:both;
-		position: absolute;
-		bottom: 0px;
-		left: -1em;
-		width: 20px;
-		height: 20px;
-		border-radius: 50%;
-		background: none repeat scroll 0% 0% #DDD;
-		border: 5px solid #DDD;
-		box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-        animation:revealScaleUp 0.75s 2.82s ease both 1;
-	}
+    transform-origin: 0 0;
+    animation: scaleVertical 3s 1s ease both 1;
 }
+
+.our-story-list:after {
+    content: "";
+    clear: both;
+    position: absolute;
+    bottom: -5px;
+    left: -0.75em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: none repeat scroll 0% 0% #DDD;
+    border: 5px solid #DDD;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    animation: revealScaleUp 0.75s 2.82s ease both 1;
+}
+
 
 .t-block-teal {
-	background:#02aa9d;
+    background: #02aa9d;
 }
+
 .t-block-teal h2 {
-	color:#fff;
+    color: #fff;
 }
+
 .t-block-teal h3 {
-	color:#034944;
+    color: #034944;
 }
+
 .t-block-teal p {
-	color:#034944;
+    color: #034944;
 }
 
 /*list animation */
 /*scale in the circle, follwoed by the list item*/
 /*the border must also animate in.*/
 .our-story-list li {
-
-	margin:0 0 3em 0;
-	padding:0 2em 0em 2em;
+    margin: 0 0 3em 0;
+    padding: 0 2em 0em 2em;
     position: relative;
-
+    list-style-type: none;
 }
+
 .our-story-list li:before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -3.5em;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: none repeat scroll 0% 0% #02aa9d;
+    border: 5px solid #fff;
+    animation: revealScaleUp 0.75s 0s ease both 1;
+}
 
-	content: "";
-	position: absolute;
-	top: 0px;
-	left: -1.45em;
-	width: 30px;
-	height: 30px;
-	border-radius: 50%;
-	background: none repeat scroll 0% 0% #02aa9d;
-	border: 5px solid #fff;
-    animation:revealScaleUp 0.75s 0s ease both 1;
-}
 .our-story-list {
-    animation:reveal 2s 0 ease both 1;
+    animation: reveal 2s 0 ease both 1;
 }
+
 .our-story-list li .content {
-    animation:revealFromLeft 0.5s 0s ease both 1;
+    animation: revealFromLeft 0.5s 0s ease both 1;
 }
+
 .our-story-list li:nth-child(1):before {
-    animation-delay:0.85s;
+    animation-delay: 0.85s;
 }
+
 .our-story-list li:nth-child(1) .content {
-    animation-delay:1.05s;
+    animation-delay: 1.05s;
 }
+
 .our-story-list li:nth-child(2):before {
-    animation-delay:1.2s;
+    animation-delay: 1.2s;
 }
+
 .our-story-list li:nth-child(2) .content {
-    animation-delay:1.5s;
+    animation-delay: 1.5s;
 }
+
 .our-story-list li:nth-child(3):before {
-    animation-delay:1.8s;
+    animation-delay: 1.8s;
 }
+
 .our-story-list li:nth-child(3) .content {
-    animation-delay:2.1s;
+    animation-delay: 2.1s;
 }
+
 .our-story-list li:nth-child(4):before {
-    animation-delay:2s;
+    animation-delay: 2s;
 }
+
 .our-story-list li:nth-child(4) .content {
-    animation-delay:2.3s;
+    animation-delay: 2.3s;
 }
+
+.our-story-list li:nth-child(5):before {
+    animation-delay:2.6s;
+}
+
+.our-story-list li:nth-child(5) .content {
+    animation-delay:2.9s;
+}
+
 @keyframes revealFromLeft {
-  0% {
-    transform:translateX(-1em);
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-    transform:translateX(0);
-  }
+    0% {
+        transform: translateX(-1em);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
+
 @keyframes reveal {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
+
 @keyframes scaleVertical {
-  0% {
-    transform:scaleY(0);
-    
-  }
-  100% {
-    transform:scaleY(1);
-  }
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
 }
+
 @keyframes revealScaleUp {
-  0% {
-    opacity:0;
-    transform:scale(0.5);
-  }
-  50% {
-     opacity:1;
-     transform:scale(1.3);
-  }
-  100% {
-    opacity:1;
-    transform:scale(1);
-  }
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 
