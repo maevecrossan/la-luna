@@ -74,7 +74,7 @@ a {
 }
 
 /*------------------------------------------------------------ Our Story */
-
+/* Tempalte from codepen.io */
 .our-story-section {
     min-height: 100vh;
 }
@@ -245,19 +245,19 @@ a {
 }
 
 .our-story-list li:nth-child(4):before {
-    animation-delay: 2s;
+    animation-delay: 2.4s;
 }
 
 .our-story-list li:nth-child(4) .content {
-    animation-delay: 2.3s;
+    animation-delay: 2.7s;
 }
 
 .our-story-list li:nth-child(5):before {
-    animation-delay:2.6s;
+    animation-delay:3s;
 }
 
 .our-story-list li:nth-child(5) .content {
-    animation-delay:2.9s;
+    animation-delay:3.3s;
 }
 
 @keyframes revealFromLeft {
