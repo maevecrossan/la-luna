@@ -1,23 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
 header {
     background-color: red;
 }
 
 body {
     background: orange; /* ADD PATTERN BG HERE */
-
 }
 
 footer {
     background-color: yellow;
 }
 
+/* General Styles */
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /*------------------------------------------------------------ Header */
 /*------------------------------ Logo */
 h1 {
     font-size: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 /*------------------------------ Nav */
@@ -38,9 +46,6 @@ a {
 .callout-container {
     height: 100vh;
     background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
 }
 
@@ -67,6 +72,52 @@ a {
     background-color: rgb(255, 255, 127);
 }
 
+/*------------------------------------------------------------ Our Story */
+
+#our-story-section {
+    max-width: 1000px;
+}
+
+.our-story-content {
+    padding: 4em 2em 0em 2em;
+    position: relative;
+    color: #fafafa;
+    border-left: 1px solid;
+}
+
+.our-story-content p {
+    padding: 0;
+    margin: 0;
+}
+
+.our-story-content:before {
+    content: attr(data-dates);
+    position: absolute;
+    left: 2.5em;
+    top: 3em;
+    display: block;
+    font-family: "Exo", sans-serif;
+    font-weight: 500;
+    font-size: 0.8em;
+    padding: 0;
+    margin: 0;
+}
+
+.our-story-content:after {
+    width: 12px;
+    height: 12px;
+    display: block;
+    top: 2.4em;
+    position: absolute;
+    left: -6px;
+    border-radius: 12px;
+    content: "";
+    background-color: #fafafa;
+}
+
+.our-story-item {
+    margin-bottom: 30px;
+}
 /* 
 Media query to offset third image in gallery on md and sm sizes
 */
