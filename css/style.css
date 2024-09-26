@@ -73,52 +73,47 @@ a {
 }
 
 /*------------------------------------------------------------ Our Story */
-
-#our-story-section {
-    max-width: 1000px;
-    background-color: blue;
+.our-story-item {
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-bottom: 50px;
 }
 
 .our-story-content {
-    padding: 4em 2em 0em 2em;
-    position: relative;
-    color: #fafafa;
-    border-left: 1px solid;
+    padding: 30px;
+    border-top: 3px dashed black;
 }
 
-.our-story-content p {
-    padding: 0;
-    margin: 0;
+.our-story-content:nth-child(even) {
+    border-left: 2px dashed;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    margin-right: 30px; 
+    padding-right: 0;
+  }
+
+.our-story-content:nth-child(odd) {
+    border-right: 2px dashed;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    margin-left: 30px; 
+    padding-left: 0;
 }
 
-.our-story-content:before {
-    content: attr(data-dates);
-    position: absolute;
-    left: 2.5em;
-    top: 3em;
-    display: block;
-    font-family: "Exo", sans-serif;
-    font-weight: 500;
-    font-size: 0.8em;
-    padding: 0;
-    margin: 0;
+.our-story-content:first-child {
+    border-top: 0;
+    border-top-right-radius:0;
+    border-top-left-radius:0;
+}
+  
+.our-story-content:last-child {
+    border-bottom-right-radius:0;
+    border-bottom-left-radius:0;
 }
 
-.our-story-content:after {
-    width: 12px;
-    height: 12px;
-    display: block;
-    top: 2.4em;
-    position: absolute;
-    left: -6px;
-    border-radius: 12px;
-    content: "";
-    background-color: #fafafa;
-}
+/*------------------------------------------------------------ Footer */
 
-.our-story-item {
-    margin-bottom: 30px;
-}
+
 /* 
 Media query to offset third image in gallery on md and sm sizes
 */
