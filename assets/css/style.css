@@ -1,0 +1,345 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    margin-top: 20px;
+    background-color: none;
+}
+
+body {
+    background-color: #592828;
+    min-height: 100vh;
+    /* ADD PATTERN BG HERE */
+}
+
+
+/* General Styles */
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+/*------------------------------------------------------------ Header */
+/*------------------------------ Logo */
+h1 {
+    font-size: 50px;
+    color: #d8d7d9;
+    font-family: "Italiana", serif;
+}
+
+/*------------------------------ Nav */
+.navbar {
+    margin-bottom: 0;
+    width: 100%;
+    background-color: none;
+    border: 0;
+    list-style-type: none;
+}
+
+a {
+    color: white;
+}
+
+/*------------------------------------------------------------ Callout Jumbotron */
+.callout-container {
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+}
+
+.jumbotron {
+    padding-top: 60px;
+    height: 70vh;
+}
+
+/*------------------------------------------------------------ Mini Gallery */
+#mini-gallery-container {
+    width: 80vw;
+    margin-bottom: 50px;
+}
+
+.image-column {
+    min-width: 300px;
+    min-height: 410px;
+}
+
+img {
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 290px;
+    height: 400px;
+}
+
+/* .image-column-left {
+    background-color: rgb(252, 122, 122);
+}
+
+.image-column-middle {
+    background-color: rgb(255, 207, 118);
+}
+
+.image-column-right {
+    background-color: rgb(255, 255, 127);
+} */
+
+/*------------------------------------------------------------ Our Story */
+/* Tempalte from codepen.io */
+.our-story-section {
+    min-height: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.our-story-title {
+    text-align: center;
+    margin: 1em 0 0 0;
+    font-size: 2.5em;
+    line-height: 1;
+    letter-spacing: 0.02em;
+
+    @media all and (min-width:40em) {
+        font-size: 4.75em;
+    }
+}
+
+.subtitle {
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1em;
+    margin: 0.5em 0;
+}
+
+.content h3 {
+    font-size: 1.2em;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #fff;
+    
+    @media all and (min-width:40em) {
+        font-size: 2.5em;
+    }
+}
+
+.l-block-spacing {
+    min-height: 80vh;
+    padding: 2em 0 4em 0;
+}
+
+.l-contained {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+
+    @media all and (min-width:40em) {
+
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+}
+
+.our-story-list {
+
+    border-left: 5px solid #bf7b75;
+    padding-bottom: 1em;
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.our-story-list:before {
+    content: "";
+    border-left: 5px solid #bf7b75;
+    left: -0.25em;
+    top: 2em;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    transform-origin: 0 0;
+    animation: scaleVertical 3s 1s ease both 1;
+}
+
+.our-story-list:after {
+    content: "";
+    clear: both;
+    position: absolute;
+    bottom: -5px;
+    left: -0.75em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: none repeat scroll 0% 0% #d8b8b8;
+    border: 5px solid #d8b8b8;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    animation: revealScaleUp 0.75s 2.82s ease both 1;
+}
+
+
+.t-block-red {
+    background-color: #592828;
+}
+
+.t-block-red h3,
+.t-block-red h4 {
+    color: #d8b8b8;
+}
+
+.t-block-red p {
+    color: #d9d9d9;
+}
+
+/*list animation */
+/*scale in the circle, follwoed by the list item*/
+/*the border must also animate in.*/
+.our-story-list li {
+    margin: 0 0 3em 0;
+    padding: 0 2em 0em 2em;
+    position: relative;
+    list-style-type: none;
+}
+
+.our-story-list li:before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -3.5em;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: none repeat scroll 0% 0% #d8b8b8;
+    border: 5px solid #d8d7d9;
+    animation: revealScaleUp 0.75s 0s ease both 1;
+}
+
+.our-story-list {
+    animation: reveal 2s 0 ease both 1;
+}
+
+.our-story-list li .content {
+    animation: revealFromLeft 0.5s 0s ease both 1;
+}
+
+.our-story-list li:nth-child(1):before {
+    animation-delay: 0.85s;
+}
+
+.our-story-list li:nth-child(1) .content {
+    animation-delay: 1.05s;
+}
+
+.our-story-list li:nth-child(2):before {
+    animation-delay: 1.2s;
+}
+
+.our-story-list li:nth-child(2) .content {
+    animation-delay: 1.5s;
+}
+
+.our-story-list li:nth-child(3):before {
+    animation-delay: 1.8s;
+}
+
+.our-story-list li:nth-child(3) .content {
+    animation-delay: 2.1s;
+}
+
+.our-story-list li:nth-child(4):before {
+    animation-delay: 2.4s;
+}
+
+.our-story-list li:nth-child(4) .content {
+    animation-delay: 2.7s;
+}
+
+.our-story-list li:nth-child(5):before {
+    animation-delay:3s;
+}
+
+.our-story-list li:nth-child(5) .content {
+    animation-delay:3.3s;
+}
+
+@keyframes revealFromLeft {
+    0% {
+        transform: translateX(-1em);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleVertical {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes revealScaleUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/*------------------------------------------------------------ Footer */
+
+footer .col {
+    height: 230px;
+    margin-top: 30px;
+}
+
+/* 
+Media query to offset third image in gallery on md and sm sizes
+*/
+@media only screen and (max-width: 320px) {
+    .responsive {
+      width: 100%;
+    }
+  }
+
+@media only screen and (max-width: 576px) {
+    .responsive {
+      width: 49.99999%;
+      margin: 6px 0;
+    }
+  }
