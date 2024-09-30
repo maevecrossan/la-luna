@@ -37,6 +37,12 @@ body {
 
 .lato {
     font-family: "Lato", sans-serif;
+    font-size: 19px;
+}
+
+.jumbotron-header,
+.our-story-heading {
+    font-size: 50px;
 }
 
 /*------------------------------------------------------------ Header */
@@ -107,11 +113,6 @@ img {
 
 /*------------------------------------------------------------ Our Story */
 /* Tempalte from codepen.io */
-
-.jumbotron-header,
-.our-story-heading {
-    font-size: 40px;
-}
 
 .our-story-section {
     min-height: auto;
