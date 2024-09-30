@@ -1,7 +1,7 @@
 /* Fonts */
 
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -31,12 +31,19 @@ body {
     text-transform: uppercase;
 }
 
+.italiana {
+    font-family: "Italiana", serif;
+}
+
+.lato {
+    font-family: "Lato", sans-serif;
+}
+
 /*------------------------------------------------------------ Header */
 /*------------------------------ Logo */
 h1 {
-    font-size: 50px;
+    font-size: 60px;
     color: #d8d7d9;
-    font-family: "Italiana", serif;
 }
 
 /*------------------------------ Nav */
@@ -46,6 +53,7 @@ h1 {
     background-color: none;
     border: 0;
     list-style-type: none;
+    font-size: 20px;
 }
 
 a {
@@ -67,7 +75,9 @@ a {
 /*------------------------------------------------------------ Mini Gallery */
 #mini-gallery-container {
     width: 80vw;
+    height: 80vh;
     margin-bottom: 50px;
+    margin-left: 350px;
 }
 
 .image-column {
@@ -97,6 +107,12 @@ img {
 
 /*------------------------------------------------------------ Our Story */
 /* Tempalte from codepen.io */
+
+.jumbotron-header,
+.our-story-heading {
+    font-size: 40px;
+}
+
 .our-story-section {
     min-height: auto;
     margin-top: 30px;
