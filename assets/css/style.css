@@ -81,12 +81,12 @@ a {
 /*------------------------------------------------------------ Mini Gallery */
 #mini-gallery-container {
     margin-bottom: 80px;
-    margin-left: 350px;
+    margin-left: auto; /* center the container */
+    margin-right: auto; /* center the container */
 }
 
 .image-column {
-    min-width: 300px;
-    min-height: 410px;
+    padding: 20px;
 }
 
 img {
@@ -331,17 +331,37 @@ footer .col {
 }
 
 /* 
-Media query to offset third image in gallery on md and sm sizes
+Media query to hide second row on small screens
 */
-@media only screen and (max-width: 320px) {
+@media only screen and (min-width: 320px) and (max-width:575px) {
     .responsive {
       width: 100%;
     }
-  }
-
-@media only screen and (max-width: 576px) {
-    .responsive {
-      width: 49.99999%;
-      margin: 6px 0;
+    .gallery-row-2 {
+        display: none;
     }
-  }
+}
+
+  /* For screens between 576px and 768px */
+@media (min-width: 576px) and (max-width: 767px) {
+    .image-column {
+        padding: 10px;
+    }
+
+    img {
+        width: 160px; /* Resize images to fit the columns */
+        height: 240px; /* Keep aspect ratio */
+    }
+}
+
+/* For screens larger than 768px */
+@media (min-width: 768px) and (max-width: 991px) {
+    .image-column {
+        padding: 20px;
+    }
+
+    img {
+        width: 190px; /* Explicit sizing for larger screens */
+        height: 300px;
+    }
+}
