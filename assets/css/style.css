@@ -67,10 +67,18 @@ a {
 }
 
 /*------------------------------------------------------------ Callout Jumbotron */
+.intro-background {
+    background-image: url("../images/pexels-rachel-claire-5490933.jpg");
+    background-color: #592828;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .callout-container {
     height: 100vh;
     background-size: cover;
     position: relative;
+    
 }
 
 .jumbotron {
