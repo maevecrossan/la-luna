@@ -8,18 +8,23 @@
 }
 
 header {
-    margin-top: 20px;
-    background-color: none;
+    padding-top: 20px;
+    z-index: 1;
+    background-color: #592828;
 }
 
 body {
+    /* Polka dot background */
     background-color: #592828;
+    opacity: 1;
+    background-image:  radial-gradient(#bf7b75 0.75px, transparent 0.75px), radial-gradient(#bf7b75 0.75px, #592828 0.75px);
+    background-size: 30px 30px;
+    background-position: 0 0,15px 15px;
     min-height: 100vh;
-    /* ADD PATTERN BG HERE */
 }
 
 
-/* General Styles */
+/* Common/general styles */
 
 .center {
     display: flex;
@@ -110,7 +115,7 @@ a:hover {
     transform: translateY(0px);
 }
 
-/*------------------------------------------------------------ Callout Jumbotron */
+/*------------------------------------------------------------  Jumbotron */
 .intro-background {
     background-image: url("https://images.pexels.com/photos/5490933/pexels-photo-5490933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-color: #592828;
@@ -118,7 +123,7 @@ a:hover {
     background-size: cover;
 }
 
-.callout-container {
+.jumbotron-container {
     height: 100vh;
     background-size: cover;
     position: relative;
