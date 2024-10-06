@@ -14,17 +14,20 @@ header {
 }
 
 body {
+
+}
+
+
+/* Common/general styles */
     /* Polka dot background */
+.polka-dot-background {
     background-color: #592828;
     opacity: 1;
     background-image:  radial-gradient(#bf7b75 0.75px, transparent 0.75px), radial-gradient(#bf7b75 0.75px, #592828 0.75px);
     background-size: 30px 30px;
     background-position: 0 0,15px 15px;
-    min-height: 100vh;
+    min-height: auto;
 }
-
-
-/* Common/general styles */
 
 .center {
     display: flex;
@@ -61,7 +64,6 @@ h1 {
 .navbar {
     margin-bottom: 0;
     width: 100%;
-    background-color: none;
     border: 0;
     font-size: 20px;
     list-style-type: none;
@@ -116,27 +118,50 @@ a:hover {
 }
 
 /*------------------------------------------------------------  Jumbotron */
-.intro-background {
-    background-image: url("https://images.pexels.com/photos/5490933/pexels-photo-5490933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    background-color: #592828;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 .jumbotron-container {
-    height: 100vh;
+    height: 80vh;
     background-size: cover;
     position: relative;
+    width: 80%;
+    overflow-x: hidden;
 }
 
 .jumbotron {
-    padding-top: 60px;
     height: 70vh;
+    width: 90vh;
+    background-image: url("https://images.pexels.com/photos/5490933/pexels-photo-5490933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    flex-direction: column;
+}
+
+.jumbotron::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+    z-index: -1;
+}
+
+.jumbotron h2,
+.jumbotron p {
+    color: #d8d7d9;
+    opacity: 1;
+    position: relative; /* Keeps text above the overlay */
+    z-index: 2;
 }
 
 /*------------------------------------------------------------ Mini Gallery */
 #mini-gallery-container {
-    margin-bottom: 80px;
     margin-left: auto; /* center the container */
     margin-right: auto; /* center the container */
 }
@@ -401,6 +426,10 @@ Media query to hide second row on small screens
 
   /* For screens between 576px and 768px */
 @media (min-width: 576px) and (max-width: 767px) {
+    .jumbotron-container {
+        max-height: auto;
+    }
+    
     .image-column {
         padding: 10px;
     }
