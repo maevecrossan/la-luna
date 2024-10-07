@@ -11,19 +11,10 @@ header {
     padding-top: 20px;
     z-index: 1;
     background-color: #592828;
-<<<<<<< HEAD
-=======
-}
-
-body {
-
->>>>>>> origin/main
 }
 
 
 /* Common/general styles */
-<<<<<<< HEAD
-=======
     /* Polka dot background */
 .polka-dot-background {
     background-color: #592828;
@@ -33,7 +24,6 @@ body {
     background-position: 0 0,15px 15px;
     min-height: auto;
 }
->>>>>>> origin/main
 
 .center {
     display: flex;
@@ -63,10 +53,15 @@ body {
     background-color: #592828;
 }
 
+h5 {
+    color: #350606;
+    font-size: 26px;
+}
+
 /*------------------------------------------------------------ Header */
 /*------------------------------ Logo */
 h1 {
-    font-size: 60px;
+    font-size: 80px;
     color: #d8d7d9;
 }
 
@@ -74,7 +69,7 @@ h1 {
 .navbar {
     margin-bottom: 0;
     width: 100%;
-    border: 0;
+    border-bottom: 2px solid #350606;
     font-size: 20px;
     list-style-type: none;
 }
@@ -149,28 +144,6 @@ a:hover {
     position: relative;
     z-index: 1;
     flex-direction: column;
-<<<<<<< HEAD
-=======
-}
-
-.jumbotron::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
-    z-index: -1;
-}
-
-.jumbotron h2,
-.jumbotron p {
-    color: #d8d7d9;
-    opacity: 1;
-    position: relative; /* Keeps text above the overlay */
-    z-index: 2;
->>>>>>> origin/main
 }
 
 .jumbotron::before {
@@ -192,6 +165,29 @@ a:hover {
     z-index: 2;
 }
 
+.jumbotron::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background overlay */
+    z-index: -1;
+}
+
+.jumbotron h2,
+.jumbotron p {
+    color: #d8d7d9;
+    opacity: 1;
+    position: relative; /* Keeps text above the overlay */
+    z-index: 2;
+}
+
+.reservation-button {
+    background-color: #d8d7d9;
+    color: #592828;
+}
 
 /*------------------------------------------------------------ Mini Gallery */
 #mini-gallery-container {
@@ -203,7 +199,7 @@ a:hover {
     padding: 20px;
 }
 
-img {
+#mini-gallery-container img {
     margin-left: 10px;
     margin-right: 10px;
     width: 290px;
@@ -220,12 +216,13 @@ img {
     margin-bottom: 30px;
 }
 
-.our-story-title {
+.our-story-heading {
     text-align: center;
     margin: 1em 0 0 0;
     font-size: 2.5em;
     line-height: 1;
     letter-spacing: 0.02em;
+    padding: 40px 0 20px 0;
 
     @media all and (min-width:40em) {
         font-size: 4.75em;
@@ -271,16 +268,14 @@ img {
 }
 
 .our-story-list {
-
     border-left: 5px solid #bf7b75;
     padding-bottom: 1em;
     position: relative;
     max-width: 700px;
-    margin: 0 auto;
+    margin-top: 30px;
 }
 
 .our-story-list:before {
-    content: "";
     border-left: 5px solid #bf7b75;
     left: -0.25em;
     top: 2em;
@@ -306,7 +301,6 @@ img {
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
     animation: revealScaleUp 0.75s 2.82s ease both 1;
 }
-
 
 .t-block-red {
     background-color: #592828;
@@ -334,7 +328,7 @@ img {
 .our-story-list li:before {
     content: "";
     position: absolute;
-    top: 10px;
+    top: 0px;
     left: -3.5em;
     width: 30px;
     height: 30px;
@@ -361,35 +355,35 @@ img {
 }
 
 .our-story-list li:nth-child(2):before {
-    animation-delay: 1.2s;
+    animation-delay: 1.25s;
 }
 
 .our-story-list li:nth-child(2) .content {
-    animation-delay: 1.5s;
+    animation-delay: 1.45s;
 }
 
 .our-story-list li:nth-child(3):before {
-    animation-delay: 1.8s;
+    animation-delay: 1.65s;
 }
 
 .our-story-list li:nth-child(3) .content {
-    animation-delay: 2.1s;
+    animation-delay: 1.85s;
 }
 
 .our-story-list li:nth-child(4):before {
-    animation-delay: 2.4s;
+    animation-delay: 2.05s;
 }
 
 .our-story-list li:nth-child(4) .content {
-    animation-delay: 2.7s;
+    animation-delay: 2.25s;
 }
 
 .our-story-list li:nth-child(5):before {
-    animation-delay:3s;
+    animation-delay: 2.45s;
 }
 
 .our-story-list li:nth-child(5) .content {
-    animation-delay:3.3s;
+    animation-delay: 2.65s;
 }
 
 @keyframes revealFromLeft {
@@ -440,9 +434,21 @@ img {
 
 /*------------------------------------------------------------ Footer */
 
+footer {
+    background-color: #592828;
+}
+
 footer .col {
     height: 230px;
     margin-top: 30px;
+}
+
+.footer-link {
+    color: #d8d7d9;
+}
+
+.copyright {
+    color: #d8d7d9;
 }
 
 /* 
@@ -455,8 +461,6 @@ Media query to hide second row on small screens
     .gallery-row-2 {
         display: none;
     }
-<<<<<<< HEAD
-
     .jumbotron {
         width: 70vw;
         height: 550px;
@@ -473,8 +477,6 @@ Media query to hide second row on small screens
     .reservation-button {
         margin-top: 12px;
     }
-=======
->>>>>>> origin/main
 }
 
   /* For screens between 576px and 768px */
@@ -491,7 +493,6 @@ Media query to hide second row on small screens
         width: 160px; /* Resize images to fit the columns */
         height: 240px; /* Keep aspect ratio */
     }
-<<<<<<< HEAD
 
     .jumbotron {
         height: 70vh;
@@ -520,8 +521,6 @@ Media query to hide second row on small screens
     .reservation-button {
         margin-top: 15px;
     }
-=======
->>>>>>> origin/main
 }
 
 /* For screens larger than 768px */
@@ -534,7 +533,6 @@ Media query to hide second row on small screens
         width: 190px; /* Explicit sizing for larger screens */
         height: 300px;
     }
-<<<<<<< HEAD
 
     .jumbotron {
         height: 70vh;
@@ -576,6 +574,3 @@ Media query to hide second row on small screens
         max-width: 70vw;
     }
 }
-=======
-}
->>>>>>> origin/main
