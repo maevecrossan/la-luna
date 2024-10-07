@@ -11,10 +11,29 @@ header {
     padding-top: 20px;
     z-index: 1;
     background-color: #592828;
+<<<<<<< HEAD
+=======
+}
+
+body {
+
+>>>>>>> origin/main
 }
 
 
 /* Common/general styles */
+<<<<<<< HEAD
+=======
+    /* Polka dot background */
+.polka-dot-background {
+    background-color: #592828;
+    opacity: 1;
+    background-image:  radial-gradient(#bf7b75 0.75px, transparent 0.75px), radial-gradient(#bf7b75 0.75px, #592828 0.75px);
+    background-size: 30px 30px;
+    background-position: 0 0,15px 15px;
+    min-height: auto;
+}
+>>>>>>> origin/main
 
 .center {
     display: flex;
@@ -130,6 +149,28 @@ a:hover {
     position: relative;
     z-index: 1;
     flex-direction: column;
+<<<<<<< HEAD
+=======
+}
+
+.jumbotron::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+    z-index: -1;
+}
+
+.jumbotron h2,
+.jumbotron p {
+    color: #d8d7d9;
+    opacity: 1;
+    position: relative; /* Keeps text above the overlay */
+    z-index: 2;
+>>>>>>> origin/main
 }
 
 .jumbotron::before {
@@ -414,6 +455,7 @@ Media query to hide second row on small screens
     .gallery-row-2 {
         display: none;
     }
+<<<<<<< HEAD
 
     .jumbotron {
         width: 70vw;
@@ -431,6 +473,8 @@ Media query to hide second row on small screens
     .reservation-button {
         margin-top: 12px;
     }
+=======
+>>>>>>> origin/main
 }
 
   /* For screens between 576px and 768px */
@@ -447,6 +491,7 @@ Media query to hide second row on small screens
         width: 160px; /* Resize images to fit the columns */
         height: 240px; /* Keep aspect ratio */
     }
+<<<<<<< HEAD
 
     .jumbotron {
         height: 70vh;
@@ -475,6 +520,8 @@ Media query to hide second row on small screens
     .reservation-button {
         margin-top: 15px;
     }
+=======
+>>>>>>> origin/main
 }
 
 /* For screens larger than 768px */
@@ -487,6 +534,7 @@ Media query to hide second row on small screens
         width: 190px; /* Explicit sizing for larger screens */
         height: 300px;
     }
+<<<<<<< HEAD
 
     .jumbotron {
         height: 70vh;
@@ -528,3 +576,6 @@ Media query to hide second row on small screens
         max-width: 70vw;
     }
 }
+=======
+}
+>>>>>>> origin/main
