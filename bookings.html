@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/booking-form.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- FORM -->
+    <div class="formbold-main-wrapper">
+        <!-- Author: FormBold Team -->
+        <!-- Learn More: https://formbold.com -->
+        <div class="formbold-form-wrapper">
+          <form action="https://formbold.com/s/FORM_ID" method="POST">
+            <div class="formbold-mb-5">
+              <label for="name" class="formbold-form-label"> Full Name </label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Full Name"
+                class="formbold-form-input"
+              />
+            </div>
+            <div class="formbold-mb-5">
+              <label for="phone" class="formbold-form-label"> Phone Number </label>
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                placeholder="Enter your phone number"
+                class="formbold-form-input"
+              />
+            </div>
+            <div class="formbold-mb-5">
+              <label for="email" class="formbold-form-label"> Email Address </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email"
+                class="formbold-form-input"
+              />
+            </div>
+            <div class="flex flex-wrap formbold--mx-3">
+              <div class="w-full sm:w-half formbold-px-3">
+                <div class="formbold-mb-5 w-full">
+                  <label for="date" class="formbold-form-label"> Date </label>
+                  <input
+                    type="date"
+                    name="date"
+                    id="date"
+                    class="formbold-form-input"
+                  />
+                </div>
+              </div>
+              <div class="w-full sm:w-half formbold-px-3">
+                <div class="formbold-mb-5">
+                  <label for="time" class="formbold-form-label"> Time </label>
+                  <input
+                    type="time"
+                    name="time"
+                    id="time"
+                    class="formbold-form-input"
+                  />
+                </div>
+              </div>
+            </div>
+      
+            <div class="formbold-mb-5">
+              <label for="guests" class="formbold-form-label"> Number of Guests </label>
+              <input
+                type="number"
+                name="guests"
+                id="guests"
+                min="1"
+                max="8"
+                placeholder="Enter number of guests"
+                class="formbold-form-input"
+                oninput="checkGuests(this)"
+              />
+            </div>
+      
+            <div>
+              <button class="formbold-btn">Make Reservation</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <script src="assets/js/booking-form.js"></script>
+</body>
+</html>
