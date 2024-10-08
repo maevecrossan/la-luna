@@ -4,6 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -13,6 +15,15 @@ header {
     background-color: #592828;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    padding: 0;
+    margin: 0;
+}
 
 /* Common/general styles */
     /* Polka dot background */
@@ -122,19 +133,48 @@ a:hover {
     transform: translateY(0px);
 }
 
+/* Mobile Menu Toggle */
+#nav-toggle {
+    display: none;
+    position: absolute;
+}
+
+#nav-toggle:checked~nav {
+    display: block;
+}
+
+.nav-toggle-label {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    right: 14px;
+    top: 8px;
+    font-size: 27px;
+}
+
+/* Code borrowed from "https://css-tricks.com/inclusively-hidden/" */
+.sr-only:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+  }
+
 /*------------------------------------------------------------  Jumbotron */
 
 .jumbotron-container {
-    height: 80vh;
+    height: 84vh;
     background-size: cover;
     position: relative;
     width: 80%;
     overflow-x: hidden;
+    padding: 0;
 }
 
 .jumbotron {
     height: 70vh;
-    width: 90vh;
+    width: 130vh;
     background-image: url("https://images.pexels.com/photos/5490933/pexels-photo-5490933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-repeat: no-repeat;
     background-size: cover;
@@ -462,7 +502,7 @@ Media query to hide second row on small screens
         display: none;
     }
     .jumbotron {
-        width: 70vw;
+        width: 80vw;
         height: 550px;
     }
     .jumbotron h2 {
@@ -564,6 +604,7 @@ Media query to hide second row on small screens
 }
 
 @media (min-width: 992px) {
+    
     .jumbotron h2 {
         font-size: 90px;
     }
