@@ -476,6 +476,7 @@ a:hover {
 
 footer {
     background-color: #592828;
+    max-width: 100vw;
 }
 
 footer .col {
@@ -489,6 +490,9 @@ footer .col {
 
 .copyright {
     color: #d8d7d9;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 
