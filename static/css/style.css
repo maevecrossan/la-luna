@@ -171,6 +171,7 @@ a:hover {
 
 .jumbotron-container {
     height: 84vh;
+    min-height: 600px;
     background-size: cover;
     position: relative;
     width: 100%;
@@ -495,10 +496,7 @@ footer .col {
 }
 
 
-@media only screen and (min-width: 320px) and (max-width:575px) {
-    .responsive {
-      width: 100%;
-    }
+@media only screen and (min-width: 310px) and (max-width:575px) {
 
     header {
         padding-top: 18px;
@@ -510,13 +508,25 @@ footer .col {
         margin: 0 50px 0 0;
     }
 
+    /* Gallery Styles */
+    #mini-gallery-container img {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 200px;
+        height: 300px;
+        border-radius: 2%;
+    }
+    
     .gallery-row-2 {
         display: none;
     }
+
+    
     .jumbotron {
         width: 80vw;
         height: 550px;
     }
+
     .jumbotron h2 {
         font-size: 55px;
     }
