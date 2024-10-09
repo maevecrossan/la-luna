@@ -11,6 +11,7 @@
 
 html,
 body {
+    min-width: 330px;
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -177,6 +178,7 @@ a:hover {
 }
 
 .jumbotron {
+    min-height: 550px;
     height: 70vh;
     width: 130vh;
     background-image: url("https://images.pexels.com/photos/5490933/pexels-photo-5490933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
@@ -511,15 +513,9 @@ footer .col {
     justify-content: space-evenly;
 }
 
+/*------------------------------------------------------------ Media Queries */
 
-@media screen and (max-width:425px) {
-    
-    .gallery-row-2 {
-        display: none;
-    }
-}
-
-@media screen and (max-width:575px) {
+@media (min-width: 310px) and (max-width: 768px) {
 
     header {
         padding-top: 18px;
@@ -527,33 +523,34 @@ footer .col {
     }
 
     h1 {
-        font-size: 55px;
-        margin: 0 50px 0 0;
+        font-size: 65px;
+        margin: 0 50px 0 20px;
+        padding-right: 20px;
     }
 
     /* Mobile Nav Styles */
-    .navbar {
+    .navbar { 
         display: none;
     }
 
     .nav-toggle-label {
-        top: 26px;
-        font-size: 33px;
-        right: 36px;
+        top: 34px;
+        font-size: 37px;
+        right: 12px;
         color: #d8d7d9;
     }
 
-    .jumbotron {
-        width: 80vw;
+    .jumbotron-container {
+        width: 80%;
         height: 550px;
     }
 
     .jumbotron h2 {
-        font-size: 55px;
+        font-size: 50px;
     }
 
     .jumbotron p {
-        font-size: 19px;
+        font-size: 22px;
         padding: 0 10px 0 10px;
     }
 
@@ -576,9 +573,10 @@ footer .col {
 }
 
 
-@media screen and (max-width: 767px) {
-    .jumbotron-container {
-        max-height: auto;
+@media screen and (min-width: 768px) {
+
+    .nav-toggle-label {
+        display: none;
     }
 
     header {
@@ -597,9 +595,14 @@ footer .col {
     }
 
     /* Jumbotron Styles */
+    .jumbotron-container{
+        width: 80%;
+        max-height: auto;
+    }
+    
     .jumbotron {
         height: 70vh;
-        width: 90vh;
+        width: auto;
         background-image: url(https://images.pexels.com/photos/5490933/pexels-photo-5490933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
         background-repeat: no-repeat;
         background-size: cover;
@@ -630,50 +633,4 @@ footer .col {
         display: none;
     }
 
-    .nav-toggle-label {
-        top: 38px;
-        font-size: 49px;
-        right: 49px;
-        color: #d8d7d9;
-    }
-}
-
-
-/* For screens larger than 768px */
-@media screen and (max-width: 991px) {
-    .nav-toggle-label {
-        display: none;
-    }
-   
-    /* Gallery Styles */
-
-
-    /* Jumbotron Styles */
-    .jumbotron {
-        height: 70vh;
-        width: 90vh;
-        background-image: url(https://images.pexels.com/photos/5490933/pexels-photo-5490933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        position: relative;
-        z-index: 1;
-        flex-direction: column;
-    }
-
-    .jumbotron h2 {
-        font-size: 70px;
-    }
-
-    .jumbotron p {
-        font-size: 19px;
-        padding: 0 10px 0 10px;
-        max-width: 70vw;
-    }
-
-    .reservation-button {
-        margin-top: 15px;
-    }
 }
