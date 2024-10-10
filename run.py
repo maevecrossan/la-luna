@@ -21,6 +21,12 @@ def bookings(): # view is called inside html file
     return render_template("bookings.html", page_title="Bookings")
 
 
+@app.route('/bookings', methods=['POST'])
+def handle_booking():
+    # Handle the booking here
+    return 'Booking received!'
+
+
 @app.route("/contact")
 def contact(): # view is called inside html file
     return render_template("contact.html", page_title="Contact Us")
