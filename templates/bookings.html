@@ -11,34 +11,54 @@
 
 			<div class="formbold-mb-5">
 				<label for="name" class="formbold-form-label "> Full Name </label>
-				<input type="text" name="name" id="name" placeholder="Full Name" class="formbold-form-input" required/>
+				<input type="text" name="name" id="name" placeholder="Full Name" class="formbold-form-input" required />
+				<span class="validity"></span>
 			</div>
 
 			<div class="formbold-mb-5">
 				<label for="phone" class="formbold-form-label"> Phone Number </label>
 				<input type="text" name="phone" id="phone" placeholder="Enter your phone number"
-					class="formbold-form-input" required/>
+					class="formbold-form-input" required />
+				<span class="validity"></span>
 			</div>
 
 			<div class="formbold-mb-5">
 				<label for="email" class="formbold-form-label"> Email Address </label>
 				<input type="email" name="email" id="email" placeholder="Enter your email" class="formbold-form-input"
-					required/>
+					required />
+				<span class="validity"></span>
 			</div>
 
 			<div class="flex flex-wrap formbold--mx-3">
 				<div class="w-full sm:w-half formbold-px-3">
 					<div class="formbold-mb-5 w-full">
 						<label for="date" class="formbold-form-label"> Date </label>
-						<input type="date" name="date" id="date" class="formbold-form-input" required/>
+						<input type="date" name="date" id="date" class="formbold-form-input" required />
+						<span class="validity"></span>
 					</div>
 				</div>
 
 				<div class="w-full sm:w-half formbold-px-3">
 					<div class="formbold-mb-5">
-						<label for="time" class="formbold-form-label"> Time </label>
-						<input type="time" name="time" id="time" class="formbold-form-input" min="15:00" max="22:00"
-							step="1800" required/>
+						<label for="time" class="formbold-form-label">Choose a time:</label>
+						<select id="time" name="time" id="time" class="formbold-form-input" required>
+							<option value="15:00">3:00 PM</option>
+							<option value="15:30">3:30 PM</option>
+							<option value="16:00">4:00 PM</option>
+							<option value="16:30">4:30 PM</option>
+							<option value="17:00">5:00 PM</option>
+							<option value="17:30">5:30 PM</option>
+							<option value="18:00">6:00 PM</option>
+							<option value="18:30">6:30 PM</option>
+							<option value="19:00">7:00 PM</option>
+							<option value="19:30">7:30 PM</option>
+							<option value="20:00">8:00 PM</option>
+							<option value="20:30">8:30 PM</option>
+							<option value="21:00">9:00 PM</option>
+							<option value="21:30">9:30 PM</option>
+							<option value="22:00">10:00 PM</option>
+						</select>
+						<span class="validity"></span>
 					</div>
 				</div>
 			</div>
@@ -46,7 +66,8 @@
 			<div class="formbold-mb-5">
 				<label for="guests" class="formbold-form-label"> Number of Guests </label>
 				<input type="number" name="guests" id="guests" min="1" max="8" placeholder="Enter number of guests"
-					class="formbold-form-input" oninput="checkGuests(this)" required/>
+					class="formbold-form-input" oninput="checkGuests(this)" required />
+				<span class="validity"></span>
 			</div>
 
 			<div>

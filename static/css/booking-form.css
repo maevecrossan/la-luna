@@ -43,7 +43,7 @@
 }
 
 .formbold-form-input {
-    width: 100%;
+    width: 80%;
     padding: 12px 24px;
     border-radius: 6px;
     border: 1px solid #e0e0e0;
@@ -58,6 +58,16 @@
 .formbold-form-input:focus {
     border-color: #592828;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+input:invalid+span:after {
+    content: '✖';
+    margin-left: 10px;
+}
+  
+input:valid+span:after {
+    content: '✓';
+    margin-left: 10px;
 }
 
 .formbold-btn {
