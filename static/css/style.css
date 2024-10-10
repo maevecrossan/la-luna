@@ -486,11 +486,27 @@ footer .col {
     margin-top: 30px;
 }
 
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Spread the columns evenly */
+    align-items: flex-start;
+    padding: 20px 40px; /* Add some padding inside the footer */
+}
+
 .footer-link {
     color: #d8d7d9;
 }
 
-.copyright {
+.directory {
+    text-align: center;
+}
+
+.copyright-container {
+    width: 100%;
+}
+
+.copyright-text {
     color: #d8d7d9;
     display: flex;
     align-items: center;
@@ -595,6 +611,12 @@ footer .col {
         align-items: center;
     }
 
+    .directory {
+        display:inline-flex;
+        flex-direction: column;
+        margin: 10px 30px;
+    }
+
 }
 
 
@@ -663,5 +685,10 @@ footer .col {
 
     .reservation-button {
         margin-top: 15px;
+    }
+
+    .directory-container {
+        display: flex;
+        flex-direction: row;
     }
 }

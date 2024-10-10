@@ -7,8 +7,7 @@
     <!-- Favicon -->
 
     <!-- EmailJS Browser Script -->
-    <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
     <script type="text/javascript">
         (function () {
@@ -91,21 +90,17 @@
     </div>
 
     <div class="container-fluid">
-        <footer class="row row-cols-5 border-top">
-            <div class="col">
+        <footer class="row row-cols-5 border-top footer-container">
+            <div class="copyright-container">
                 <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
                     <svg class="bi me-2" width="40" height="32">
                         <use xlink:href="#bootstrap"></use>
                     </svg>
                 </a>
-                <p class="copyright italiana"> © 2024 </p>
+                <p class="copyright-text italiana"> © 2024 </p>
             </div>
 
-            <div class="col">
-
-            </div>
-
-            <div class="col">
+            <div class="col directory">
                 <h5 class="italiana">Directory</h5>
                 <ul class="nav flex-column lato">
                     <li class="footer-link mb-2"><a href="{{ url_for('index') }}" class="nav-link p-0">Home</a></li>
@@ -120,10 +115,11 @@
                 </ul>
             </div>
 
-            <div class="col">
+            <div class="col directory">
                 <h5 class="italiana">Social Media</h5>
-                <ul class="nav flex-column lato">
-                    <li class="footer-link mb-2 "><a href="https://x.com/?lang=en" class="nav-link p-0"> X / Twitter</a>
+                <ul class="nav flex-column flex-column lato">
+                    <li class="footer-link mb-2 "><a href="https://x.com/?lang=en" class="nav-link p-0"> X /
+                            Twitter</a>
                     </li>
                     <li class="footer-link mb-2"><a href="https://www.instagram.com/" class="nav-link p-0">Instagram</a>
                     </li>
@@ -132,7 +128,7 @@
                             class="nav-link p-0">Facebook</a></li>
                 </ul>
             </div>
-            <div class="col">
+            <div class="col directory">
                 <h5 class="italiana">Administration</h5>
                 <ul class="nav flex-column lato">
                     <li class="footer-link mb-2"><a href="admin-dashboard.html" class="nav-link p-0">Sign In</a>
