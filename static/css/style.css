@@ -87,11 +87,6 @@ h5 {
     display: inline-block;
 }
 
-/* Desktop nav - visible on larger screens */
-.desktop-nav {
-    display: block;
-}
-
 /*------------------------------------------------------------ Header */
 /*------------------------------ Logo */
 h1 {
@@ -110,12 +105,12 @@ h1 {
 .navbar {
     margin-bottom: 0;
     border-bottom: 2px solid #350606;
-    font-size: 20px;
+    font-size: 30px;
     list-style-type: none;
 }
 
 a {
-    color: #FFF;
+    color: #d8d7d9;
     text-decoration: none;
     margin: 0px 10px;
     padding: 10px 10px;
@@ -125,7 +120,7 @@ a {
 }
 
 a:hover {
-    color: #FFF;
+    color: #d8d7d9;
 }
 
 /* --------- Navbar Link Animations */
@@ -136,7 +131,7 @@ a:hover {
     left: 0px;
     width: 100%;
     height: 2px;
-    background: #FFF;
+    background: #d8d7d9;
     content: "";
     opacity: 0;
     transition: all 0.3s;
@@ -176,7 +171,6 @@ a:hover {
     background-size: cover;
     position: relative;
     width: 100%;
-    overflow-x: hidden;
     padding: 0;
 }
 
@@ -195,28 +189,17 @@ a:hover {
     flex-direction: column;
 }
 
-.jumbotron::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent background overlay */
-    z-index: -1;
-}
-
 .jumbotron h2,
 .jumbotron p {
     color: #d8d7d9;
     opacity: 1;
     position: relative;
-    /* Keeps text above the overlay */
+    /* Keeps text above the overlay below */
     z-index: 2;
 }
 
 .jumbotron::before {
+    /* Semi-transparent background overlay */
     content: "";
     position: absolute;
     top: 0;
@@ -224,7 +207,6 @@ a:hover {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.8);
-    /* Semi-transparent background overlay */
     z-index: -1;
 }
 
@@ -305,7 +287,7 @@ a:hover {
     font-size: 1.2em;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    color: #fff;
+    color: #d8d7d9;
 
     @media all and (min-width:40em) {
         font-size: 2.5em;
@@ -371,7 +353,7 @@ a:hover {
 }
 
 .t-block-red p {
-    color: #d9d9d9;
+    color: #d8d7d9;
 }
 
 /*list animation */
@@ -566,14 +548,14 @@ footer .col {
     
     /* Style for the links themselves */
     #mobile-navigation .nav-link {
-        color: #d9d9d9; /* Link text color */
+        color: #d8d7d9; /* Link text color */
         text-decoration: none; /* Remove underline */
         font-size: 28px; /* Font size for links */
     }
 
     /* Add hover effects */
     #mobile-navigation .nav-link:hover {
-        color: #000000; /* Change color on hover */
+        color: #d8d7d9; /* Change color on hover */
     }
 
     /* Display the hamburger icon for smaller screens */
@@ -628,13 +610,21 @@ footer .col {
         border-bottom: 1px solid #d8d7d9;
     }
 
+    .header-container {
+        display: flex;
+        flex-direction: column;
+    }
+
     h1 {
         font-size: 84px;
         margin: 0 50px 0 0;
+        font-weight: 600;
     }
 
-    #desktop-navigation {
-        display: inline-flex;
+    #desktop-navigation .navbar {
+        display: flex;
+        border-bottom: none;
+        font-size: 30px;
     }
 
     /* Gallery Styles */
@@ -675,10 +665,4 @@ footer .col {
     .reservation-button {
         margin-top: 15px;
     }
-
-    /* Mobile Nav Styles */
-    .navbar {
-        display: none;
-    }
-
 }
