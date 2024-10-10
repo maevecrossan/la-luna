@@ -11,31 +11,31 @@
 
       <div class="formbold-mb-5">
         <label for="name" class="formbold-form-label "> Full Name </label>
-        <input type="text" name="name" id="name" placeholder="Full Name" class="formbold-form-input" />
+        <input type="text" name="name" id="name" placeholder="Full Name" class="formbold-form-input" required/>
       </div>
 
       <div class="formbold-mb-5">
         <label for="phone" class="formbold-form-label"> Phone Number </label>
-        <input type="text" name="phone" id="phone" placeholder="Enter your phone number" class="formbold-form-input" />
+        <input type="text" name="phone" id="phone" placeholder="Enter your phone number" class="formbold-form-input" required/>
       </div>
 
       <div class="formbold-mb-5">
         <label for="email" class="formbold-form-label"> Email Address </label>
-        <input type="email" name="email" id="email" placeholder="Enter your email" class="formbold-form-input" />
+        <input type="email" name="email" id="email" placeholder="Enter your email" class="formbold-form-input" required/>
       </div>
 
       <div class="flex flex-wrap formbold--mx-3">
         <div class="w-full sm:w-half formbold-px-3">
           <div class="formbold-mb-5 w-full">
             <label for="date" class="formbold-form-label"> Date </label>
-            <input type="date" name="date" id="date" class="formbold-form-input" />
+            <input type="date" name="date" id="date" class="formbold-form-input" required/>
           </div>
         </div>
         
         <div class="w-full sm:w-half formbold-px-3">
           <div class="formbold-mb-5">
             <label for="time" class="formbold-form-label"> Time </label>
-            <input type="time" name="time" id="time" class="formbold-form-input" />
+            <input type="time" name="time" id="time" class="formbold-form-input" min="15:00" max="22:00" step="1800" required/>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@
       <div class="formbold-mb-5">
         <label for="guests" class="formbold-form-label"> Number of Guests </label>
         <input type="number" name="guests" id="guests" min="1" max="8" placeholder="Enter number of guests"
-          class="formbold-form-input" oninput="checkGuests(this)" />
+          class="formbold-form-input" oninput="checkGuests(this)" required/>
       </div>
 
       <div>
