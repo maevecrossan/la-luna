@@ -235,18 +235,29 @@ a:hover {
 .gallery-row-1, .gallery-row-2 {
     display: flex;
     justify-content: space-between;
+    align-items: stretch; /* Ensure the height is equal for all images */
 }
 
 .gallery-image {
+    display: flex;
     flex-grow: 1;
     padding: 10px; /* Space between images */
     max-width: calc(33.33% - 20px); /* Ensure three columns with padding */
+    box-sizing: border-box; /* Make sure padding doesn't affect width calculation */
+    overflow: hidden; /* Hide overflow if image aspect ratio doesn't match container */
+    align-content: flex-end;
+    justify-content: space-evenly;
 }
 
+/* Image within the gallery */
 .gallery-image img {
-    width: 100%;
-    height: auto;
+    min-width: 30vw;
+    min-height: 40vh;
     display: block;
+    object-fit: cover; /*Ensures image is fully covered within its container */
+}
+
+.resizable-image {
     object-fit: cover;
 }
 
@@ -609,8 +620,20 @@ footer .col {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 0;
+        min-height: 90vh;
     }
 
+    .gallery-image {
+        max-width: calc(100% - 20px);
+        min-height: 40vh;
+        max-height: 70vh;
+        display: flex;
+        align-content: flex-end;
+        justify-content: space-evenly;
+    }
+
+    /* Footer */
     .directory {
         display:inline-flex;
         flex-direction: column;
@@ -651,6 +674,9 @@ footer .col {
     /* Gallery Styles */
     .gallery-image {
         max-width: calc(50% - 20px); /* Two images per row for tablet screens */
+        display: flex;
+        align-content: flex-end;
+        justify-content: space-evenly;
     }
 
     /* Jumbotron Styles */
