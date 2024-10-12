@@ -551,11 +551,12 @@ footer .col {
         list-style-type: none;
         padding: 0;
         border: none;
+        height: 100vh;
     }
     
     #mobile-navigation ul li {
         text-align: center;
-        padding: 10px;
+        padding: 5px;
     }
     
     /* Style for each nav link */

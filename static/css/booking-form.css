@@ -7,10 +7,7 @@
 }
 
 .formbold-main-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    
     padding: 48px;
 }
 
@@ -18,14 +15,15 @@
     margin: 0 auto;
     max-width: 550px;
     width: 100%;
-    background: #d9d9d9;
+    background: #d8b8b8;
     padding: 20px;
     border-radius: 7px;
 }
 
 .form-title {
-    font-size: 35px;
+    font-size: 2.6em;
     font-weight: 600;
+    color: #592828;
 }
 
 .formbold-form-label {
@@ -34,6 +32,7 @@
     font-size: 20px;
     color: #592828;
     margin-bottom: 12px;
+    margin-right: 10px;
 }
 
 .formbold-form-label-2 {
@@ -63,12 +62,15 @@
 input:invalid+span:after {
     content: '✖';
     margin-left: 10px;
+    color: black;
 }
   
 input:valid+span:after {
     content: '✓';
     margin-left: 10px;
+    color: rgb(36, 113, 36);
 }
+
 
 .formbold-btn {
     text-align: center;
@@ -112,5 +114,25 @@ input:valid+span:after {
 @media (min-width: 540px) {
     .sm\:w-half {
         width: 50%;
+    }
+}
+
+/* On smaller screens, still maintain consistent layout */
+@media (max-width: 620px) {
+    .formbold-main-wrapper {
+        padding: 24px;
+    }
+
+    .formbold-form-wrapper {
+        max-width: 100%; /* Ensure form takes full width */
+        padding: 16px;
+    }
+
+    .formbold-form-input, input[type="date"], select {
+        width: 80%; /* Make sure all inputs are full-width on smaller screens */
+    }
+
+    .validity {
+        margin-left: 10px;
     }
 }
