@@ -105,6 +105,8 @@ h1 {
     border-bottom: 2px solid #350606;
     font-size: 30px;
     list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 a {
@@ -570,7 +572,7 @@ footer .col {
     #mobile-navigation .nav-link {
         color: #d8d7d9; /* Link text color */
         text-decoration: none; /* Remove underline */
-        font-size: 28px; /* Font size for links */
+        font-size: 1.5em; /* Font size for links */
     }
 
     /* Add hover effects */
@@ -662,7 +664,9 @@ footer .col {
     #desktop-navigation .navbar {
         display: flex;
         border-bottom: none;
-        font-size: 30px;
+        font-size: 2em;
+        white-space: nowrap;
+        overflow: hidden; /* stops multi-word nav headings from wrapping */
     }
 
     /* Gallery Styles */
