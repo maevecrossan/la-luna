@@ -71,9 +71,9 @@ body {
 }
 
 .footer-title {
-    color: #350606;
-    font-size: 2.1em;
-    font-weight: 700;
+    color: #bf7b75;
+    font-size: 2.2em;
+    font-weight: 900;
 }
 
 #mobile-navigation {
@@ -484,7 +484,7 @@ a:hover {
 /*------------------------------------------------------------ Footer */
 
 footer {
-    background-color: #592828;
+    background-color: #432020;
 }
 
 footer .col {
