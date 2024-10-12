@@ -14,6 +14,7 @@ body {
     min-width: 330px;
     max-width: 100%;
     overflow-x: hidden;
+    background-color: #592828;
 }
 
 header {
@@ -29,12 +30,13 @@ body {
 }
 
 .container-fluid {
-    padding: 0;
+    padding: 0;    
     margin: 0;
     max-width: 100%;
 }
 
 /* --------------------------- Common/general styles */
+
 /* Polka dot background */
 .polka-dot-background {
     background-color: #592828;
@@ -63,18 +65,15 @@ body {
     font-family: "Lato", sans-serif;
 }
 
-.jumbotron-header,
-.our-story-heading {
-    font-size: 50px;
-}
 
 .dark-red-background {
     background-color: #592828;
 }
 
-h5 {
+.footer-title {
     color: #350606;
-    font-size: 26px;
+    font-size: 2.1em;
+    font-weight: 700;
 }
 
 #mobile-navigation {
@@ -188,15 +187,6 @@ a:hover {
     flex-direction: column;
 }
 
-.jumbotron h2,
-.jumbotron p {
-    color: #d8d7d9;
-    opacity: 1;
-    position: relative;
-    /* Keeps text above the overlay below */
-    z-index: 2;
-}
-
 .jumbotron::before {
     /* Semi-transparent background overlay */
     content: "";
@@ -223,45 +213,6 @@ a:hover {
     color: #592828;
 }
 
-/*------------------------------------------------------------ Mini Gallery */
-#mini-gallery-container {
-    padding: 0 15px; /* Add padding to container so images don't touch the edges */
-}
-
-.gallery-row-1 {
-    margin-bottom: 20px;
-}
-
-.gallery-row-1, .gallery-row-2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch; /* Ensure the height is equal for all images */
-}
-
-.gallery-image {
-    display: flex;
-    flex-grow: 1;
-    padding: 10px; /* Space between images */
-    max-width: calc(33.33% - 20px); /* Ensure three columns with padding */
-    box-sizing: border-box; /* Make sure padding doesn't affect width calculation */
-    overflow: hidden; /* Hide overflow if image aspect ratio doesn't match container */
-    align-content: flex-end;
-    justify-content: space-evenly;
-}
-
-/* Image within the gallery */
-.gallery-image img {
-    min-width: 30vw;
-    min-height: 40vh;
-    display: block;
-    object-fit: cover; /*Ensures image is fully covered within its container */
-}
-
-.resizable-image {
-    object-fit: cover;
-}
-
-
 
 /*------------------------------------------------------------ Our Story */
 /* Tempalte from codepen.io */
@@ -272,13 +223,17 @@ a:hover {
     margin-bottom: 30px;
 }
 
+.gallery-heading,
 .our-story-heading {
     text-align: center;
-    margin: 1em 0 0 0;
-    font-size: 2.5em;
+    margin: 0 0 0 0;
+    font-size: 3em;
     line-height: 1;
     letter-spacing: 0.02em;
     padding: 40px 0 20px 0;
+    color: #d8d7d9;
+    font-weight: 700;
+    padding-top: 40px;
 
     @media all and (min-width:40em) {
         font-size: 4.75em;
@@ -293,14 +248,15 @@ a:hover {
     margin: 0.5em 0;
 }
 
-.content h3 {
-    font-size: 1.2em;
+.content h4 {
+    font-size: 2em;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    color: #d8d7d9;
+    color: #d8b8b8;
+    font-weight: 700;
 
     @media all and (min-width:40em) {
-        font-size: 2.5em;
+        font-size: 2.2em;
     }
 }
 
@@ -357,13 +313,9 @@ a:hover {
     background-color: #592828;
 }
 
-.t-block-red h3,
-.t-block-red h4 {
-    color: #d8b8b8;
-}
-
 .t-block-red p {
     color: #d8d7d9;
+    font-size: 1.25em;
 }
 
 /*list animation */
@@ -487,6 +439,46 @@ a:hover {
 }
 
 
+/*------------------------------------------------------------ Mini Gallery */
+#mini-gallery-container {
+    padding: 0 40px; /* Add padding to container so images don't touch the edges */
+    margin: 0;
+}
+
+.gallery-row-1 {
+    margin-bottom: 20px;
+}
+
+.gallery-row-1, .gallery-row-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensure the height is equal for all images */
+}
+
+.gallery-image {
+    display: flex;
+    flex-grow: 1;
+    padding: 10px; /* Space between images */
+    max-width: calc(33.33% - 20px); /* Ensure three columns with padding */
+    box-sizing: border-box; /* Make sure padding doesn't affect width calculation */
+    overflow: hidden; /* Hide overflow if image aspect ratio doesn't match container */
+    align-content: flex-end;
+    justify-content: space-evenly;
+}
+
+/* Image within the gallery */
+.gallery-image img {
+    min-width: 30vw;
+    min-height: 40vh;
+    display: block;
+    object-fit: cover; /*Ensures image is fully covered within its container */
+}
+
+.resizable-image {
+    object-fit: cover;
+}
+
+
 /*------------------------------------------------------------ Footer */
 
 footer {
@@ -507,6 +499,7 @@ footer .col {
 
 .footer-link {
     color: #d8d7d9;
+    font-size: 1.3em;
 }
 
 .directory {
@@ -522,6 +515,7 @@ footer .col {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    font-size: 1.5em;
 }
 
 /*------------------------------------------------------------ Media Queries */
@@ -598,7 +592,7 @@ footer .col {
     }
 
     .jumbotron h2 {
-        font-size: 50px;
+        font-size: 3em;
     }
 
     .jumbotron p {
