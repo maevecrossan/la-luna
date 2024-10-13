@@ -504,9 +504,11 @@ footer .col {
     padding: 20px 40px; /* Add some padding inside the footer */
 }
 
+.footer-contact-info,
 .footer-link {
     color: #d8d7d9;
     font-size: 1.3em;
+    padding: 0.4em;
 }
 
 .directory {
