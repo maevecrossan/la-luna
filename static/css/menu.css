@@ -16,21 +16,30 @@
 }
 
 .menu-item {
-    margin-top: 20px;
+    /* margin-top: 20px; */
+}
+
+.menu-section-title {
+    color: #fff;
+    font-size: 1.8em;
+}
+
+.menu-sub-section-title {
+    color: #fff;
 }
 
 .menu-item-name {
-
+    color: #d8b8b8;
 }
 
 .menu-item-description {
-
+    color: #bf7b75;
 }
 
-.menu-item-allergens {
-
+em {
+    color: #99635e;
 }
 
 .menu-item-price {
-
+    color: #bf7b75;
 }
