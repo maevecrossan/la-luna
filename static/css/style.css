@@ -68,6 +68,10 @@ body {
     font-family: "Lato", sans-serif;
 }
 
+.small-letter-spacing {
+    letter-spacing: 0.1em;
+}
+
 
 .dark-red-background {
     background-color: #592828;
@@ -93,6 +97,7 @@ body {
 h1 {
     font-size: 80px;
     color: #d8d7d9;
+    letter-spacing: 0.23em;
 }
 
 .header-container {

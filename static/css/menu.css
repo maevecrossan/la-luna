@@ -3,7 +3,7 @@
     align-items: center;
     flex-direction: column;
     width: auto;
-    max-width: 60vw;
+    max-width: 780px;
     color: #d8b8b8;
     font-size: 1.5em;
     margin: 0;
@@ -13,33 +13,95 @@
 
 .menu-wrapper {
     width: 70vw;
+    max-width: 900px;
+    padding-bottom: 3em;
+    border-radius: 6px;
 }
 
 .menu-item {
-    /* margin-top: 20px; */
+    padding: 0.4em;
+    margin: 0 3em;
 }
 
 .menu-section-title {
     color: #fff;
     font-size: 1.8em;
+    font-weight: 900;
+    padding: 1.5em 0;
+    text-decoration: underline;
+    text-align: center;
 }
 
 .menu-sub-section-title {
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5em;
 }
 
 .menu-item-name {
     color: #d8b8b8;
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 .menu-item-description {
     color: #bf7b75;
+    font-size: 1.1em;
 }
 
-em {
+.menu-item-allergens {
     color: #99635e;
+    font-size: 1.1em;
 }
 
 .menu-item-price {
     color: #bf7b75;
+    font-size: 1.1em;
+}
+
+@media (max-width: 768px) {
+    .menu-intro {
+        font-size: 1.2em;
+        max-width: 80vw;
+        padding: 1em 0;
+    }
+
+    .menu-wrapper {
+        width: 90vw;
+        padding-bottom: 2em;
+        border-radius: 6px;
+    }
+
+    .menu-item {
+        margin: 0 1em;
+        padding: 0.3em;
+    }
+
+    .menu-section-title {
+        font-size: 1.5em;
+        padding: 1em 0;
+    }
+
+    .menu-sub-section-title {
+        font-size: 1.3em;
+        padding: 0.8em 0;
+    }
+
+    .menu-item-name {
+        font-size: 1.1rem;
+    }
+
+    .menu-item-description,
+    .menu-item-allergens,
+    .menu-item-price {
+        font-size: 1em;
+    }
+
+    /* Optional: Adjust margins for a better mobile experience */
+    .menu-section {
+        margin: 1.5em 0;
+    }
 }
