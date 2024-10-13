@@ -20,7 +20,6 @@ body {
 header {
     padding-top: 20px;
     z-index: 1;
-    background-color: #432020;
 }
 
 body {
@@ -45,6 +44,10 @@ body {
     background-size: 30px 30px;
     background-position: 0 0, 15px 15px;
     min-height: auto;
+}
+
+.dark-brown-background {
+    background-color: #432020;
 }
 
 .center {
@@ -225,7 +228,7 @@ a:hover {
     margin-bottom: 30px;
 }
 
-.menu-heading,
+.menu-title,
 .gallery-heading,
 .our-story-heading {
     text-align: center;
@@ -483,10 +486,6 @@ a:hover {
 
 
 /*------------------------------------------------------------ Footer */
-
-footer {
-    background-color: #432020;
-}
 
 footer .col {
     margin-top: 30px;

@@ -3,9 +3,34 @@
     align-items: center;
     flex-direction: column;
     width: auto;
+    max-width: 60vw;
     color: #d8b8b8;
     font-size: 1.5em;
     margin: 0;
     padding: 0.7em 0;
     font-weight: 300;
+}
+
+.menu-wrapper {
+    width: 70vw;
+}
+
+.menu-item {
+    margin-top: 20px;
+}
+
+.menu-item-name {
+
+}
+
+.menu-item-description {
+
+}
+
+.menu-item-allergens {
+
+}
+
+.menu-item-price {
+
 }
