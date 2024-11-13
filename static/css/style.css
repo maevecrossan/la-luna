@@ -9,6 +9,7 @@
     box-sizing: border-box;
 }
 
+html,
 body {
     min-width: 330px;
     max-width: 100%;
@@ -183,8 +184,8 @@ a:hover {
 
 .hero {
     min-height: 550px;
-    height: 70vh;
-    width: 130vh;
+    height: 100vh;
+    width: 100vw;
     background-image: url("https://images.pexels.com/photos/5490933/pexels-photo-5490933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-repeat: no-repeat;
     background-size: cover;
@@ -597,10 +598,7 @@ footer .col {
     }
 
     /* ---------------- Hero Styles */
-    .hero-container {
-        width: 80%;
-        height: 550px;
-    }
+
 
     .hero h2 {
         font-size: 3em;
@@ -687,13 +685,9 @@ footer .col {
     }
 
     /* Hero Styles */
-    .hero-container{
-        width: 80%;
-        max-height: auto;
-    }
     
     .hero {
-        height: 70vh;
+        height: 100vh;
         width: auto;
         background-image: url(https://images.pexels.com/photos/5490933/pexels-photo-5490933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
         background-repeat: no-repeat;
