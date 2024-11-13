@@ -9,7 +9,6 @@
     box-sizing: border-box;
 }
 
-html,
 body {
     min-width: 330px;
     max-width: 100%;
@@ -171,9 +170,9 @@ a:hover {
     width: 1px;
 }
 
-/*------------------------------------------------------------  Jumbotron */
+/*------------------------------------------------------------  Hero */
 
-.jumbotron-container {
+.hero-container {
     height: 84vh;
     min-height: 600px;
     background-size: cover;
@@ -182,7 +181,7 @@ a:hover {
     padding: 0;
 }
 
-.jumbotron {
+.hero {
     min-height: 550px;
     height: 70vh;
     width: 130vh;
@@ -197,7 +196,7 @@ a:hover {
     flex-direction: column;
 }
 
-.jumbotron::before {
+.hero::before {
     /* Semi-transparent background overlay */
     content: "";
     position: absolute;
@@ -209,8 +208,8 @@ a:hover {
     z-index: -1;
 }
 
-.jumbotron h2,
-.jumbotron p {
+.hero h2,
+.hero p {
     color: #d8d7d9;
     opacity: 1;
     position: relative;
@@ -597,17 +596,17 @@ footer .col {
         color: #d8d7d9;
     }
 
-    /* ---------------- Jumbotron Styles */
-    .jumbotron-container {
+    /* ---------------- Hero Styles */
+    .hero-container {
         width: 80%;
         height: 550px;
     }
 
-    .jumbotron h2 {
+    .hero h2 {
         font-size: 3em;
     }
 
-    .jumbotron p {
+    .hero p {
         font-size: 22px;
         padding: 0 10px 0 10px;
     }
@@ -687,13 +686,13 @@ footer .col {
         justify-content: space-evenly;
     }
 
-    /* Jumbotron Styles */
-    .jumbotron-container{
+    /* Hero Styles */
+    .hero-container{
         width: 80%;
         max-height: auto;
     }
     
-    .jumbotron {
+    .hero {
         height: 70vh;
         width: auto;
         background-image: url(https://images.pexels.com/photos/5490933/pexels-photo-5490933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
@@ -707,11 +706,11 @@ footer .col {
         flex-direction: column;
     }
 
-    .jumbotron h2 {
+    .hero h2 {
         font-size: 70px;
     }
 
-    .jumbotron p {
+    .hero p {
         font-size: 19px;
         padding: 0 10px 0 10px;
         max-width: 70vw;

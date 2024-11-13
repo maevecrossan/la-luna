@@ -6,7 +6,7 @@ app = Flask(__name__)
 app = Flask(__name__, static_url_path='/static', static_folder='static')
 
 
-@app.route('/')
+@app.route("/")
 def index():
     return render_template('index.html')
 
@@ -21,7 +21,7 @@ def bookings(): # view is called inside html file
     return render_template("bookings.html", page_title="Bookings")
 
 
-@app.route('/bookings', methods=['POST'])
+@app.route("/bookings", methods=['POST'])
 def handle_booking():
     # Handle the booking here
     return 'Booking received!'
