@@ -1,0 +1,8 @@
+asgiref==3.8.1
+blinker==1.8.2
+click==8.1.7
+Django==4.2.16
+Flask==3.0.3
+itsdangerous==2.2.0
+sqlparse==0.5.2
+Werkzeug==3.0.4
