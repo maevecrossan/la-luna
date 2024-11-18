@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-g)sc+f2r2vv#112=9s)g6*$u@)1_vfc3wfwddh85wtpyrk0u%a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-maevecrossan-laluna-3dgn3xzyd81.ws.codeinstitute-ide.net',]
 
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bookingsystem/',
+    'bookingsystem',
 ]
 
 MIDDLEWARE = [
