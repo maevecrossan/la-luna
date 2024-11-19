@@ -9,6 +9,9 @@ class Booking(models.Model):
     """
     Model for booking a table
     """
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="bookings", null=True, blank=True
+    )
     name = models.CharField(
         max_length=100,
         blank=False,
