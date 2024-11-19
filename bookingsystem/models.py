@@ -10,19 +10,25 @@ class Booking(models.Model):
     Model for booking a table
     """
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="bookings", null=True, blank=True
+        User, on_delete=models.CASCADE, 
+        related_name="bookings", 
+        null=True, 
+        blank=True
     )
+    
     name = models.CharField(
         max_length=100,
         blank=False,
         null=False,
     )
+    
     email = models.EmailField(
         max_length=250,
         null=False,
         blank=False,
         default='no-reply@example.com'
     )
+    
     phone_number = models.CharField(
         max_length=15,  
         validators=[ # Source: geeksforgeeks.org
@@ -32,7 +38,9 @@ class Booking(models.Model):
             )
         ] # minimal validation added as this is not main method of contact
     )
+    
     date = models.DateField()
+    
     TIME_OPTIONS = [
         ("15:00", "3:00 PM"),
         ("15:30", "3:30 PM"),
@@ -51,6 +59,7 @@ class Booking(models.Model):
         ("22:00", "10:00 PM"),
     ]
     time = models.CharField(max_length=5, choices=TIME_OPTIONS)
+    
     GUEST_OPTIONS = [
         ("1", "1"),
         ("2", "2"),
