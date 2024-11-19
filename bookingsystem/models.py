@@ -6,8 +6,16 @@ from django.core.validators import RegexValidator
 
 
 class Booking(models.Model):
+    """
+    Model for booking a table
+    """
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="bookings"
+    )
+    email = models.EmailField(
+        max_length=250,
+        null=False,
+        blank=False,
     )
     phone_number = models.CharField(
         max_length=15,  
