@@ -9,13 +9,16 @@ class Booking(models.Model):
     """
     Model for booking a table
     """
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="bookings"
+    name = models.CharField(
+        max_length=100,
+        blank=False,
+        null=False,
     )
     email = models.EmailField(
         max_length=250,
         null=False,
         blank=False,
+        default='no-reply@example.com'
     )
     phone_number = models.CharField(
         max_length=15,  
@@ -24,7 +27,7 @@ class Booking(models.Model):
                 regex=r'^\+?1?\d{9,15}$',
                 message="Please enter a valid phone number. Up to 15 digits allowed."
             )
-        ]
+        ] # minimal validation added as this is not main method of contact
     )
     date = models.DateField()
     TIME_OPTIONS = [
