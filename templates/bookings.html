@@ -9,40 +9,46 @@
 		<h2 class="center form-title italiana"> Book with us today! </h2>
 		
 		<form action="/bookings" onsubmit="return sendBookingConfirmation(this);" method="POST">
+			
+			{% csrf_token %}
 
 			<div class="formbold-mb-5">
 				<label for="name" class="formbold-form-label "> Full Name </label>
-				<input type="text" name="name" id="name" placeholder="Full Name" class="formbold-form-input" required />
-				<span class="validity"></span>
+				<!-- <input type="text" name="name" id="name" placeholder="Full Name" class="formbold-form-input" required />
+				<span class="validity"></span> -->
+				{{ form.name }}
 			</div>
 
 			<div class="formbold-mb-5">
 				<label for="phone" class="formbold-form-label"> Phone Number </label>
-				<input type="text" name="phone" id="phone" placeholder="Phone Number"
+				<!-- <input type="text" name="phone" id="phone" placeholder="Phone Number"
 					class="formbold-form-input" required />
-				<span class="validity"></span>
+				<span class="validity"></span> -->
+				{{ form.phone_number }}
 			</div>
 
 			<div class="formbold-mb-5">
 				<label for="email" class="formbold-form-label"> Email Address </label>
-				<input type="email" name="email" id="email" placeholder="Email" class="formbold-form-input"
+				<!-- <input type="email" name="email" id="email" placeholder="Email" class="formbold-form-input"
 					required />
-				<span class="validity"></span>
+				<span class="validity"></span> -->
+				{{ form.email }}
 			</div>
 
 			<div class="flex flex-wrap formbold--mx-3">
 				<div class="w-full sm:w-half formbold-px-3">
 					<div class="formbold-mb-5 w-full">
 						<label for="date" class="formbold-form-label"> Date </label>
-						<input type="date" name="date" id="date" class="formbold-form-input" required />
-						<span class="validity"></span>
+						<!-- <input type="date" name="date" id="date" class="formbold-form-input" required />
+						<span class="validity"></span> -->
+						{{ form.date }}
 					</div>
 				</div>
 
 				<div class="w-full sm:w-half formbold-px-3">
 					<div class="formbold-mb-5">
 						<label for="time" class="formbold-form-label"> Choose a time:</label>
-						<select id="time" name="time" id="time" class="formbold-form-input" required>
+						<!-- <select id="time" name="time" id="time" class="formbold-form-input" required>
 							<option value="15:00">3:00 PM</option>
 							<option value="15:30">3:30 PM</option>
 							<option value="16:00">4:00 PM</option>
@@ -59,7 +65,8 @@
 							<option value="21:30">9:30 PM</option>
 							<option value="22:00">10:00 PM</option>
 						</select>
-						<span class="validity"></span>
+						<span class="validity"></span> -->
+						{{ form.time }}
 					</div>
 				</div>
 			</div>
@@ -71,7 +78,7 @@
 					<span class="validity" id="guests-validity"></span> <!-- Moved beside label -->
 				</label>
 				
-				<select name="guests" id="guests" class="formbold-form-input" required>
+				<!-- <select name="guests" id="guests" class="formbold-form-input" required>
 					<option value="" disabled selected> Guests</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -81,7 +88,8 @@
 					<option value="6">6</option>
 					<option value="7">7</option>
 					<option value="8">8</option>
-				</select>
+				</select> -->
+				{{ form.guests }}
 
 				<p class="form-subtext"><em> For bookings of nine or more guests, please contact us directly. </em></p>
 
