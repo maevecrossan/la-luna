@@ -16,5 +16,4 @@ class BookingForm(forms.ModelForm):
             'time': forms.Select(attrs={'class': 'formbold-form-input'}),
             'guests': forms.Select(attrs={'class': 'formbold-form-input'}),
             }
-    
-    
+        
