@@ -5,4 +5,4 @@ from.models import Booking
 
 # Create your views here.
 def booking_system(request):
-    return render(request, '../templates/bookings.html', context)
+    return render(request, '../templates/bookings.html')

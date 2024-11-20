@@ -1,3 +1,7 @@
+{% load static %}
+
+{% url 'home' as home_url %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,49 +26,49 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/booking-form.css') }}" type="text/css">
+    <link rel="stylesheet" href="{% static filename='css/booking-form.css' %}" type="text/css">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{% static filename='css/style.css' %}" type="text/css">
 
     <title>La Luna</title>
 
 </head>
 
 <body>
-     <header class="dark-brown-background">
+    <header class="dark-brown-background">
         <div class="header-container">
             <!-- Logo -->
             <h1 class="logo center italiana"> La Luna </h1>
 
             <!-- Nav -->
-            
+
             <!-- desktop nav -->
             <nav id="desktop-navigation" class="active">
                 <ul class="navbar navbar-expand-sm justify-content-center italiana full-width">
                     <li class="nav-item mr-2 topBotomBordersOut">
-                        <a class="nav-link" href="{{ url_for('index') }}"> Home </a>
+                        <a class="nav-link" href="{% url 'index' %}"> Home </a>
                     </li>
 
                     <li class="nav-item mr-2 topBotomBordersOut">
-                        <a class="nav-link" href="{{ url_for('menu') }}"> Menu </a>
+                        <a class="nav-link" href="{% url 'menu' %}"> Menu </a>
                     </li>
 
                     <li class="nav-item mr-2 topBotomBordersOut">
-                        <a class="nav-link" href="{{ url_for('bookings') }}"> Bookings </a>
+                        <a class="nav-link" href="{% url 'bookings' %}"> Bookings </a>
                     </li>
 
                     <li class="nav-item mr-2 topBotomBordersOut">
-                        <a class="nav-link" href="{{ url_for('index') }}#our-story-section"> Our Story </a>
+                        <a class="nav-link" href="{% url 'index' %}#our-story-section"> Our Story </a>
                     </li>
 
                     <li class="nav-item mr-2 topBotomBordersOut">
-                        <a class="nav-link" href="{{ url_for('index') }}#mini-gallery-container"> Gallery </a>
+                        <a class="nav-link" href="{% url 'index' %}#mini-gallery-container"> Gallery </a>
                     </li>
 
                     <li class="nav-item mr-2 topBotomBordersOut">
-                        <a class="nav-link" href="{{ url_for('contact') }}"> Contact Us</a>
+                        <a class="nav-link" href="{% url 'contact' %}"> Contact Us</a>
                     </li>
 
                     <li class="nav-item mr-2 topBotomBordersOut">
@@ -82,25 +86,24 @@
             <nav id="mobile-navigation" class="mobile-menu">
                 <ul class="navbar navbar-expand-sm italiana">
                     <li class="nav-item topBotomBordersOut">
-                        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                        <a class="nav-link" href="{% url 'index' %}">Home</a>
                     </li>
 
                     <li class="nav-item topBotomBordersOut">
-                        <a class="nav-link" href="{{ url_for('menu') }}">Menu</a>
+                        <a class="nav-link" href="{% url 'menu' %}">Menu</a>
                     </li>
 
                     <li class="nav-item topBotomBordersOut">
-                        <a class="nav-link" href="{{ url_for('bookings') }}">Bookings</a>
+                        <a class="nav-link" href="{% url 'bookings' %}">Bookings</a>
                     </li>
 
                     <li class="nav-item topBotomBordersOut">
-                        <a class="nav-link" href="#our-story-section">Our Story</a>
+                        <a class="nav-link" href="{% url 'index' %}#our-story-section">Our Story</a>
                     </li>
 
                     <li class="nav-item topBotomBordersOut">
-                        <a class="nav-link" href="{{ url_for('contact') }}">Contact Us</a>
+                        <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
                     </li>
-
                 </ul>
             </nav>
         </div>
@@ -113,7 +116,7 @@
 
     <div class="container-fluid polka-dot-background">
         <footer class="row row-cols-4 border-top footer-container dark-brown-background">
-            
+
             <div class="copyright-container">
                 <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
                     <svg class="bi me-2" width="40" height="32">
@@ -166,8 +169,8 @@
             </div>
             <div class="col directory">
                 <h5 class="italiana footer-title">Address</h5>
-                
-                <address class="nav flex-column lato footer-contact-info" >
+
+                <address class="nav flex-column lato footer-contact-info">
                     La Luna,<br>
                     34 Donnybrook Rd, <br>
                     Dublin 4, <br>
@@ -197,7 +200,7 @@
 
     <!--lozad.js-->
     <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
-    
+
     <!-- Font Awesome kit -->
     <script src="https://kit.fontawesome.com/dc45154bc3.js" crossorigin="anonymous"></script>
 

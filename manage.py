@@ -20,20 +20,11 @@ def main():
     execute_from_command_line(sys.argv)
 
 
-app = Flask(__name__) 
 app = Flask(__name__, static_url_path='/static', static_folder='static')
 
 
 if __name__ == '__main__':
     main()
-
-
-if __name__ == "__main__": #__main__ is the default module in python
-    app.run( # we want to run our app using the arguments inside this statement
-        host=os.environ.get("IP", "0.0.0.0"), 
-        port=int(os.environ.get("PORT", "5000")),
-        debug=True #SHOULD ONLY BE TRUE IN DEVELOPMENT. CHANGE TO FALSE BE SUBMITTING.
-    )
 
 
 @app.route("/")
