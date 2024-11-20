@@ -28,9 +28,9 @@
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 
-    <link rel="stylesheet" href="{% static filename='css/booking-form.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/booking-form.css' %}" type="text/css">
 
-    <link rel="stylesheet" href="{% static filename='css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 
     <title>La Luna</title>
 
@@ -129,17 +129,17 @@
             <div class="col directory">
                 <h5 class="italiana footer-title">Directory</h5>
                 <ul class="nav flex-column lato">
-                    <li class="mb-2"><a href="{{ url_for('index') }}" class="footer-link p-0">Home</a></li>
+                    <li class="mb-2"><a href="{% url 'index' %}" class="footer-link p-0">Home</a></li>
 
-                    <li class="mb-2"><a href="{{ url_for('menu') }}" class="footer-link p-0">Menu</a></li>
+                    <li class="mb-2"><a href="{% url 'menu' %}" class="footer-link p-0">Menu</a></li>
 
-                    <li class="mb-2"><a href="{{ url_for('bookings') }}" class="footer-link p-0">Bookings</a>
+                    <li class="mb-2"><a href="{% url 'bookings' %}" class="footer-link p-0">Bookings</a>
                     </li>
 
-                    <li class="mb-2"><a href="#our-story-section" class="footer-link p-0">Our Story</a>
+                    <li class="mb-2"><a href="{% url 'index' %}#our-story-section" class="footer-link p-0">Our Story</a>
                     </li>
 
-                    <li class="mb-2"><a href="{{ url_for('contact') }}" class="footer-link p-0">Contact</a>
+                    <li class="mb-2"><a href="{% url 'contact' %}" class="footer-link p-0">Contact</a>
                     </li>
 
                 </ul>
@@ -184,9 +184,9 @@
         </footer>
     </div>
 
-    <script src="{{ url_for('static', filename='js/booking-confirmation-email.js') }}"> </script>
+    <script src="{% static 'js/booking-confirmation-email.js' %}"> </script>
 
-    <script src="{{ url_for('static', filename='js/booking-form.js') }}"> </script>
+    <script src="{% static 'js/booking-form.js' %}"> </script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
@@ -196,7 +196,7 @@
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
 
-    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+    <script src="{% static 'js/base.js' %}"></script>
 
     <!--lozad.js-->
     <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>

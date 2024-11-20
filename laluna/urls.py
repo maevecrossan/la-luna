@@ -17,8 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from bookingsystem.views import booking_system
+from laluna.views import index, menu, contact
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('bookingsystem/', booking_system, name='bookingsystem'),
+    path('bookings/', booking_system, name='bookings'),
+    path('contact/', contact, name='contact'),
+    path('', index, name='index'),  # This makes the homepage point to the 'index' view
+    path('menu/', menu, name='menu'),
 ]
