@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from.models import Booking
+
 
 # Create your views here.
 def booking_system(request):
-    return HttpResponse("Hello, Booking System!")
+    return render(request, '../templates/bookings.html', context)
