@@ -6,4 +6,5 @@ from .forms import BookingForm
 
 # Create your views here.
 def booking_system(request):
-    return render(request, '../templates/bookings.html')
+    form = BookingForm()
+    return render(request, '../templates/bookings.html', {'form': form})
