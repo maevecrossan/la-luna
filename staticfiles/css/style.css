@@ -1,0 +1,721 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-width: 330px;
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #592828;
+}
+
+header {
+    padding-top: 20px;
+    z-index: 1;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.container-fluid {
+    padding: 0;    
+    margin: 0;
+    max-width: 100%;
+}
+
+/* --------------------------- Common/general styles */
+
+/* Polka dot background */
+.polka-dot-background {
+    background-color: #592828;
+    opacity: 1;
+    background-image: radial-gradient(#bf7b75 0.75px, transparent 0.75px), radial-gradient(#bf7b75 0.75px, #592828 0.75px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    min-height: auto;
+}
+
+.dark-brown-background {
+    background-color: #432020;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.italiana {
+    font-family: "Italiana", serif;
+}
+
+.lato {
+    font-family: "Lato", sans-serif;
+}
+
+.small-letter-spacing {
+    letter-spacing: 0.1em;
+}
+
+
+.dark-red-background {
+    background-color: #592828;
+}
+
+.footer-title {
+    color: #bf7b75;
+    font-size: 2.2em;
+    font-weight: 900;
+}
+
+#mobile-navigation {
+    display: none;
+}
+
+/* When active, show mobile menu */
+.mobile-menu.active-menu {
+    display: inline-block;
+}
+
+/*------------------------------------------------------------ Header */
+/*------------------------------ Logo */
+h1 {
+    font-size: 80px;
+    color: #d8d7d9;
+    letter-spacing: 0.23em;
+}
+
+.header-container {
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Center items vertically */
+    padding: 10px; /* Add some padding */
+}
+
+/*------------------------------ Nav */
+.navbar {
+    margin-bottom: 0;
+    border-bottom: 2px solid #350606;
+    font-size: 30px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: #bf7b75;
+    text-decoration: none;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #d8b8b8;
+}
+
+/* --------- Navbar Link Animations */
+/* Top and Bottom borders go out */
+.topBotomBordersOut a:before,
+.topBotomBordersOut a:after {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #d8b8b8;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.topBotomBordersOut a:before {
+    top: 0px;
+    transform: translateY(10px);
+}
+
+.topBotomBordersOut a:after {
+    bottom: 0px;
+    transform: translateY(-10px);
+}
+
+.topBotomBordersOut a:hover:before,
+.topBotomBordersOut a:hover:after {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* Code borrowed from "https://css-tricks.com/inclusively-hidden/" */
+.sr-only:not(:focus):not(:active) {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/*------------------------------------------------------------  Hero */
+
+.hero-container {
+    height: 84vh;
+    min-height: 600px;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    padding: 0;
+}
+
+.hero {
+    min-height: 550px;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("https://images.pexels.com/photos/5490933/pexels-photo-5490933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    flex-direction: column;
+}
+
+.hero::before {
+    /* Semi-transparent background overlay */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+}
+
+.hero h2,
+.hero p {
+    color: #d8d7d9;
+    opacity: 1;
+    position: relative;
+    /* Keeps text above the overlay */
+    z-index: 2;
+}
+
+.reservation-button {
+    background-color: #d8d7d9;
+    color: #592828;
+}
+
+
+/*------------------------------------------------------------ Our Story */
+/* Tempalte from codepen.io */
+
+.our-story-section {
+    min-height: auto;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.menu-title,
+.gallery-heading,
+.our-story-heading {
+    text-align: center;
+    margin: 0 0 0 0;
+    font-size: 3em;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    padding: 40px 0 20px 0;
+    color: #d8d7d9;
+    font-weight: 700;
+    padding-top: 40px;
+
+    @media all and (min-width:40em) {
+        font-size: 4.75em;
+    }
+}
+
+.subtitle {
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1em;
+    margin: 0.5em 0;
+}
+
+.content h4 {
+    font-size: 2em;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #d8b8b8;
+    font-weight: 700;
+
+    @media all and (min-width:40em) {
+        font-size: 2.2em;
+    }
+}
+
+.l-contained {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+
+    @media all and (min-width:40em) {
+
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+}
+
+.our-story-list {
+    border-left: 5px solid #bf7b75;
+    padding-bottom: 1em;
+    position: relative;
+    max-width: 700px;
+    margin-top: 30px;
+}
+
+.our-story-list:before {
+    border-left: 5px solid #bf7b75;
+    left: -0.25em;
+    top: 2em;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    transform-origin: 0 0;
+    animation: scaleVertical 3s 1s ease both 1;
+}
+
+.our-story-list:after {
+    content: "";
+    clear: both;
+    position: absolute;
+    bottom: -5px;
+    left: -0.75em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: none repeat scroll 0% 0% #d8b8b8;
+    border: 5px solid #d8b8b8;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    animation: revealScaleUp 0.75s 2.82s ease both 1;
+}
+
+.t-block-red {
+    background-color: #592828;
+}
+
+.t-block-red p {
+    color: #d8d7d9;
+    font-size: 1.25em;
+}
+
+/*list animation */
+/*scale in the circle, follwoed by the list item*/
+/*the border must also animate in.*/
+.our-story-list li {
+    margin: 0 0 3em 0;
+    padding: 0 2em 0em 2em;
+    position: relative;
+    list-style-type: none;
+}
+
+.our-story-list li:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -1.1em;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: none repeat scroll 0% 0% #d8b8b8;
+    border: 5px solid #d8d7d9;
+    animation: revealScaleUp 0.75s 0s ease both 1;
+}
+
+.our-story-list {
+    animation: reveal 2s 0 ease both 1;
+}
+
+.our-story-list li .content {
+    animation: revealFromLeft 0.5s 0s ease both 1;
+}
+
+.our-story-list li:nth-child(1):before {
+    animation-delay: 0.85s;
+}
+
+.our-story-list li:nth-child(1) .content {
+    animation-delay: 1.05s;
+}
+
+.our-story-list li:nth-child(2):before {
+    animation-delay: 1.25s;
+}
+
+.our-story-list li:nth-child(2) .content {
+    animation-delay: 1.45s;
+}
+
+.our-story-list li:nth-child(3):before {
+    animation-delay: 1.65s;
+}
+
+.our-story-list li:nth-child(3) .content {
+    animation-delay: 1.85s;
+}
+
+.our-story-list li:nth-child(4):before {
+    animation-delay: 2.05s;
+}
+
+.our-story-list li:nth-child(4) .content {
+    animation-delay: 2.25s;
+}
+
+.our-story-list li:nth-child(5):before {
+    animation-delay: 2.45s;
+}
+
+.our-story-list li:nth-child(5) .content {
+    animation-delay: 2.65s;
+}
+
+@keyframes revealFromLeft {
+    0% {
+        transform: translateX(-1em);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleVertical {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes revealScaleUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/*------------------------------------------------------------ Mini Gallery */
+#mini-gallery-container {
+    padding: 0 40px; /* Add padding to container so images don't touch the edges */
+    margin: 0;
+}
+
+.gallery-row-1 {
+    margin-bottom: 20px;
+}
+
+.gallery-row-1, .gallery-row-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensure the height is equal for all images */
+}
+
+.gallery-image {
+    display: flex;
+    flex-grow: 1;
+    padding: 10px; /* Space between images */
+    max-width: calc(33.33% - 20px); /* Ensure three columns with padding */
+    box-sizing: border-box; /* Make sure padding doesn't affect width calculation */
+    overflow: hidden; /* Hide overflow if image aspect ratio doesn't match container */
+    align-content: flex-end;
+    justify-content: space-evenly;
+}
+
+/* Image within the gallery */
+.gallery-image img {
+    min-width: 30vw;
+    min-height: 40vh;
+    display: block;
+    object-fit: cover; /*Ensures image is fully covered within its container */
+}
+
+.resizable-image {
+    object-fit: cover;
+}
+
+
+/*------------------------------------------------------------ Footer */
+
+footer .col {
+    margin-top: 30px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Spread the columns evenly */
+    align-items: flex-start;
+    padding: 20px 40px; /* Add some padding inside the footer */
+}
+
+.footer-contact-info,
+.footer-link {
+    color: #d8d7d9;
+    font-size: 1.3em;
+    padding: 0.4em;
+}
+
+.directory {
+    text-align: center;
+}
+
+.copyright-container {
+    width: 100%;
+}
+
+.copyright-text {
+    color: #d8d7d9;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.5em;
+}
+
+/*------------------------------------------------------------ Media Queries */
+
+@media (min-width: 310px) and (max-width: 768px) {
+
+    .header-container{
+        padding-top: 18px;
+        border-bottom: 1px solid #d8b8b8;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 60px;
+        margin: 0px 0px 0 20px;
+        padding-right: 20px;
+    }
+
+    /* ---------------- Mobile Nav Styles */
+    #desktop-navigation {
+        display: none;
+    }
+
+    #mobile-navigation.active {
+        display: block; /* Show the nav when active */
+    }
+
+    /* Ensure mobile menu items are stacked vertically on smaller screens */
+    #mobile-navigation ul {
+        list-style-type: none;
+        padding: 0;
+        border: none;
+        height: 100vh;
+    }
+    
+    #mobile-navigation ul li {
+        text-align: center;
+        padding: 5px;
+    }
+    
+    /* Style for each nav link */
+    #mobile-navigation .nav-item {
+        margin: 10px 0; /* Space between each link */
+        text-align: center; /* Center the link text */
+    }
+
+    #mobile-navigation .navbar {
+        display: inline-block;
+        flex-direction: column;
+    }
+    
+    /* Style for the links themselves */
+    #mobile-navigation .nav-link {
+        color: #bf7b75; /* Link text color */
+        text-decoration: none; /* Remove underline */
+        font-size: 1.5em; /* Font size for links */
+    }
+
+    /* Add hover effects */
+    #mobile-navigation .nav-link:hover {
+        color: #d8d7d9; /* Change color on hover */
+    }
+
+    /* Display the hamburger icon for smaller screens */
+    .icon {
+        display: block;
+        font-size: 35px;
+        cursor: pointer;
+        color: #d8d7d9;
+    }
+
+    /* ---------------- Hero Styles */
+
+
+    .hero h2 {
+        font-size: 3em;
+    }
+
+    .hero p {
+        font-size: 22px;
+        padding: 0 10px 0 10px;
+    }
+
+    .reservation-button {
+        margin-top: 12px;
+    }
+
+    /* Gallery Styles */
+
+    .gallery-row-2 {
+        display: none;
+    }
+
+    .gallery-row-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        min-height: 90vh;
+    }
+
+    .gallery-image {
+        max-width: calc(100% - 20px);
+        min-height: 40vh;
+        max-height: 70vh;
+        display: flex;
+        align-content: flex-end;
+        justify-content: space-evenly;
+    }
+
+    /* Footer */
+    .directory {
+        display:inline-flex;
+        flex-direction: column;
+        margin: 10px 30px;
+    }
+
+}
+
+
+@media screen and (min-width: 769px) {
+
+    .icon {
+        display: none;
+    }
+
+    header {
+        padding-top: 18px;
+        border-bottom: 1px solid #d8d7d9;
+    }
+
+    .header-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 84px;
+        margin: 0 50px 0 0;
+        font-weight: 600;
+    }
+
+    #desktop-navigation .navbar {
+        display: flex;
+        border-bottom: none;
+        font-size: 2em;
+        white-space: nowrap;
+        overflow: hidden; /* stops multi-word nav headings from wrapping */
+    }
+
+    /* Gallery Styles */
+    .gallery-image {
+        max-width: calc(50% - 20px); /* Two images per row for tablet screens */
+        display: flex;
+        align-content: flex-end;
+        justify-content: space-evenly;
+    }
+
+    /* Hero Styles */
+    
+    .hero {
+        height: 100vh;
+        width: auto;
+        background-image: url(https://images.pexels.com/photos/5490933/pexels-photo-5490933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        flex-direction: column;
+    }
+
+    .hero h2 {
+        font-size: 70px;
+    }
+
+    .hero p {
+        font-size: 19px;
+        padding: 0 10px 0 10px;
+        max-width: 70vw;
+    }
+
+    .reservation-button {
+        margin-top: 15px;
+    }
+
+    .directory-container {
+        display: flex;
+        flex-direction: row;
+    }
+}
