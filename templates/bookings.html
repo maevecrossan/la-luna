@@ -10,7 +10,7 @@
 	<div class="formbold-form-wrapper lato">
 		<h2 class="center form-title italiana"> Book with us today! </h2>
 		
-		<form action="/bookings" onsubmit="return sendBookingConfirmation(this);" method="POST">
+		<form action="{% url 'bookings' %}" onsubmit="return sendBookingConfirmation(this);" method="POST">
 			
 			{% csrf_token %}
 
