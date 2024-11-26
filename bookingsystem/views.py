@@ -14,5 +14,5 @@ def booking_system(request):
         form = BookingForm(request.POST)
         if form.is_valid():
             form.save() 
-            # return redirect('../templates/bookings.html') edit to redirect to user bookings
+            return redirect('../templates/bookings.html') # edit to redirect to user bookings
     return render(request, '../templates/bookings.html', {'form': form, 'today': today})
