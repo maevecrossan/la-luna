@@ -10,17 +10,46 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ['name', 'phone_number', 'email', 'date', 'time', 'guests']
         widgets = {
-            'name': forms.TextInput(attrs={'placeholder': 'Full Name', 'class': 'formbold-form-input'}),
-            'phone_number': forms.TextInput(attrs={'placeholder': 'Phone Number', 'class': 'formbold-form-input'}),
-            'email': forms.EmailInput(attrs={'placeholder': 'Email Address', 'class': 'formbold-form-input'}),
+            'name': forms.TextInput(
+                attrs={
+                    'id': 'name', 
+                       'placeholder': 'Full Name', 
+                       'class': 'formbold-form-input'
+                    }
+                ),
+            'phone_number': forms.TextInput(
+                attrs={
+                    'id': 'phone', 
+                    'placeholder': 'Phone Number', 
+                    'class': 'formbold-form-input'
+                    }
+                ),
+            'email': forms.EmailInput(
+                attrs={
+                    'id': 'email', 
+                    'placeholder': 'Email Address', 
+                    'class': 'formbold-form-input'
+                    }
+                ),
             'date': forms.DateInput(
                 attrs={
+                    'id': 'date', 
                     'type': 'date',
                     'class': 'formbold-form-input',
                 }
             ),
-            'time': forms.Select(attrs={'class': 'formbold-form-input'}),
-            'guests': forms.Select(attrs={'class': 'formbold-form-input'}),
+            'time': forms.Select(
+                attrs={
+                    'id': 'time', 
+                    'class': 'formbold-form-input'
+                    }
+                ),
+            'guests': forms.Select(
+                attrs={
+                    'id': 'guests', 
+                    'class': 'formbold-form-input'
+                    }
+                ),
             }
         
     def __init__(self, *args, **kwargs):
