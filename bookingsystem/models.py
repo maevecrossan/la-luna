@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
+from django.core.exceptions import ValidationError
 
 # Create your models here.
 
@@ -87,3 +88,22 @@ class Booking(models.Model):
 
         super().save(*args, **kwargs)
         
+        
+    def clean(self):
+        """
+        Custom validation to prevent overlap in bookings 
+        and tally capacity (max 40 ppl)
+        """
+        overlapping_bookings = Booking.objects.filter(
+            date=self.date,
+            end_time__gt=start_datetime.time(), # Existing booking ends after new start time
+            start_time__gt=end_datetime.time(), # Existing booking starts before new end time
+        )
+        
+        # Calculate total number of guests during overlapping time slots
+        total_guests = sum([int(booking.guests) for booking in overlapping_bookings])
+        
+        
+        # Check if capacity is reached
+        if total_guests + int(self.guests) > 40:
+            raise ValidationError ("We cannot accomodate your group size at this time. Please reduce your guest count or try another time slot.")
