@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from .models import Booking
 from .forms import BookingForm
-from datetime import date
+from datetime import date, timedelta
 
 
 # Create your views here.

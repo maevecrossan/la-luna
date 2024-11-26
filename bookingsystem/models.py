@@ -71,3 +71,18 @@ class Booking(models.Model):
         ("8", "8"),
     ]
     guests = models.CharField(max_length=1, choices=GUEST_OPTIONS)
+    
+    end_time = models.TimeField(null=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        """
+        Calculates the end time (adds two hours to 'time') and
+        stores it to the database.
+        """
+        if self.time:
+            start_datetime = datetime.combine(self.date, self.time)
+            end_datetime = start_datetime + timedelta(hours=2)
+            self.end_time = end_datetime.time()
+
+        super().save(*args, **kwargs)
+        
