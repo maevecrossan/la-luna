@@ -7,7 +7,7 @@ from django.core.validators import RegexValidator
 
 class Booking(models.Model):
     """
-    Model for booking a table
+    Model for booking a table.
     """
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, 
