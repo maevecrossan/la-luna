@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 from django.core.exceptions import ValidationError
+from datetime import datetime, timedelta
 
 # Create your models here.
 
@@ -82,8 +83,16 @@ class Booking(models.Model):
         Database use only (not visible to admin or user).
         """
         if self.time:
-            start_datetime = datetime.combine(self.date, self.time)
+            # Convert the 'time' string (e.g., "15:00") to a datetime.time object
+            start_time_obj = datetime.strptime(self.time, '%H:%M').time()
+            
+            # Combine the 'date' and 'start_time_obj' to create a datetime object
+            start_datetime = datetime.combine(self.date, start_time_obj)
+            
+            # Add two hours to the start time to calculate the end time
             end_datetime = start_datetime + timedelta(hours=2)
+            
+            # Store the calculated end time
             self.end_time = end_datetime.time()
 
         super().save(*args, **kwargs)
@@ -94,16 +103,24 @@ class Booking(models.Model):
         Custom validation to prevent overlap in bookings 
         and tally capacity (max 40 ppl)
         """
-        overlapping_bookings = Booking.objects.filter(
-            date=self.date,
-            end_time__gt=start_datetime.time(), # Existing booking ends after new start time
-            start_time__gt=end_datetime.time(), # Existing booking starts before new end time
-        )
         
-        # Calculate total number of guests during overlapping time slots
-        total_guests = sum([int(booking.guests) for booking in overlapping_bookings])
-        
-        
-        # Check if capacity is reached
-        if total_guests + int(self.guests) > 40:
-            raise ValidationError ("We cannot accomodate your group size at this time. Please reduce your guest count or try another time slot.")
+        if self.time:
+            start_datetime = datetime.combine(self.date, datetime.strptime(self.time, '%H:%M').time())
+            end_datetime = start_datetime + timedelta(hours=2)
+            
+            # Convert 'end_datetime' to time to use in comparisons
+            end_time = end_datetime.time()
+            
+            overlapping_bookings = Booking.objects.filter(
+                date=self.date,
+                end_time__gt=start_datetime.time(), # Existing booking ends after new start time
+                time__lt=end_time, # Existing booking starts before new end time
+            )
+            
+            # Calculate total number of guests during overlapping time slots
+            total_guests = sum([int(booking.guests) for booking in overlapping_bookings])
+            
+            
+            # Check if adding this booking would exceed capacity
+            if total_guests + int(self.guests) > 40:
+                raise ValidationError("We cannot accommodate your group size at this time. Please reduce your guest count or try another time slot.")
