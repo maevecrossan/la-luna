@@ -78,6 +78,7 @@ class Booking(models.Model):
         """
         Calculates the end time (adds two hours to 'time') and
         stores it to the database.
+        Database use only (not visible to admin or user).
         """
         if self.time:
             start_datetime = datetime.combine(self.date, self.time)
