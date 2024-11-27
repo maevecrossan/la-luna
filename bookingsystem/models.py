@@ -1,3 +1,5 @@
+"""This file houses the booking model."""
+
 from datetime import datetime, timedelta
 from django.db import models
 from django.contrib.auth.models import User
@@ -8,41 +10,40 @@ from django.core.exceptions import ValidationError
 
 
 class Booking(models.Model):
-    """
-    Model for booking a table.
-    """
+    """Model for booking a table."""
+
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, 
-        related_name="bookings", 
-        null=True, 
+        User, on_delete=models.CASCADE,
+        related_name="bookings",
+        null=True,
         blank=True
     )
-    
+
     name = models.CharField(
         max_length=100,
         blank=False,
         null=False,
     )
-    
+
     email = models.EmailField(
         max_length=250,
         null=False,
         blank=False,
         default='no-reply@example.com'
     )
-    
+
     phone_number = models.CharField(
-        max_length=15,  
-        validators=[ # Source: geeksforgeeks.org
+        max_length=15,
+        validators=[  # Source: geeksforgeeks.org
             RegexValidator(
                 regex=r'^\+?1?\d{9,15}$',
                 message="Please enter a valid phone number. Up to 15 digits allowed."
             )
-        ] # minimal validation added as this is not main method of contact
+        ]  # minimal validation added as this is not main method of contact
     )
-    
+
     date = models.DateField()
-    
+
     TIME_OPTIONS = [
         ("15:00", "3:00 PM"),
         ("15:30", "3:30 PM"),
@@ -61,7 +62,7 @@ class Booking(models.Model):
         ("22:00", "10:00 PM"),
     ]
     time = models.CharField(max_length=5, choices=TIME_OPTIONS)
-    
+
     GUEST_OPTIONS = [
         ("1", "1"),
         ("2", "2"),
@@ -73,58 +74,56 @@ class Booking(models.Model):
         ("8", "8"),
     ]
     guests = models.CharField(max_length=1, choices=GUEST_OPTIONS)
-    
+
     end_time = models.TimeField(null=True, blank=True)
 
+    objects = models.Manager()
+
     def save(self, *args, **kwargs):
-        """
-        Calculates the end time (adds two hours to 'time') and
-        stores it to the database.
+
+        """Calculates the end time (adds two hours to 
+        'time') and stores it to the database.
+        
         Database use only (not visible to admin or user).
         """
+
         if self.time:
-            # Convert the 'time' string (e.g., "15:00") to a datetime.time object
+            # Convert the 'time' string to datetime.time object
             start_time_obj = datetime.strptime(self.time, '%H:%M').time()
-            
-            # Combine the 'date' and 'start_time_obj' to create a datetime object
+
+            # Combine the 'date' and 'start_time_obj' into datetime object
             start_datetime = datetime.combine(self.date, start_time_obj)
-            
+
             # Add two hours to the start time to calculate the end time
             end_datetime = start_datetime + timedelta(hours=2)
-            
+
             # Store the calculated end time
             self.end_time = end_datetime.time()
 
         super().save(*args, **kwargs)
-        
-        
+
     def clean(self):
+        """ Custom validation to prevent overlap in bookings
+        and tally capacity (max 40 ppl).
         """
-        Custom validation to prevent overlap in bookings 
-        and tally capacity (max 40 ppl)
-        """
-       
         if self.time:
             start_datetime = datetime.combine(self.date, datetime.strptime(self.time, '%H:%M').time())
             end_datetime = start_datetime + timedelta(hours=2)
-            
-            
+
             # Convert 'end_datetime' to time to use in comparisons
-            
-            
             end_time = end_datetime.time()
-            
-            
+
             overlapping_bookings = Booking.objects.filter(
                 date=self.date,
-                end_time__gt=start_datetime.time(), # Existing booking ends after new start time
-                time__lt=end_time, # Existing booking starts before new end time
+                # Existing booking ends after new start time
+                end_time__gt=start_datetime.time(),
+                # Existing booking starts before new end time
+                time__lt=end_time,
             )
-           
+
             # Calculate total number of guests during overlapping time slots
-            total_guests = sum([int(booking.guests) for booking in overlapping_bookings])
-           
-           
+            total_guests = sum(int(booking.guests) for booking in overlapping_bookings)
+
             # Check if adding this booking would exceed capacity
             if total_guests + int(self.guests) > 40:
                 raise ValidationError("We cannot accommodate your group size at this time. Please reduce your guest count or try another time slot.")
