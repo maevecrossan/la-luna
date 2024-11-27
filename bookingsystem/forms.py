@@ -1,12 +1,17 @@
+"""This file houses the form django template."""
+
 from datetime import date
-from .models import Booking
 from django import forms
+from .models import Booking
 
 class BookingForm(forms.ModelForm):
     """
     Booking Form Template
     """
     class Meta:
+        """
+        booking form fields
+        """
         model = Booking
         fields = ['name', 'phone_number', 'email', 'date', 'time', 'guests']
         widgets = {
@@ -51,7 +56,7 @@ class BookingForm(forms.ModelForm):
                     }
                 ),
             }
-        
+
     def __init__(self, *args, **kwargs):
         """
         Prevents bookings in the past.
