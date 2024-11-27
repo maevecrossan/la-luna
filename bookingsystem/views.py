@@ -1,20 +1,30 @@
-from django.shortcuts import render, redirect
-from django.views import generic
-from django.http import HttpResponse, HttpResponseRedirect
-from .models import Booking
+"""
+Contains booking form logic
+"""
+
+from datetime import date
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from .forms import BookingForm
-from datetime import date, timedelta
-import logging
 
 
 # Create your views here.
-
 def booking_system(request):
+    """
+    Handles booking form submission. 
+    Saves valid data to the database.
+    """
+
+    form = BookingForm()
+    today = date.today().strftime('%Y-%m-%d')
+
     if request.method == 'POST':
         form = BookingForm(request.POST)
+        print("POST data received") #debugging
         if form.is_valid():
             form.save()
+            print("successful database submission")
             return HttpResponseRedirect('/')
         else:
-            print(f"Form errors: {form.errors}")  # Log validation errors
-    return render(request, '../templates/bookings.html', {'form': BookingForm()})
+            print("ERROR:", form.errors) #debugging
+    return render(request, '../templates/bookings.html', {'form': BookingForm(), 'today': today})

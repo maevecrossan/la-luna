@@ -11,7 +11,7 @@
 		<h2 class="center form-title italiana"> Book with us today! </h2>
 		
 		<form action="{% url 'bookings' %}" onsubmit="return sendBookingConfirmation(this);" method="POST">
-			
+
 			{% csrf_token %}
 
 			<div class="formbold-mb-5">
@@ -66,7 +66,7 @@
 			</div>
 
 			<div>
-				<button class="formbold-btn"> Make Reservation </button>
+				<button type="submit" class="formbold-btn"> Make Reservation </button>
 			</div>
 		</form>
 	</div>

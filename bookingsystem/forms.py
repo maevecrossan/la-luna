@@ -17,41 +17,47 @@ class BookingForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(
                 attrs={
-                    'id': 'name', 
-                       'placeholder': 'Full Name', 
-                       'class': 'formbold-form-input'
+                    'id': 'name',
+                    'name': 'name',
+                    'placeholder': 'Full Name', 
+                    'class': 'formbold-form-input'
                     }
                 ),
             'phone_number': forms.TextInput(
                 attrs={
-                    'id': 'phone', 
+                    'id': 'phone',
+                    'name': 'phone',
                     'placeholder': 'Phone Number', 
                     'class': 'formbold-form-input'
                     }
                 ),
             'email': forms.EmailInput(
                 attrs={
-                    'id': 'email', 
+                    'id': 'email',
+                    'name': 'email',
                     'placeholder': 'Email Address', 
                     'class': 'formbold-form-input'
                     }
                 ),
             'date': forms.DateInput(
                 attrs={
-                    'id': 'date', 
+                    'id': 'date',
+                    'name': 'date',
                     'type': 'date',
                     'class': 'formbold-form-input',
                 }
             ),
             'time': forms.Select(
                 attrs={
-                    'id': 'time', 
+                    'id': 'time',
+                    'name': 'time',
                     'class': 'formbold-form-input'
                     }
                 ),
             'guests': forms.Select(
                 attrs={
-                    'id': 'guests', 
+                    'id': 'guests',
+                    'name': 'guests',
                     'class': 'formbold-form-input'
                     }
                 ),
