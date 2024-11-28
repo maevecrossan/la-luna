@@ -107,7 +107,9 @@ class Booking(models.Model):
         and tally capacity (max 40 ppl).
         """
         if self.time:
-            start_datetime = datetime.combine(self.date, datetime.strptime(self.time, '%H:%M').time())
+            start_datetime = (
+                datetime.combine(self.date, datetime.strptime(self.time, '%H:%M').time())
+                )
             end_datetime = start_datetime + timedelta(hours=2)
 
             # Convert 'end_datetime' to time to use in comparisons
@@ -126,4 +128,6 @@ class Booking(models.Model):
 
             # Check if adding this booking would exceed capacity
             if total_guests + int(self.guests) > 40:
-                raise ValidationError("We cannot accommodate your group size at this time. Please reduce your guest count or try another time slot.")
+                raise ValidationError(
+                    "We cannot accommodate your group size at this time." 
+                    "Please reduce your guest count or try another time slot.")
