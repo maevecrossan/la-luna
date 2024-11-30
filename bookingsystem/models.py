@@ -131,3 +131,21 @@ class Booking(models.Model):
                 raise ValidationError(
                     "We cannot accommodate your group size at this time." 
                     "Please reduce your guest count or try another time slot.")
+
+    @property
+    def expired(self):
+        """
+        Determines whether the booking has expired.
+
+        A booking is considered expired if the current date and time
+        are later than the booking's end date and time.
+        """
+
+        if self.date and self.end_time:
+            # Convert the end_time string to a datetime.time object
+            end_time_obj = datetime.strptime(self.end_time.strftime('%H:%M'), '%H:%M').time()
+            # Combine the date and end_time into a single datetime object
+            end_datetime = datetime.combine(self.date, end_time_obj)
+            # Compare current datetime with the booking's end datetime
+            return datetime.now() < end_datetime
+        return False
