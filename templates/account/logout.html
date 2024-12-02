@@ -5,25 +5,27 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="polka-dot-background center">
+  <div class="container formbold-form-wrapper authentication-form">
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Sign Out" %}</h3>
+      <div class="col-md-8 mt-3 offset-md-2">
+        <h3 class="center form-title italiana">{% trans "Sign Out" %}</h3>
 
-            <p>{% trans 'Are you sure you want to sign out?' %}</p>
-        </div>
+        <p class="lato content ta-center">{% trans 'Are you sure you want to sign out?' %}</p>
+      </div>
     </div>
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
+      <div class="col-md-8 mt-3 offset-md-2">
 
-            <form method="post" action="{% url 'account_logout' %}">
-                {% csrf_token %}
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-                <button class="btn btn-signup right" type="submit">{% trans 'Sign Out' %}</button>
-            </form>
-        </div>
+        <form class="login formbold-form-label" method="post" action="{% url 'account_logout' %}">
+          {% csrf_token %}
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          <button class="btn btn-signup right" type="submit">{% trans 'Sign Out' %}</button>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
 {% endblock %}
