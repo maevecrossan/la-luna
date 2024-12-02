@@ -75,7 +75,23 @@
                     <li class="nav-item mr-2 topBotomBordersOut">
                         <a class="nav-link" href="{% url 'contact' %}"> Contact Us</a>
                     </li>
-
+                    
+                    {% if user.is_authenticated %}
+                    <li class="nav-item mr-2 topBotomBordersOut">
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item mr-2 topBotomBordersOut">
+                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    
+                    <li class="nav-item mr-2 topBotomBordersOut">
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </nav>
 
@@ -106,6 +122,23 @@
                     <li class="nav-item topBotomBordersOut">
                         <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
                     </li>
+
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_signup' %}">Register</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>
@@ -143,6 +176,22 @@
 
                     <li class="mb-2"><a href="{% url 'contact' %}" class="footer-link p-0">Contact</a>
                     </li>
+
+                    {% if user.is_authenticated %}
+                    <li class="mb-2">
+                        <a class="footer-link p-0 {% if request.path == logout_url %}active{% endif %}"
+                            aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="mb-2">
+                        <a class="footer-link p-0 {% if request.path == signup_url %}active{% endif %}"
+                            aria-current="page" href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li class="mb-2">
+                        <a class="footer-link p-0 {% if request.path == login_url %}active{% endif %}"
+                            aria-current="page" href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    {% endif %}
 
                 </ul>
             </div>
