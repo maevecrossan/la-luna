@@ -68,10 +68,25 @@ body {
     font-family: "Lato", sans-serif;
 }
 
+.topic-heading {
+    text-align: center;
+    margin: 0 0 0 0;
+    font-size: 3em;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    padding: 40px 0 20px 0;
+    color: #d8d7d9;
+    font-weight: 700;
+    padding-top: 40px;
+
+    @media all and (min-width:40em) {
+        font-size: 4.75em;
+    }
+}
+
 .small-letter-spacing {
     letter-spacing: 0.1em;
 }
-
 
 .dark-red-background {
     background-color: #592828;
@@ -233,24 +248,6 @@ a:hover {
     margin-bottom: 30px;
 }
 
-.menu-title,
-.gallery-heading,
-.our-story-heading {
-    text-align: center;
-    margin: 0 0 0 0;
-    font-size: 3em;
-    line-height: 1;
-    letter-spacing: 0.02em;
-    padding: 40px 0 20px 0;
-    color: #d8d7d9;
-    font-weight: 700;
-    padding-top: 40px;
-
-    @media all and (min-width:40em) {
-        font-size: 4.75em;
-    }
-}
-
 .subtitle {
     font-weight: 300;
     text-transform: uppercase;
@@ -320,18 +317,14 @@ a:hover {
     animation: revealScaleUp 0.75s 2.82s ease both 1;
 }
 
-.t-block-red {
-    background-color: #592828;
-}
-
 .t-block-red p {
     color: #d8d7d9;
     font-size: 1.25em;
 }
 
-/*list animation */
-/*scale in the circle, follwoed by the list item*/
-/*the border must also animate in.*/
+/* Our Storu list animation */
+/* scale in the circle, followed by the list item*/
+/* the border must also animate in. */
 .our-story-list li {
     margin: 0 0 3em 0;
     padding: 0 2em 0em 2em;

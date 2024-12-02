@@ -1,3 +1,7 @@
+/* Contains specific styles for the booking form and 'My Bookings' page.
+Generic styles are inherited from style.css
+*/
+
 .formbold-mb-5 {
     margin-bottom: 20px;
 }

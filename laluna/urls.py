@@ -15,13 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from bookingsystem.views import booking_system
 from laluna.views import index, menu, contact
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bookings/', booking_system, name='bookings'),
+    path('', include('bookingsystem.urls')),
     path('contact/', contact, name='contact'),
     path('', index, name='index'),  # This makes the homepage point to the 'index' view
     path('menu/', menu, name='menu'),

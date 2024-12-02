@@ -5,10 +5,22 @@ Contains booking form logic
 from datetime import date
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.views import generic
+from .models import Booking
 from .forms import BookingForm
 
 
 # Create your views here.
+
+class BookingList(generic.ListView):
+    """
+    Allows booking_list.html to display bookings for users.
+    """
+    model = Booking
+    template_name = "booking_list.html"
+    context_object_name = 'bookings'
+
+
 def booking_system(request):
     """
     Handles booking form submission. 
