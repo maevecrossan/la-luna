@@ -8,6 +8,9 @@
 | ![testing screenshot](photo-link) | When preventing bookings in the past (date-wise), the date field stopped working completely. | ![testing screenshot](photo-link) Added `min="{{ today }}` |
 | ![testing screenshot](photo-link) | ![testing screenshot](photo-link) Google dev tools raised 6 issues relating to my form fields not having ids. | ![testing screenshot](photo-link) Added ids to the `BookingForm` model |
 | ![testing screenshot](photo-link) | Email.js and POST method conflicting: At times, only one function was being executed. When email.js was working, it tripped up the POST request, and vice versa. | After several rounds of refactoring and debugging, updating the url, and the return statement in `booking-confirmation-email.js`. |
+| ![testing screenshot](photo-link) | Bookings previously only visible on backend now visible on front end but styling wasn't rendering and was very messy and unreadable. Validity was also incorrect. | Styling fixed to isolate bookings into a more appealing presentation. Validity just needed one simple tweak from <br>`return datetime.now() < end_datetime` to <br> `return datetime.now() > end_datetime` (line 150 bookingsystem/models.py) |
+| ![testing screenshot](photo-link) | Issue deploying on Heroku. | I had forgotten to recollect my static files, so I did so which fixed the issue. During deploying, the logs stated I should update python for improved security. <br> I did so but had to rename my runtime.txt file to `.python-version` and merely state the numeric verion I wished to use. After removing the python prefix, the project successfully built and deployed.|
+| ![testing screenshot](photo-link) | issue | fix |
 | ![testing screenshot](photo-link) | issue | fix |
 
 ## Post Development : Bugs and Fixes
