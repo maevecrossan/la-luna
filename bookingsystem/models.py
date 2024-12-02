@@ -147,5 +147,5 @@ class Booking(models.Model):
             # Combine the date and end_time into a single datetime object
             end_datetime = datetime.combine(self.date, end_time_obj)
             # Compare current datetime with the booking's end datetime
-            return datetime.now() < end_datetime
+            return datetime.now() > end_datetime
         return False

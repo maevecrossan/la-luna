@@ -20,6 +20,10 @@ class BookingList(generic.ListView):
     template_name = "booking_list.html"
     context_object_name = 'bookings'
 
+    def get_queryset(self):
+        """Override to order bookings by date and time."""
+        return Booking.objects.all().order_by('-date', '-time')
+
 
 def booking_system(request):
     """
@@ -32,11 +36,11 @@ def booking_system(request):
 
     if request.method == 'POST':
         form = BookingForm(request.POST)
-        print("POST data received") #debugging
+        print("POST data received")  # debugging
         if form.is_valid():
             form.save()
             print("successful database submission")
             return HttpResponseRedirect('/')
         else:
-            print("ERROR:", form.errors) #debugging
+            print("ERROR:", form.errors)  # debugging
     return render(request, '../templates/bookings.html', {'form': BookingForm(), 'today': today})
