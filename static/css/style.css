@@ -142,7 +142,7 @@ h1 {
     cursor: pointer;
 }
 
-a:hover {
+.nav-link:hover {
     color: #d8b8b8;
 }
 
@@ -497,6 +497,7 @@ footer .col {
     padding: 20px 40px; /* Add some padding inside the footer */
 }
 
+.login-status,
 .footer-contact-info,
 .footer-link {
     color: #d8d7d9;

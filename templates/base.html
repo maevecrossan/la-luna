@@ -95,6 +95,12 @@
                 </ul>
             </nav>
 
+            {% if user.is_authenticated %}
+            <p class="text-end m-3">You are logged in as {{ user }}</p>
+            {% else %}
+            <p class="text-end m-3">You are not logged in</p>
+            {% endif %}
+
             <!-- Hamburger icon for mobile menu -->
             <a href="javascript:void(0);" id="burger-icon" class="icon" onclick="displayMobileMenu()">
                 <i class="fa fa-bars"></i>
