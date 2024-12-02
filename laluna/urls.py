@@ -20,6 +20,7 @@ from bookingsystem.views import booking_system
 from laluna.views import index, menu, contact
 
 urlpatterns = [
+    path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
     path('bookings/', booking_system, name='bookings'),
     path('', include('bookingsystem.urls')),

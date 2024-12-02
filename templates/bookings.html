@@ -10,8 +10,24 @@
 	<div class="formbold-form-wrapper lato">
 		<h2 class="center form-title italiana"> Book with us today! </h2>
 
-		<p class="lato center"> Already have a booking? <a href="{% url 'my-bookings' %}"> Click here </a> to view and modify. </p>
-		
+		{% if user.is_authenticated %}
+		<li class="nav-item">
+			<a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+				href="{% url 'account_logout' %}">Logout</a>
+		</li>
+		{% else %}
+		<li class="nav-item">
+			<a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+				href="{% url 'account_signup' %}">Register</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+				href="{% url 'account_login' %}">Login</a>
+		</li>
+
+		<p class="lato center"> Already have a booking? <a href="{% url 'my-bookings' %}"> Click here </a> to view and
+			modify. </p>
+
 		<form action="{% url 'bookings' %}" onsubmit="return sendBookingConfirmation(this);" method="POST">
 
 			{% csrf_token %}
@@ -32,7 +48,7 @@
 
 			<div class="formbold-mb-5">
 				<label for="email" class="formbold-form-label"> Email Address </label>
-	 
+
 				{{ form.email }}
 
 			</div>
@@ -40,7 +56,7 @@
 			<div class="flex flex-wrap formbold--mx-3">
 				<div class="w-full sm:w-half formbold-px-3">
 					<div class="formbold-mb-5 w-full">
-						<label for="date" class="formbold-form-label" min="{{ today }}" > Date </label>
+						<label for="date" class="formbold-form-label" min="{{ today }}"> Date </label>
 
 						{{ form.date.as_widget }}
 
@@ -50,7 +66,7 @@
 				<div class="w-full sm:w-half formbold-px-3">
 					<div class="formbold-mb-5">
 						<label for="time" class="formbold-form-label"> Choose a time:</label>
-						
+
 						{{ form.time }}
 
 					</div>
@@ -58,7 +74,7 @@
 			</div>
 
 			<div class="formbold-mb-5">
-				
+
 				<label for="guests" class="formbold-form-label"> Number of Guests </label>
 
 				{{ form.guests }}
@@ -71,6 +87,7 @@
 				<button type="submit" class="formbold-btn"> Make Reservation </button>
 			</div>
 		</form>
+		{% endif %}
 	</div>
 </div>
 
