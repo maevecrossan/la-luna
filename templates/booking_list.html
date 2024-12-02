@@ -7,8 +7,8 @@
     {% if bookings %}
     {% for booking in bookings %}
     <div class="container">
-        <div class="row">
-            <div class="col-4 card mb-4 mt-3 left top ">
+        <div class="row center">
+            <div class="col-6 card mb-4 mt-3 left top">
                 <div class="card-body">
                     <p class="card-text">
                         <strong>Name:</strong> {{ booking.name }}
@@ -30,11 +30,11 @@
                     </p>
                     {% if booking.expired %}
                     <span style="color: red;">
-                        <strong>Expired</strong>
+                        <strong>EXPIRED</strong>
                     </span>
                     {% else %}
                     <span style="color: green;">
-                        <strong>Active</strong>
+                        <strong>ACTIVE</strong>
                     </span>
                     {% endif %}
                 </div>
@@ -46,8 +46,7 @@
 
     {% else %}
     <div class="no-bookings-container">
-        <p class="lato center"> No bookings available. Please <a href="{% url 'bookings' %}"> click here </a> to make a
-            new booking.</p>
+        <p class="lato center"> No bookings available. Please <a href="{% url 'bookings' %}"> click here </a> to make a new booking.</p>
     </div>
     {% endif %}
 </div>
