@@ -571,7 +571,7 @@ footer .col {
     }
 
     #mobile-navigation .navbar {
-        display: inline-block;
+        display: inline;
         flex-direction: column;
     }
     
@@ -592,6 +592,7 @@ footer .col {
         display: block;
         font-size: 35px;
         cursor: pointer;
+        align-self: center;
     }
 
     /* ---------------- Hero Styles */

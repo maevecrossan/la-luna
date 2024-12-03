@@ -44,13 +44,13 @@
 <body>
     <header class="dark-brown-background">
         <div class="header-container">
-            
+
             {% if user.is_authenticated %}
             <p class="right off-white italiana text-end m-3">You are logged in as {{ user }}.</p>
             {% else %}
             <p class="right off-white italiana text-end m-3">You are not logged in.</p>
             {% endif %}
-           
+
             <!-- Logo -->
             <h1 class="logo center off-white italiana"> La Luna </h1>
 
@@ -82,7 +82,7 @@
                     <li class="nav-item mr-2 topBotomBordersOut">
                         <a class="nav-link" href="{% url 'contact' %}"> Contact Us</a>
                     </li>
-                    
+
                     {% if user.is_authenticated %}
                     <li class="nav-item mr-2 topBotomBordersOut">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
@@ -200,10 +200,12 @@
                             Twitter</a>
                     </li>
 
-                    <li class="mb-2 off-white center"><a href="https://www.instagram.com/" class="footer-link p-0">Instagram</a>
+                    <li class="mb-2 off-white center"><a href="https://www.instagram.com/"
+                            class="footer-link p-0">Instagram</a>
                     </li>
 
-                    <li class="mb-2 off-white center"><a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F"
+                    <li class="mb-2 off-white center"><a
+                            href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F"
                             class="footer-link p-0">Facebook</a></li>
 
                 </ul>
