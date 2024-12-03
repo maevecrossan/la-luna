@@ -51,6 +51,20 @@
             <p class="right off-white italiana text-end m-3">You are not logged in.</p>
             {% endif %}
 
+            {% if user.is_authenticated %}
+            <div>
+                <a class="right off-white italiana text-end m-3 {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                    href="{% url 'account_logout' %}">Logout</a>
+            </div>
+            {% else %}
+            <div class="right">
+                <a class="right off-white italiana text-end m-3 {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                    href="{% url 'account_login' %}">Login</a>
+                <a class="right off-white italiana text-end m-3 {% if request.path == signup_url %}active{% endif %}"
+                    aria-current="page" href="{% url 'account_signup' %}">Register</a>
+            </div>
+            {% endif %}
+
             <!-- Logo -->
             <h1 class="logo center off-white italiana"> La Luna </h1>
 
@@ -83,17 +97,6 @@
                         <a class="nav-link" href="{% url 'contact' %}"> Contact Us</a>
                     </li>
 
-                    {% if user.is_authenticated %}
-                    <li class="nav-item mr-2 topBotomBordersOut">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item mr-2 topBotomBordersOut">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    {% endif %}
                 </ul>
             </nav>
 
