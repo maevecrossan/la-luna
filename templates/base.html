@@ -44,6 +44,13 @@
 <body>
     <header class="dark-brown-background">
         <div class="header-container">
+            
+            <!-- {% if user.is_authenticated %}
+            <p class="login-status text-end m-3">You are logged in as {{ user }}.</p>
+            {% else %}
+            <p class="login-status italiana m-3">You are not logged in.</p>
+            {% endif %} -->
+           
             <!-- Logo -->
             <h1 class="logo center italiana"> La Luna </h1>
 
@@ -83,23 +90,12 @@
                     </li>
                     {% else %}
                     <li class="nav-item mr-2 topBotomBordersOut">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    
-                    <li class="nav-item mr-2 topBotomBordersOut">
                         <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
                             href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
                 </ul>
             </nav>
-
-            {% if user.is_authenticated %}
-            <p class="text-end m-3">You are logged in as {{ user }}</p>
-            {% else %}
-            <p class="text-end m-3">You are not logged in</p>
-            {% endif %}
 
             <!-- Hamburger icon for mobile menu -->
             <a href="javascript:void(0);" id="burger-icon" class="icon" onclick="displayMobileMenu()">
@@ -135,11 +131,6 @@
                             href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_signup' %}">Register</a>
-                    </li>
-
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
                             href="{% url 'account_login' %}">Login</a>
