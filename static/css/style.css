@@ -56,6 +56,16 @@ body {
     justify-content: center;
 }
 
+.right {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+}
+
+.off-white {
+    color: #d8d7d9;
+}
+
 .upper {
     text-transform: uppercase;
 }
@@ -120,13 +130,6 @@ h1 {
     justify-content: space-between; /* Space between elements */
     /* align-items: center; Center items vertically */
     padding: 10px; /* Add some padding */
-}
-
- .login-status {
-    color: #d8d7d9;
-    text-align: right;
-    font-size: small;
-    display: flex;
 }
 
 /*------------------------------ Nav */
