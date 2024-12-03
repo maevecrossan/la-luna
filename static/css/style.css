@@ -85,7 +85,6 @@ body {
     line-height: 1;
     letter-spacing: 0.02em;
     padding: 40px 0 20px 0;
-    color: #d8d7d9;
     font-weight: 700;
     padding-top: 40px;
 
@@ -121,7 +120,6 @@ body {
 /*------------------------------ Logo */
 h1 {
     font-size: 80px;
-    color: #d8d7d9;
     letter-spacing: 0.23em;
 }
 
@@ -236,7 +234,6 @@ h1 {
 
 .hero h2,
 .hero p {
-    color: #d8d7d9;
     opacity: 1;
     position: relative;
     /* Keeps text above the overlay */
@@ -328,7 +325,6 @@ h1 {
 }
 
 .t-block-red p {
-    color: #d8d7d9;
     font-size: 1.25em;
 }
 
@@ -510,7 +506,6 @@ footer .col {
 .login-status,
 .footer-contact-info,
 .footer-link {
-    color: #d8d7d9;
     font-size: 1.3em;
     padding: 0.4em;
 }
@@ -524,7 +519,6 @@ footer .col {
 }
 
 .copyright-text {
-    color: #d8d7d9;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -598,7 +592,6 @@ footer .col {
         display: block;
         font-size: 35px;
         cursor: pointer;
-        color: #d8d7d9;
     }
 
     /* ---------------- Hero Styles */
