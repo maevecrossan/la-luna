@@ -5,6 +5,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 from django.core.exceptions import ValidationError
+from django.utils import timezone
+
 
 # Create your models here.
 
@@ -88,17 +90,23 @@ class Booking(models.Model):
         """
 
         if self.time:
+            print(f"Start time string: {self.time}")  # Debugging: Check time value
+
             # Convert the 'time' string to datetime.time object
             start_time_obj = datetime.strptime(self.time, '%H:%M').time()
+            print(f"Start time object: {start_time_obj}")  # Debugging: Check time object
 
             # Combine the 'date' and 'start_time_obj' into datetime object
             start_datetime = datetime.combine(self.date, start_time_obj)
+            print(f"Start datetime: {start_datetime}")  # Debugging: Check datetime
 
             # Add two hours to the start time to calculate the end time
             end_datetime = start_datetime + timedelta(hours=2)
+            print(f"End datetime: {end_datetime}")  # Debugging: Check end datetime
 
             # Store the calculated end time
             self.end_time = end_datetime.time()
+            print(f"End time saved: {self.end_time}")  # Debugging: Check end time
 
         super().save(*args, **kwargs)
 
@@ -135,17 +143,24 @@ class Booking(models.Model):
     @property
     def expired(self):
         """
-        Determines whether the booking has expired.
-
-        A booking is considered expired if the current date and time
-        are later than the booking's end date and time.
+        If reservation time and date has passed current time and date,
+        booking will be marked 'expired'.
+        
+        Otherwise will be labelled as 'active'.
         """
+        if self.date and self.time:
+            # Combine the booking date and start time to get the full datetime
 
-        if self.date and self.end_time:
-            # Convert the end_time string to a datetime.time object
-            end_time_obj = datetime.strptime(self.end_time.strftime('%H:%M'), '%H:%M').time()
-            # Combine the date and end_time into a single datetime object
-            end_datetime = datetime.combine(self.date, end_time_obj)
-            # Compare current datetime with the booking's end datetime
-            return datetime.now() > end_datetime
+            # Convert start time string to time object
+            start_time_obj = datetime.strptime(self.time, '%H:%M').time()
+
+            # Combine date and time to create a datetime object
+            start_datetime = datetime.combine(self.date, start_time_obj)
+
+            # Make sure the datetime is timezone-aware
+            local_timezone = timezone.get_current_timezone()  # Get the current timezone
+            start_datetime = timezone.make_aware(start_datetime, timezone=local_timezone)
+
+            # Compare current time with the booking's start time
+            return timezone.now() > start_datetime
         return False
