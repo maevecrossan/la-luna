@@ -56,6 +56,16 @@ body {
     justify-content: center;
 }
 
+.right {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+}
+
+.off-white {
+    color: #d8d7d9;
+}
+
 .upper {
     text-transform: uppercase;
 }
@@ -75,7 +85,6 @@ body {
     line-height: 1;
     letter-spacing: 0.02em;
     padding: 40px 0 20px 0;
-    color: #d8d7d9;
     font-weight: 700;
     padding-top: 40px;
 
@@ -111,14 +120,13 @@ body {
 /*------------------------------ Logo */
 h1 {
     font-size: 80px;
-    color: #d8d7d9;
     letter-spacing: 0.23em;
 }
 
 .header-container {
     display: flex; /* Use flexbox */
     justify-content: space-between; /* Space between elements */
-    align-items: center; /* Center items vertically */
+    /* align-items: center; Center items vertically */
     padding: 10px; /* Add some padding */
 }
 
@@ -142,7 +150,7 @@ h1 {
     cursor: pointer;
 }
 
-a:hover {
+.nav-link:hover {
     color: #d8b8b8;
 }
 
@@ -226,7 +234,6 @@ a:hover {
 
 .hero h2,
 .hero p {
-    color: #d8d7d9;
     opacity: 1;
     position: relative;
     /* Keeps text above the overlay */
@@ -318,7 +325,6 @@ a:hover {
 }
 
 .t-block-red p {
-    color: #d8d7d9;
     font-size: 1.25em;
 }
 
@@ -497,9 +503,9 @@ footer .col {
     padding: 20px 40px; /* Add some padding inside the footer */
 }
 
+.login-status,
 .footer-contact-info,
 .footer-link {
-    color: #d8d7d9;
     font-size: 1.3em;
     padding: 0.4em;
 }
@@ -513,7 +519,6 @@ footer .col {
 }
 
 .copyright-text {
-    color: #d8d7d9;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -587,7 +592,6 @@ footer .col {
         display: block;
         font-size: 35px;
         cursor: pointer;
-        color: #d8d7d9;
     }
 
     /* ---------------- Hero Styles */
