@@ -6,6 +6,7 @@ from datetime import date
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views import generic
+from django.contrib import messages
 from .models import Booking
 from .forms import BookingForm
 
@@ -39,7 +40,9 @@ def booking_system(request):
         print("POST data received")  # debugging
         if form.is_valid():
             form.save()
-            print("successful database submission")
+            messages.add_message(
+        request, messages.SUCCESS,
+        'Booking successfully created.')
             return HttpResponseRedirect('/')
         else:
             print("ERROR:", form.errors)  # debugging
