@@ -53,13 +53,13 @@
 
             {% if user.is_authenticated %}
             <div>
-                <a class="right off-white italiana text-end m-3 {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                    href="{% url 'account_logout' %}">Logout</a>
+                <a class="right off-white italiana text-end m-3 {% if request.path == logout_url %}active{% endif %}"
+                    aria-current="page" href="{% url 'account_logout' %}">Logout</a>
             </div>
             {% else %}
             <div class="right">
-                <a class="right off-white italiana text-end m-3 {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                    href="{% url 'account_login' %}">Login</a>
+                <a class="right off-white italiana text-end m-3 {% if request.path == login_url %}active{% endif %}"
+                    aria-current="page" href="{% url 'account_login' %}">Login</a>
                 <a class="right off-white italiana text-end m-3 {% if request.path == signup_url %}active{% endif %}"
                     aria-current="page" href="{% url 'account_signup' %}">Register</a>
             </div>
@@ -145,6 +145,15 @@
     </header>
 
     <div class="container-fluid">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        
         {% block content %}
         {% endblock %}
     </div>
@@ -238,7 +247,7 @@
     </div>
 
     <script src="{% static 'js/booking-confirmation-email.js' %}"></script>
-    
+
     <script src="{% static 'js/my-bookings-crud.js' %}"></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

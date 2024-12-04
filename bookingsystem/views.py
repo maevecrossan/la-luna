@@ -4,7 +4,6 @@ Contains booking form logic
 
 from datetime import date
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Booking
@@ -26,13 +25,17 @@ def booking_system(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
+            booking = form.save(commit=False)
+            booking.user = request.user
             form.save()
             messages.add_message(
                 request, messages.SUCCESS,
-                'Booking successfully created.')
-            return HttpResponseRedirect('/')
+                'Booking successfully submitted.')
+            return redirect('my-bookings')
         else:
-            print("ERROR:", form.errors)  # debugging
+            messages.add_message(
+                request, messages.ERROR,
+                'Error submitting booking.')
     return render(request, 'bookings.html', {'form': form, 'today': today})
 
 
@@ -69,14 +72,15 @@ def booking_edit(request, booking_id):
         # Validate the form and check ownership again for extra safety
         if booking_form.is_valid() and booking.user == request.user:
             booking.save()
-            messages.add_message(request, messages.SUCCESS, 'Booking Updated!')
+            messages.add_message(request, messages.SUCCESS, 'Booking successfully submitted.')
             return redirect('my-bookings')
         else:
             messages.add_message(request, messages.ERROR,
-                                 'Error updating booking!')
+                                 'Error submitting booking.')
             return redirect('my-bookings')
 
     else:
         booking_form = BookingForm(instance=booking)
 
     return render(request, 'bookings.html', {'form': booking_form, 'booking': booking})
+        
