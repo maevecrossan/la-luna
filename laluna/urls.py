@@ -25,6 +25,6 @@ urlpatterns = [
     path('bookings/', booking_system, name='bookings'),
     path('', include('bookingsystem.urls')),
     path('contact/', contact, name='contact'),
-    path('', index, name='index'),  # This makes the homepage point to the 'index' view
+    path('', index, name='index'),
     path('menu/', menu, name='menu'),
 ]

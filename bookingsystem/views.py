@@ -3,9 +3,9 @@ Contains booking form logic
 """
 
 from datetime import date
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.http import HttpResponseRedirect
-from django.views import generic
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Booking
 from .forms import BookingForm
@@ -13,21 +13,7 @@ from .forms import BookingForm
 
 # Create your views here.
 
-class BookingList(generic.ListView):
-    """
-    Allows booking_list.html to display bookings for users.
-    """
-    model = Booking
-    template_name = "booking_list.html"
-    context_object_name = 'bookings'
-
-    def get_queryset(self):
-        """
-        Override to order bookings by date and time.
-        """
-        return Booking.objects.filter(user=self.request.user).order_by('-date', '-time')
-
-
+@login_required
 def booking_system(request):
     """
     Handles booking form submission. 
@@ -42,21 +28,41 @@ def booking_system(request):
         if form.is_valid():
             form.save()
             messages.add_message(
-        request, messages.SUCCESS,
-        'Booking successfully created.')
-            return HttpResponseRedirect('my-bookings')
+                request, messages.SUCCESS,
+                'Booking successfully created.')
+            return HttpResponseRedirect('/')
         else:
             print("ERROR:", form.errors)  # debugging
-    return render(request, 'my-bookings', {'form': form, 'today': today})
+    return render(request, 'bookings.html', {'form': form, 'today': today})
+
+
+@login_required
+def booking_list(request):
+    """
+    Allows booking_list.html to display bookings for authenticated users.
+    """
+    # Check if the user is authenticated before making a query based on request.user
+    if request.user.is_authenticated:
+        print(f"Authenticated user: {request.user.username}")
+        # Filter bookings
+        bookings = Booking.objects.filter(user=request.user)
+
+        # Return the filtered booking list template with bookings context
+        return render(request, 'booking_list.html', {'bookings': bookings})
+
+    else:
+        messages.error(request, "You must be logged in to view your bookings.")
+        return redirect('login')
 
 
 def booking_edit(request, booking_id):
     """
     View to edit bookings.
-    
+
     Populates booking form with relevant details.
     """
-    booking = get_object_or_404(Booking, id=booking_id, user=request.user, expired=False)
+    booking = get_object_or_404(
+        Booking, id=booking_id, user=request.user, expired=False)
 
     if request.method == "POST":
         booking_form = BookingForm(request.POST, instance=booking)
@@ -65,13 +71,14 @@ def booking_edit(request, booking_id):
         if booking_form.is_valid() and booking.user == request.user:
             booking.save()
             messages.add_message(request, messages.SUCCESS, 'Booking Updated!')
-            return HttpResponseRedirect(reverse('my-bookings'))
+            return HttpResponseRedirect(reverse('bookings.html'))
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating booking!')
-            return HttpResponseRedirect(reverse('my-bookings'))
+            messages.add_message(request, messages.ERROR,
+                                 'Error updating booking!')
+            return HttpResponseRedirect(reverse('bookings.html'))
 
     else:
         booking_form = BookingForm(instance=booking)
-        return HttpResponseRedirect(reverse('bookings'))
+        return HttpResponseRedirect(reverse('bookings.html'))
 
     return render(request, 'bookings.html', {'form': booking_form, 'booking': booking})

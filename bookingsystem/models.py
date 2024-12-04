@@ -17,8 +17,6 @@ class Booking(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE,
         related_name="bookings",
-        null=True,
-        blank=True
     )
 
     name = models.CharField(
