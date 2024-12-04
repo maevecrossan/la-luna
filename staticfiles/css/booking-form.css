@@ -115,6 +115,16 @@ input:valid+span:after {
     width: 100%;
 }
 
+.btn-edit {
+    color: white;
+    background-color: green;
+}
+
+.btn-delete {
+    color: white;
+    background-color: red;
+}
+
 @media (min-width: 540px) {
     .sm\:w-half {
         width: 50%;

@@ -72,7 +72,8 @@ def booking_edit(request, booking_id):
         # Validate the form and check ownership again for extra safety
         if booking_form.is_valid() and booking.user == request.user:
             booking.save()
-            messages.add_message(request, messages.SUCCESS, 'Booking successfully submitted.')
+            messages.add_message(request, messages.SUCCESS,
+                                 'Booking successfully submitted.')
             return redirect('my-bookings')
         else:
             messages.add_message(request, messages.ERROR,
@@ -83,4 +84,16 @@ def booking_edit(request, booking_id):
         booking_form = BookingForm(instance=booking)
 
     return render(request, 'bookings.html', {'form': booking_form, 'booking': booking})
-        
+
+
+def booking_delete(request, booking_id):
+    """
+    View to delete bookings.
+    """
+    booking = get_object_or_404(
+        Booking, id=booking_id, user=request.user)
+
+    if booking.user == request.user:
+        booking.delete()
+        messages.add_message(request, messages.SUCCESS, 'Booking deleted!')
+    return redirect('my-bookings')
