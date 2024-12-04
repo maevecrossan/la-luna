@@ -43,7 +43,6 @@ def booking_list(request):
     """
     # Check if the user is authenticated before making a query based on request.user
     if request.user.is_authenticated:
-        print(f"Authenticated user: {request.user.username}")
         # Filter bookings
         bookings = Booking.objects.filter(user=request.user)
 
@@ -62,7 +61,7 @@ def booking_edit(request, booking_id):
     Populates booking form with relevant details.
     """
     booking = get_object_or_404(
-        Booking, id=booking_id, user=request.user, expired=False)
+        Booking, id=booking_id, user=request.user)
 
     if request.method == "POST":
         booking_form = BookingForm(request.POST, instance=booking)
@@ -71,14 +70,13 @@ def booking_edit(request, booking_id):
         if booking_form.is_valid() and booking.user == request.user:
             booking.save()
             messages.add_message(request, messages.SUCCESS, 'Booking Updated!')
-            return HttpResponseRedirect(reverse('bookings.html'))
+            return redirect('my-bookings')
         else:
             messages.add_message(request, messages.ERROR,
                                  'Error updating booking!')
-            return HttpResponseRedirect(reverse('bookings.html'))
+            return redirect('my-bookings')
 
     else:
         booking_form = BookingForm(instance=booking)
-        return HttpResponseRedirect(reverse('bookings.html'))
 
     return render(request, 'bookings.html', {'form': booking_form, 'booking': booking})
