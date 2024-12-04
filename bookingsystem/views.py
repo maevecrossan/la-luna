@@ -12,6 +12,7 @@ from .forms import BookingForm
 
 # Create your views here.
 
+
 @login_required
 def booking_system(request):
     """

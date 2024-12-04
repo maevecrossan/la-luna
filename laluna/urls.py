@@ -16,14 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from bookingsystem.views import booking_system
 from laluna.views import index, menu, contact
 
 urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
-    path('bookings/', booking_system, name='bookings'),
-    path('', include('bookingsystem.urls')),
+    path('bookings/', include('bookingsystem.urls')),
     path('contact/', contact, name='contact'),
     path('', index, name='index'),
     path('menu/', menu, name='menu'),
