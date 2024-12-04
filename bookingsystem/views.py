@@ -3,7 +3,7 @@ Contains booking form logic
 """
 
 from datetime import date
-from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
