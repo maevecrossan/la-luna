@@ -66,7 +66,7 @@ class BookingForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         """
-        Prevents bookings in the past.
+        Restricts user from clicking dates in the past.
         """
         super().__init__(*args, **kwargs)
         self.fields['date'].widget.attrs['min'] = date.today().strftime('%Y-%m-%d')

@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row center">
             <div class="col-6 card mb-4 mt-3 left top">
-                <div class="card-body">
+                <div id="booking{{ booking.id }}" class="card-body">
                     <p class="card-text">
                         <strong>Name:</strong> {{ booking.name }}
                     </p>
@@ -38,6 +38,9 @@
                     </span>
                     {% endif %}
                 </div>
+                {% if user.is_authenticated and booking.user == user and not booking.expired %}
+                <a href="{% url 'booking-edit' booking.id %}" class="btn btn-edit">Edit</a>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -46,7 +49,8 @@
 
     {% else %}
     <div class="no-bookings-container">
-        <p class="lato center"> No bookings available. Please <a href="{% url 'bookings' %}"> click here </a> to make a new booking.</p>
+        <p class="lato center"> No bookings available. Please <a href="{% url 'my-bookings' %}"> click here </a> to make a
+            new booking.</p>
     </div>
     {% endif %}
 </div>
