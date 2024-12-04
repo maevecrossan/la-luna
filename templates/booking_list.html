@@ -39,8 +39,15 @@
                     {% endif %}
                 </div>
                 {% if user.is_authenticated and booking.user == user %}
-                <button><a href="{% url 'booking-edit' booking.id %}" class="btn btn-edit">Edit</a></button>
-                <button><a href="{% url 'booking-delete' booking.id %}" class="btn btn-delete">Delete</a></button>
+
+                <button class="btn btn-edit btn-outline-secondary">
+                    <a href="{% url 'booking-edit' booking.id %}">Edit</a>
+                </button>
+
+                <button class="btn btn-delete btn-outline-danger" booking_id="{{ booking.id }}">
+                    <a href="{% url 'booking-delete' booking.id %}">Delete</a>
+                </button>
+
                 {% endif %}
             </div>
         </div>
@@ -56,16 +63,17 @@
 </div>
 
 </div>
+
 <!-- Delete confirmation modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
+                <h5 class="modal-title" id="deleteModalLabel">Delete booking?</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Are you sure you want to delete your comment?
+                Are you sure you want to delete your booking?
                 This action cannot be undone.
             </div>
             <div class="modal-footer">
