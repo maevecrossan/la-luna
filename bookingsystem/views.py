@@ -21,7 +21,7 @@ def booking_system(request):
     """
 
     form = BookingForm()
-    today = date.today().strftime('%Y-%m-%d')
+    today = date.today().strftime('%d-%m-%Y')
 
     if request.method == 'POST':
         form = BookingForm(request.POST)
@@ -72,7 +72,7 @@ def booking_edit(request, booking_id):
 
         # Validate the form and check ownership again for extra safety
         if booking_form.is_valid() and booking.user == request.user:
-            booking.save()
+            booking_form.save()
             messages.add_message(request, messages.SUCCESS,
                                  'Booking successfully submitted.')
             return redirect('my-bookings')
@@ -80,7 +80,6 @@ def booking_edit(request, booking_id):
             messages.add_message(request, messages.ERROR,
                                  'Error submitting booking.')
             return redirect('my-bookings')
-
     else:
         booking_form = BookingForm(instance=booking)
 
