@@ -15,7 +15,6 @@ const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("btn-delete");
 const deleteConfirm = document.getElementById("deleteConfirm");
 
-
 /**
  * Allows users to EDIT their booking with the edit button.
  */
@@ -61,4 +60,4 @@ for (let button of deleteButtons) {
 		deleteConfirm.href = `delete_booking/${bookingId}`;
 		deleteModal.show();
 	});
-	}
+}
