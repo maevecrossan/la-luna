@@ -1,4 +1,6 @@
-// Handles CRUD functionality for users.
+/**
+ * Handles CRUD functionality for users.
+ */
 
 const editButtons = document.getElementsByClassName("btn-edit"); // Edit buttons for each booking
 const bookingName = document.getElementById("id_name"); // Booking name input field
@@ -10,7 +12,9 @@ const bookingGuests = document.getElementById("id_guests"); // Booking guests in
 const bookingForm = document.getElementById("bookingForm"); // The form used to edit bookings
 const submitButton = document.getElementById("submitButton"); // The submit button in the form
 
-// Modals for defensive programming
+/**
+ * Modals for defensive programming
+ */ 
 const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("btn-delete");
 const deleteConfirm = document.getElementById("deleteConfirm");
