@@ -42,11 +42,11 @@
                 {% if user.is_authenticated and booking.user == user %}
 
                 <button class="btn btn-edit btn-outline-secondary">
-                    <a href="{% url 'booking-edit' booking.id %}">Edit</a>
+                    <a href="{% url 'bookingsystem:booking-edit' booking.id %}">Edit</a>
                 </button>
 
                 <button class="btn btn-delete btn-outline-danger" booking_id="{{ booking.id }}">
-                    <a href="{% url 'booking-delete' booking.id %}">Delete</a>
+                    <a href="{% url 'bookingsystem:booking-delete' booking.id %}">Delete</a>
                 </button>
 
                 {% endif %}
