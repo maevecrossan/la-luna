@@ -14,7 +14,7 @@
 | ![testing screenshot](docs/testing/mob_nav_not_appearing.png) | Mobile nav toggle not rendering after adding login status message in header. | ![testing screenshot](docs/testing/mob_nav_not_appearing2.png) Fixed stylings in CSS. (Nav toggle was later centered) |
 | ![testing screenshot](docs/testing/expired_function_not_working_1.png) [testing screenshot](docs/testing/expired_function_not_working_2.png) | [testing screenshot](docs/testing/expired_function_working_1.png) [testing screenshot](docs/testing/expired_function_working_2.png) Another common issue I encountered was the expired function not working. All bookings were marked as active, despite being expired. | The function was not correctly calculating the end time for each booking, as so wasn't being flagged as expired as there was no `end_time` to compare to. I fixed this by changing `end_time` to `time`.|
 | ![testing screenshot](docs/testing/edit_booking_not_working_1.png) | Edit booking button not working correctly. | ![testing screenshot](docs/testing/edit_booking_working.png) A simple replacement of the urls from `booking.html` to `my-bookings`. |
-| ![testing screenshot](photo-link) | Issue | Fix |
+| ![testing screenshot](docs/testing/url_no_prefix.png) | Links to views not linking properly, causing errors and preventing pages from rendering. It also prohibited the POST function to execute properly. | Adding the `bookingsystem` prefix to the view names in the views.py file as well as the html file, allowing them to render properly. The POST function also began working as expected. |
 | ![testing screenshot](photo-link) | Issue | Fix |
 | ![testing screenshot](photo-link) | Issue | Fix |
 | ![testing screenshot](photo-link) | Issue | Fix |
