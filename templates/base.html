@@ -144,9 +144,10 @@
         </div>
     </header>
 
-    <div class="container-fluid">
+    <div class="container-fluid polka-dot-background">
+        
         {% if messages %}
-        <ul class="messages">
+        <ul class="messages upper lato off-white center">
             {% for message in messages %}
             <li class="{{ message.tags }}">{{ message }}</li>
             {% endfor %}
@@ -155,6 +156,7 @@
 
         
         {% block content %}
+
         {% endblock %}
     </div>
 
