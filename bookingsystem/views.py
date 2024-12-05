@@ -24,6 +24,7 @@ def booking_system(request):
     today = date.today().strftime('%d-%m-%Y')
 
     if request.method == 'POST':
+        print("Received a POST request")
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
@@ -32,11 +33,13 @@ def booking_system(request):
             messages.add_message(
                 request, messages.SUCCESS,
                 'Booking successfully submitted.')
+            print("Form submitted")
             return redirect('my-bookings')
         else:
             messages.add_message(
                 request, messages.ERROR,
                 'Error submitting booking.')
+            print("Form error")
     return render(request, 'bookings.html', {'form': form, 'today': today})
 
 
