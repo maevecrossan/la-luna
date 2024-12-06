@@ -69,7 +69,7 @@ input:invalid+span:after {
     margin-left: 10px;
     color: black;
 }
-  
+
 input:valid+span:after {
     content: '✓';
     margin-left: 10px;
@@ -132,8 +132,11 @@ input:valid+span:after {
         padding: 16px;
     }
 
-    .formbold-form-input, input[type="date"], select {
-        width: 80%; /* Make sure all inputs are full-width on smaller screens */
+    .formbold-form-input,
+    input[type="date"],
+    select {
+        width: 80%;
+        /* Make sure all inputs are full-width on smaller screens */
     }
 
     .validity {
