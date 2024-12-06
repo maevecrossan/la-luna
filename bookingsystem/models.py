@@ -92,19 +92,15 @@ class Booking(models.Model):
 
             # Convert the 'time' string to datetime.time object
             start_time_obj = datetime.strptime(self.time, '%H:%M').time()
-            print(f"Start time object: {start_time_obj}")  # Debugging: Check time object
 
             # Combine the 'date' and 'start_time_obj' into datetime object
             start_datetime = datetime.combine(self.date, start_time_obj)
-            print(f"Start datetime: {start_datetime}")  # Debugging: Check datetime
 
             # Add two hours to the start time to calculate the end time
             end_datetime = start_datetime + timedelta(hours=2)
-            print(f"End datetime: {end_datetime}")  # Debugging: Check end datetime
 
             # Store the calculated end time
             self.end_time = end_datetime.time()
-            print(f"End time saved: {self.end_time}")  # Debugging: Check end time
 
         super().save(*args, **kwargs)
 
