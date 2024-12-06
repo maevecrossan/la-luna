@@ -68,7 +68,8 @@ def booking_edit(request, booking_id):
     Populates booking form with relevant details.
     """
     booking = get_object_or_404(
-        Booking, id=booking_id, user=request.user)
+        Booking, id=booking_id, user=request.user
+        )
 
     if request.method == "POST":
         booking_form = BookingForm(request.POST, instance=booking)

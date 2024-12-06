@@ -39,17 +39,17 @@
                     </span>
                     {% endif %}
                 </div>
+
                 {% if user.is_authenticated and booking.user == user %}
 
-                <button class="btn btn-edit btn-outline-secondary">
-                    <a href="{% url 'bookingsystem:booking-edit' booking.id %}">Edit</a>
-                </button>
+                <a href="{% url 'bookingsystem:booking-edit' booking.id %}" id="edit-booking"class="btn btn-edit btn-outline-secondary">
+                    Edit
+                </a>
 
-                <button class="btn btn-delete btn-outline-danger" booking_id="{{ booking.id }}">
-                    <a href="{% url 'bookingsystem:booking-delete' booking.id %}">Delete</a>
-                </button>
+                <a href="#" id="delete-booking" class="btn btn-delete btn-outline-danger" booking_id="{{ booking.id }}">Delete</a>
 
                 {% endif %}
+
             </div>
         </div>
     </div>
@@ -74,18 +74,14 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Are you sure you want to delete your booking?
-                This action cannot be undone.
+                Are you sure you want to delete your booking? This action cannot be undone.
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a id="deleteConfirm" href="#" class="btn
-          btn-danger">Delete</a>
+                <a id="deleteConfirm" href="{% url 'bookingsystem:my-bookings' %}" class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>
 </div>
-
-<script src="{% static 'js/my-bookings-crud.js' %}"></script>
 
 {% endblock content %}

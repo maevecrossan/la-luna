@@ -145,7 +145,7 @@
     </header>
 
     <div class="container-fluid polka-dot-background">
-        
+
         {% if messages %}
         <ul class="messages upper lato off-white center">
             {% for message in messages %}
@@ -154,7 +154,7 @@
         </ul>
         {% endif %}
 
-        
+
         {% block content %}
 
         {% endblock %}
@@ -250,6 +250,10 @@
 
     <script src="{% static 'js/booking-confirmation-email.js' %}"></script>
 
+    <script src="{% static 'js/my-bookings-crud.js' %}"></script>
+
+    <script src="{% static 'js/base.js' %}"></script>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
@@ -258,7 +262,7 @@
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
 
-    <script src="{% static 'js/base.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <!--lozad.js-->
     <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
