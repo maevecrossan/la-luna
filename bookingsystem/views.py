@@ -78,11 +78,11 @@ def booking_edit(request, booking_id):
             booking_form.save()
             messages.add_message(request, messages.SUCCESS,
                                  'Booking successfully submitted.')
-            return redirect('my-bookings')
+            return redirect('bookingsystem:my-bookings')
         else:
             messages.add_message(request, messages.ERROR,
                                  'Error submitting booking.')
-            return redirect('my-bookings')
+            return redirect('bookingsystem:my-bookings')
     else:
         booking_form = BookingForm(instance=booking)
 
@@ -99,4 +99,4 @@ def booking_delete(request, booking_id):
     if booking.user == request.user:
         booking.delete()
         messages.add_message(request, messages.SUCCESS, 'Booking deleted!')
-    return redirect('my-bookings')
+    return redirect('bookingsystem:my-bookings')
