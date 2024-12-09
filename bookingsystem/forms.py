@@ -40,6 +40,7 @@ class BookingForm(forms.ModelForm):
                     }
                 ),
             'date': forms.DateInput(
+                format='%d-%m-%Y',
                 attrs={
                     'id': 'date',
                     'name': 'date',
