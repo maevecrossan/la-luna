@@ -53,15 +53,22 @@ for (let button of editButtons) {
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-    const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
-    const deleteButtons = document.getElementsByClassName("btn-delete");
-    const deleteConfirm = document.getElementById("deleteConfirm");
+    const deleteModalElement = document.getElementById("deleteModal");
+    if (deleteModalElement) {
+        // Initialize the modal only if it exists
+        const deleteModal = new bootstrap.Modal(deleteModalElement);
 
-    for (let button of deleteButtons) {
-        button.addEventListener("click", (e) => {
-            let bookingId = e.target.getAttribute("booking_id");
-            deleteConfirm.href = `/bookings/delete-booking/${bookingId}/`;
-            deleteModal.show(); // Show the modal
-        });
+        // Add event listeners for delete buttons
+        const deleteButtons = document.getElementsByClassName("btn-delete");
+        for (let button of deleteButtons) {
+            button.addEventListener("click", (e) => {
+                let bookingId = e.target.getAttribute("booking_id");
+                const deleteConfirm = document.getElementById("deleteConfirm");
+                if (deleteConfirm) {
+                    deleteConfirm.href = `delete_booking/${bookingId}`;
+                }
+                deleteModal.show();
+            });
+        }
     }
 });
