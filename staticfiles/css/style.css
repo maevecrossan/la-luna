@@ -62,10 +62,6 @@ body {
     justify-content: right;
 }
 
-.off-white {
-    color: #d8d7d9;
-}
-
 .upper {
     text-transform: uppercase;
 }
@@ -101,14 +97,12 @@ body {
     background-color: #592828;
 }
 
-.footer-title {
-    color: #bf7b75;
-    font-size: 2.2em;
-    font-weight: 900;
-}
-
 #mobile-navigation {
     display: none;
+}
+
+.off-white {
+    color: #d8d7d9;
 }
 
 /* When active, show mobile menu */
@@ -503,11 +497,22 @@ footer .col {
     padding: 20px 40px; /* Add some padding inside the footer */
 }
 
+
+.footer-title {
+    color: #bf7b75;
+    font-size: 2.2em;
+    font-weight: 900;
+}
+
 .login-status,
 .footer-contact-info,
 .footer-link {
     font-size: 1.3em;
     padding: 0.4em;
+}
+
+.footer-link:hover {
+    color: #bf7b75;
 }
 
 .ta-center {
