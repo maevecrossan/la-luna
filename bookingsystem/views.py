@@ -12,7 +12,6 @@ from .forms import BookingForm
 
 # Create your views here.
 
-
 @login_required
 def booking_system(request):
     """
@@ -24,7 +23,6 @@ def booking_system(request):
     today = date.today().strftime('%d-%m-%Y')
 
     if request.method == 'POST':
-        print("Received a POST request") #debugging
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
@@ -33,13 +31,11 @@ def booking_system(request):
             messages.add_message(
                 request, messages.SUCCESS,
                 'Booking successfully submitted.')
-            print("Form submitted") #debugging
             return redirect('bookingsystem:my-bookings')
         else:
             messages.add_message(
                 request, messages.ERROR,
                 'Error submitting booking.')
-            print("Form error") #debugging
     return render(request, 'bookings.html', {'form': form, 'today': today})
 
 
@@ -67,27 +63,33 @@ def booking_edit(request, booking_id):
 
     Populates booking form with relevant details.
     """
-    booking = get_object_or_404(
-        Booking, id=booking_id, user=request.user
-        )
+
+    # Retrieve the booking instance
+    booking = get_object_or_404(Booking, id=booking_id, user=request.user)
 
     if request.method == "POST":
-        booking_form = BookingForm(request.POST, instance=booking)
+        # Populate the form with POST data and the existing booking instance
+        booking_form = BookingForm(data=request.POST, instance=booking)
 
         # Validate the form and check ownership again for extra safety
-        if booking_form.is_valid() and booking.user == request.user:
+        if booking_form.is_valid():
             booking_form.save()
             messages.add_message(request, messages.SUCCESS,
-                                 'Booking successfully submitted.')
+                                 'Booking successfully updated.')
             return redirect('bookingsystem:my-bookings')
         else:
             messages.add_message(request, messages.ERROR,
-                                 'Error submitting booking.')
-            return redirect('bookingsystem:my-bookings')
+                                 'Error updating booking.')
     else:
+        # Instantiate the form with the existing booking instance
         booking_form = BookingForm(instance=booking)
 
-    return render(request, 'bookings.html', {'form': booking_form, 'booking': booking})
+     # Render the form template with additional `is_edit` context
+    return render(request, 'bookings.html', {
+        'form': booking_form,
+        'booking': booking,
+        'is_edit': True  # Set to True when editing
+    })
 
 
 def booking_delete(request, booking_id):
