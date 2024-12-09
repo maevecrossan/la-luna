@@ -60,12 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Add event listeners for delete buttons
         const deleteButtons = document.getElementsByClassName("btn-delete");
+
         for (let button of deleteButtons) {
             button.addEventListener("click", (e) => {
                 let bookingId = e.target.getAttribute("booking_id");
                 const deleteConfirm = document.getElementById("deleteConfirm");
                 if (deleteConfirm) {
-                    deleteConfirm.href = `delete_booking/${bookingId}`;
+                    deleteConfirm.href = `/bookings/delete-booking/${bookingId}`;
                 }
                 deleteModal.show();
             });
