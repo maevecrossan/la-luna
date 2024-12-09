@@ -29,7 +29,6 @@ class Booking(models.Model):
         max_length=250,
         null=False,
         blank=False,
-        default='no-reply@example.com'
     )
 
     phone_number = models.CharField(
