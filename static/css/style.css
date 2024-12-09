@@ -62,10 +62,6 @@ body {
     justify-content: right;
 }
 
-.off-white {
-    color: #d8d7d9;
-}
-
 .upper {
     text-transform: uppercase;
 }
@@ -109,6 +105,10 @@ body {
 
 #mobile-navigation {
     display: none;
+}
+
+.off-white {
+    color: #d8d7d9;
 }
 
 /* When active, show mobile menu */
@@ -508,6 +508,10 @@ footer .col {
 .footer-link {
     font-size: 1.3em;
     padding: 0.4em;
+}
+
+a.footer-link:hover {
+    color: #bf7b75;
 }
 
 .ta-center {
