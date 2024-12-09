@@ -4,6 +4,7 @@ from datetime import date
 from django import forms
 from .models import Booking
 
+
 class BookingForm(forms.ModelForm):
     """
     Booking Form Template
@@ -19,28 +20,27 @@ class BookingForm(forms.ModelForm):
                 attrs={
                     'id': 'name',
                     'name': 'name',
-                    'placeholder': 'Full Name', 
+                    'placeholder': 'Full Name',
                     'class': 'formbold-form-input'
-                    }
-                ),
+                }
+            ),
             'phone_number': forms.TextInput(
                 attrs={
                     'id': 'phone',
                     'name': 'phone',
-                    'placeholder': 'Phone Number', 
+                    'placeholder': 'Phone Number',
                     'class': 'formbold-form-input'
-                    }
-                ),
+                }
+            ),
             'email': forms.EmailInput(
                 attrs={
                     'id': 'email',
                     'name': 'email',
-                    'placeholder': 'Email Address', 
+                    'placeholder': 'Email Address',
                     'class': 'formbold-form-input'
-                    }
-                ),
+                }
+            ),
             'date': forms.DateInput(
-                format='%d-%m-%Y',
                 attrs={
                     'id': 'date',
                     'name': 'date',
@@ -54,20 +54,21 @@ class BookingForm(forms.ModelForm):
                     'name': 'time',
                     'type': 'time',
                     'class': 'formbold-form-input'
-                    }
-                ),
+                }
+            ),
             'guests': forms.Select(
                 attrs={
                     'id': 'guests',
                     'name': 'guests',
                     'class': 'formbold-form-input'
-                    }
-                ),
-            }
+                }
+            ),
+        }
 
     def __init__(self, *args, **kwargs):
         """
         Restricts user from clicking dates in the past.
         """
         super().__init__(*args, **kwargs)
-        self.fields['date'].widget.attrs['min'] = date.today().strftime('%Y-%m-%d')
+        self.fields['date'].widget.attrs['min'] = date.today().strftime(
+            '%Y-%m-%d')

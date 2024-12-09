@@ -5,27 +5,14 @@
 
 <!-- FORM -->
 <div class="formbold-main-wrapper polka-dot-background">
-	<!-- displaying Django messages -->
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 offset-md-2 upper lato off-white center">
-				{% for message in messages %}
-				<div class="alert {{ message.tags }} alert-dismissible
-		  fade show" id="msg" role="alert">
-					{{ message | safe }}
-					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>
-				{% endfor %}
-			</div>
-		</div>
-	</div>
+
 	<!-- Author: FormBold Team -->
 	<!-- Learn More: https://formbold.com -->
 	<div class="formbold-form-wrapper lato">
 		<h2 class="center form-title italiana"> Book with us today! </h2>
 
 		{% if user.is_authenticated %}
-		<p class="lato center"> Already have a booking? Go to <a href="{% url 'bookingsystem:my-bookings' %}"> my
+		<p class="lato content ta-center"> Already have a booking? Go to <a href="{% url 'bookingsystem:my-bookings' %}"> my
 				bookings </a> to view and modify. </p>
 		{% endif %}
 
