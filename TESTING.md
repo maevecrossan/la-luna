@@ -16,6 +16,8 @@
 | ![testing screenshot](docs/testing/edit_booking_not_working_1.png) | Edit booking button not working correctly. | ![testing screenshot](docs/testing/edit_booking_working.png) A simple replacement of the urls from `booking.html` to `my-bookings`. |
 | ![testing screenshot](docs/testing/url_no_prefix.png) | Links to views not linking properly, causing errors and preventing pages from rendering. It also prohibited the POST function to execute properly. | Adding the `bookingsystem` prefix to the view names in the views.py file as well as the html file, allowing them to render properly. The POST function also began working as expected. |
 | ![testing screenshot](docs/testing/delete_modal_working.png) | I ran into some difficulty when attempting to implement a deletion confirmation modal. This was largely due to me not including Bootstrap's JavaScript. | By adding the script file and moving `my-bookings-crud.js` back to the base.html file, the modal appeared correctly. I did have to alter the url attached to the modal delete button to contain the prefix mentioned in the previous fix. |
+| ![testing screenshot](docs/testing/modal_on_edit_page.png) | An console error was appearing when editing a booking regarding the delete modal. | ![testing screenshot](docs/testing/modal_conditional.png) The modal was made conditional and was only to be triggered when it is present. |
+| ![testing screenshot](photo-link) | Issue | Fix |
 | ![testing screenshot](photo-link) | Issue | Fix |
 | ![testing screenshot](photo-link) | Issue | Fix |
 | ![testing screenshot](photo-link) | Issue | Fix |
