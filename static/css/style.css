@@ -97,12 +97,6 @@ body {
     background-color: #592828;
 }
 
-.footer-title {
-    color: #bf7b75;
-    font-size: 2.2em;
-    font-weight: 900;
-}
-
 #mobile-navigation {
     display: none;
 }
@@ -503,6 +497,13 @@ footer .col {
     padding: 20px 40px; /* Add some padding inside the footer */
 }
 
+
+.footer-title {
+    color: #bf7b75;
+    font-size: 2.2em;
+    font-weight: 900;
+}
+
 .login-status,
 .footer-contact-info,
 .footer-link {
@@ -510,7 +511,7 @@ footer .col {
     padding: 0.4em;
 }
 
-a.footer-link:hover {
+.footer-link:hover {
     color: #bf7b75;
 }
 
