@@ -13,9 +13,10 @@ class ContactForm(forms.ModelForm):
         Contact form fields
         """
         model = Contact
-        fields = ['contact_name', 'contact_phone_number', 'contact_email', 'contact_message']
+        fields = ['contact_name', 'contact_phone_number',
+                  'contact_email', 'contact_message']
         widgets = {
-            'name': forms.TextInput(
+            'contact_name': forms.TextInput(
                 attrs={
                     'id': 'contact_name',
                     'name': 'contact_name',
@@ -23,7 +24,7 @@ class ContactForm(forms.ModelForm):
                     'class': 'formbold-form-input'
                 }
             ),
-            'phone_number': forms.TextInput(
+            'contact_phone_number': forms.TextInput(
                 attrs={
                     'id': 'contact_phone_number',
                     'name': 'contact_phone_number',
@@ -31,7 +32,7 @@ class ContactForm(forms.ModelForm):
                     'class': 'formbold-form-input'
                 }
             ),
-            'email': forms.EmailInput(
+            'contact_email': forms.EmailInput(
                 attrs={
                     'id': 'contact_email',
                     'name': 'contact_email',
@@ -39,5 +40,12 @@ class ContactForm(forms.ModelForm):
                     'class': 'formbold-form-input'
                 }
             ),
-            'message': forms.Textarea()
+            'contact_message': forms.Textarea(
+                attrs={
+                    'id': 'contact_message',
+                    'placeholder': 'Your Message',
+                    'class': 'formbold-form-input',
+                    'rows': 4,
+                }
+            )
         }

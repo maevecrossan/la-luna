@@ -1,48 +1,72 @@
 {% extends "base.html" %}
 {% block content %}
+{% load crispy_forms_tags %}
 
 
 <div class="formbold-main-wrapper polka-dot-background">
+	<!-- displaying Django messages -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2 upper lato off-white center">
+				{% for message in messages %}
+				<div class="alert {{ message.tags }} alert-dismissible
+			  fade show" id="msg" role="alert">
+					{{ message | safe }}
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	
 	<!-- Author: FormBold Team -->
 	<!-- Learn More: https://formbold.com -->
 	<div class="formbold-form-wrapper lato">
 		<h2 class="center form-title italiana"> Contact Us! </h2>
 		<p class="form-subtext center"> We will do our best to get back to you as soon as possible. </p>
-		<form action="/bookings" onsubmit="return sendBookingConfirmation(this);" method="POST">
-			
+		<form method="POST">
+
 			{% csrf_token %}
-			
+
 			<div class="formbold-mb-5">
-				<label for="contact_name" class="formbold-form-label "> Full Name </label>
-				<input type="text" name="contact_name" id="contact_name" placeholder="Full Name" class="formbold-form-input" required />
-				<span class="validity"></span>
+				<label for="contact_name" class="formbold-form-label">
+					Full Name
+				</label>
+
+				{{ form.contact_name }}
+
 			</div>
 
 			<div class="formbold-mb-5">
-				<label for="contact_phone_number" class="formbold-form-label"> Phone Number </label>
-				<input type="text" name="contact_phone_number" id="contact_phone_number" placeholder="Phone Number"
-					class="formbold-form-input" required />
+				<label for="contact_phone_number" class="formbold-form-label">
+					Phone Number
+				</label>
+
+				{{ form.contact_phone_number }}
+
 			</div>
 
 			<div class="formbold-mb-5">
 				<label for="contact_email" class="formbold-form-label"> Email Address </label>
-				<input type="email" name="contact_email" id="contact_email" placeholder="Email" class="formbold-form-input"
-					required />
+
+				{{ form.contact_email }}
+
 			</div>
 
-            <div class="formbold-mb-5">
-				<label for="contact_message" class="formbold-form-label"> Your Message </label>
-				<textarea row="5" name="contact_message" id="contact_message" placeholder="Type your message here" class="formbold-form-input"
-					required></textarea>
+			<div class="formbold-mb-5">
+				<label for="contact_message" class="formbold-form-label">
+					Your Message
+				</label>
+
+				{{ form.contact_message | safe }}
+
 			</div>
-			
+
 			<div>
-				<button class="formbold-btn"> SEND </button>
+				<button class="formbold-btn"> Send </button>
 			</div>
 		</form>
 	</div>
 </div>
-
-<div id="map"></div>
 
 {% endblock %}
