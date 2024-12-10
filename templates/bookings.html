@@ -12,15 +12,14 @@
 		<h2 class="center form-title italiana"> Book with us today! </h2>
 
 		{% if user.is_authenticated %}
-		<p class="lato content ta-center"> Already have a booking? Go to <a href="{% url 'bookingsystem:my-bookings' %}"> my
+		<p class="lato content ta-center"> Already have a booking? Go to <a
+				href="{% url 'bookingsystem:my-bookings' %}"> my
 				bookings </a> to view and modify. </p>
 		{% endif %}
 
 		<form action="{% if is_edit %}{% url 'bookingsystem:booking-edit' booking.id %}
 		{% else %}{% url 'bookingsystem:bookings' %}
-		{% endif %}" 
-		onsubmit="return sendBookingConfirmation(this);"
-			method="POST">
+		{% endif %}" onsubmit="return sendBookingConfirmation(this);" method="POST">
 
 			{% csrf_token %}
 
@@ -29,6 +28,10 @@
 
 				{{ form.name }}
 
+				{% for error in form.name.errors %}
+				<div class="error">{{ error }}</div>
+				{% endfor %}
+
 			</div>
 
 			<div class="formbold-mb-5">
@@ -36,12 +39,20 @@
 
 				{{ form.phone_number }}
 
+				{% for error in form.phone_number.errors %}
+				<div class="error">{{ error }}</div>
+				{% endfor %}
+
 			</div>
 
 			<div class="formbold-mb-5">
 				<label for="email" class="formbold-form-label"> Email Address </label>
 
 				{{ form.email }}
+
+				{% for error in form.email.errors %}
+				<div class="error">{{ error }}</div>
+				{% endfor %}
 
 			</div>
 
@@ -52,6 +63,10 @@
 
 						{{ form.date.as_widget }}
 
+						{% for error in form.date.errors %}
+						<div class="error">{{ error }}</div>
+						{% endfor %}
+
 					</div>
 				</div>
 
@@ -60,6 +75,10 @@
 						<label for="time" class="formbold-form-label"> Choose a time:</label>
 
 						{{ form.time }}
+
+						{% for error in form.time.errors %}
+						<div class="error">{{ error }}</div>
+						{% endfor %}
 
 					</div>
 				</div>
@@ -71,13 +90,17 @@
 
 				{{ form.guests }}
 
+				{% for error in form.guests.errors %}
+				<div class="error">{{ error }}</div>
+				{% endfor %}
+
 				<p class="form-subtext"><em> For bookings of nine or more guests, please contact us directly. </em></p>
 
 			</div>
 
 			<div>
-				<button id="submitbutton" type="submit" class="formbold-btn"> 
-					{% if is_edit %} Update {% else %} Make Reservation {% endif %} 
+				<button id="submitbutton" type="submit" class="formbold-btn">
+					{% if is_edit %} Update {% else %} Make Reservation {% endif %}
 				</button>
 			</div>
 		</form>
