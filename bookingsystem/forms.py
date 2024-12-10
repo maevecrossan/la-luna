@@ -1,4 +1,4 @@
-"""This file houses the form django template."""
+"""This file houses the booking form django template."""
 
 from datetime import date
 from django import forms
