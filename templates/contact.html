@@ -18,7 +18,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- Author: FormBold Team -->
 	<!-- Learn More: https://formbold.com -->
 	<div class="formbold-form-wrapper lato">
@@ -35,6 +35,10 @@
 
 				{{ form.contact_name }}
 
+				{% for error in form.contact_name.errors %}
+				<div class="error">{{ error }}</div>
+				{% endfor %}
+
 			</div>
 
 			<div class="formbold-mb-5">
@@ -44,12 +48,20 @@
 
 				{{ form.contact_phone_number }}
 
+				{% for error in form.contact_phone_number.errors %}
+				<div class="error">{{ error }}</div>
+				{% endfor %}
+
 			</div>
 
 			<div class="formbold-mb-5">
 				<label for="contact_email" class="formbold-form-label"> Email Address </label>
 
 				{{ form.contact_email }}
+
+				{% for error in form.contact_email.errors %}
+				<div class="error">{{ error }}</div>
+				{% endfor %}
 
 			</div>
 
@@ -58,7 +70,11 @@
 					Your Message
 				</label>
 
-				{{ form.contact_message | safe }}
+				{{ form.contact_message }}
+
+				{% for error in form.contact_message.errors %}
+				<div class="error">{{ error }}</div>
+				{% endfor %}
 
 			</div>
 

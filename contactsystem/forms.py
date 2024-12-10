@@ -29,7 +29,8 @@ class ContactForm(forms.ModelForm):
                     'id': 'contact_phone_number',
                     'name': 'contact_phone_number',
                     'placeholder': 'Phone Number',
-                    'class': 'formbold-form-input'
+                    'class': 'formbold-form-input',
+                    'pattern': r'^\+?1?\d{9,15}$',
                 }
             ),
             'contact_email': forms.EmailInput(
