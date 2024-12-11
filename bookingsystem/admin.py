@@ -1,15 +1,25 @@
+""" Sets paramaters for the booking app for administrative viewing. """
+
 from django.contrib import admin
 from .models import Booking
 from .forms import BookingForm
 
+
 class BookingAdmin(admin.ModelAdmin):
     """
-    Set parameters and layout for admin page.
+    Set parameters and layout for booking app on the admin page.
     """
     form = BookingForm
-    list_display = ('name', 'date', 'time', 'guests', 'email', 'phone_number', 'expired_status')
-    list_filter = ('date', 'time')  # Add filters for better organization
-    search_fields = ('name', 'email')  # Allow searching by these fields
+    list_display = (
+        'name', 'date', 'time', 'guests',
+        'email', 'phone_number', 'expired_status'
+        )
+    list_filter = (
+        'date', 'time'
+        )
+    search_fields = (
+        'name', 'email'
+        )
 
     @admin.display(boolean=True, description='Expired')
     def expired_status(self, obj):
