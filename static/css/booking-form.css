@@ -1,15 +1,10 @@
 /* Contains specific styles for the booking form, 'My Bookings' page
-as well as AllAuth pages (login/lout and register).
+as well as AllAuth pages (login/out and register).
 Generic styles are inherited from style.css
 */
 
-form {
-    padding-left: 60px;
-}
-
 .formbold-mb-5 {
     margin-bottom: 20px;
-
 }
 
 .formbold-pt-3 {
@@ -41,11 +36,12 @@ form {
     font-size: 20px;
     color: #592828;
     margin-bottom: 12px;
-    margin-right: 10px;
+    margin-left: 15px;
 }
 
 .formbold-form-input {
-    padding: 12px 24px;
+    padding: 12px 40px;
+    margin-left: 13px;
     border-radius: 6px;
     border: 1px solid #e0e0e0;
     background: white;
