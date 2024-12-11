@@ -1,7 +1,10 @@
+""" This file houses the contact model """
+
 from django.db import models
 from django.core.validators import RegexValidator
 
 # Create your models here.
+
 
 class Contact(models.Model):
     """Model for contact form submission"""
@@ -17,9 +20,10 @@ class Contact(models.Model):
         validators=[  # Source: geeksforgeeks.org
             RegexValidator(
                 regex=r'^\+?1?\d{9,15}$',
-                message="Please enter a valid phone number. Up to 15 digits allowed."
+                message="Please enter a valid phone number. \
+                Up to 15 digits allowed."
             )
-        ]  # minimal validation added as this is not main method of contact
+        ]
     )
 
     contact_email = models.EmailField(
