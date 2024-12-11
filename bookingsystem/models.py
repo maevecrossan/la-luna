@@ -1,4 +1,9 @@
-"""This file houses the booking model."""
+"""
+This file houses the booking model.
+
+Also dealt with below is the CRUD functionality.
+
+"""
 
 from datetime import datetime, timedelta
 from django.db import models
