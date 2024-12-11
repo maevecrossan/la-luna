@@ -15,7 +15,7 @@ from .forms import BookingForm
 @login_required
 def booking_system(request):
     """
-    Handles booking form submission. 
+    Handles booking form submission.
     Saves valid data to the database.
     """
 
@@ -44,7 +44,8 @@ def booking_list(request):
     """
     Allows booking_list.html to display bookings for authenticated users.
     """
-    # Check if the user is authenticated before making a query based on request.user
+    # Check if the user is authenticated before making a query
+    # based on request.user
     if request.user.is_authenticated:
         # Filter bookings
         bookings = Booking.objects.filter(user=request.user)
@@ -84,7 +85,7 @@ def booking_edit(request, booking_id):
         # Instantiate the form with the existing booking instance
         booking_form = BookingForm(instance=booking)
 
-     # Render the form template with additional `is_edit` context
+    # Render the form template with additional `is_edit` context
     return render(request, 'bookings.html', {
         'form': booking_form,
         'booking': booking,
