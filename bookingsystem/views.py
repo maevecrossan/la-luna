@@ -48,7 +48,8 @@ def booking_list(request):
     # based on request.user
     if request.user.is_authenticated:
         # Filter bookings
-        bookings = Booking.objects.filter(user=request.user)
+        bookings = Booking.objects.filter(
+            user=request.user).order_by('-date', '-time')
 
         # Return the filtered booking list template with bookings context
         return render(request, 'booking_list.html', {'bookings': bookings})
