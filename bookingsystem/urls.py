@@ -10,11 +10,11 @@ app_name = 'bookingsystem'
 urlpatterns = [
     path(
         "",
-        views.booking_system, 
+        views.booking_system,
         name="bookings"
         ),
 
-    path('delete-booking/<int:booking_id>/', 
+    path('delete-booking/<int:booking_id>/',
          views.booking_delete,
          name='booking-delete'),
 
