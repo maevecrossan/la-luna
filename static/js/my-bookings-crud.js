@@ -22,14 +22,6 @@ for (let button of editButtons) {
 		let bookingId = e.target.getAttribute("booking_id"); // Get the booking's ID from the button
 		let bookingContainer = document.getElementById(`booking${bookingId}`); // Container for the booking data
 
-		// Populate the form fields with the current booking details
-		bookingName.value = name;
-		bookingEmail.value = email;
-		bookingPhoneNumber.value = phone_number;
-		bookingDate.value = date;
-		bookingTime.value = time;
-		bookingGuests.value = guests;
-
 		// Fetch booking details from the container (assuming each booking has its own container)
 		let name = bookingContainer.querySelector(".booking-name").innerText;
 		let email = bookingContainer.querySelector(".booking-email").innerText;
@@ -37,6 +29,14 @@ for (let button of editButtons) {
 		let date = bookingContainer.querySelector(".booking-date").innerText;
 		let time = bookingContainer.querySelector(".booking-time").innerText;
 		let guests = bookingContainer.querySelector(".booking-guests").innerText;
+
+		// Populate the form fields with the current booking details
+		bookingName.value = name;
+		bookingEmail.value = email;
+		bookingPhoneNumber.value = phone_number;
+		bookingDate.value = date;
+		bookingTime.value = time;
+		bookingGuests.value = guests;
 
 		// Change submit button text to "Update" to reflect that this is an update operation
 		submitButton.innerText = "Update";
@@ -53,23 +53,23 @@ for (let button of editButtons) {
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-    const deleteModalElement = document.getElementById("deleteModal");
-    if (deleteModalElement) {
-        // Initialize the modal only if it exists
-        const deleteModal = new bootstrap.Modal(deleteModalElement);
+	const deleteModalElement = document.getElementById("deleteModal");
+	if (deleteModalElement) {
+		// Initialize the modal only if it exists
+		const deleteModal = new bootstrap.Modal(deleteModalElement);
 
-        // Add event listeners for delete buttons
-        const deleteButtons = document.getElementsByClassName("btn-delete");
+		// Add event listeners for delete buttons
+		const deleteButtons = document.getElementsByClassName("btn-delete");
 
-        for (let button of deleteButtons) {
-            button.addEventListener("click", (e) => {
-                let bookingId = e.target.getAttribute("booking_id");
-                const deleteConfirm = document.getElementById("deleteConfirm");
-                if (deleteConfirm) {
-                    deleteConfirm.href = `/bookings/delete-booking/${bookingId}`;
-                }
-                deleteModal.show();
-            });
-        }
-    }
+		for (let button of deleteButtons) {
+			button.addEventListener("click", (e) => {
+				let bookingId = e.target.getAttribute("booking_id");
+				const deleteConfirm = document.getElementById("deleteConfirm");
+				if (deleteConfirm) {
+					deleteConfirm.href = `/bookings/delete-booking/${bookingId}`;
+				}
+				deleteModal.show();
+			});
+		}
+	}
 });
