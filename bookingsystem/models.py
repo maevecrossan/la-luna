@@ -36,7 +36,8 @@ class Booking(models.Model):
         validators=[  # Source: geeksforgeeks.org
             RegexValidator(
                 regex=r'^\+?1?\d{9,15}$',
-                message="Please enter a valid phone number. Up to 15 digits allowed."
+                message="Please enter a valid phone number.\
+                    Up to 15 digits allowed."
             )
         ]  # minimal validation added as this is not main method of contact
     )
@@ -87,7 +88,6 @@ class Booking(models.Model):
         """
 
         if self.time:
-            print(f"Start time string: {self.time}")  # Debugging: Check time value
 
             # Convert the 'time' string to datetime.time object
             start_time_obj = datetime.strptime(self.time, '%H:%M').time()
@@ -109,7 +109,9 @@ class Booking(models.Model):
         """
         if self.time:
             start_datetime = (
-                datetime.combine(self.date, datetime.strptime(self.time, '%H:%M').time())
+                datetime.combine(
+                    self.date, datetime.strptime(self.time, '%H:%M').time()
+                    )
                 )
             end_datetime = start_datetime + timedelta(hours=2)
 
@@ -125,7 +127,8 @@ class Booking(models.Model):
             )
 
             # Calculate total number of guests during overlapping time slots
-            total_guests = sum(int(booking.guests) for booking in overlapping_bookings)
+            total_guests = sum(
+                int(booking.guests) for booking in overlapping_bookings)
 
             # Check if adding this booking would exceed capacity
             if total_guests + int(self.guests) > 40:
@@ -151,8 +154,11 @@ class Booking(models.Model):
             start_datetime = datetime.combine(self.date, start_time_obj)
 
             # Make sure the datetime is timezone-aware
-            local_timezone = timezone.get_current_timezone()  # Get the current timezone
-            start_datetime = timezone.make_aware(start_datetime, timezone=local_timezone)
+            local_timezone = timezone.get_current_timezone()
+            start_datetime = timezone.make_aware(
+                start_datetime,
+                timezone=local_timezone
+                )
 
             # Compare current time with the booking's start time
             return timezone.now() > start_datetime
