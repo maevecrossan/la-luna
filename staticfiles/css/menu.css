@@ -28,7 +28,6 @@
     font-size: 1.8em;
     font-weight: 900;
     padding: 1.5em 0;
-    text-decoration: underline;
     text-align: center;
 }
 
@@ -53,12 +52,12 @@
 }
 
 .menu-item-allergens {
-    color: #99635e;
+    color: #bf7b75;
     font-size: 1.1em;
 }
 
 .menu-item-price {
-    color: #bf7b75;
+    color: #d8b8b8;
     font-size: 1.1em;
 }
 

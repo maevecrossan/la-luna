@@ -39,15 +39,7 @@ Generic styles are inherited from style.css
     margin-right: 10px;
 }
 
-.formbold-form-label-2 {
-    font-weight: 600;
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-.formbold-form-input,
-input {
-    width: 80%;
+.formbold-form-input {
     padding: 12px 24px;
     border-radius: 6px;
     border: 1px solid #e0e0e0;
@@ -57,23 +49,6 @@ input {
     color: black;
     outline: none;
     resize: none;
-}
-
-.formbold-form-input:focus {
-    border-color: #592828;
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
-}
-
-input:invalid+span:after {
-    content: '✖';
-    margin-left: 10px;
-    color: black;
-}
-
-input:valid+span:after {
-    content: '✓';
-    margin-left: 10px;
-    color: rgb(36, 113, 36);
 }
 
 .formbold-btn {
@@ -113,6 +88,15 @@ input:valid+span:after {
 
 .w-full {
     width: 100%;
+}
+
+.inline-link {
+    color: #592828;
+}
+
+.inline-link:hover {
+    color: #592828;
+    text-decoration: underline;
 }
 
 @media (min-width: 540px) {

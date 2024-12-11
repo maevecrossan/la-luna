@@ -50,6 +50,10 @@ body {
     background-color: #432020;
 }
 
+.chocolate-background {
+    background-color: #311919;
+}
+
 .center {
     display: flex;
     align-items: center;
