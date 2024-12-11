@@ -1,3 +1,5 @@
+""" This file houses the view for the contact form """
+
 from django.shortcuts import render
 from django.contrib import messages
 from .forms import ContactForm
@@ -7,7 +9,7 @@ from .forms import ContactForm
 
 def contact_system(request):
     """
-    Handles booking form submission. 
+    Handles booking form submission.
     Saves valid data to the database.
     """
 
@@ -15,7 +17,7 @@ def contact_system(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save() # Save the form to the database
+            form.save()  # Save the form to the database
             messages.add_message(
                 request, messages.SUCCESS,
                 'Message successfully sent.')
