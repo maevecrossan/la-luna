@@ -81,9 +81,9 @@ class Booking(models.Model):
 
     def save(self, *args, **kwargs):
 
-        """Calculates the end time (adds two hours to 
+        """Calculates the end time (adds two hours to
         'time') and stores it to the database.
-        
+
         Database use only (not visible to admin or user).
         """
 
@@ -133,7 +133,7 @@ class Booking(models.Model):
             # Check if adding this booking would exceed capacity
             if total_guests + int(self.guests) > 40:
                 raise ValidationError(
-                    "We cannot accommodate your group size at this time." 
+                    "We cannot accommodate your group size at this time."
                     "Please reduce your guest count or try another time slot.")
 
     @property
@@ -141,7 +141,7 @@ class Booking(models.Model):
         """
         If reservation time and date has passed current time and date,
         booking will be marked 'expired'.
-        
+
         Otherwise will be labelled as 'active'.
         """
         if self.date and self.time:
