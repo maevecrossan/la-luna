@@ -3,8 +3,13 @@ as well as AllAuth pages (login/lout and register).
 Generic styles are inherited from style.css
 */
 
+form {
+    padding-left: 60px;
+}
+
 .formbold-mb-5 {
     margin-bottom: 20px;
+
 }
 
 .formbold-pt-3 {
