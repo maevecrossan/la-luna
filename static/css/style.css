@@ -179,7 +179,6 @@ h1 {
 
 /* Code borrowed from "https://css-tricks.com/inclusively-hidden/" */
 .sr-only:not(:focus):not(:active) {
-    clip-path: inset(50%);
     height: 1px;
     overflow: hidden;
     position: absolute;
