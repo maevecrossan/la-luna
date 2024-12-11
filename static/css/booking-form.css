@@ -114,6 +114,15 @@ input:valid+span:after {
     width: 100%;
 }
 
+.inline-link {
+    color: #592828;
+}
+
+.inline-link:hover {
+    color: #592828;
+    text-decoration: underline;
+}
+
 @media (min-width: 540px) {
     .sm\:w-half {
         width: 50%;
