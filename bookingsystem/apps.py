@@ -1,4 +1,4 @@
-""" List of registered apps """
+""" App registry """
 
 from django.apps import AppConfig
 
