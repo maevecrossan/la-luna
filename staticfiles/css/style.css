@@ -62,7 +62,6 @@ body {
 
 .right {
     display: flex;
-    align-items: right;
     justify-content: right;
 }
 
@@ -86,11 +85,13 @@ body {
     letter-spacing: 0.02em;
     padding: 40px 0 20px 0;
     font-weight: 700;
-    padding-top: 40px;
+}
 
-    @media all and (min-width:40em) {
-        font-size: 4.75em;
-    }
+.sub-heading {
+    font-size: 2.5em;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    padding: 60px 0 20px 0;
 }
 
 .small-letter-spacing {
@@ -184,7 +185,6 @@ h1 {
 
 /* Code borrowed from "https://css-tricks.com/inclusively-hidden/" */
 .sr-only:not(:focus):not(:active) {
-    clip-path: inset(50%);
     height: 1px;
     overflow: hidden;
     position: absolute;
@@ -267,10 +267,6 @@ h1 {
     letter-spacing: 0.02em;
     color: #d8b8b8;
     font-weight: 700;
-
-    @media all and (min-width:40em) {
-        font-size: 2.2em;
-    }
 }
 
 .l-contained {
@@ -279,12 +275,6 @@ h1 {
     margin-right: auto;
     padding-left: 1em;
     padding-right: 1em;
-
-    @media all and (min-width:40em) {
-
-        padding-left: 2em;
-        padding-right: 2em;
-    }
 }
 
 .our-story-list {
@@ -346,15 +336,15 @@ h1 {
     border-radius: 50%;
     background: none repeat scroll 0% 0% #d8b8b8;
     border: 5px solid #d8d7d9;
-    animation: revealScaleUp 0.75s 0s ease both 1;
+    animation: revealScaleUp 0.75s 0s ease both;
 }
 
 .our-story-list {
-    animation: reveal 2s 0 ease both 1;
+    animation: reveal 2s 0 ease both;
 }
 
 .our-story-list li .content {
-    animation: revealFromLeft 0.5s 0s ease both 1;
+    animation: revealFromLeft 0.5s 0s ease both;
 }
 
 .our-story-list li:nth-child(1):before {
