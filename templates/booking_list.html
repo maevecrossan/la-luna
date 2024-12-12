@@ -6,22 +6,29 @@
     <h2 class="topic-heading off-white italiana"> My Bookings </h2>
 
     <!-- displaying Django messages -->
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 offset-md-2 upper lato off-white center">
-				{% for message in messages %}
-				<div class="alert {{ message.tags }} alert-dismissible
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 upper lato off-white center">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible
 		  fade show" id="msg" role="alert">
-					{{ message | safe }}
-					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>
-				{% endfor %}
-			</div>
-		</div>
-	</div>
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
     {% if bookings %}
+
+    <!-- Upcoming Bookings Section -->
+
+    <h3 class="sub-heading off-white italiana center">Upcoming Bookings</h3>
+
     {% for booking in bookings %}
+
+    {% if booking.date >= today %}
     <div class="container">
         <div class="row center">
             <div class="col-6 card mb-4 mt-3 left top">
@@ -44,15 +51,9 @@
                     <p class="card-text">
                         <strong>Guests:</strong> {{ booking.guests }}
                     </p>
-                    {% if booking.expired %}
-                    <span style="color: red;">
-                        <strong>EXPIRED</strong>
-                    </span>
-                    {% else %}
-                    <span style="color: green;">
+                    <span class="active">
                         <strong>ACTIVE</strong>
                     </span>
-                    {% endif %}
                 </div>
 
                 {% if user.is_authenticated and booking.user == user %}
@@ -71,7 +72,58 @@
         </div>
     </div>
 
+    {% endif %}
+
     {% endfor %}
+
+    <!-- Expired Bookings Section -->
+
+    <h3 class="sub-heading off-white italiana center"> Expired Bookings </h3>
+
+    {% for booking in bookings %}
+    {% if booking.date|date:"Y-m-d" < today|date:"Y-m-d" %}
+    <div class="container">
+        <div class="row center">
+            <div class="col-6 card mb-4 mt-3 left top">
+                <div id="booking{{ booking.id }}" class="card-body">
+                    <p class="card-text">
+                        <strong>Name:</strong> {{ booking.name }}
+                    </p>
+                    <p class="card-text">
+                        <strong>Email:</strong> {{ booking.email }}
+                    </p>
+                    <p class="card-text">
+                        <strong>Phone Number:</strong> {{ booking.phone_number }}
+                    </p>
+                    <p class="card-text">
+                        <strong>Date:</strong> {{ booking.date }}
+                    </p>
+                    <p class="card-text">
+                        <strong>Time:</strong> {{ booking.time }}
+                    </p>
+                    <p class="card-text">
+                        <strong>Guests:</strong> {{ booking.guests }}
+                    </p>
+                    <span class="expired">
+                        <strong>EXPIRED</strong>
+                    </span>
+                </div>
+
+                {% if user.is_authenticated and booking.user == user %}
+                <a href="{% url 'bookingsystem:booking-edit' booking.id %}" id="edit-booking"
+                    class="btn btn-edit btn-outline-secondary">
+                    Edit
+                </a>
+
+                <a href="#" id="delete-booking" class="btn btn-delete btn-outline-danger"
+                    booking_id="{{ booking.id }}">Delete</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+
     {% else %}
     <div class="no-bookings-container">
         <p class="lato center"> No bookings available. Please <a href="{% url 'bookings' %}"> click here </a> to make a

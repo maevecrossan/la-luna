@@ -85,7 +85,13 @@ body {
     letter-spacing: 0.02em;
     padding: 40px 0 20px 0;
     font-weight: 700;
-    padding-top: 40px;
+}
+
+.sub-heading {
+    font-size: 2.5em;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    padding: 60px 0 20px 0;
 }
 
 .small-letter-spacing {
