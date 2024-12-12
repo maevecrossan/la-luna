@@ -185,6 +185,7 @@ h1 {
 
 /* Code borrowed from "https://css-tricks.com/inclusively-hidden/" */
 .sr-only:not(:focus):not(:active) {
+    clip-path: inset(50%);
     height: 1px;
     overflow: hidden;
     position: absolute;
@@ -336,15 +337,15 @@ h1 {
     border-radius: 50%;
     background: none repeat scroll 0% 0% #d8b8b8;
     border: 5px solid #d8d7d9;
-    animation: revealScaleUp 0.75s 0s ease both;
+    animation: revealScaleUp 0.75s 0s ease both 1;
 }
 
 .our-story-list {
-    animation: reveal 2s 0 ease both;
+    animation: reveal 2s 0 ease both 1;
 }
 
 .our-story-list li .content {
-    animation: revealFromLeft 0.5s 0s ease both;
+    animation: revealFromLeft 0.5s 0s ease both 1;
 }
 
 .our-story-list li:nth-child(1):before {
