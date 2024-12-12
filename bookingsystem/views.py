@@ -42,14 +42,25 @@ def booking_system(request):
 @login_required
 def booking_list(request):
     """
-    Allows booking_list.html to display bookings for authenticated users.
+    Allows booking_list.html to display bookings for the relevant
+    authenticated user, organized by month with nearest reservations
+    at the top and expired ones at the bottom.
     """
     # Check if the user is authenticated before making a query
     # based on request.user
     if request.user.is_authenticated:
-        # Filter bookings
-        bookings = Booking.objects.filter(
-            user=request.user).order_by('-date', '-time')
+        today = date.today()
+
+        # Filter for upcoming bookings (date >= today)
+        upcoming_bookings = Booking.objects.filter(
+            user=request.user, date__gte=today).order_by('date', 'time')
+
+        # Filter for expired bookings (date < today)
+        expired_bookings = Booking.objects.filter(
+            user=request.user, date__lt=today).order_by('-date', '-time')
+
+        # Combine both sets of bookings in a logical order
+        bookings = list(upcoming_bookings) + list(expired_bookings)
 
         # Return the filtered booking list template with bookings context
         return render(request, 'booking_list.html', {'bookings': bookings})
