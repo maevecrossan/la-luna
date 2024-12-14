@@ -122,6 +122,10 @@ h1 {
     letter-spacing: 0.23em;
 }
 
+.user-status {
+    font-size: 20px;
+}
+
 .header-container {
     display: flex; /* Use flexbox */
     justify-content: space-between; /* Space between elements */
@@ -540,10 +544,6 @@ footer .col {
         font-size: 60px;
         margin: 0px 0px 0 20px;
         padding-right: 20px;
-    }
-
-    .user-status {
-        font-size: 20px;
     }
 
     /* ---------------- Mobile Nav Styles */
