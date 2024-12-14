@@ -3,6 +3,12 @@
 
 Generic styles are inherited from style.css
 */
+a.btn-edit,
+a.btn-delete {
+    width: 40%;
+    align-self: center;
+    margin: 10px;
+}
 
 .formbold-mb-5 {
     margin-bottom: 20px;
