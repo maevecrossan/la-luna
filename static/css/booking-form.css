@@ -41,6 +41,7 @@ Generic styles are inherited from style.css
 }
 
 .formbold-form-input {
+    min-width: 300px;
     padding: 12px 18px;
     margin-left: 13px;
     border-radius: 6px;
