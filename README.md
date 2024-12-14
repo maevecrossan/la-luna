@@ -1,5 +1,6 @@
 # La Luna 
-
+## Introduction
+Welcome to La Luna, the online gateway to an exceptional fine-dining experience. Designed to reflect the elegance and sophistication of the restaurant itself, this website ensures that every visitor’s journey—from exploring our offerings to reserving a table—is as delightful and seamless as the dining experience at La Luna.
 
 # Planning
 
