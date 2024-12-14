@@ -41,7 +41,8 @@ Generic styles are inherited from style.css
 }
 
 .formbold-form-input {
-    padding: 12px 40px;
+    min-width: 300px;
+    padding: 12px 18px;
     margin-left: 13px;
     border-radius: 6px;
     border: 1px solid #e0e0e0;
@@ -101,13 +102,15 @@ Generic styles are inherited from style.css
     text-decoration: underline;
 }
 
-@media (min-width: 540px) {
-    .sm\:w-half {
-        width: 50%;
-    }
+.card {
+    width: 50%;
 }
 
-/* Expired/ Active Styles for My Bookings Page */
+.authentication-form {
+    margin: 30px 0px;
+}
+
+/* Expired/Active Styles for My Bookings Page */
 
 .expired {
     color: rgb(167, 43, 43);
@@ -117,15 +120,23 @@ Generic styles are inherited from style.css
     color: rgb(35, 95, 35);
 }
 
+/* ---------------------------- Media Queries */
 
-/* On smaller screens, still maintain consistent layout */
+@media (min-width: 540px) {
+    .sm\:w-half {
+        width: 50%;
+    }
+}
+
+
+/* ---------------------------- Smaller Screen Styles : Form & My Bookings */
 @media (max-width: 620px) {
     .formbold-main-wrapper {
         padding: 24px;
     }
 
     .formbold-form-wrapper {
-        max-width: 100%; /* Ensure form takes full width */
+        max-width: 100%;
         padding: 16px;
     }
 
@@ -133,14 +144,23 @@ Generic styles are inherited from style.css
     input[type="date"],
     select {
         width: 80%;
-        /* Make sure all inputs are full-width on smaller screens */
     }
 
     .validity {
-        margin-left: 10px;
+        margin-left: 8px;
+    }
+
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .sub-heading {
+        text-align: center;
+    }
+    
+    .card {
+        min-width: 320px;
     }
 }
 
-.authentication-form {
-    margin: 30px 0px;
-}
+
+
