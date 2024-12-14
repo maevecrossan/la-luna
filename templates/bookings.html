@@ -6,21 +6,20 @@
 
 <!-- FORM -->
 <div class="formbold-main-wrapper polka-dot-background">
-	
-    <!-- displaying Django messages -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2 upper lato off-white center">
-                {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissible
-		  fade show" id="msg" role="alert">
-                    {{ message | safe }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
+
+	<!-- displaying Django messages -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2 upper lato off-white center">
+				{% for message in messages %}
+				<div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+					{{ message|safe }}
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
 
 	<!-- Author: FormBold Team -->
 	<!-- Learn More: https://formbold.com -->
@@ -28,9 +27,9 @@
 		<h2 class="center form-title italiana ta-center"> Book with us today! </h2>
 
 		{% if user.is_authenticated %}
-		<p class="form-subtext ta-center"> Already have a booking? Go to <a
-				href="{% url 'bookingsystem:my-bookings' %}" class="inline-link"> <strong>my
-				bookings </strong></a> to view and modify. </p>
+		<p class="form-subtext ta-center"> Already have a booking? Go to <a href="{% url 'bookingsystem:my-bookings' %}"
+				class="inline-link"> <strong>my
+					bookings </strong></a> to view and modify. </p>
 		{% endif %}
 
 		<form action="{% if is_edit %}{% url 'bookingsystem:booking-edit' booking.id %}
