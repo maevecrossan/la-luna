@@ -28,7 +28,7 @@
 		<h2 class="center form-title italiana ta-center"> Book with us today! </h2>
 
 		{% if user.is_authenticated %}
-		<p class="lato content ta-center"> Already have a booking? Go to <a
+		<p class="form-subtext ta-center"> Already have a booking? Go to <a
 				href="{% url 'bookingsystem:my-bookings' %}" class="inline-link"> <strong>my
 				bookings </strong></a> to view and modify. </p>
 		{% endif %}

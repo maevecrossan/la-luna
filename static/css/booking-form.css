@@ -31,6 +31,11 @@ Generic styles are inherited from style.css
     color: #592828;
 }
 
+.form-subtext {
+    font-size: 20px;
+    padding: 15px 15px 5px 15px;
+}
+
 .formbold-form-label {
     display: block;
     font-weight: 500;
