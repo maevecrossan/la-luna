@@ -3,6 +3,12 @@
 
 Generic styles are inherited from style.css
 */
+a.btn-edit,
+a.btn-delete {
+    width: 40%;
+    align-self: center;
+    margin: 10px;
+}
 
 .formbold-mb-5 {
     margin-bottom: 20px;
@@ -29,6 +35,11 @@ Generic styles are inherited from style.css
     font-size: 2.6em;
     font-weight: 600;
     color: #592828;
+}
+
+.form-subtext {
+    font-size: 20px;
+    padding: 15px 15px 5px 15px;
 }
 
 .formbold-form-label {
