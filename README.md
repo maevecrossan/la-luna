@@ -28,6 +28,7 @@ As a manager/owner...
 * I want to display a menu with allergen information and prices. 
 * I want to allow users to create an account.
 * I want users to have full control over bookings through said account so that staff can prioritise their time.
+* I want users to know that tables will be given for two hours.
 * I want users to have several means of contacting the restaurant (contact form, phone number, email). 
 * I want users to not make reservations for more than 8 people via the booking form.
 * I want an admin page where view bookings, user account details, and contact form submissions.
@@ -39,6 +40,7 @@ As a manager/owner...
 * I want staff to be able to see a list of contact form submissions. (The details of which can be copied and replied to using the company email account.)
 
 ## **Agile Development Process**
+
 
 ## **Strategy**
 
@@ -88,3 +90,5 @@ As a manager/owner...
 ## **Tech used**
 
 ## **Credits**
+
+### **Resources**
