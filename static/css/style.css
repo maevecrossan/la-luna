@@ -529,7 +529,7 @@ footer .col {
 
 @media (min-width: 310px) and (max-width: 768px) {
 
-    .header-container{
+    .header-container {
         padding-top: 18px;
         border-bottom: 1px solid #d8b8b8;
         display: flex;
@@ -540,6 +540,10 @@ footer .col {
         font-size: 60px;
         margin: 0px 0px 0 20px;
         padding-right: 20px;
+    }
+
+    .user-status {
+        font-size: 20px;
     }
 
     /* ---------------- Mobile Nav Styles */
