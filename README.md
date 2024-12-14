@@ -144,7 +144,9 @@ My tasks included:
 
 Given how quickly I had completed my MVP, I decided to extend my MVP to link the contact form to the admin page. This was originally categorised as a 'could have' feature.
 
-During this sprint I also did some 'housekeeping' by removing out debugging prints, making files PEP8 complaint, etc. 
+During this sprint I also did some 'housekeeping' by removing out debugging prints, making files PEP8 complaint, as well as adjusting styles to make website more accessible. 
+
+
 
 ----
 
