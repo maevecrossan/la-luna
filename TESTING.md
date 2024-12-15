@@ -42,12 +42,15 @@
 | **My Bookings**       | If logged out, users should be promted to log in.                             | Sign in page appears.  | Yes | Yes |
 |                       | If logged in, users should br brought to the booking form.                    | Form appears. | Yes | Yes |
 |                       | My bookings link at top of booking form links to booking list page.           | My bookings page appears. | Yes | Yes |
-|                       | Form won't submit with an empty field.                                        | Error message appears under the relevant field.  | Yes | Yes |
-|                       | If 'required' is removed from html in devtools, form will still not submit.   | Error message appears under relevant field. | Yes | Yes |
-|                       |                                                 |   |  |  |
-| **Contact Form**      | All users (logged in and out) should be able to access and submit the form.   |   |  |  |
-|                       |                                                 |   |  |  |
-|                       |                                                 |   |  |  |
+|                       | Form won't submit with an empty field.                                        | Django error message appears on top of form and under relevant field. Custom 500 page as fallback. | Yes | Yes |
+|                       | If 'required' attribute is removed in devtools, form will still not submit.   | Custom error message appears on top of form and under relevant field. Custom 500 page as fallback. | Yes | Yes |
+|                       | Enter invalid information in each field.                                      | Django error message appears on top of form and under relevant field. The form will not submit.| Yes | Yes |
+|                       |                                                 |  |  |  |
+| **Contact Form**      | All users (logged in and out) should be able to access and submit the form.   | - | Yes | Yes |
+|                       | Form won't submit with an empty field.                                        | Django error message appears on top of form and under relevant field. Custom 500 page as fallback. | Yes | Yes |
+|                       | If 'required' attribute is removed in devtools, form will still not submit.   | Custom error message appears on top of form and under relevant field. Custom 500 page as fallback. | Yes | Yes |
+|                       | Enter invalid information in each field.                                      | Django error message appears on top of form and under relevant field. The form will not submit. | Yes | Yes |
+|                       |                                                 |  |  |  |
 
 
 
