@@ -10,6 +10,10 @@ a.btn-delete {
     margin: 10px;
 }
 
+.authentication-form {
+    margin: 30px 0px;
+}
+
 .formbold-mb-5 {
     margin-bottom: 20px;
 }
@@ -23,7 +27,7 @@ a.btn-delete {
 }
 
 .formbold-form-wrapper {
-    margin: 0 auto;
+    margin: 30px;
     max-width: 550px;
     width: 100%;
     background: #d8b8b8;
@@ -117,18 +121,20 @@ a.btn-delete {
     width: 50%;
 }
 
-.authentication-form {
-    margin: 30px 0px;
+p.card-text {
+    margin: 10px 0 0 20px;
 }
 
 /* Expired/Active Styles for My Bookings Page */
 
 .expired {
     color: rgb(167, 43, 43);
+    margin-left: 20px;
 }
 
 .active {
     color: rgb(35, 95, 35);
+    margin-left: 20px;
 }
 
 /* ---------------------------- Media Queries */
