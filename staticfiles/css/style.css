@@ -110,6 +110,13 @@ body {
     color: #d8d7d9;
 }
 
+/* Error Message */
+.alert.error {
+    background-color: #d8b8b8;
+    color: #592828;
+    border-radius: 5px;
+}
+
 /* When active, show mobile menu */
 .mobile-menu.active-menu {
     display: inline-block;
@@ -124,6 +131,10 @@ h1 {
 
 .user-status {
     font-size: 20px;
+}
+
+.user-status:hover {
+    color: #bf7b75;
 }
 
 .header-container {
@@ -527,6 +538,18 @@ footer .col {
     align-items: center;
     justify-content: space-evenly;
     font-size: 1.5em;
+}
+
+.error-container {
+    padding: 58px;
+}
+
+.error-header {
+    font-size: 40px;
+}
+
+.error-text {
+    font-size: 30px;
 }
 
 /*------------------------------------------------------------ Media Queries */
