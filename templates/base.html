@@ -101,7 +101,7 @@
 
                     <li class="nav-item mr-2 topBotomBordersOut">
                         <a class="nav-link" href="{% url 'bookingsystem:bookings' %}">
-                            My Bookings
+                            Bookings
                         </a>
                     </li>
 
@@ -159,30 +159,16 @@
                     </li>
 
                     <li class="nav-item topBotomBordersOut">
+                        <a class="nav-link" href="{% url 'index' %}#mini-gallery-container">
+                            Gallery
+                        </a>
+                    </li>
+
+                    <li class="nav-item topBotomBordersOut">
                         <a class="nav-link" href="{% url 'contact' %}">
                             Contact Us
                         </a>
                     </li>
-
-                    {% if user.is_authenticated %}
-
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_logout' %}">
-                            Logout
-                        </a>
-                    </li>
-
-                    {% else %}
-
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_login' %}">
-                            Login
-                        </a>
-                    </li>
-
-                    {% endif %}
 
                 </ul>
             </nav>
