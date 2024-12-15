@@ -12,7 +12,7 @@ urlpatterns = [
         "",
         views.booking_system,
         name="bookings"
-        ),
+     ),
 
     path('delete-booking/<int:booking_id>/',
          views.booking_delete,
