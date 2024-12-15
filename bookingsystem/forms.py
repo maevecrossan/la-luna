@@ -72,3 +72,18 @@ class BookingForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['date'].widget.attrs['min'] = date.today().strftime(
             '%Y-%m-%d')
+
+    def clean_date(self):
+        """
+        Validate the date field to ensure:
+        - It is not empty.
+        - It is not a date in the past.
+        """
+        date_value = self.cleaned_data.get('date')
+        if not date_value:
+            raise forms.ValidationError("The date field is required.")
+        if date_value < date.today():
+            raise forms.ValidationError(
+                "The booking date cannot be in the past."
+            )
+        return date_value

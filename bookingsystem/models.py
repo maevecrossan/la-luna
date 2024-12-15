@@ -115,6 +115,8 @@ class Booking(models.Model):
         """ Custom validation to prevent overlap in bookings
         and tally capacity (max 40 ppl).
         """
+        if not self.date:
+            raise ValidationError("The date field is required.")
         if self.time:
             start_datetime = (
                 datetime.combine(
