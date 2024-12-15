@@ -47,7 +47,10 @@ class Booking(models.Model):
         ]  # minimal validation added as this is not main method of contact
     )
 
-    date = models.DateField()
+    date = models.DateField(
+        null=False,
+        blank=False
+    )
 
     TIME_OPTIONS = [
         ("15:00", "3:00 PM"),
