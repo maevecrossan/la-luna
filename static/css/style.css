@@ -133,6 +133,10 @@ h1 {
     font-size: 20px;
 }
 
+.user-status:hover {
+    color: #bf7b75;
+}
+
 .header-container {
     display: flex; /* Use flexbox */
     justify-content: space-between; /* Space between elements */
