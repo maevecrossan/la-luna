@@ -24,6 +24,10 @@ a.btn-delete {
 
 .formbold-main-wrapper {
     padding: 48px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .formbold-form-wrapper {
