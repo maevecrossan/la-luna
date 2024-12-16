@@ -235,7 +235,13 @@ This sprint was wrapped up by the testing phase.
 
 ## **Skeleton**
 ### Wireframes
+* [Homepage wireframes](docs/wireframes/homepage_wireframe.png)
+* [Menu wireframe](docs/wireframes/menu_wireframe.png)
+* [Bookings wireframe](docs/wireframes/booking_form_wireframe.png)
+* [My Bookings wireframe](docs/wireframes/booking_list_wireframe.png)
+* [Homepage wireframe](docs/wireframes/menu_wireframe.png)
 
+The 'Our Story' section deisgn wasn't confirmed at this point as I wanted to make the list appear in a dynamic way and some character to the page. 
 
 ### Database
 
