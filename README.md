@@ -245,7 +245,12 @@ The 'Our Story' section deisgn wasn't confirmed at this point as I wanted to mak
 
 ### Database
 
-Below is the plan for my database schema. I opted to user the default user model from the AllAuth library.
+Below is the ERD for my database schema. I opted to user the default user model from the AllAuth library.
+
+The most extensive model is by far the booking model, that required user validation before accessing the form. 
+The contact model behaves in isolation and behaves separarely from the booking model.
+
+![Database ERD](docs/database-erd/models.png)
 
 ## **Surface**
 * Colors
