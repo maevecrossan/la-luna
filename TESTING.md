@@ -63,6 +63,12 @@
 |                       | Dashboard users can view contact form submissions.                   | Contact form submissions can be view as a list but also clicked into to view the information submitted more clearly. | - | Yes |
 |                       |                                                 |  |  |  |
 
+## Eight Shapes Contrast Grid
+
+Below is a screenshot of how I ensured my colour combinations passed the contrast test so the website remains accessible to all users. No combinations labelled DNP were used for essential aspects such as text, but may have been used for box borders, accents, etc.
+
+![Colour Contrast Grid](docs/testing/colour-contrast-test.png)
+
 ## WAVE Evaluation Tool
 
 ## Lighthouse
