@@ -21,7 +21,7 @@
 |  | 500 error appearing submitting form after removing 'required' attribute in devtools from 'date' input field. | ![testing screenshot](docs/testing/date_field_update.png) ![testing screenshot](docs/testing/field_date_update_2.png) Add additional checks and validationin the models.py file and forms.py |
 
  
-## Post Development Manual Testing
+## Post Development Testing
 
 | **Test Category**     | **Test Case**                                                                 | **Expected Outcome**                                           | **Mobile** | **Desktop** |
 |-----------------------|-------------------------------------------------------------------------------|----------------------------------------------------------------|------------|-------------|
@@ -62,3 +62,14 @@
 |                       | Dashboard users can organise bookings with various filters.                   | Bookings can be organised by name, date, validity, etc. | - | Yes |
 |                       | Dashboard users can view contact form submissions.                   | Contact form submissions can be view as a list but also clicked into to view the information submitted more clearly. | - | Yes |
 |                       |                                                 |  |  |  |
+
+## WAVE Evaluation Tool
+
+## Lighthouse
+
+## PEP8
+
+## JavaScript
+
+## HTML
+
