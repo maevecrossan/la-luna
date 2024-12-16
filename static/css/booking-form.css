@@ -26,7 +26,7 @@ a.btn-delete {
     padding: 48px;
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
 }
 
