@@ -13,6 +13,16 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 
 
+# Custom validator for phone number minimum length
+def validate_min_length(value):
+    """Ensure the number has at least 10 digits"""
+
+    if len(value.replace("+", "").replace(" ", "")) < 9:
+        raise ValidationError(
+            "Phone number must have between 9 and 15 digits."
+            )
+
+
 # Create your models here.
 
 
@@ -41,10 +51,10 @@ class Booking(models.Model):
         validators=[  # Source: geeksforgeeks.org
             RegexValidator(
                 regex=r'^\+?1?\d{9,15}$',
-                message="Please enter a valid phone number.\
-                    Up to 15 digits allowed."
-            )
-        ]  # minimal validation added as this is not main method of contact
+                message="Please enter a valid phone number."
+            ),
+            validate_min_length,
+        ]
     )
 
     date = models.DateField(
