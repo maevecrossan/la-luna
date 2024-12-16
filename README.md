@@ -12,13 +12,20 @@ Welcome to La Luna, the online gateway to an exceptional fine-dining experience.
 
 ### Site Aims
 
+The aim of this webiste was to provide a sleek, intuitive experience for users who wish to learn about the La Luna restaurant, make a reservation, and ask questions. 
+
+Users would be able to create an account through which they can create, edit and modify bookings. Admin users could also keep track of bookings through the admin dashboard.
+
 ### Opportunities
+
+Below are the main points that arose when planning my project. The scores given to each opportunity were influences by the project timeframe, familiarity with the languages and frameworks used, and project scope.
 
 Opportunity | Importance | Viability/Feasibility
 ---|:---:|:---:|
 Learn about restaurant history | 4 | 5
 See images of the restaurant | 3 | 5
-Displaya menu with all relevant details | 5 | 5
+Display a menu with all relevant details | 5 | 5
+Allow menu to be edited and updated by admin | 1 | 1
 Display contact info | 5 | 5
 Create an account to keep to track of bookings | 5 | 5
 Give bookings 'active/expired' labels for better UX | 5 | 5
@@ -26,19 +33,55 @@ Allow users to create, edit and delete bookings | 5 | 5
 Allow users to make multiple bookings | 5 | 5
 Allow uses to access social media links | 4 | 5
 Users can send a message via a contact form | 4 | 5
-Display a map of the location | 2 | 4 
+Display a map of the location | 2 | 2 
 Allow admin to add and remove items from the menu | 2 | 2
-Create an a newslteer to be distributed to account holders | 1 | 2
+Create an a newsletter to be distributed to account holders | 1 | 2
 Allow users to make a booking without creating an account. | 1 | 1
 Allow admin users to view and filter bookings made by users. | 5 | 5
 Allow admin users to view and filter contact form submissions. | 5 | 5
 Allow admin users to respond to respond to contact form messages in the dashboard. | 3 | 1
 Restrict capacity to 40 people at any one time | 5 | 5
 Add a review section for registered customers. | 1 | 2
+Google Maps API. | 1 | 1
+---------- | --- | ---
+**TOTAL** | **72** | **77**
 
-## 
 
-## User Stories
+## Scope
+
+I divided these opportunities into categories under the MoSCoW headings for clarity.
+
+* Must Have:
+    * See a full menu with allergens.
+    * See the history of the establishment.
+    * See contact info.
+    * Instantly make a booking and see what times and dates are available for bookings.
+    * Instantly modify a booking.
+    * Instantly delete a booking.
+    * Make multiple bookings.
+    * Create an account to keep track of bookings.
+    * Admin can view and filter bookings made by users.
+    * 40 people capacity.
+
+* Should Have:
+    * View images of the restaurant so I know what the atmosphere is like.
+    * Have social media links easily accessible.
+
+* Could Have:
+    * Send a message to the restaurant staff if I have a query.
+    * Dynamic menu.
+    * Allow menu to be updated by staff.
+    * Admin users can respond to contact form messages in the dashboard.
+
+* Won't Have:
+    * Review section.
+    * Allow users to create and modify bookings without creating an account by having a booking ID.
+    * Google Maps API.
+    * Newsletter distribution.
+
+## Structure
+
+### User Stories
 
 As a user...
 * I want to experience an intuitively laid-out website.
@@ -69,8 +112,9 @@ As a manager/owner...
 * I want staff to be able to see a list of bookings made and to be able to organise them by different criteria (validity, name, date, etc).
 * I want staff to be able to see a list of contact form submissions. (The details of which can be copied and replied to using the company email account.)
 
-## **Agile Development Process**
-### **Overview** 
+
+### **Agile Development Process**
+#### **Overview** 
 
 To track my development, I used Github Boards and followed Agile methodology. I gave each user story acceptance criteria which helped focus me and encouraged efficient progress towards the MVP.
 
@@ -89,11 +133,20 @@ Below is a table laying out the timeframe for each sprint. Following is a brief 
 | 6 | 10/12/2024 - 10/12/2024 | On Time |
 
 
-#### Sprint 0
+##### Sprint 0
 Very early on I had began coding when I saw the project brief using Flask as a way to practice using the framework. Therefore, I consider my inital sprint everything I did up until I installed Django and fully understood the assignemnt brief.
 
+During this stage, I also reviewed my user stories and decided to drop some.
+
+**User Stories Dropped/Changed:**
+
+* As a user, I can create a booking and receive a booking ID rather than create an account. 
+* Googe maps API.
+* Dynamic menu
+* Admin users can respond to contact form messages in the dashboard.
+
 ----
-#### Sprint 1
+##### Sprint 1
 During this sprint I set up my project by completing the following:
 
 * Installed Django
@@ -105,7 +158,7 @@ During this sprint I set up my project by completing the following:
 
 ----
 
-#### Sprint 2
+##### Sprint 2
 During this sprint I was concerned with setting up the 'C' in CRUD in relation to the booking model. I would like to note that I am aware that this sprint was longer than it should have been and is a lesson I learned. I underestimated the work that this user story would require and defiently could have separated the tasks into more manageable, bite-size chunks. 
 
 During this sprint, I planned on:
@@ -123,7 +176,7 @@ During this sprint, I planned on:
 
 ----
 
-#### Sprint 3
+##### Sprint 3
 
 During this sprint I was focused on:
 1) completing incomplete tasks from the previous sprint,
@@ -142,7 +195,7 @@ I did this by:
 
 ----
 
-#### Sprint 4
+##### Sprint 4
 
 During this sprint I was concerned with creating a `My Bookings` page through which users could perform the remaining ('R','U','D') CRUD functionality. 
 
@@ -159,7 +212,7 @@ During this sprint, I noticed the POST functionality wasn't working as expected.
 
 ---- 
 
-#### Sprint 5
+##### Sprint 5
 
 During this sprint, I concerned myself with going back over the small pieces that I had missed or were not huge priorities during the previous sprints.
 
@@ -170,55 +223,22 @@ My tasks included:
 
 ----
 
-#### Sprint 6
+##### Sprint 6
 
 Given how quickly I had completed my MVP, I decided to extend my MVP to link the contact form to the admin page. This was originally categorised as a 'could have' feature.
 
 During this sprint I also did some 'housekeeping' by removing out debugging prints, making files PEP8 complaint, as well as adjusting styles to make website more accessible. 
 
-
+This sprint was wrapped up by the testing phase.
 
 ----
 
-### MoSCoW
-
-| **Must Have** |
-| :-------- |
-| See a full menu with allergens.
-See the history of the establishment.
-See contact info.
-Instantly make a booking and see what times and dates are available for bookings.
-Instantly modify a booking
-Instantly delete a booking
-Make multiple bookings.
-Create an account to keep track of bookings. |
-
-| **Should Have** |
-| :-------- |
-| View images of the restaurant so I know what the atmosphere is like.
-Have social media links easily accessible |
-
-| **Could Have** |
-| :-------- |
-| Send a message to the restaurant staff if I have a query
-Review section
-Google Maps API 
-Admin-editable menu|
-
-| **Won't Have** |
-| :-------- |
-| Allow users to create and modify bookings without creating an account by having a booking ID (better UX).
-Admin can add banners (lunch specials, events) |
-
-## **Strategy**
-
-## **Scope**
-
-## **Structure**
-
 ## **Skeleton**
-* Wireframes
-* Database
+### Wireframes
+
+
+### Database
+
 
 ## **Surface**
 * Colors
