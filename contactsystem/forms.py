@@ -28,7 +28,7 @@ class ContactForm(forms.ModelForm):
                 attrs={
                     'id': 'contact_phone_number',
                     'name': 'contact_phone_number',
-                    'placeholder': 'Phone Number',
+                    'placeholder': '123456789',
                     'class': 'formbold-form-input',
                     'pattern': r'^\+?1?\d{9,15}$',
                 }

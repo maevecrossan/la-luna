@@ -28,7 +28,7 @@ class BookingForm(forms.ModelForm):
                 attrs={
                     'id': 'phone',
                     'name': 'phone',
-                    'placeholder': 'Phone Number',
+                    'placeholder': '123456789',
                     'class': 'formbold-form-input'
                 }
             ),
