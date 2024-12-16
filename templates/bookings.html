@@ -62,11 +62,7 @@
 			<div class="formbold-mb-5">
 				<label for="email" class="formbold-form-label"> Email Address </label>
 
-				{% if not user.is_authenticated %}
-					{{ form.email }}
-				{% else %}
-					<input type="email" name="email" id="id_email" value="{{ user.email }}" readonly>
-				{% endif %}
+				<input type="email" class="formbold-form-input" name="email" id="id_email" value="{{ user.email }}" readonly>
 
 				{% for error in form.email.errors %}
 				<div class="error">{{ error }}</div>
