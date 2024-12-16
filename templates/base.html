@@ -100,11 +100,28 @@
                         </a>
                     </li>
 
+                    {% if user.is_authenticated %}
+
+                    <li class="nav-item dropdown mr-2 topBotomBordersOut">
+                        <a class="nav-link dropbtn" href="#">
+                            Bookings <i class="fa fa-caret-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'bookingsystem:bookings' %}" class="nav-link">Make Booking</a>
+                            <a href="{% url 'bookingsystem:my-bookings' %}" class="nav-link">My Bookings</a>
+                        </div>
+                    </li>
+
+                    {% else %}
+
                     <li class="nav-item mr-2 topBotomBordersOut">
                         <a class="nav-link" href="{% url 'bookingsystem:bookings' %}">
                             Bookings
                         </a>
                     </li>
+
+                    {% endif %}
+
 
                     <li class="nav-item mr-2 topBotomBordersOut">
                         <a class="nav-link" href="{% url 'index' %}#our-story-section">
@@ -125,6 +142,7 @@
                     </li>
 
                 </ul>
+                <a href="javascript:void(0);" class="icon" onclick="dropdownItems()">&#9776;</a>
             </nav>
 
             <!-- Hamburger icon for mobile menu -->
