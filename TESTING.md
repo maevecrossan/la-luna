@@ -27,6 +27,7 @@
 | **Test Category**     | **Test Case**                                                                 | **Expected Outcome**                                           | **Mobile** | **Desktop** |
 |-----------------------|-------------------------------------------------------------------------------|----------------------------------------------------------------|------------|-------------|
 | **Base Template Features** | Ensure navigation links work correctly.                                  | Buttons/links navigate to the correct pages.                   | Yes | Yes |
+|                       | Test end-to-end flows.                                                        | All pages work correctly when accessed from one another.  | Yes | Yes |
 |                       | Ensure navigation collapses.                                                  | Navigation wraps on medium screens and collapses to a burger icon on smaller screens.   | Yes | Yes |
 |                       | All footer Links work correctly.                                              | Directory links and SNS links work as expected.  | Yes | Yes |
 |                       | Footer collapses correctly on smaller screens.                                | Columns wrap and stack on mobiles.  | Yes | Yes |
@@ -39,46 +40,29 @@
 | **Menu**              | Content is accurate, properly aligned, and visually appealing.                | Verify all dishes are listed with descriptions and pricing.  | Yes | Yes |
 |                       | Content collapses and expands while maintaing visible.                        | Content should narrow or widen depending on screensize. | Yes | Yes |
 |                       |                                                 |   |  |  |
-| **My Bookings**       | If logged out, users should be promted to log in.                             | Sign in page appears.  | Yes | Yes |
+| **My Bookings**       | If logged out, users should be promted to log in.                             | Sign in page appears. Unauthorised users cannot make bookings. | Yes | Yes |
 |                       | If logged in, users should br brought to the booking form.                    | Form appears. | Yes | Yes |
 |                       | My bookings link at top of booking form links to booking list page.           | My bookings page appears. | Yes | Yes |
 |                       | Form won't submit with an empty field.                                        | Django error message appears on top of form and under relevant field. Custom 500 page as fallback. | Yes | Yes |
-|                       | If 'required' attribute is removed in devtools, form will still not submit.   | Custom error message appears on top of form and under relevant field. Custom 500 page as fallback. | Yes | Yes |
+|                       | Remove 'required' attribute in devtools and try submit.   | Form will not submit. Custom error message appears on top of form and under relevant field. Custom 500 page as fallback. | Yes | Yes |
 |                       | Enter invalid information in each field.                                      | Django error message appears on top of form and under relevant field. The form will not submit.| Yes | Yes |
+|                       | Submit valid data and test for success response.                              | User will be redirected to 'my bookings' page and see a success message below the heading. | Yes | Yes |
 |                       |                                                 |  |  |  |
 | **Contact Form**      | All users (logged in and out) should be able to access and submit the form.   | - | Yes | Yes |
 |                       | Form won't submit with an empty field.                                        | Django error message appears on top of form and under relevant field. Custom 500 page as fallback. | Yes | Yes |
-|                       | If 'required' attribute is removed in devtools, form will still not submit.   | Custom error message appears on top of form and under relevant field. Custom 500 page as fallback. | Yes | Yes |
+|                       | Remove 'required' attribute in devtools and try submit.                       | Form will not submit. Custom error message appears on top of form and under relevant field. Custom 500 page as fallback. | Yes | Yes |
 |                       | Enter invalid information in each field.                                      | Django error message appears on top of form and under relevant field. The form will not submit. | Yes | Yes |
+|                       | Submit valid data and test for success response.                              | User will see a success message above the form. | Yes | Yes |
 |                       |                                                 |  |  |  |
-
-
-
-
-
-
-
-
-| **Booking Page**      | Test form field validations (e.g., email format, required fields).            | Error messages appear for invalid inputs; valid inputs submit correctly.|
-|                       | Submit valid data and verify the success response.                           | Booking completes with confirmation message.                            |
-|                       | Ensure the booking calendar prevents past-date selection.                    | Users cannot select dates in the past.                                  |
-|                       | Test navigation back to the homepage from the booking page.                  | Navigation works correctly.                                             |
-| **Services Page**     | Verify all services are listed with descriptions and pricing.                | Services display accurate details, pricing, and links (if any).         |
-|                       | Test image and link functionality for each service.                          | Images load, and links navigate correctly.                              |
-| **About Us Page**     | Check team details and static content accuracy.                              | All information is accurate and up to date.                             |
-|                       | Test external links (e.g., social media profiles).                           | External links open in new tabs and lead to correct pages.              |
-| **Contact Page**      | Test the contact form with valid/invalid inputs.                              | Invalid inputs trigger errors; valid inputs submit successfully.        |
-|                       | Verify success/failure messages after form submission.                       | Users receive appropriate feedback after submission.                    |
-|                       | Test phone numbers, email links, and embedded maps (if applicable).          | Phone/email links work, and maps load correctly.                        |
-| **Login/Signup**      | Verify login with valid and invalid credentials.                              | Valid credentials log in; invalid ones display error messages.          |
-|                       | Test account creation and password recovery flows.                           | Users can create accounts and reset passwords successfully.             |
-| **Dashboard**         | Verify user-specific content after login.                                    | Logged-in users see the correct personalized content.                   |
-|                       | Test logout functionality.                                                   | Logging out redirects users to the homepage or login page.              |
-|                       | Ensure restricted pages redirect unauthenticated users to the login page.     | Users cannot access restricted pages without logging in.                |
-| **End-to-End Flows**  | Start on the homepage, complete the booking flow, and verify confirmation.   | Users can successfully book and see confirmation.                      |
-|                       | Navigate all pages via the menu and return to the homepage.                  | Navigation is seamless and functional.                                  |
-|                       | Submit all forms with empty, invalid, and valid inputs.                      | Forms validate correctly and provide appropriate feedback.              |
-|                       | Test error handling for 404 or server errors.                                | Users see a friendly error page for invalid URLs or server issues.      |
+| **Login/Signup**      | Verify login with valid and invalid credentials.                              | Invalid credentials or form inputs will display error messages.          | Yes | Yes |
+|                       | Test account creation.                                                        | Users can create accounts.             | Yes | Yes |
+|                       | Test logout functionality.                                                    | Logging out redirects users to the homepage or login page.              | Yes | Yes |
+|                       |                                                 |  |  |  |
+| **Admin Dashboard**   | Users verified by super user can access admin panel.                          | Users verified as 'staff' will have access to the admin panel.           | - | Yes |
+|                       | Regular users cannot sign in to the admin panel.                              | Users cannot access restricted pages unless verified by the super user. | - | Yes |
+|                       | Dashboard users can organise bookings with various filters.                   | Bookings can be organised by name, date, validity, etc. | - | Yes |
+|                       | Dashboard users can view contact form submissions.                   | Contact form submissions can be view as a list but also clicked into to view the information submitted more clearly. | - | Yes |
+|                       |                                                 |  |  |  |
 
 
 
