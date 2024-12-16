@@ -62,19 +62,3 @@
 |                       | Dashboard users can organise bookings with various filters.                   | Bookings can be organised by name, date, validity, etc. | - | Yes |
 |                       | Dashboard users can view contact form submissions.                   | Contact form submissions can be view as a list but also clicked into to view the information submitted more clearly. | - | Yes |
 |                       |                                                 |  |  |  |
-
-
-
-### Logged in Testing
-
-
-### Logged Out Testing
-
-
-### Admin Testing
-
-
-
-### Bugs and Fixes
-
-### Manual Testing
