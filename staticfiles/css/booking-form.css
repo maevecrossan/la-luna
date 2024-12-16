@@ -181,6 +181,10 @@ p.card-text {
     .card {
         min-width: 320px;
     }
+
+    .card-body {
+        padding: 0.8rem;
+    }
 }
 
 

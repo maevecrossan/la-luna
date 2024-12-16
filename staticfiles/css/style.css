@@ -40,7 +40,7 @@ body {
 .polka-dot-background {
     background-color: #592828;
     opacity: 1;
-    background-image: radial-gradient(#bf7b75 0.75px, transparent 0.75px), radial-gradient(#bf7b75 0.75px, #592828 0.75px);
+    background-image: radial-gradient(#bf7b75b1 0.75px, transparent 0.75px), radial-gradient(#bf7b75b1 0.75px, #592828 0.75px);
     background-size: 30px 30px;
     background-position: 0 0, 15px 15px;
     min-height: auto;
