@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'bookingsystem',
     'contactsystem',
-    'django_extensions',
 ]
 
 SITE_ID = 1
