@@ -32,8 +32,8 @@
 		{% endif %}
 
 		<form action="{% if is_edit %}{% url 'bookingsystem:booking-edit' booking.id %}
-		{% else %}{% url 'bookingsystem:bookings' %}
-		{% endif %}" onsubmit="return sendBookingConfirmation(this);" method="POST">
+        {% else %}{% url 'bookingsystem:bookings' %}
+        {% endif %}" onsubmit="return validateForm(this);" method="POST" novalidate>
 
 			{% csrf_token %}
 
@@ -43,18 +43,18 @@
 				{{ form.name }}
 
 				{% for error in form.name.errors %}
-				<div class="error">{{ error }}</div>
+				<div class="formbold-error-message">{{ error }}</div>
 				{% endfor %}
 
 			</div>
 
 			<div class="formbold-mb-5">
-				<label for="phone" class="formbold-form-label"> Phone Number </label>
+				<label for="formbold-error-message" class="formbold-form-label"> Phone Number </label>
 
 				{{ form.phone_number }}
 
 				{% for error in form.phone_number.errors %}
-				<div class="error">{{ error }}</div>
+				<div class="formbold-error-message">{{ error }}</div>
 				{% endfor %}
 
 			</div>
@@ -62,10 +62,11 @@
 			<div class="formbold-mb-5">
 				<label for="email" class="formbold-form-label"> Email Address </label>
 
-				<input type="email" class="formbold-form-input" name="email" id="id_email" value="{{ user.email }}" readonly>
+				<input type="email" class="formbold-form-input" name="email" id="id_email" value="{{ user.email }}"
+					readonly>
 
 				{% for error in form.email.errors %}
-				<div class="error">{{ error }}</div>
+				<div class="formbold-error-message">{{ error }}</div>
 				{% endfor %}
 
 			</div>
@@ -78,7 +79,7 @@
 						{{ form.date.as_widget }}
 
 						{% for error in form.date.errors %}
-						<div class="error">{{ error }}</div>
+						<div class="formbold-error-message">{{ error }}</div>
 						{% endfor %}
 
 					</div>
@@ -91,7 +92,7 @@
 						{{ form.time }}
 
 						{% for error in form.time.errors %}
-						<div class="error">{{ error }}</div>
+						<div class="formbold-error-message">{{ error }}</div>
 						{% endfor %}
 
 					</div>
@@ -105,7 +106,7 @@
 				{{ form.guests }}
 
 				{% for error in form.guests.errors %}
-				<div class="error">{{ error }}</div>
+				<div class="formbold-error-message">{{ error }}</div>
 				{% endfor %}
 
 				<p class="form-subtext"><em> For bookings of nine or more guests, please contact us directly. </em></p>

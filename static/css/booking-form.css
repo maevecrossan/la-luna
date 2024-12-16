@@ -72,6 +72,14 @@ a.btn-delete {
     resize: none;
 }
 
+.formbold-error-message {
+    color: #ff4d4f; /* Bright red for visibility */
+    font-size: 14px;
+    margin-top: 5px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
 .formbold-btn {
     text-align: center;
     font-size: 18px;
