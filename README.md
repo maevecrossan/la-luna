@@ -253,9 +253,33 @@ The contact model behaves in isolation and behaves separarely from the booking m
 ![Database ERD](docs/database-erd/models.png)
 
 ## **Surface**
-* Colors
-* Fonts
-* Images
+### Colour Scheme
+
+Below is my colour scheme.
+
+![Website colour scheme.](docs/surface/colour-palette.png)
+
+**Fonts**
+
+The fonts used in my project are from Google Fonts.
+
+'Italiana' was used for decorative, large text. Lato was used for smaller text and longer sentences so that the user has no difficulty reading it.
+
+
+**Images**
+
+Below are the images I used for the hero image and in the gallery section. 
+
+**Hero Image:**
+* [Hero image: Two men standing behind the bar of an open restaurant.](https://images.pexels.com/photos/5490933/pexels-photo-5490933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)
+
+**Gallery Images:**
+* [Gallery image: A man working in a restaurant kitchen.](https://images.pexels.com/photos/14410382/pexels-photo-14410382.jpeg)
+* [Gallery image: Two people clinking glasses.](https://images.pexels.com/photos/4255489/pexels-photo-4255489.jpeg)
+* [Gallery image: Pasta being cut with a machine.](https://images.pexels.com/photos/4252785/pexels-photo-4252785.jpeg)
+* [Gallery image: Uplcose shot of pepperoni pizza.](https://images.pexels.com/photos/20844860/pexels-photo-20844860/free-photo-of-pizza-served-in-a-restaurant.jpeg)
+* [Gallery image: A man sprinkling flour on freshly cut pasta.](https://images.pexels.com/photos/4252779/pexels-photo-4252779.jpeg)
+* [Gallery image: Hands clapping to remove flour.](https://images.pexels.com/photos/784633/pexels-photo-784633.jpeg)
 
 ## **Features**
 ### **Base**
