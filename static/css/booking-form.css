@@ -55,14 +55,13 @@ a.btn-delete {
     font-weight: 500;
     font-size: 20px;
     color: #592828;
-    margin-bottom: 12px;
     margin-left: 15px;
 }
 
 .formbold-form-input {
-    min-width: 300px;
+    width: -webkit-fill-available;
     padding: 12px 18px;
-    margin-left: 13px;
+    margin: 13px;
     border-radius: 6px;
     border: 1px solid #e0e0e0;
     background: white;
