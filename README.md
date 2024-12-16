@@ -8,6 +8,36 @@ Welcome to La Luna, the online gateway to an exceptional fine-dining experience.
 
 # **Planning**
 
+## Strategy
+
+### Site Aims
+
+### Opportunities
+
+Opportunity | Importance | Viability/Feasibility
+---|:---:|:---:|
+Learn about restaurant history | 4 | 5
+See images of the restaurant | 3 | 5
+Displaya menu with all relevant details | 5 | 5
+Display contact info | 5 | 5
+Create an account to keep to track of bookings | 5 | 5
+Give bookings 'active/expired' labels for better UX | 5 | 5
+Allow users to create, edit and delete bookings | 5 | 5
+Allow users to make multiple bookings | 5 | 5
+Allow uses to access social media links | 4 | 5
+Users can send a message via a contact form | 4 | 5
+Display a map of the location | 2 | 4 
+Allow admin to add and remove items from the menu | 2 | 2
+Create an a newslteer to be distributed to account holders | 1 | 2
+Allow users to make a booking without creating an account. | 1 | 1
+Allow admin users to view and filter bookings made by users. | 5 | 5
+Allow admin users to view and filter contact form submissions. | 5 | 5
+Allow admin users to respond to respond to contact form messages in the dashboard. | 3 | 1
+Restrict capacity to 40 people at any one time | 5 | 5
+Add a review section for registered customers. | 1 | 2
+
+## 
+
 ## User Stories
 
 As a user...
