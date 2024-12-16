@@ -245,6 +245,7 @@ The 'Our Story' section deisgn wasn't confirmed at this point as I wanted to mak
 
 ### Database
 
+Below is the plan for my database schema. I opted to user the default user model from the AllAuth library.
 
 ## **Surface**
 * Colors
