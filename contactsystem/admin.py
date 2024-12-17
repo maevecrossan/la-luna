@@ -16,6 +16,7 @@ class ContactAdmin(admin.ModelAdmin):
                     'contact_email',  'is_resolved')
     list_filter = ("is_resolved",)
     search_fields = ("contact_name", "contact_email")
+    list_editable = ("is_resolved",)
 
 
 # Register your models here.
