@@ -180,12 +180,10 @@ h1 {
     height: fit-content;
 }
 
-/* Add hover effect for dropdown links */
 .dropdown-content a:hover {
     color: #d8b8b8;
 }
 
-/* Adjust dropdown positioning (optional, depending on your design) */
 .nav-item.dropdown {
     position: relative;
 }
@@ -198,12 +196,12 @@ h1 {
     position: relative;
     z-index: 0;
     cursor: pointer;
-    border: none; /* Removed border to remove padding */
+    border: none;
 }
 
 .nav-link:hover {
     color: #d8b8b8;
-    padding-bottom: 0; /* Remove bottom padding to align with the dropdown content */
+    padding-bottom: 0;
 }
 
 /* --------- Navbar Link Animations */
