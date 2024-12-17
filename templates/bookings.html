@@ -31,9 +31,7 @@
 					bookings </strong></a> to view and modify. </p>
 		{% endif %}
 
-		<form action="{% if is_edit %}{% url 'bookingsystem:booking-edit' booking.id %}
-        {% else %}{% url 'bookingsystem:bookings' %}
-        {% endif %}" onsubmit="return validateForm(this);" method="POST" novalidate>
+		<form action="{% if is_edit %}{% url 'bookingsystem:booking-edit' booking.id %}{% else %}{% url 'bookingsystem:bookings' %}{% endif %}" onsubmit="return sendBookingConfirmation(this);" method="POST" novalidate>
 
 			{% csrf_token %}
 
