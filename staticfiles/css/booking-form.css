@@ -151,6 +151,15 @@ p.card-text {
     margin-left: 20px;
 }
 
+.no-bookings-container {
+    background-color: #d8d8d8;
+    width: fit-content;
+    padding: 19px;
+    border-radius: 6px;
+    color: #432020;
+}
+
+
 /* ---------------------------- Media Queries */
 
 @media (min-width: 540px) {
