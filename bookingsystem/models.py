@@ -5,7 +5,7 @@ Also dealt with below is the CRUD functionality.
 
 """
 
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date as dt_date
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
@@ -20,7 +20,7 @@ def validate_min_length(value):
     if len(value.replace("+", "").replace(" ", "")) < 9:
         raise ValidationError(
             "Phone number must have between 9 and 15 digits."
-            )
+        )
 
 
 # Create your models here.
@@ -62,6 +62,17 @@ class Booking(models.Model):
         blank=False
     )
 
+    CLOSED_DATES = [
+        dt_date(2024, 12, 25),
+        dt_date(2025, 12, 25),
+        dt_date(2026, 12, 25),
+        dt_date(2027, 12, 25),
+        dt_date(2025, 1, 1),
+        dt_date(2026, 1, 1),
+        dt_date(2027, 1, 1),
+        dt_date(2028, 1, 1),
+    ]
+
     TIME_OPTIONS = [
         ("15:00", "3:00 PM"),
         ("15:30", "3:30 PM"),
@@ -101,9 +112,15 @@ class Booking(models.Model):
 
     objects = models.Manager()
 
-    def save(self, *args, **kwargs):
+    def is_restaurant_closed(self):
+        """
+        Check if the given date is a restaurant closure date.
+        """
+        return self.date in self.CLOSED_DATES
 
-        """Calculates the end time (adds two hours to
+    def save(self, *args, **kwargs):
+        """
+        Calculates the end time (adds two hours to
         'time') and stores it to the database.
 
         Database use only (not visible to admin or user).
@@ -126,17 +143,27 @@ class Booking(models.Model):
         super().save(*args, **kwargs)
 
     def clean(self):
-        """ Custom validation to prevent overlap in bookings
+        """
+        Custom validation to prevent overlap in bookings
         and tally capacity (max 40 ppl).
         """
+
         if not self.date:
             raise ValidationError("The date field is required.")
+
+        # Access the date from the form data
+        selected_date = self.date
+
+        if selected_date in self.CLOSED_DATES:
+            raise ValidationError(f"The restaurant is closed on {
+                                selected_date}. Please select another date.")
+
         if self.time:
             start_datetime = (
                 datetime.combine(
                     self.date, datetime.strptime(self.time, '%H:%M').time()
-                    )
                 )
+            )
             end_datetime = start_datetime + timedelta(hours=2)
 
             # Convert 'end_datetime' to time to use in comparisons
@@ -160,6 +187,11 @@ class Booking(models.Model):
                     "We cannot accommodate your group size at this time."
                     "Please reduce your guest count or try another time slot.")
 
+            if self.is_restaurant_closed():  # No conflict with dt_date
+                raise ValidationError(
+                    f"The restaurant is closed on {self.date}.\
+                        Please select another date.")
+
     @property
     def expired(self):
         """
@@ -182,7 +214,7 @@ class Booking(models.Model):
             start_datetime = timezone.make_aware(
                 start_datetime,
                 timezone=local_timezone
-                )
+            )
 
             # Compare current time with the booking's start time
             return timezone.now() > start_datetime

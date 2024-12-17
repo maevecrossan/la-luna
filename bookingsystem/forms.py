@@ -72,18 +72,32 @@ class BookingForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['date'].widget.attrs['min'] = date.today().strftime(
             '%Y-%m-%d')
+        # Pass the CLOSED_DATES to the form
+        self.fields['date'].disabled_dates = self.instance.CLOSED_DATES
+
+    def disabled_dates(self):
+        """
+        Prevents bookings on closed dates.
+        """
+        return self.fields['date'].disabled_dates
 
     def clean_date(self):
         """
         Validate the date field to ensure:
         - It is not empty.
         - It is not a date in the past.
+        - It is not a closed date.
         """
         date_value = self.cleaned_data.get('date')
         if not date_value:
-            raise forms.ValidationError("The date field is required.")
+            raise forms.ValidationError(
+                "The date field is required.")
         if date_value < date.today():
             raise forms.ValidationError(
-                "The booking date cannot be in the past."
-            )
+                "The booking date cannot be in the past.")
+        if date_value in self.instance.CLOSED_DATES:
+            # `self.instance` refers to the Booking model instance
+            raise forms.ValidationError(
+                f"The restaurant is closed on {date_value}.\
+                    Please select another date.")
         return date_value

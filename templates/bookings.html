@@ -76,11 +76,15 @@
 					<div class="formbold-mb-5 w-full">
 						<label for="date" class="formbold-form-label" min="{{ today }}"> Date </label>
 
-						{{ form.date.as_widget }}
+						{% for date in form.date.disabled_dates %}
+						<input type="hidden" name="date" value="{{ date }}">
+						{% endfor %}
 
 						{% for error in form.date.errors %}
 						<div class="formbold-error-message">{{ error }}</div>
 						{% endfor %}
+
+						{{ form.date.as_widget }}
 
 					</div>
 				</div>
