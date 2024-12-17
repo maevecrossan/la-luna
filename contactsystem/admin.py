@@ -13,10 +13,11 @@ class ContactAdmin(admin.ModelAdmin):
     """
     form = ContactForm
     list_display = ('contact_name', 'contact_phone_number',
-                    'contact_email', 'contact_message')
+                    'contact_email',  'is_resolved')
+    list_filter = ("is_resolved",)
+    search_fields = ("contact_name", "contact_email")
 
 
 # Register your models here.
-
 
 admin.site.register(Contact, ContactAdmin)

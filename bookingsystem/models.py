@@ -92,7 +92,7 @@ class Booking(models.Model):
         ("8", "8"),
     ]
     guests = models.CharField(
-        max_length=1, 
+        max_length=1,
         choices=GUEST_OPTIONS,
         null=False,
         blank=False)

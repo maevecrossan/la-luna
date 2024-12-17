@@ -37,3 +37,12 @@ class Contact(models.Model):
         null=False,
         blank=False
     )
+
+    is_resolved = models.BooleanField(
+        default=False,
+        help_text="Mark this as resolved when the query is handled.",
+    )
+
+
+def __str__(self):
+    return self.contact_name
