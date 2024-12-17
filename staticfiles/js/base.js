@@ -16,3 +16,18 @@ document.addEventListener("DOMContentLoaded", function() {
     // Attach event listener to the hamburger icon
     document.getElementById("burger-icon").addEventListener("click", displayMobileMenu);
 });
+
+
+/* Dropdown nav links: toggle between adding and removing the 
+"responsive" class to topnav when the user clicks on the icon */
+document.querySelectorAll('.dropbtn').forEach(button => {
+    button.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent default link behavior
+        const dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === 'block') {
+            dropdownContent.style.display = 'none';
+        } else {
+            dropdownContent.style.display = 'block';
+        }
+    });
+});
