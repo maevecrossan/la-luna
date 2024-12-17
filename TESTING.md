@@ -19,6 +19,7 @@
 | ![testing screenshot](docs/testing/modal_on_edit_page.png) | An console error was appearing when editing a booking regarding the delete modal. | ![testing screenshot](docs/testing/modal_conditional.png) The modal was made conditional and was only to be triggered when it is present. |
 | ![testing screenshot](docs/testing/edit_function_duplicating.png) | Rather than replacing the original booking with the updated version, the edit function creates a new booking with the updated version. | ![testing screenshot](docs/testing/form_action_before_and_after.png) The previous form action was overriding any editing logic. Once the form action was updated, bookings were successfully edited and updated and no additional bookings were made. |
 |  | 500 error appearing submitting form after removing 'required' attribute in devtools from 'date' input field. | ![testing screenshot](docs/testing/date_field_update.png) ![testing screenshot](docs/testing/field_date_update_2.png) Add additional checks and validationin the models.py file and forms.py |
+| ![testing screenshot](docs/testing/empty_guest_field_500_error.png) | Submitting blank guests input brings user to 500 error page rather than triggering error message. |  |
 
  
 ## Post Development Testing

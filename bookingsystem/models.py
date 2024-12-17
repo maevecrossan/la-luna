@@ -158,6 +158,9 @@ class Booking(models.Model):
             raise ValidationError(f"The restaurant is closed on {
                                 selected_date}. Please select another date.")
 
+        if not self.guests:
+            raise ValidationError("The guests field is required.")
+
         if self.time:
             start_datetime = (
                 datetime.combine(
