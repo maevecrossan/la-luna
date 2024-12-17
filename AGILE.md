@@ -1,5 +1,5 @@
-### **Agile Development Process**
-#### **Overview** 
+# **Agile Development Process**
+## **Overview** 
 
 To track my development, I used Github Boards and followed Agile methodology. I gave each user story acceptance criteria which helped focus me and encouraged efficient progress towards the MVP.
 
@@ -17,8 +17,86 @@ Below is a table laying out the timeframe for each sprint. Following is a brief 
 | 5 | 9/12/2024 - 9/12/2024 | On Time |
 | 6 | 10/12/2024 - 10/12/2024 | On Time |
 
+## **Epic Labels**
 
-##### Sprint 0
+The following is an explanation of the epic labels attached to each user story.
+
+### Epic 1: Basics
+The Epic 1 label was given to an user stories that were related to the surface-level (HTML & CSS) aspects of the project.
+**User Stories**
+* Displaying images.
+    * See images on the homepage.
+* Display social media links.
+    * Access sns links from the footer of each page.
+* Displaying contact info.
+    * Access contact info from the footer of each page.
+    * Access the contact page from the nav bar.
+* Display restaurant history 
+    * Easily access an 'about' section.
+    * Learn about the backstory of the restaurant.
+* Display the menu.
+    * See a comprehensive menu.
+    * See the prices.
+    * See allergens.
+    * View the menu on a variety of devices.
+
+
+### Epic 2: Create Bookings
+This epic was focused on booking creation and viewing logic (the 'C' in CRUD functionality). 
+**User Stories**
+* Make a booking
+    * See available dates.
+    * See available times.
+    * Select how many guests will attend.
+    * See instructions on booking form if I have more than 8 guests attending.
+    * Automatically send booking confirmation after submitting a valid form.
+    * Allow bookings to be made by users (currently with no account).
+    * Allow bookings to be made by the admin.
+    * Disallow bookings in the past (block past dates and times).
+    * Disallow bookings once capacity is reached (40 ppl max).
+    * See what bookings are active or expired.
+* Avoid double bookings.
+    * Grey-out times on the booking form that have full capacity.
+    * Grey-out dates on the booking form that have full capacity.
+    * Grey-out dates on the booking form when the restaurant is closed.
+    * Hold seats for two hours.
+* Access list of bookings.
+    * View a list of reservations only when signed into admin account.
+
+### Epic 3: User Authentication
+This epic was used to implement user authentication and filter bookings of the relevant user.
+**User Stories**
+* Create an account.
+    * I can create an account.
+    * I can view all of my bookings.
+    * I can modify (edit or delete) a booking.
+    * I can view my bookings in order (by date).
+
+### Epic 4: Alter Bookings
+This epic was focused on creating the remaining CRUD functionality.
+**User Stories**
+* Modify a booking
+    * View bookings when signed in.
+    * View available times and dates.
+    * Modify time, date and number of guests.
+    * Receive instant feedback.
+* Delete a booking
+    * View bookings when signed in.
+    * Delete a booking.
+    * Receive instant feedback.
+
+### Epic 5: Additonal Features
+During this epic, I tidied up my MVP and decided to add on an extra feature.
+**User Stories**
+* Contact the restaurant
+    * Access the contact form from all pages.
+    * Receive instant feedback when form is submitted.
+* View messages from the contact form.
+    * View inquiries when logged in as the admin.
+    * See what inquiries have been dealt with.
+
+## **Sprints**
+### Sprint 0
 Very early on I had began coding when I saw the project brief using Flask as a way to practice using the framework. Therefore, I consider my inital sprint everything I did up until I installed Django and fully understood the assignemnt brief.
 
 During this stage, I also reviewed my user stories and decided to drop some.
@@ -31,7 +109,7 @@ During this stage, I also reviewed my user stories and decided to drop some.
 * Admin users can respond to contact form messages in the dashboard.
 
 ----
-##### Sprint 1
+### Sprint 1
 During this sprint I set up my project by completing the following:
 
 * Installed Django
@@ -43,7 +121,7 @@ During this sprint I set up my project by completing the following:
 
 ----
 
-##### Sprint 2
+### Sprint 2
 During this sprint I was concerned with setting up the 'C' in CRUD in relation to the booking model. I would like to note that I am aware that this sprint was longer than it should have been and is a lesson I learned. I underestimated the work that this user story would require and defiently could have separated the tasks into more manageable, bite-size chunks. 
 
 During this sprint, I planned on:
@@ -61,7 +139,7 @@ During this sprint, I planned on:
 
 ----
 
-##### Sprint 3
+### Sprint 3
 
 During this sprint I was focused on:
 1) completing incomplete tasks from the previous sprint,
@@ -80,7 +158,7 @@ I did this by:
 
 ----
 
-##### Sprint 4
+### Sprint 4
 
 During this sprint I was concerned with creating a `My Bookings` page through which users could perform the remaining ('R','U','D') CRUD functionality. 
 
@@ -97,7 +175,7 @@ During this sprint, I noticed the POST functionality wasn't working as expected.
 
 ---- 
 
-##### Sprint 5
+### Sprint 5
 
 During this sprint, I concerned myself with going back over the small pieces that I had missed or were not huge priorities during the previous sprints.
 
@@ -108,7 +186,7 @@ My tasks included:
 
 ----
 
-##### Sprint 6
+### Sprint 6
 
 Given how quickly I had completed my MVP, I decided to extend my MVP to link the contact form to the admin page. This was originally categorised as a 'could have' feature.
 
