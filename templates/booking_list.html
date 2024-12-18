@@ -124,9 +124,12 @@
     {% endfor %}
 
     {% else %}
-    <div class="no-bookings-container">
-        <p class="lato ta-center"> No bookings available. Please <a href="{% url 'bookingsystem:bookings' %}" class="inline-link"><strong> click here </strong></a> to make a
-            new booking.</p>
+    <div class="container center">
+        <div class="no-bookings-container">
+            <p class="lato ta-center"> No bookings available. Please <a href="{% url 'bookingsystem:bookings' %}"
+                    class="inline-link"><strong> click here </strong></a> to make a
+                new booking.</p>
+        </div>
     </div>
     {% endif %}
 </div>
