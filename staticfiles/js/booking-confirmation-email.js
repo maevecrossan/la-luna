@@ -1,5 +1,5 @@
 // CRED: CI UCD Resume Template
-function sendBookingConfirmation(contactForm) {
+function sendBookingConfirmation(bookingForm) {
     if (form.checkValidity()) {
         // Get all input elements within the form
         var inputs = form.querySelectorAll('input, textarea, select');
