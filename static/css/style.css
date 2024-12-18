@@ -19,7 +19,6 @@ body {
 
 header {
     padding-top: 20px;
-    z-index: 1;
 }
 
 body {
@@ -737,7 +736,6 @@ footer .col {
         border-bottom: none;
         font-size: 2em;
         white-space: nowrap;
-        overflow: hidden; /* stops multi-word nav headings from wrapping */
     }
 
     /* Gallery Styles */
