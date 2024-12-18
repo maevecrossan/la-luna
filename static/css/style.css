@@ -143,6 +143,10 @@ h1 {
     padding: 10px; /* Add some padding */
 }
 
+.error-head {
+    height: 20vh;
+}
+
 /*------------------------------ Nav */
 .navbar {
     margin-bottom: 0;
@@ -533,6 +537,10 @@ h1 {
 
 /*------------------------------------------------------------ Footer */
 
+footer {
+    bottom: 0;
+}
+
 footer .col {
     margin-top: 30px;
 }
@@ -580,6 +588,7 @@ footer .col {
 
 .error-container {
     padding: 58px;
+    height: 40vh;
 }
 
 .error-header {
@@ -588,6 +597,10 @@ footer .col {
 
 .error-text {
     font-size: 30px;
+}
+
+.error-footer {
+    height: 40vh;
 }
 
 /*------------------------------------------------------------ Media Queries */
@@ -599,6 +612,14 @@ footer .col {
         border-bottom: 1px solid #d8b8b8;
         display: flex;
         flex-direction: column;
+    }
+
+    .error-head {
+        height: auto;
+    }
+
+    .error-container {
+        height: 50vh;
     }
 
     h1 {
