@@ -157,12 +157,15 @@ h1 {
 /* Hide dropdown content by default */
 .dropdown-content {
     display: none;
-    position: fixed;
-    background-color: #432020;
+    position: absolute;
+    background-color: #482323;
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 2;
     padding: 0;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 /* Display dropdown content on hover */
