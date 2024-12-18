@@ -55,9 +55,11 @@
 |                       | Enter invalid information in each field.                                      | Django error message appears on top of form and under relevant field. The form will not submit. | Yes | Yes |
 |                       | Submit valid data and test for success response.                              | User will see a success message above the form. | Yes | Yes |
 |                       |                                                 |  |  |  |
-| **Login/Signup**      | Verify login with valid and invalid credentials.                              | Invalid credentials or form inputs will display error messages.          | Yes | Yes |
-|                       | Test account creation.                                                        | Users can create accounts.             | Yes | Yes |
-|                       | Test logout functionality.                                                    | Logging out redirects users to the homepage or login page.              | Yes | Yes |
+| **Login/Signup/Logout** | Attempt login with invalid credentials.                                       | Invalid credentials or form inputs will display error messages.          | Yes | Yes |
+|                       | Attempt login with valid credentials.                                         | Successful sign in.          | Yes | Yes |
+|                       | Test account creation with invalid info.                                      | Invalid form inputs will display error messages.             | Yes | Yes |
+|                       | Test account creation with valid info.                                        | User can create account.             | Yes | Yes |
+|                       | Test logout functionality.                                                    | User can click the confirm button. Logging out redirects users to the homepage or login page.              | Yes | Yes |
 |                       |                                                 |  |  |  |
 | **Admin Dashboard**   | Users verified by super user can access admin panel.                          | Users verified as 'staff' will have access to the admin panel.           | - | Yes |
 |                       | Regular users cannot sign in to the admin panel.                              | Users cannot access restricted pages unless verified by the super user. | - | Yes |
