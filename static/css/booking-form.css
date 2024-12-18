@@ -29,6 +29,7 @@ a.btn-delete {
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
+    align-content: center;
 }
 
 .formbold-form-wrapper {
