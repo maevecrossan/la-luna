@@ -31,7 +31,9 @@
 					bookings </strong></a> to view and modify. </p>
 		{% endif %}
 
-		<form id="booking-form" action="{% if is_edit %}{% url 'bookingsystem:booking-edit' booking.id %}{% else %}{% url 'bookingsystem:bookings' %}{% endif %}" onsubmit="return sendBookingConfirmation(this);" method="POST" novalidate>
+		<form id="booking-form" action="{% if is_edit %}{% url 'bookingsystem:booking-edit' booking.id %}{% else %}{% url 'bookingsystem:bookings' %}{% endif %}" 
+		onsubmit="return sendBookingConfirmation(this);";
+		method="POST" novalidate>
 
 			{% csrf_token %}
 
@@ -60,8 +62,7 @@
 			<div class="formbold-mb-5">
 				<label for="email" class="formbold-form-label"> Email Address </label>
 
-				<input type="email" class="formbold-form-input" name="email" id="id_email" value="{{ user.email }}"
-					readonly>
+				<input type="email" class="formbold-form-input" name="email" id="id_email" value="{{ user.email }}">
 
 				{% for error in form.email.errors %}
 				<div class="formbold-error-message">{{ error }}</div>

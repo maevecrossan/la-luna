@@ -1,39 +1,25 @@
-// CRED: CI UCD Resume Template
-function sendBookingConfirmation(bookingForm) {
-    if (form.checkValidity()) {
-        // Get all input elements within the form
-        var inputs = form.querySelectorAll('input, textarea, select');
+// CRED: CI UCD Resume 
 
-        // Object to hold form data
-        var formData = {};
-        var isValid = true;
+function sendBookingConfirmation(formElement) {
+    console.log('Form submitted:', formElement);
 
-        // Check each input field
-        for (var i = 0; i < inputs.length; i++) {
-            var input = inputs[i];
-            if (input.required && !input.value) {
-                alert("Please fill out the " + input.name + " field.");
-                isValid = false;
-                break;
-            }
-            formData[input.name] = input.value;
-        }
+    emailjs.sendForm('service_3cz29sk', 'template_j6lagrm', {
+        "name" :contactForm.name.value,
+        "number" :contactForm.number.value,
+        "email": contactForm.email.value,
+        "date": contactForm.date.value,
+        "time": contactForm.time.value,
+        "guest": contactForm.date.value
+    })
+        .then((result) => {
+            console.log('Booking confirmation email sent:', result);
+            alert('Booking confirmation email sent successfully!');
+            // Optionally redirect to the booking list page
+            window.location.href = '/bookings/my-bookings/';
+        }, (error) => {
+            console.error('Error sending booking confirmation email:', error);
+            alert('Failed to send booking confirmation email. Please try again later.');
+        });
 
-        if (isValid) {
-            emailjs.sendForm("service_3cz29sk", "template_j6lagrm", formData)
-                .then(
-                    function (response) {
-                        console.log('Email sent successfully:', response);
-                        form.reset();
-                    },
-                    function (error) {
-                        console.log('Failed to send email:', error);
-                    }
-                );
-            return true;
-        } else {
-            form.reportValidity();
-            return false;
-        }
-    }
+    return false; // Prevent the default form submission
 }
