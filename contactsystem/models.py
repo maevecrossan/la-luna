@@ -21,7 +21,7 @@ class Contact(models.Model):
             RegexValidator(
                 regex=r'^\+?1?\d{9,15}$',
                 message="Please enter a valid phone number. \
-                Up to 15 digits allowed."
+                Between 9 and 15 digits allowed."
             )
         ]
     )
