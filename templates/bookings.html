@@ -43,7 +43,7 @@
 			{% csrf_token %}
 
 			<div class="formbold-mb-5">
-				<label for="name" class="formbold-form-label"> Full Name </label>
+				<label for="name" class="formbold-form-label"><strong>Full Name</strong></label>
 
 				{{ form.name }}
 
@@ -54,7 +54,7 @@
 			</div>
 
 			<div class="formbold-mb-5">
-				<label for="formbold-error-message" class="formbold-form-label"> Phone Number </label>
+				<label for="formbold-error-message" class="formbold-form-label"><strong> Phone Number </strong></label>
 
 				{{ form.phone_number }}
 
@@ -62,10 +62,20 @@
 				<div class="formbold-error-message">{{ error }}</div>
 				{% endfor %}
 
+				<p class="form-subtext">
+					<em>
+						Please enter between 9 and 15 numbers.
+					</em>
+				</p>
+
 			</div>
 
 			<div class="formbold-mb-5">
-				<label for="email" class="formbold-form-label"> Email Address </label>
+				<label for="email" class="formbold-form-label">
+					<strong>
+						Email Address
+					</strong>
+				</label>
 
 				<input type="email" class="formbold-form-input" name="email" id="id_email" value="{{ user.email }}">
 
@@ -78,7 +88,11 @@
 			<div class="flex flex-wrap formbold--mx-3">
 				<div class="w-full formbold-px-3">
 					<div class="formbold-mb-5 w-full">
-						<label for="date" class="formbold-form-label" min="{{ today }}"> Date </label>
+						<label for="date" class="formbold-form-label" min="{{ today }}">
+							<strong> 
+								Date 
+							</strong>
+						</label>
 
 						{% for date in form.date.disabled_dates %}
 						<input type="hidden" name="date" value="{{ date }}">
@@ -95,7 +109,11 @@
 
 				<div class="w-full formbold-px-3">
 					<div class="formbold-mb-5">
-						<label for="time" class="formbold-form-label"> Choose a time:</label>
+						<label for="time" class="formbold-form-label">
+							<strong> 
+								Choose a time:
+							</strong>
+						</label>
 
 						{{ form.time }}
 
@@ -109,7 +127,11 @@
 
 			<div class="formbold-mb-3">
 
-				<label for="guests" class="formbold-form-label"> Number of Guests </label>
+				<label for="guests" class="formbold-form-label">
+					<strong> 
+						Number of Guests 
+					</strong>
+				</label>
 
 				{{ form.guests }}
 
@@ -117,7 +139,11 @@
 				<div class="formbold-error-message">{{ error }}</div>
 				{% endfor %}
 
-				<p class="form-subtext"><em> For bookings of nine or more guests, please contact us directly. </em></p>
+				<p class="form-subtext">
+					<em> 
+						For bookings of nine or more guests, please contact us directly. 
+					</em>
+				</p>
 
 			</div>
 

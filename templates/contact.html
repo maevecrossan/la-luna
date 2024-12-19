@@ -30,7 +30,9 @@
 
 			<div class="formbold-mb-5">
 				<label for="contact_name" class="formbold-form-label">
-					Full Name
+					<strong>
+						Full Name
+					</strong>
 				</label>
 
 				{{ form.contact_name }}
@@ -43,8 +45,12 @@
 
 			<div class="formbold-mb-5">
 				<label for="contact_phone_number" class="formbold-form-label">
-					Phone Number
+					<strong>
+						Phone Number
+					</strong>
 				</label>
+
+				<p class="form-subtext"><em>Please enter between 9 and 15 numbers.</em></p>
 
 				{{ form.contact_phone_number }}
 
@@ -55,7 +61,11 @@
 			</div>
 
 			<div class="formbold-mb-5">
-				<label for="contact_email" class="formbold-form-label"> Email Address </label>
+				<label for="contact_email" class="formbold-form-label">
+					<strong>
+						Email Address
+					</strong>
+				</label>
 
 				{{ form.contact_email }}
 
@@ -67,7 +77,9 @@
 
 			<div class="formbold-mb-5">
 				<label for="contact_message" class="formbold-form-label">
-					Your Message
+					<strong>
+						Your Message
+					</strong>
 				</label>
 
 				{{ form.contact_message }}
