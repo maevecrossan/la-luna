@@ -33,7 +33,8 @@ class Contact(models.Model):
                 regex=r'^\+?1?\d{9,15}$',
                 message="Please enter a valid phone number. \
                 Between 9 and 15 digits allowed."
-            )
+            ),
+            validate_min_length,
         ]
     )
 
