@@ -20,6 +20,9 @@ class BookingAdmin(admin.ModelAdmin):
     search_fields = (
         'name', 'email'
         )
+    actions = [
+        'delete_selected'
+        ]
 
     @admin.display(boolean=True, description='Expired')
     def expired_status(self, obj):
