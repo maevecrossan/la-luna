@@ -83,6 +83,54 @@
 |                       | Dashboard users can see user information (user names, reigstered emails, but never passwords).| - | - | Yes |
 |                       | Dashboard users can delete a user from the database.                          | Cascading setting will delete all traces of that user and their booking(s). | - | Yes |
 
+## Responsiveness Tests
+
+'Am I responsive?' was used to illustrate the ways in which each page scales down/changes depending on the screensize. Below are screenshots of each feature on the respective pages, with an additional screenshot taken on a phone view as I find the 'Am I responsive?' phone mock-up to be slightly inaccurate.
+
+* [Nav Am I Responsive]()
+* [Nav Am I Responsive Mobile Screenshot]()
+
+* [Footer Am I Responsive]()
+* [Footer Am I Responsive Mobile Screenshot]()
+
+* [Hero Am I Responsive]()
+* [Hero Am I Responsive Mobile Screenshot]()
+
+* [Our Story Am I Responsive]()
+* [Our Story Am I Responsive Mobile Screenshot]()
+
+* [Gallery Am I Responsive]()
+* [Gallery Am I Responsive Mobile Screenshot]()
+
+* [Menu Am I Responsive]()
+* [Menu Am I Responsive Mobile Screenshot]()
+
+* [Booking Form Am I Responsive]()
+* [Booking Form Am I Responsive Mobile Screenshot]()
+
+* [Edit Booking Am I Responsive]()
+* [Edit Booking Am I Responsive Mobile Screenshot]()
+
+* [My Bookings Am I Responsive]()
+* [My Bookings Am I Responsive Mobile Screenshot]()
+
+* [Contact Form Am I Responsive]()
+* [Contact Form Am I Responsive Mobile Screenshot]()
+
+* [Sign In Am I Responsive]()
+* [Sign In Am I Responsive Mobile Screenshot]()
+
+* [Sign Up Am I Responsive]()
+* [Sign Up Am I Responsive Mobile Screenshot]()
+
+* [Log Out Confirmation Am I Responsive]()
+* [Log Out Confirmation Am I Responsive Mobile Screenshot]()
+
+* [Delete Booking Confirmation Am I Responsive]()
+* [Delete Booking Confirmation Am I Responsive Mobile Screenshot]()
+
+
+
 ## Eight Shapes Contrast Grid
 
 Below is a screenshot of how I ensured my colour combinations passed the contrast test so the website remains accessible to all users. No combinations labelled DNP were used for essential aspects such as text, but may have been used for box borders, accents, etc.

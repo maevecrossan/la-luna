@@ -1,22 +1,25 @@
 # **La Luna**
+
 ## **Introduction**
 Welcome to La Luna, the online gateway to an exceptional fine-dining experience. Designed to reflect the elegance and sophistication of the restaurant itself, this website ensures that every visitor’s journey—from exploring our offerings to reserving a table—is as delightful and seamless as the dining experience at La Luna.
+
+![La Luna Am I Repsonsive Screenshot](docs/testing/am_i_responsive_test_home.png)
 
 ## **Table of Contents**
 
 
 
-# **Planning**
+## **Planning**
 
-## Strategy
+### Strategy
 
-### Site Aims
+#### Site Aims
 
 The aim of this webiste was to provide a sleek, intuitive experience for users who wish to learn about the La Luna restaurant, make a reservation, and ask questions. 
 
 Users would be able to create an account through which they can create, edit and modify bookings. Admin users could also keep track of bookings through the admin dashboard.
 
-### Opportunities
+#### Opportunities
 
 Below are the main points that arose when planning my project. The scores given to each opportunity were influences by the project timeframe, familiarity with the languages and frameworks used, and project scope.
 
@@ -47,7 +50,7 @@ Google Maps API. | 1 | 1
 **TOTAL** | **72** | **77**
 
 
-## Scope
+### Scope
 
 I divided these opportunities into categories under the MoSCoW headings for clarity.
 
@@ -79,9 +82,9 @@ I divided these opportunities into categories under the MoSCoW headings for clar
     * Google Maps API.
     * Newsletter distribution.
 
-## Structure
+### Structure
 
-### User Stories
+#### User Stories
 
 As a user...
 * I want to experience an intuitively laid-out website.
@@ -114,8 +117,8 @@ As a manager/owner...
 
 
 
-## **Skeleton**
-### Wireframes
+### **Skeleton**
+#### Wireframes
 * [Homepage wireframes](docs/wireframes/homepage_wireframe.png)
 * [Menu wireframe](docs/wireframes/menu_wireframe.png)
 * [Bookings wireframe](docs/wireframes/booking_form_wireframe.png)
@@ -124,7 +127,7 @@ As a manager/owner...
 
 The 'Our Story' section deisgn wasn't confirmed at this point as I wanted to make the list appear in a dynamic way and some character to the page. 
 
-### Database
+#### Database
 
 Below is the ERD for my database schema. I opted to user the default user model from the AllAuth library.
 
@@ -133,8 +136,8 @@ The contact model behaves in isolation and behaves separarely from the booking m
 
 ![Database ERD](docs/database-erd/models.png)
 
-## **Surface**
-### Colour Scheme
+### **Surface**
+#### Colour Scheme
 
 Below is my colour scheme.
 
@@ -165,10 +168,15 @@ Below are the images I used for the hero image and in the gallery section.
 ## **Features**
 ### **Base**
 * Logo
+
 * Nav (hamburger)
+
 * Content
+
 * Footer
+
 * Account features & status
+
 
 ### **Index/Home**
 
