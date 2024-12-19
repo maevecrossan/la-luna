@@ -23,18 +23,22 @@
 	<!-- Author: FormBold Team -->
 	<!-- Learn More: https://formbold.com -->
 	<div class="formbold-form-wrapper lato">
-		<h2 class="center form-title italiana ta-center"> Book with us today! </h2>
+		<h2 class="center form-title italiana ta-center">
+
+			{% if is_edit %} Update Booking {% else %} Book with us today! {% endif %}
+
+		</h2>
 
 		{% if user.is_authenticated %}
 		<p class="form-subtext ta-center"> Already have a booking? Go to <a href="{% url 'bookingsystem:my-bookings' %}"
 				class="inline-link"> <strong>my
-					bookings </strong></a> to view and modify. </p>
+					bookings </strong></a> to view and modify.
+		</p>
 		{% endif %}
 
-		<form id="booking-form" 
-		action="{% if is_edit %}{% url 'bookingsystem:booking-edit' booking.id %}{% else %}{% url 'bookingsystem:bookings' %}{% endif %}" 
-		method="POST" 
-		novalidate>
+		<form id="booking-form"
+			action="{% if is_edit %}{% url 'bookingsystem:booking-edit' booking.id %}{% else %}{% url 'bookingsystem:bookings' %}{% endif %}"
+			method="POST" novalidate>
 
 			{% csrf_token %}
 
@@ -81,7 +85,7 @@
 						{% endfor %}
 
 						{{ form.date.as_widget }}
-						
+
 						{% for error in form.date.errors %}
 						<div class="formbold-error-message">{{ error }}</div>
 						{% endfor %}

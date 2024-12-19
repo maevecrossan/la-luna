@@ -27,16 +27,20 @@
 
 | **Test Category**     | **Test Case**                                                                 | **Expected Outcome**                                           | **Mobile** | **Desktop** |
 |-----------------------|-------------------------------------------------------------------------------|----------------------------------------------------------------|------------|-------------|
-| **Base Template Features** | Ensure navigation links work correctly.                                  | Buttons/links navigate to the correct pages.                   | Yes | Yes |
-|                       | Test end-to-end flows.                                                        | All pages work correctly when accessed from one another.  | Yes | Yes |
-|                       | Ensure navigation collapses.                                                  | Navigation wraps on medium screens and collapses to a burger icon on smaller screens.   | Yes | Yes |
-|                       | All footer Links work correctly.                                              | Directory links and SNS links work as expected.  | Yes | Yes |
-|                       | Footer collapses correctly on smaller screens.                                | Columns wrap and stack on mobiles.  | Yes | Yes |
-|                       |                                                 |   |  |  |
-| **Homepage**          | Verify hero section content (text, images, alignment).                        | Content is accurate, properly aligned, and visually appealing.  | Yes | Yes |
-|                       | Check 'Make Reservation' link.                                                | Links to 'Booking' page.  | Yes | Yes |
-|                       | Our Story section appears correctly.                                          | Animations occur when link is pressed.  | Yes | Yes |
-|                       | Gallery renders correctly.                                                    | Six images on desktop (3 x 2 rows), three on mobile (vertically centered).  | Yes | Yes |
+| **Base Template Features** | Ensure navigation links work correctly.                                  | Links navigate to the correct pages.                   |  |  |
+|                       | Test end-to-end flows.                                                        | All pages work and link correctly when accessed from one another.  |  |  |
+|                       | Ensure navigation collapses.                                                  | Navigation wraps on medium screens and collapses to a burger icon on smaller screens.   |  |  |
+|                       | All footer Links work correctly.                                              | Directory links and SNS links are present and work as expected.  |  |  |
+|                       | Footer collapses correctly on smaller screens.                                | Columns wrap and stack on mobiles.  |  | - |
+|                       | Nav dropdown appears.                                                         | If a user is authenticated, they will be able to access the booking dropdown. Otherwise they will only see 'Bookings' and will be promted to sign in. |  |  |
+| **Homepage**          | Hero section behaves correctly.                                               | Hero section resizes and remains centered on smaller screens. Test remains visible.  |  |  |
+|                       | Hero 'make reservation' button behaves correctly.                             | Links to booking page. Prompts unauthorised users to sign in. Bring authorised users to booking form. |  |  |
+|                       | Our Story section animates correctly.                                         | Animations occur when link is pressed. |  |  |
+|                       | Our Story section appears as expected.                                        | Renders correctly on an already loaded page. |  |  |
+|                       | Our Story section resizes as expected.                                        | Collapses while remaining readable on smaller screens. Remains centered on larger screens. |  |  |
+|                       | Gallery renders correctly on large screens.                                   | Six images on desktop (3 x 2) | - |  |
+|                       | Gallery renders correctly on medium/tablet screens.                           | Three images stacked vertically. |  |  |
+|                       | Gallery renders correctly on small screens.                                   | Three images stacked vertically. |  | - |
 |                       |                                                 |   |  |  |
 | **Menu**              | Content is accurate, properly aligned, and visually appealing.                | Verify all dishes are listed with descriptions and pricing.  | Yes | Yes |
 |                       | Content collapses and expands while maintaing visible.                        | Content should narrow or widen depending on screensize. | Yes | Yes |
@@ -44,8 +48,8 @@
 | **My Bookings**       | If logged out, users should be promted to log in.                             | Sign in page appears. Unauthorised users cannot make bookings. | Yes | Yes |
 |                       | If logged in, users should br brought to the booking form.                    | Form appears. | Yes | Yes |
 |                       | My bookings link at top of booking form links to booking list page.           | My bookings page appears. | Yes | Yes |
-|                       | Form won't submit with an empty field.                                        | Django error message appears on top of form and under relevant field. Custom 500 page as fallback. | Yes | Yes |
-|                       | Remove 'required' attribute in devtools and try submit.   | Form will not submit. Custom error message appears on top of form and under relevant field. Custom 500 page as fallback. | Yes | Yes |
+|                       | Form won't submit with an empty field.                                        | Error message appears on top of form and under relevant field. Custom 500 page as fallback. Form will not submit with an empty field. | Yes | Yes |
+|                       | Remove 'required' attribute in devtools and try submit with an empty field.   | Form will not submit. Custom error message appears on top of form and under relevant field. Custom 500 page as fallback. | Yes | Yes |
 |                       | Enter invalid information in each field.                                      | Django error message appears on top of form and under relevant field. The form will not submit.| Yes | Yes |
 |                       | Submit valid data and test for success response.                              | User will be redirected to 'my bookings' page and see a success message below the heading. | Yes | Yes |
 |                       |                                                 |  |  |  |
