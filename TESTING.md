@@ -27,31 +27,40 @@
 
 | **Test Category**     | **Test Case**                                                                 | **Expected Outcome**                                           | **Mobile** | **Desktop** |
 |-----------------------|-------------------------------------------------------------------------------|----------------------------------------------------------------|------------|-------------|
-| **Base Template Features** | Ensure navigation links work correctly.                                  | Links navigate to the correct pages.                   |  |  |
-|                       | Test end-to-end flows.                                                        | All pages work and link correctly when accessed from one another.  |  |  |
-|                       | Ensure navigation collapses.                                                  | Navigation wraps on medium screens and collapses to a burger icon on smaller screens.   |  |  |
-|                       | All footer Links work correctly.                                              | Directory links and SNS links are present and work as expected.  |  |  |
-|                       | Footer collapses correctly on smaller screens.                                | Columns wrap and stack on mobiles.  |  | - |
-|                       | Nav dropdown appears.                                                         | If a user is authenticated, they will be able to access the booking dropdown. Otherwise they will only see 'Bookings' and will be promted to sign in. |  |  |
-| **Homepage**          | Hero section behaves correctly.                                               | Hero section resizes and remains centered on smaller screens. Test remains visible.  |  |  |
-|                       | Hero 'make reservation' button behaves correctly.                             | Links to booking page. Prompts unauthorised users to sign in. Bring authorised users to booking form. |  |  |
-|                       | Our Story section animates correctly.                                         | Animations occur when link is pressed. |  |  |
-|                       | Our Story section appears as expected.                                        | Renders correctly on an already loaded page. |  |  |
-|                       | Our Story section resizes as expected.                                        | Collapses while remaining readable on smaller screens. Remains centered on larger screens. |  |  |
-|                       | Gallery renders correctly on large screens.                                   | Six images on desktop (3 x 2) | - |  |
-|                       | Gallery renders correctly on medium/tablet screens.                           | Three images stacked vertically. |  |  |
-|                       | Gallery renders correctly on small screens.                                   | Three images stacked vertically. |  | - |
+| **Base Template Features** | Ensure navigation links work correctly.                                  | Links navigate to the correct pages.                   | Yes | Yes |
+|                       | Test end-to-end flows.                                                        | All pages work and link correctly when accessed from one another.  | Yes | Yes |
+|                       | Ensure navigation collapses.                                                  | Navigation wraps on medium screens and collapses to a burger icon on smaller screens.   | Yes | Yes |
+|                       | All footer Links work correctly.                                              | Directory links and SNS links are present and work as expected.  | Yes | Yes |
+|                       | Footer collapses correctly on smaller screens.                                | Columns wrap and stack on mobiles.  | Yes | - |
+|                       | Nav dropdown appears.                                                         | If a user is authenticated, they will be able to access the booking dropdown. Otherwise they will only see 'Bookings' and will be promted to sign in. | Yes | Yes |
+| **Homepage**          | Hero section behaves correctly.                                               | Hero section resizes and remains centered on smaller screens. Test remains visible.  | Yes | Yes |
+|                       | Hero 'make reservation' button behaves correctly.                             | Links to booking page. Prompts unauthorised users to sign in. Bring authorised users to booking form. | Yes | Yes |
+|                       | Our Story section animates correctly.                                         | Animations occur when link is pressed. | Yes | Yes |
+|                       | Our Story section appears as expected.                                        | Renders correctly on an already loaded page. | Yes | Yes |
+|                       | Our Story section resizes as expected.                                        | Collapses while remaining readable on smaller screens. Remains centered on larger screens. | Yes | Yes |
+|                       | Gallery renders correctly on large screens.                                   | Six images on desktop (3 x 2) | - | Yes |
+|                       | Gallery renders correctly on medium/tablet screens.                           | Three images stacked vertically. | Yes | Yes |
+|                       | Gallery renders correctly on small screens.                                   | Three images stacked vertically. | Yes | - |
 |                       |                                                 |   |  |  |
 | **Menu**              | Content is accurate, properly aligned, and visually appealing.                | Verify all dishes are listed with descriptions and pricing.  | Yes | Yes |
 |                       | Content collapses and expands while maintaing visible.                        | Content should narrow or widen depending on screensize. | Yes | Yes |
 |                       |                                                 |   |  |  |
-| **My Bookings**       | If logged out, users should be promted to log in.                             | Sign in page appears. Unauthorised users cannot make bookings. | Yes | Yes |
+| **Booking Form**       | If logged out, users should be promted to log in.                             | Sign in page appears. Unauthorised users cannot make bookings. | Yes | Yes |
 |                       | If logged in, users should br brought to the booking form.                    | Form appears. | Yes | Yes |
 |                       | My bookings link at top of booking form links to booking list page.           | My bookings page appears. | Yes | Yes |
 |                       | Form won't submit with an empty field.                                        | Error message appears on top of form and under relevant field. Custom 500 page as fallback. Form will not submit with an empty field. | Yes | Yes |
 |                       | Remove 'required' attribute in devtools and try submit with an empty field.   | Form will not submit. Custom error message appears on top of form and under relevant field. Custom 500 page as fallback. | Yes | Yes |
 |                       | Enter invalid information in each field.                                      | Django error message appears on top of form and under relevant field. The form will not submit.| Yes | Yes |
 |                       | Submit valid data and test for success response.                              | User will be redirected to 'my bookings' page and see a success message below the heading. | Yes | Yes |
+|                       | Correct promt heading is displayed when creating a new booking.               | 'Book with us today!' is displayed at the top of the form. | Yes | Yes |
+|                       | Correct submit button is displayed when creating a new booking.               | 'Make reservation' is displayed on the button. | Yes | Yes |
+|                       | User is redirected after submitting a valid booking.                          | User is redirected to the 'My Bookings' page where they can view their booking. | Yes | Yes |
+|                       |                                                 |  |  |  |
+|   **My Bookings**     | User has no bookings.                                                         | User will see a message promting them to make a booking. A clickable link will direct them to the booking form. | Yes | Yes |
+|                       | User has bookings. | Valid bookings will be displayed under the 'Upcoming Bookings' section, while 'Expired bookings' display bookings that have passed the current date and time combination. | Yes | Yes |
+|                       | User can click the edit button and modify their booking.                      | Details are updated. User is redirected to My Bookings page. Success message appears. | Yes | Yes |
+|                       | User can click the edit button and modify expired bookings.                   | User will have to update the date or an error will appear. If date is valid, details are updated. User is redirected to My Bookings page. Success message appears. | Yes | Yes |
+|                       | User can delete a booking (valid and expired).                                | A confirmation modal appears to check if the user is sure. 'Close' cancels the action. 'Delete' removes the booking from the database and fromthe My Bookings page. Deleted message appears on the refreshed page. | Yes | Yes |
 |                       |                                                 |  |  |  |
 | **Contact Form**      | All users (logged in and out) should be able to access and submit the form.   | - | Yes | Yes |
 |                       | Form won't submit with an empty field.                                        | Django error message appears on top of form and under relevant field. Custom 500 page as fallback. | Yes | Yes |
@@ -59,17 +68,20 @@
 |                       | Enter invalid information in each field.                                      | Django error message appears on top of form and under relevant field. The form will not submit. | Yes | Yes |
 |                       | Submit valid data and test for success response.                              | User will see a success message above the form. | Yes | Yes |
 |                       |                                                 |  |  |  |
-| **Login/Signup/Logout** | Attempt login with invalid credentials.                                       | Invalid credentials or form inputs will display error messages.          | Yes | Yes |
+| **Login/Signup/Logout** | Attempt login with invalid credentials.                                     | Invalid credentials or form inputs will display error messages.          | Yes | Yes |
 |                       | Attempt login with valid credentials.                                         | Successful sign in.          | Yes | Yes |
 |                       | Test account creation with invalid info.                                      | Invalid form inputs will display error messages.             | Yes | Yes |
 |                       | Test account creation with valid info.                                        | User can create account.             | Yes | Yes |
-|                       | Test logout functionality.                                                    | User can click the confirm button. Logging out redirects users to the homepage or login page.              | Yes | Yes |
+|                       | Test logout functionality.                                                    | User can click the confirm button on confirmation page. Logging out redirects users to the homepage or login page.              | Yes | Yes |
 |                       |                                                 |  |  |  |
 | **Admin Dashboard**   | Users verified by super user can access admin panel.                          | Users verified as 'staff' will have access to the admin panel.           | - | Yes |
+|                       | Admin only accessible by adding `/admin` manually to the end of the homepage link.| No links on the customer-user page to suggest access to the database/dashboard for security. |  |  |
 |                       | Regular users cannot sign in to the admin panel.                              | Users cannot access restricted pages unless verified by the super user. | - | Yes |
 |                       | Dashboard users can organise bookings with various filters.                   | Bookings can be organised by name, date, validity, etc. | - | Yes |
-|                       | Dashboard users can view contact form submissions.                   | Contact form submissions can be view as a list but also clicked into to view the information submitted more clearly. | - | Yes |
-|                       |                                                 |  |  |  |
+|                       | Dashboard users can view contact form submissions.                            | Contact form submissions can be view as a list but also clicked into to view the information submitted more clearly. | - | Yes |
+|                       | Dashboard users can mass delete selected booking or contact form submissions. | Users can select and delete selected bookings from the `action` drop down menu. | - | Yes |
+|                       | Dashboard users can see user information (user names, reigstered emails, but never passwords).| - | - | Yes |
+|                       | Dashboard users can delete a user from the database.                          | Cascading setting will delete all traces of that user and their booking(s). | - | Yes |
 
 ## Eight Shapes Contrast Grid
 
