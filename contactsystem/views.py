@@ -17,12 +17,14 @@ def contact_system(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()  # Save the form to the database
+            form.save()
             messages.add_message(
                 request, messages.SUCCESS,
-                'Message successfully sent.')
+                'Thank you for contacting us! Your message has been sent.')
+            form = ContactForm()
         else:
             messages.add_message(
                 request, messages.ERROR,
-                'Error sending message.')
+                'There was an error with your submission.\
+                    Please correct the errors below.')
     return render(request, 'contact.html', {'form': form})
