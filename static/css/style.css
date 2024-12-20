@@ -597,7 +597,7 @@ footer .col {
 }
 
 .error-message-container {
-    height: 36vh;
+    height: 40vh;
 }
 
 .error-header {
@@ -629,6 +629,10 @@ footer .col {
 
     .error-container {
         height: fit-content;
+    }
+
+    .error-message-container {
+        min-height: 90vh;
     }
 
     h1 {
