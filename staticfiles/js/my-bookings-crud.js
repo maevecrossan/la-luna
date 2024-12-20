@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const deleteModalElement = document.getElementById("deleteModal");
 	if (deleteModalElement) {
 		// Initialize the modal only if it exists
-		const deleteModal = new bootstrap.Modal(deleteModalElement);
+		const deleteModal = new bootstrap.Modal(deleteModalElement); /* global bootstrap */
 
 		// Add event listeners for delete buttons
 		const deleteButtons = document.getElementsByClassName("btn-delete");
