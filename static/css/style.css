@@ -593,7 +593,7 @@ footer .col {
 
 .error-container {
     padding: 58px;
-    height: 40vh;
+    height: auto;
 }
 
 .error-message-container {
