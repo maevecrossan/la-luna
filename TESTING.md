@@ -129,12 +129,12 @@
 * [Sign In Am I Responsive](docs/testing/responsive-tests/air_sign_in.png)
 * [Sign In Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_sign_in_mobile.PNG)
 
-* [Sign Up Am I Responsive](docs/testing/responsive-tests)
-* [Sign Up Am I Responsive Mobile Screenshot](docs/testing/responsive-tests)
+* [Sign Up Am I Responsive](docs/testing/responsive-tests/air_sign_up.png)
+* [Sign Up Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_signup_mobile.jpeg)
 
-* [Log Out Confirmation Am I Responsive  Desktop Screenshot](docs/testing/responsive-tests)
-* [Log Out Confirmation Am I Responsive Tablet Screenshot](docs/testing/responsive-tests)
-* [Log Out Confirmation Am I Responsive Mobile Screenshot](docs/testing/responsive-tests)
+* [Log Out Confirmation Am I Responsive  Desktop Screenshot](docs/testing/responsive-tests/air_signout_desktop.png)
+* [Log Out Confirmation Am I Responsive Tablet Screenshot](docs/testing/responsive-tests/air_signout_tablet.PNG)
+* [Log Out Confirmation Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_signout_mobile.PNG)
 
 * [404/500 Error Page Am I Responsive](docs/testing/responsive-tests)
 * [404/500 Error Page Am I Responsive Mobile Screenshot](docs/testing/responsive-tests)
