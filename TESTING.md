@@ -201,10 +201,8 @@ Desktop:
 Mobile:
 ![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_contact_mobile.png)
 
-
-
-
 ## PEP8
+
 
 ## JavaScript
 
