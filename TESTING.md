@@ -87,50 +87,57 @@
 
 'Am I responsive?' was used to illustrate the ways in which each page scales down/changes depending on the screensize. Below are screenshots of each feature on the respective pages, with an additional screenshot taken on a phone view as I find the 'Am I responsive?' phone mock-up to be slightly inaccurate.
 
-* [Nav Am I Responsive]()
-* [Nav Am I Responsive Mobile Screenshot]()
+(Some pages that require being signed in are not accessible through Am I Responsive, in which case three screenshots taken across a phone, tablet and desktop will be included.)
 
-* [Footer Am I Responsive]()
-* [Footer Am I Responsive Mobile Screenshot]()
+* [Nav Am I Responsive](docs/testing/responsive-tests/air_nav.png)
+* [Nav Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_nav_mobile.jpeg)
 
-* [Hero Am I Responsive]()
-* [Hero Am I Responsive Mobile Screenshot]()
+* [Footer Am I Responsive](docs/testing/responsive-tests/air_footer.png)
+* [Footer Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_footer_mobile.jpeg)
 
-* [Our Story Am I Responsive]()
-* [Our Story Am I Responsive Mobile Screenshot]()
+* [Hero Am I Responsive](docs/testing/responsive-tests/air_hero.png)
+* [Hero Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_hero_mobile.jpeg)
 
-* [Gallery Am I Responsive]()
-* [Gallery Am I Responsive Mobile Screenshot]()
+* [Our Story Am I Responsive](docs/testing/responsive-tests/air_our_story.png)
+* [Our Story Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_our_story_mobile.jpeg)
 
-* [Menu Am I Responsive]()
-* [Menu Am I Responsive Mobile Screenshot]()
+* [Gallery Am I Responsive](docs/testing/responsive-tests/air_gallery.png)
+* [Gallery Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_gallery_mobile.jpeg)
 
-* [Booking Form Am I Responsive]()
-* [Booking Form Am I Responsive Mobile Screenshot]()
+* [Menu Am I Responsive](docs/testing/responsive-tests/air_menu.png)
+* [Menu Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_menu_mobile.PNG)
 
-* [Edit Booking Am I Responsive]()
-* [Edit Booking Am I Responsive Mobile Screenshot]()
+* [Booking Form Am I Responsive Desktop Screenshot](docs/testing/responsive-tests/air_booking_form_desktop.png)
+* [Booking Form Am I Responsive Tablet Screenshot](docs/testing/responsive-tests/air_booking_form_tablet.jpeg)
+* [Booking Form Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_booking_form_mobile.PNG)
 
-* [My Bookings Am I Responsive]()
-* [My Bookings Am I Responsive Mobile Screenshot]()
+* [My Bookings Am I Responsive Desktop Screenshot](docs/testing/responsive-tests/air_my_bookings_list_desktop.png)
+* [My Bookings Am I Responsive Tablet Screenshot](docs/testing/responsive-tests/air_my_bookings_list_tablet.jpeg)
+* [My Bookings Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_my_bookings_list_mobile.jpeg)
 
-* [Contact Form Am I Responsive]()
-* [Contact Form Am I Responsive Mobile Screenshot]()
+* [Edit Booking Am I Responsive Desktop Screenshot](docs/testing/responsive-tests/air_edit_desktop.jpeg)
+* [Edit Booking Am I Responsive Tablet Screenshot](docs/testing/responsive-tests/air_edit_tablet.jpeg)
+* [Edit Booking Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_edit_mobile.jpeg)
 
-* [Sign In Am I Responsive]()
-* [Sign In Am I Responsive Mobile Screenshot]()
+* [Delete Booking Confirmation Am I Responsive Desktop Screenshot](docs/testing/responsive-tests)
+* [Delete Booking Confirmation Am I Responsive Tablet Screenshot](docs/testing/responsive-tests)
+* [Delete Booking Confirmation Am I Responsive Mobile Screenshot](docs/testing/responsive-tests)
 
-* [Sign Up Am I Responsive]()
-* [Sign Up Am I Responsive Mobile Screenshot]()
+* [Contact Form Am I Responsive](docs/testing/responsive-tests)
+* [Contact Form Am I Responsive Mobile Screenshot](docs/testing/responsive-tests)
 
-* [Log Out Confirmation Am I Responsive]()
-* [Log Out Confirmation Am I Responsive Mobile Screenshot]()
+* [Sign In Am I Responsive](docs/testing/responsive-tests/air_sign_in.png)
+* [Sign In Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_sign_in_mobile.PNG)
 
-* [Delete Booking Confirmation Am I Responsive]()
-* [Delete Booking Confirmation Am I Responsive Mobile Screenshot]()
+* [Sign Up Am I Responsive](docs/testing/responsive-tests)
+* [Sign Up Am I Responsive Mobile Screenshot](docs/testing/responsive-tests)
 
-* [404/500 Error Page Am I Responsive]()
-* [404/500 Error Page Am I Responsive Mobile Screenshot]()
+* [Log Out Confirmation Am I Responsive  Desktop Screenshot](docs/testing/responsive-tests)
+* [Log Out Confirmation Am I Responsive Tablet Screenshot](docs/testing/responsive-tests)
+* [Log Out Confirmation Am I Responsive Mobile Screenshot](docs/testing/responsive-tests)
+
+* [404/500 Error Page Am I Responsive](docs/testing/responsive-tests)
+* [404/500 Error Page Am I Responsive Mobile Screenshot](docs/testing/responsive-tests)
 
 ## Eight Shapes Contrast Grid
 
