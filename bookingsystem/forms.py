@@ -46,6 +46,7 @@ class BookingForm(forms.ModelForm):
                     'name': 'date',
                     'type': 'date',
                     'class': 'formbold-form-input',
+                    'min': date.today().strftime('%Y-%m-%d'),
                 }
             ),
             'time': forms.Select(
@@ -74,6 +75,12 @@ class BookingForm(forms.ModelForm):
             '%Y-%m-%d')
         # Pass the CLOSED_DATES to the form
         self.fields['date'].disabled_dates = self.instance.CLOSED_DATES
+
+        # Prepopulate email field
+        user = kwargs.pop('user', None)
+        super().__init__(*args, **kwargs)
+        if user and user.email:
+            self.fields['email'].initial = user.email
 
     def disabled_dates(self):
         """
