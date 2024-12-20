@@ -659,10 +659,9 @@ footer .col {
         padding: 5px;
     }
     
-    /* Style for each nav link */
     #mobile-navigation .nav-item {
-        margin: 10px 0; /* Space between each link */
-        text-align: center; /* Center the link text */
+        margin: 10px 0;
+        text-align: center;
     }
 
     #mobile-navigation .navbar {
@@ -670,19 +669,18 @@ footer .col {
         flex-direction: column;
     }
     
-    /* Style for the links themselves */
     #mobile-navigation .nav-link {
-        color: #bf7b75; /* Link text color */
-        text-decoration: none; /* Remove underline */
-        font-size: 1.5em; /* Font size for links */
+        color: #bf7b75;
+        text-decoration: none;
+        font-size: 1.5em;
     }
 
     /* Add hover effects */
     #mobile-navigation .nav-link:hover {
-        color: #bf7b75; /* Change color on hover */
+        color: #d8b8b8; /* Change color on tap */
     }
 
-    /* Display the hamburger icon for smaller screens */
+    /* Display the hamburger icon on smaller screens */
     .icon {
         display: block;
         font-size: 35px;
@@ -691,7 +689,6 @@ footer .col {
     }
 
     /* ---------------- Hero Styles */
-
 
     .hero h2 {
         font-size: 3em;
