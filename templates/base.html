@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="{% static 'css/menu.css' %}" type="text/css">
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
-    
+
     <title>La Luna</title>
 
 </head>
@@ -38,9 +38,10 @@
         <div class="header-container">
 
             {% if user.is_authenticated %}
-            <p class="user-status right off-white italiana text-end m-3">You are logged in as {{ user }}.</p>
+            <p class="user-status right off-white italiana text-end m-3"><strong>You are logged in as
+                    {{ user }}.</strong></p>
             {% else %}
-            <p class="user-status right off-white italiana text-end m-3">You are not logged in.</p>
+            <p class="user-status right off-white italiana text-end m-3"><strong>You are not logged in.</strong></p>
             {% endif %}
 
             {% if user.is_authenticated %}
@@ -48,7 +49,9 @@
             <div>
                 <a class="user-status right off-white italiana text-end m-3 {% if request.path == logout_url %}active{% endif %}"
                     aria-current="page" href="{% url 'account_logout' %}">
-                    Logout
+                    <strong>
+                        Logout
+                    </strong>
                 </a>
             </div>
 
@@ -57,7 +60,9 @@
 
                 <a class="user-status right off-white italiana text-end m-3 {% if request.path == login_url %}active{% endif %}"
                     aria-current="page" href="{% url 'account_login' %}">
-                    Login
+                    <strong>
+                        Login
+                    </strong>
                 </a>
 
                 <a class="user-status right off-white italiana text-end m-3 {% if request.path == signup_url %}active{% endif %}"
@@ -137,7 +142,8 @@
             </nav>
 
             <!-- Hamburger icon for mobile menu -->
-            <a href="/" id="burger-icon" aria-label="mobile navigation toggle" class="icon" onclick="displayMobileMenu()">
+            <a href="/" id="burger-icon" aria-label="mobile navigation toggle" class="icon"
+                onclick="displayMobileMenu()">
                 <i class="fa fa-bars off-white"></i>
             </a>
 
@@ -301,7 +307,7 @@
                     </li>
 
                     <li class="mb-2 off-white center">
-                        <a href="https://www.instagram.com/" class="footer-link off-white p-0"  target="_blank"
+                        <a href="https://www.instagram.com/" class="footer-link off-white p-0" target="_blank"
                             aria-label="Opens instagram in a new tab.">
                             <i class=" fa-brands fa-instagram" style="color: #d8d7d9;"></i>
                         </a>
