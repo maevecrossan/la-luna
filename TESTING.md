@@ -140,6 +140,16 @@
 * [404/500 Error Page Am I Responsive Tablet Screenshot](docs/testing/responsive-tests/air_error_tablet.PNG)
 * [404/500 Error Page Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_error_mobile.jpeg)
 
+
+## Lighthouse
+Each page was tested on an incognito browser to prevent any plugin interferance. 
+
+## PEP8
+
+## JavaScript
+
+## HTML
+
 ## Eight Shapes Contrast Grid
 
 Below is a screenshot of how I ensured my colour combinations passed the contrast test so the website remains accessible to all users. No combinations labelled DNP were used for essential aspects such as text, but may have been used for box borders, accents, etc.
@@ -181,11 +191,4 @@ The following are the results from my WAVE evaluations for each page. Notes expl
 ### Contact Us
 ![WAVE Evaluation Screenshot]()
 
-## Lighthouse
-
-## PEP8
-
-## JavaScript
-
-## HTML
 
