@@ -129,7 +129,8 @@
 * [Delete Booking Confirmation Am I Responsive]()
 * [Delete Booking Confirmation Am I Responsive Mobile Screenshot]()
 
-
+* [404/500 Error Page Am I Responsive]()
+* [404/500 Error Page Am I Responsive Mobile Screenshot]()
 
 ## Eight Shapes Contrast Grid
 
