@@ -211,6 +211,9 @@ Each file passed the validation bar the settings file. Due to Django's protest a
 [Settings PEP8 Error](docs/testing/pep8_error.png)
 
 ## JavaScript
+I used JSHint to validate my JavaScript Code. There were only two files I created, and both passed without any issues.
+*[base.js JSHint Screenshot](docs/testing/base_jshint.png)
+*[my-booking-crud.js JSHint Screenshot](docs/testing/crud_jshint.png)
 
 ## HTML
 
