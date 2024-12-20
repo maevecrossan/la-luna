@@ -142,6 +142,8 @@
 * [404/500 Error Page Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_error_mobile.jpeg)
 
 
+# Validator Testing
+
 ## Lighthouse
 Each page was tested on an incognito browser to prevent any plugin interferance. 
 
@@ -152,6 +154,7 @@ Desktop:
 
 Mobile:
 ![Lighthouse Evaluation Screenshot - Mobile](docs/testing/lighthouse/lh_home_mobile.png)
+* See above.
 
 ### Menu
 Desktop:
@@ -203,6 +206,9 @@ Mobile:
 
 ## PEP8
 
+To ensure all Python files were PEP8 compliant, I used the flake8 extension in VSCode. Post development, I tested each file with the CI Python Linter [here](https://pep8ci.herokuapp.com/) to double-check.
+Each file passed the validation bar the settings file. Due to Django's protest again PEP8 line length, the `AUTH_PASSWORD_VALIDATORS` has 4 lines that are too long. This remains the only PEP8 error.
+[Settings PEP8 Error](docs/testing/pep8_error.png)
 
 ## JavaScript
 
