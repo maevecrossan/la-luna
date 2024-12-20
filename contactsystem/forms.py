@@ -44,6 +44,7 @@ class ContactForm(forms.ModelForm):
             'contact_message': forms.Textarea(
                 attrs={
                     'id': 'contact_message',
+                    'name': 'contact_message',
                     'placeholder': 'Your Message',
                     'class': 'formbold-form-input',
                     'rows': 4,
