@@ -225,9 +225,11 @@ Below are some of the 'issues' raised by the W3 HTML validator.
 * Sign Up Page: The validator picked up four errors on this page. Similar to the case above, the AllAuth elements causing the issues are not present in my local environment, and they seems to contradict each other. Because of this, they could not be edited at this time but will be investigated at a later time.
 [Sign in elements](docs/testing/w3_signin.png)
 
-
 ## CSS
 
+The base style.css has one minor error but this was fixed but removing a simple digit from the 'our story' animations. 
+
+All three CSS files passed the validator.
 
 
 ## Eight Shapes Contrast Grid
