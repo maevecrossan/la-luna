@@ -146,29 +146,60 @@
 Each page was tested on an incognito browser to prevent any plugin interferance. 
 
 ### Homepage
-![Lighthouse Evaluation Screenshot - Desktop](docs/testing//lighthouse/lh_home_desktop.png)
-![Lighthouse Evaluation Screenshot - Mobile]()
+Desktop:
+![Lighthouse Evaluation Screenshot - Desktop](docs/testing/lighthouse/lh_home_desktop.png)
+* The performance is affected mostly by the hero image as it occupies considerable space and is hosted on another website, so will increase additional load time. While testers didn't report any issues with the image load time, I will research on how to increase this score in the next iteration.
+
+Mobile:
+![Lighthouse Evaluation Screenshot - Mobile](docs/testing/lighthouse/lh_home_mobile.png)
 
 ### Menu
-![Lighthouse Evaluation Screenshot]()
+Desktop:
+![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_menu_desktop.png)
+* Two points in accessibilty were lost due to incorrect heading order cause by the page extending from base.html. (This alert will be raised over the remaining pages so will not be addressed again.)
+
+Mobile:
+![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_menu_mobile.png)
 
 ### Make Booking (form)
-![Lighthouse Evaluation Screenshot]()
+Desktop:
+![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_booking_form_desktop.png)
+
+Mobile:
+![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_booking_form_mobile.png)
 
 ### My Bookings
-![Lighthouse Evaluation Screenshot]()
+Desktop:
+![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_my_bookings_desktop.png)
+
+Mobile:
+![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_my_bookings_mobile.png)
 
 ### Sign Up
-![Lighthouse Evaluation Screenshot]()
+Desktop:
+![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_signup_desktop.png)
+Mobile:
+![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_signup_mobile.png)
 
 ### Sign In
-![Lighthouse Evaluation Screenshot]()
+Desktop:
+![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_signin_desktop.png)
+Mobile:
+![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_signin_mobile.png)
 
 ### Logout
-![Lighthouse Evaluation Screenshot]()
+Desktop:
+![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_logout_desktop.png)
+
+Mobile:
+![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_logout_mobile.png)
 
 ### Contact Us
-![Lighthouse Evaluation Screenshot]()
+Desktop:
+![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_contact_desktop.png)
+
+Mobile:
+![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_contact_mobile.png)
 
 
 
