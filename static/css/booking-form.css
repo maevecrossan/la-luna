@@ -1,0 +1,213 @@
+/* Contains specific styles for pages containing a form (including AllAuth)
+, as well as the 'My Bookings' page. 
+
+Generic styles are inherited from style.css
+*/
+a.btn-edit,
+a.btn-delete {
+    width: 40%;
+    align-self: center;
+    margin: 10px;
+}
+
+.authentication-form {
+    margin: 30px 0px;
+}
+
+.formbold-mb-5 {
+    margin-bottom: 20px;
+}
+
+.formbold-pt-3 {
+    padding-top: 12px;
+}
+
+.formbold-main-wrapper {
+    padding: 48px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+.formbold-form-wrapper {
+    margin: 30px;
+    max-width: 550px;
+    width: 100%;
+    background: #d8b8b8;
+    padding: 20px;
+    border-radius: 7px;
+}
+
+.form-title {
+    font-size: 2.6em;
+    font-weight: 600;
+    color: #592828;
+}
+
+.form-subtext {
+    font-size: 20px;
+    padding: 15px 15px 5px 15px;
+}
+
+.formbold-form-label {
+    display: block;
+    font-weight: 500;
+    font-size: 20px;
+    color: #592828;
+    margin-left: 15px;
+}
+
+.formbold-form-input {
+    width: -webkit-fill-available;
+    padding: 12px 18px;
+    margin: 13px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    font-weight: 500;
+    font-size: 18px;
+    color: black;
+    outline: none;
+    resize: none;
+}
+
+.formbold-error-message {
+    margin-left: 15px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: palegreen;
+    font-weight: 700;
+    max-width: fit-content;
+    border-radius: 6px;
+}
+
+.formbold-btn {
+    text-align: center;
+    font-size: 18px;
+    border-radius: 6px;
+    padding: 14px 32px;
+    border: 1px solid #d8d7d9;
+    font-weight: 600;
+    background-color: #592828;
+    color: #d8d7d9;
+    width: 100%;
+    cursor: pointer;
+}
+
+.formbold-btn:hover {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.formbold--mx-3 {
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.formbold-px-3 {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.inline-link {
+    color: #592828;
+}
+
+.inline-link:hover {
+    color: #592828;
+    text-decoration: underline;
+}
+
+.card {
+    width: 50%;
+}
+
+p.card-text {
+    margin: 10px 0 0 20px;
+}
+
+.logout-container {
+    height: 50vh;
+}
+
+/* Expired/Active Styles for My Bookings Page */
+
+.expired {
+    color: rgb(167, 43, 43);
+    margin-left: 20px;
+}
+
+.active {
+    color: rgb(35, 95, 35);
+    margin-left: 20px;
+}
+
+.no-bookings-container {
+    background-color: #d8d8d8;
+    width: fit-content;
+    padding: 19px;
+    border-radius: 6px;
+    color: #432020;
+    margin-bottom: 25px;
+}
+
+
+/* ---------------------------- Media Queries */
+
+@media (min-width: 540px) {
+    .sm\:w-half {
+        width: 50%;
+    }
+}
+
+
+/* ---------------------------- Smaller Screen Styles : Form & My Bookings */
+@media (max-width: 620px) {
+    .formbold-main-wrapper {
+        padding: 24px;
+    }
+
+    .formbold-form-wrapper {
+        max-width: 100%;
+        padding: 16px;
+    }
+
+    .formbold-form-input,
+    input[type="date"],
+    select {
+        width: 80%;
+    }
+
+    .validity {
+        margin-left: 8px;
+    }
+
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .sub-heading {
+        text-align: center;
+    }
+    
+    .card {
+        min-width: 320px;
+    }
+
+    .card-body {
+        padding: 0.8rem;
+    }
+}
