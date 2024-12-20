@@ -43,7 +43,11 @@
 			{% csrf_token %}
 
 			<div class="formbold-mb-5">
-				<label for="name" class="formbold-form-label"><strong>Full Name</strong></label>
+				<label for="name" class="formbold-form-label">
+					<strong>
+						Full Name
+					</strong>
+				</label>
 
 				{{ form.name }}
 
@@ -75,13 +79,13 @@
 			</div>
 
 			<div class="formbold-mb-5">
-				<label for="id_email" class="formbold-form-label">
+				<label for="email" class="formbold-form-label">
 					<strong>
 						Email Address
 					</strong>
 				</label>
 
-				<input type="email" class="formbold-form-input" name="email" id="id_email" value="{{ user.email }}">
+				{{ form.email }}
 
 				{% for error in form.email.errors %}
 				<div class="formbold-error-message">{{ error }}</div>
@@ -92,17 +96,17 @@
 			<div class="flex flex-wrap formbold--mx-3">
 				<div class="w-full formbold-px-3">
 					<div class="formbold-mb-5 w-full">
-						<label for="date" class="formbold-form-label" min="{{ today }}">
+						<label for="date" class="formbold-form-label">
 							<strong> 
 								Date 
 							</strong>
 						</label>
 
 						{% for date in form.date.disabled_dates %}
-						<input type="hidden" name="date" value="{{ date }}">
+						<input type="hidden" name="hidden-date" value="{{ date }}">
 						{% endfor %}
 
-						{{ form.date.as_widget }}
+						{{ form.date }}
 
 						{% for error in form.date.errors %}
 						<div class="formbold-error-message">{{ error }}</div>
