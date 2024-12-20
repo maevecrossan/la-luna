@@ -19,7 +19,6 @@ class ContactForm(forms.ModelForm):
             'contact_name': forms.TextInput(
                 attrs={
                     'id': 'contact_name',
-                    'name': 'contact_name',
                     'placeholder': 'Full Name',
                     'class': 'formbold-form-input'
                 }
@@ -27,7 +26,6 @@ class ContactForm(forms.ModelForm):
             'contact_phone_number': forms.TextInput(
                 attrs={
                     'id': 'contact_phone_number',
-                    'name': 'contact_phone_number',
                     'placeholder': '123456789',
                     'class': 'formbold-form-input',
                     'pattern': r'^\+?1?\d{9,15}$',
@@ -36,7 +34,6 @@ class ContactForm(forms.ModelForm):
             'contact_email': forms.EmailInput(
                 attrs={
                     'id': 'contact_email',
-                    'name': 'contact_email',
                     'placeholder': 'Email Address',
                     'class': 'formbold-form-input'
                 }
@@ -44,10 +41,15 @@ class ContactForm(forms.ModelForm):
             'contact_message': forms.Textarea(
                 attrs={
                     'id': 'contact_message',
-                    'name': 'contact_message',
                     'placeholder': 'Your Message',
                     'class': 'formbold-form-input',
                     'rows': 4,
                 }
             )
+        }
+        labels = {
+            'contact_name': 'Full Name',
+            'contact_phone_number': 'Phone Number',
+            'contact_email': 'Email Address',
+            'contact_message': 'Your Message'
         }
