@@ -167,16 +167,25 @@ Below are the images I used for the hero image and in the gallery section.
 
 ## **Features**
 ### **Base**
-* Logo
 
-* Nav (hamburger)
+The following is an explanation of the features of the base.html file from which all (but the error (404 and 500) pages extend from.)
 
-* Content
+#### Logo
+The 'La Luna' logo is displayed at the top of every page in a large white font. It remains in the centered across all screensizes. 
 
-* Footer
+#### Navigation
+The navgiation sits just under the logo in the header. The links are light-red in colour and change to an off-white colour when in the hovered state. Two lines also expand from the top and bottom of the hovered-over link for better UX. On larger screens, the navigation links are always visible and sit side by side. 
+WHen the user is not authenticated (not logged in), they will see a 'Bookings' link. This changes when the user is signed in to a dropdown that reads 'Bookings' with a caret icon. When hovered over, the authenticated user can the access the 'Make booking' link (which brings them to the booking form) and the 'My Bookings' link which brings them to a list of their previously made bookings.
+The navigation bar is not present on the error pages (404 and 500) to minimise the chances of more errors appearing. The users should be redirected to the homepage so that their navigation path is clear. 
 
-* Account features & status
+#### Navigation (Smaller Screens)
+On smaller screens, the navigation is replaced by a burger icon which expands when clicked/tapped. The navigation links expand vertically along the screen and have the same hover features as the large-screen navigation. The same logic occurs here in which logged out users will not have the dropdown option to access bookings, while logged in users will. 
 
+#### Footer
+Across all pages, the footer is broken into three columns that stack vertically as the screen narrows. The first section is the directory which is effectively a second navigation and provides all the same links. It also provides the same relevant user authentications actions (login, sign up, logout). The second column houses the social media links for X-Twitter, Instagram and Facebook. The third and final column is the Address column which provides a summary of the important contact details.
+
+#### User Status
+As previously mentioned, users can take actions via the header and/or the footer. There are links in both that will allow users to login, log out, or sign up depending on their authentication status at that time. 
 
 ### **Index/Home**
 
