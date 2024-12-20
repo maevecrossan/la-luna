@@ -265,7 +265,7 @@ h1 {
 .hero {
     min-height: 550px;
     height: 100vh;
-    width: 100vw;
+    width: auto;
     background-image: url("https://images.pexels.com/photos/5490933/pexels-photo-5490933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-repeat: no-repeat;
     background-size: cover;
@@ -601,7 +601,7 @@ footer .col {
 }
 
 .error-footer {
-    height: 40vh;
+    height: fit-content;
 }
 
 /*------------------------------------------------------------ Media Queries */
@@ -620,7 +620,7 @@ footer .col {
     }
 
     .error-container {
-        height: 50vh;
+        height: fit-content;
     }
 
     h1 {
