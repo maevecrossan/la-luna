@@ -68,6 +68,10 @@ body {
     text-transform: uppercase;
 }
 
+.ta-center {
+    text-align: center;
+}
+
 .italiana {
     font-family: "Italiana", serif;
 }
@@ -572,8 +576,8 @@ footer .col {
     color: #bf7b75;
 }
 
-.ta-center {
-    text-align: center;
+.footer-email {
+    display: content;
 }
 
 .copyright-container {
@@ -590,6 +594,10 @@ footer .col {
 .error-container {
     padding: 58px;
     height: 40vh;
+}
+
+.error-message-container {
+    height: 36vh;
 }
 
 .error-header {
