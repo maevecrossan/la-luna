@@ -21,7 +21,7 @@
 |  | 500 error appearing submitting form after removing 'required' attribute in devtools from 'date' input field. | ![testing screenshot](docs/testing/date_field_update.png) ![testing screenshot](docs/testing/field_date_update_2.png) Add additional checks and validationin the models.py file and forms.py |
 | ![testing screenshot](docs/testing/empty_guest_field_500_error.png) | Submitting blank guests input brings user to 500 error page rather than triggering error message. | ![testing screenshot](docs/testing/empty_field_error_fix.png) Added additional check to prevent 500 page from appearing. |
 | ![testing screenshot](docs/testing/email_error.png) ![testing screenshot](docs/testing/email_error_2.png) | Confirmation email sending not working. | After several hours of debugging (trying old code, reinstalling the feature, asking ChatGPT, and trying Django's email alternative) no emails were being sent upon booking form submission. After trying to fix it to no avail, and as it is not a requirement for this project, I decided to remove the feature and to include it at a later time. I have included two screenshots. The first is my terminal which shows the app working as expected with no errors. The second is an emial that successfully sent 24 hours before the time of writing this. In an attempt to save time (and my sanity), I will attempt to implement it in a future iteration. |
-| ![testing screenshot](docs/testing/not_crawlable.png) | Links not crawlable (lighthouse test) and affecting SEO score. | Repalce href links with '/'. |
+| ![testing screenshot](docs/testing/not_crawlable.png) | Links not crawlable (lighthouse test) and affecting SEO score. | Repalce href links with '#'. |
 
  
 ## Post Development Testing
