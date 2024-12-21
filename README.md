@@ -125,7 +125,7 @@ As a manager/owner...
 * [My Bookings wireframe](docs/wireframes/booking_list_wireframe.png)
 * [Homepage wireframe](docs/wireframes/menu_wireframe.png)
 
-The 'Our Story' section deisgn wasn't confirmed at this point as I wanted to make the list appear in a dynamic way and some character to the page. 
+The 'Our Story' section deisgn wasn't confirmed at this point as I wanted to make the list appear in a dynamic way and some character to the page. Therefore, I planned out a space for it while I research for ways to display it. In the end I used a [timeline template](https://codepen.io/chriswrightdesign/pen/XJzNBN/) from codepen and adjusted the colours to match my project. 
 
 #### Database
 
