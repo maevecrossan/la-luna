@@ -21,7 +21,7 @@ Users would be able to create an account through which they can create, edit and
 
 #### Opportunities
 
-Below are the main points that arose when planning my project. The scores given to each opportunity were influences by the project timeframe, familiarity with the languages and frameworks used, and project scope.
+Below are the main opportunities that arose when planning my project. The scores given to each opportunity were influenced by the project timeframe, familiarity with the languages and frameworks used, and project scope. Opportunities ranked lowly are only done so under the lens of this iteration and will be rescored in future iterations.
 
 Opportunity | Importance | Viability/Feasibility
 ---|:---:|:---:|
