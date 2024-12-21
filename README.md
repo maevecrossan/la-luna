@@ -198,30 +198,69 @@ As previously mentioned, users can take actions via the header and/or the footer
 
 ### **Index/Homepage**
 
+#### Our Story Section
+This section provides a timeline which appears dynamically when the link is clicked. If the user scrolls down to this section, the information will be static as the animation only occurs when the page is refreshed (i.e. when the link at the top of the page is clicked). On smaller screens, the text wraps and stacks vertically.
 
+#### Gallery Section
+This section varies depending on screensize. On large screens, six images appear in two rows of three. On medium screens, the images reduce to three images vertically stacked with a more horizontal aspect ratio. On small screens, the images regain their vertical status but remain a vertically stacked set of three.
+
+The images are borrowed from [Pexels.com](https://www.pexels.com/).
 
 ### **Menu**
 
+The menu page displays hard-coded, static information. The menu background is a dark red-brown colour to make it easy to read as well as distinctive from the rest of the pages. There are no clickable links on this page.
+
+### **Make Booking**
+This page will not be visible to unathorised (logged out) users. Once the user is authorised, they can access this page. They will be able to view the booking form and create a new booking. 
+At the top of the form is a link suggesting the user visit the 'my bookings' page if they are looking to view or edit an exisitng booking. 
+
+The form itself has several inputs. The only one that is prepopulated is the email field for a more intuitve user experience. The field however is editable in case a user wants to make a booking for a third party. The name and phone fields are left blank for this reason too. 
+Users are prevented from making a booking in the past, entering an invalid phone number or email, or booking when the restaurant is at max capacity. Error messages appear under the respective field(s) where the error occurred. 
+
+When the user enters valid data and clicks the submit button, the user is redirected to the 'my bookings' page where they will see a success message.
+
+All fields on the form are required.
+
 ### **My Bookings**
+This page will not be visible to unathorised (logged out) users. 
+When the user is logged in, they will be able to view, edit and delete previously made bookings. The page separates bookings into two sections, upcoming and expired.
 
+The 'edit' button will return the user to a slightly modified version of the booking form. The form title and submit button prompt are modified to make it clear that the user is modifying a booking. When the edit is submitted, the user is returned to the 'my bookings' page with an sucess message alerting the user of the change. 
 
-#### **My bookings list (via form)**
-
-
-### **Our Story**
-
-### **Gallery**
+The delete button triggers a confirmation modal to check if the user's click/tap was intentional. The user has the option to cancel or confirm the delete. If they confirm, the 'my bookings' page will refreshed with the successful deletion message. 
 
 ### **Contact Us**
+The contact page gives users (authenticated and unauthenticated) the opportunity to get in touch with the restaurant. The decision was made to give unauthorised users access to this form in case they forgot their log in information, if there is a problem with the form, if there is a language barrier, or if users are uncomfortable making phone calls. 
+
+All fields on the form are required.
+
+### **User Authentication Pages (Login, Log out, Register)**
+
+All user pages are AllAuth default templates modified to match the style of the website. The sign in and sign up forms all have built-in validation, so the user cannot skip any fields or enter invalid information when creating an account or signing in. 
+When signing out, the user will be brought to a confirmation page and asked once again if the want to sign out. If they dont want to, they can simpy click the navigation links above the message. If they confirm, they will be logged out and redirected to the homepage. Their user status will be accurately reflected in the top right of the page.
 
 ## **Future Development**
 
-## **Testing**
+There were some features that were not implemented due to time, skill and project scope.
+
+In the future, I would like to include:
+
+|  |  |
+|:---  |:---  |
+| Automatic Email Upon Booking | I want a confirmation email to be sent when a user creates or edits a booking so that they don't have to sign in each time to view it. I feel this would provide a more pleasant experience for the user. *(This feature was implemented and successfully working for most of the development stage. Details are discussed in [TESTING.md](TESTING.md))* |
+| Booking ID | I would like to add an option for the user to access their booking via a booking ID. This would prevent them having to create an account which some users can find tedious and time consuming. This would require an email function. |
+| Update Menu | I would like to give the admin control over the menu. This would require implementing a menu model through which the menu could be updated by staff. |
+| Review Section | Providing a section for reviews from websites like Tripadvisor or Google would give the restuarant more legitmacy and would likely have a positive affect on SEO rankings. |
+|  |  |
+|  |  |
 
 ## **Deployment**
 
+
 ## **Tech used**
 
+
 ## **Credits**
+
 
 ### **Resources**
