@@ -404,6 +404,7 @@ h1 {
 
 .our-story-list {
     animation: reveal 2s 0 ease both;
+    animation-iteration-count: 1;
 }
 
 .our-story-list li .content {
