@@ -53,7 +53,6 @@ class BookingForm(forms.ModelForm):
                 attrs={
                     'id': 'time',
                     'name': 'time',
-                    'type': 'time',
                     'class': 'formbold-form-input'
                 }
             ),
