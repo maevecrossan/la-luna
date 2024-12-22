@@ -101,6 +101,10 @@ a.btn-delete {
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
 }
 
+.signup-button {
+    margin-top: 15px;
+}
+
 .formbold--mx-3 {
     margin-left: -12px;
     margin-right: -12px;
