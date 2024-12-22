@@ -53,23 +53,34 @@ for (let button of editButtons) {
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-	const deleteModalElement = document.getElementById("deleteModal");
-	if (deleteModalElement) {
-		// Initialize the modal only if it exists
-		const deleteModal = new bootstrap.Modal(deleteModalElement); /* global bootstrap */
+    const deleteModalElement = document.getElementById("deleteModal");
+    if (deleteModalElement) {
+        const deleteModal = new bootstrap.Modal(deleteModalElement); /* global bootstrap */
+        const deleteButtons = document.getElementsByClassName("btn-delete");
 
-		// Add event listeners for delete buttons
-		const deleteButtons = document.getElementsByClassName("btn-delete");
+        // Iterate over all delete buttons and add event listeners
+        for (let button of deleteButtons) {
+            button.addEventListener("click", (e) => {
+                // Get the booking ID from the button's data-booking-id attribute
+                const bookingId = e.target.getAttribute("data-booking-id");
+                console.log("Booking ID to delete:", bookingId); // Debugging line
 
-		for (let button of deleteButtons) {
-			button.addEventListener("click", (e) => {
-				let bookingId = e.target.getAttribute("booking_id");
-				const deleteConfirm = document.getElementById("deleteConfirm");
-				if (deleteConfirm) {
-					deleteConfirm.href = `/bookings/delete-booking/${bookingId}`;
-				}
-				deleteModal.show();
-			});
-		}
-	}
+                // Check if the booking ID is found
+                if (bookingId) {
+                    // Get the delete confirmation link
+                    const deleteConfirm = document.getElementById("deleteConfirm");
+
+                    if (deleteConfirm) {
+                        // Set the correct href for the confirmation link
+                        deleteConfirm.setAttribute("href", `/bookings/delete-booking/${bookingId}/`);
+                    }
+
+                    // Show the modal
+                    deleteModal.show();
+                } else {
+                    console.error("Booking ID not found!");
+                }
+            });
+        }
+    }
 });
