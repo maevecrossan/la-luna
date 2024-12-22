@@ -23,26 +23,27 @@
 				<form class="signup formbold-form-label" id="signup_form" method="post"
 					action="{% url 'account_signup' %}">
 					{% csrf_token %}
-					
+
 					{{ form.username.label_tag }}
-                    {{ form.username }}
+					{{ form.username }}
 
-                    {{ form.email.label_tag }}
-                    {{ form.email }}
+					{{ form.email.label_tag }}
+					{{ form.email }}
 
-                    {{ form.password1.label_tag }}
-                    {{ form.password1 }}
-                    <div class="helptext">
-                        <ul>
-                            <li>{% trans "Your password can’t be too similar to your other personal information." %}</li>
-                            <li>{% trans "Your password must contain at least 8 characters." %}</li>
-                            <li>{% trans "Your password can’t be a commonly used password." %}</li>
-                            <li>{% trans "Your password can’t be entirely numeric." %}</li>
-                        </ul>
-                    </div>
-                    
-                    {{ form.password2.label_tag }}
-                    {{ form.password2 }}
+					{{ form.password1.label_tag }}
+					{{ form.password1 }}
+					<div class="helptext">
+						<ul>
+							<li>{% trans "Your password can’t be too similar to your other personal information." %}
+							</li>
+							<li>{% trans "Your password must contain at least 8 characters." %}</li>
+							<li>{% trans "Your password can’t be a commonly used password." %}</li>
+							<li>{% trans "Your password can’t be entirely numeric." %}</li>
+						</ul>
+					</div>
+
+					{{ form.password2.label_tag }}
+					{{ form.password2 }}
 
 					{% if redirect_field_value %}
 					<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"
@@ -52,6 +53,7 @@
 				</form>
 			</div>
 		</div>
+
 	</div>
 </div>
 {% endblock content %}
