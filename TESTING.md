@@ -23,6 +23,7 @@
 | ![testing screenshot](docs/testing/email_error.png) ![testing screenshot](docs/testing/email_error_2.png) | Confirmation email sending not working. | After several hours of debugging (trying old code, reinstalling the feature, asking ChatGPT, and trying Django's email alternative) no emails were being sent upon booking form submission. After trying to fix it to no avail, and as it is not a requirement for this project, I decided to remove the feature and to include it at a later time. I have included two screenshots. The first is my terminal which shows the app working as expected with no errors. The second is an emial that successfully sent 24 hours before the time of writing this. In an attempt to save time (and my sanity), I will attempt to implement it in a future iteration. |
 | ![testing screenshot](docs/testing/not_crawlable.png) | Links not crawlable (lighthouse test) and affecting SEO score. | Repalce href links with '#'. |
 | ![testing screenshot](docs/testing/invalid_shorthand.png) | The resource from which I borrow the timeline animation code was using ivalid shorthand. I tried removing the '1' that was causing the issue but this stopped the text in the 'Our Story' section from appearing at all. | Apparently, `animation-iteration-count` must be specified explicitly if it's a numeric value. Once I did this, it all worked as expected and no errors were raised by W3C Validator. |
+| ![testing screenshot](docs/testing/w3_signin.png) | The validator picked up four errors on the Sign Up page. The AllAuth elements causing the issues are not present in my local environment, and they seems to contradict each other. | I decided to override the deafult `form.as_p`template and explicitly expressed each element. This returned no errors. |
 
  
 ## Post Development Testing
@@ -223,8 +224,6 @@ Below are some of the 'issues' raised by the W3 HTML validator.
 * Make Booking and My Bookings Pages: When run through the validator, these two pages produced an 'info' alert explaining that there was a trailing slash present on a form input. Upon inspecting my local files for traces of the slash, I could not find it. It seems as though it it generated automatically when rendering the form. As testing revealed no errors relating to this, I have decided to leave this until I can become on more educated on the issue and fix it then. 
 [Trailing slash error](docs/testing/w3_bookings_trailing_slash.png)
 
-* Sign Up Page: The validator picked up four errors on this page. Similar to the case above, the AllAuth elements causing the issues are not present in my local environment, and they seems to contradict each other. Because of this, they could not be edited at this time but will be investigated at a later time.
-[Sign in elements](docs/testing/w3_signin.png)
 
 ## CSS
 
