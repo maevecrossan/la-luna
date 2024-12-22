@@ -220,10 +220,11 @@ I used JSHint to validate my JavaScript Code. There were only two files I create
 
 ## HTML
 
-Below are some of the 'issues' raised by the W3 HTML validator.
+There were some issues raised by the W3 HTML validator, but they were dealt fixed and recorded in the bugs and fixes section. 
 
-* Make Booking and My Bookings Pages: When run through the validator, these two pages produced an 'info' alert explaining that there was a trailing slash present on a form input. Upon inspecting my local files for traces of the slash, I could not find it. It seems as though it it generated automatically when rendering the form. As testing revealed no errors relating to this, I have decided to leave this until I can become on more educated on the issue and fix it then. 
-[Trailing slash error](docs/testing/w3_bookings_trailing_slash.png)
+As some pages were only accessible by logging in, W3 couldn't validate them all via URI. All pages bar the 'My Bookings' and 'Make Booking' were validated by URI. In order to validate the two remaining pages, I copied the render html body element and chose the text input option instead. I double checked the other pages by doing this too.
+
+All pages returned no errors.
 
 
 ## CSS
