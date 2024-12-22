@@ -24,6 +24,7 @@
 | ![testing screenshot](docs/testing/not_crawlable.png) | Links not crawlable (lighthouse test) and affecting SEO score. | Repalce href links with '#'. |
 | ![testing screenshot](docs/testing/invalid_shorthand.png) | The resource from which I borrow the timeline animation code was using ivalid shorthand. I tried removing the '1' that was causing the issue but this stopped the text in the 'Our Story' section from appearing at all. | Apparently, `animation-iteration-count` must be specified explicitly if it's a numeric value. Once I did this, it all worked as expected and no errors were raised by W3C Validator. |
 | ![testing screenshot](docs/testing/w3_signin.png) | The validator picked up four errors on the Sign Up page. The AllAuth elements causing the issues are not present in my local environment, and they seems to contradict each other. | I decided to override the deafult `form.as_p`template and explicitly expressed each element. This returned no errors. |
+| ![testing screenshot](docs/testing/delete-modal-fix.png) | W3 HTML validator said boodikng_id was an invalid attribute. | I used the `data-*` attribute and updated the delete functionality in the `my-booking-crud.js` file. |
 
  
 ## Post Development Testing
