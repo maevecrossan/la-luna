@@ -239,6 +239,18 @@ All fields on the form are required.
 All user pages are AllAuth default templates modified to match the style of the website. The sign in and sign up forms all have built-in validation, so the user cannot skip any fields or enter invalid information when creating an account or signing in. 
 When signing out, the user will be brought to a confirmation page and asked once again if the want to sign out. If they dont want to, they can simpy click the navigation links above the message. If they confirm, they will be logged out and redirected to the homepage. Their user status will be accurately reflected in the top right of the page.
 
+### **Admin Dashboard**
+
+The admin dashboard is accessible by adding `/admin` to the end of the home/index link.
+
+It is where the admin can access the submission from the booking and contact forms. 
+The bookingsystem app houses all booking form submissions which users can organise through the various headings. The form inputs can all be used as filters, and each booking has an 'expired' check beside it. It will have a green tick if expired, otherwise a red 'x' if it's valid. Admin also has the ability to edit bookings if a user makes a request or accidentally creates a duplicate.
+The contactsystem app houses all submissions made through the contact form. At a glance, admin users can only see a name, contact details, and a checkbox indicating if it has been resolved yet. To view the message, the user simply needs to click on the name of the submitter. The message is not part of the list display as it required the user to horizontal scroll.
+
+Admin can also see a list of emails that are used to create an account and access a link to help users reset their password. 
+
+The bottom two sections ('sites' and 'social accounts') were required to make the apps work but hold no functionality at this time. In future iterations, I will make use of it. 
+
 ## **Future Development**
 
 There were some features that were not implemented due to time, skill and project scope.
@@ -251,8 +263,9 @@ In the future, I would like to include:
 | Booking ID | I would like to add an option for the user to access their booking via a booking ID. This would prevent them having to create an account which some users can find tedious and time consuming. This would require an email function. |
 | Update Menu | I would like to give the admin control over the menu. This would require implementing a menu model through which the menu could be updated by staff. |
 | Review Section | Providing a section for reviews from websites like Tripadvisor or Google would give the restuarant more legitmacy and would likely have a positive affect on SEO rankings. |
-|  |  |
-|  |  |
+| Social Account Log In | Allowing users to login or signup through an existing social account would streamline the process. |
+| Deleted bookings | I would like to create a place on the admin dashboard where they can view deleted bookings. I will also consider if it is worth adding a similar display for the user to see. |
+| Reply to Contact submissions via dashboard | At the moment, admin users have to copy the email from the submission and go over to their gmail account to reply. I would like to allow admin to send emails from the dashboard in order to streamline the process and limit the resources needed. |
 
 ## **Deployment**
 
