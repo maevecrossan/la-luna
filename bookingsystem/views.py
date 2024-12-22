@@ -19,11 +19,11 @@ def booking_system(request):
     Saves valid data to the database.
     """
 
-    form = BookingForm()
+    form = BookingForm(user=request.user)
     today = date.today().strftime('%d-%m-%Y')
 
     if request.method == 'POST':
-        form = BookingForm(request.POST)
+        form = BookingForm(request.POST, user=request.user)
         if form.is_valid():
             booking = form.save(commit=False)
             booking.user = request.user

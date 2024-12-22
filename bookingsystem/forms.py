@@ -69,17 +69,23 @@ class BookingForm(forms.ModelForm):
         """
         Restricts user from clicking dates in the past.
         """
-        super().__init__(*args, **kwargs)
-        self.fields['date'].widget.attrs['min'] = date.today().strftime(
-            '%Y-%m-%d')
-        # Pass the CLOSED_DATES to the form
-        self.fields['date'].disabled_dates = self.instance.CLOSED_DATES
-
-        # Prepopulate email field
+        # Get user from kwargs (passed from the view)
         user = kwargs.pop('user', None)
+
+        # Initialize the form
         super().__init__(*args, **kwargs)
+
+        # Restrict user from clicking dates in the past
+        self.fields['date'].widget.attrs[
+            'min'] = date.today().strftime('%Y-%m-%d')
+
+        # Prepopulate the email field with the logged-in user's email
         if user and user.email:
             self.fields['email'].initial = user.email
+
+        # If your model has a CLOSED_DATES field, pass it to the form
+        if hasattr(self.instance, 'CLOSED_DATES'):
+            self.fields['date'].disabled_dates = self.instance.CLOSED_DATES
 
     def disabled_dates(self):
         """
