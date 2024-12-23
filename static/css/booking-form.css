@@ -183,6 +183,13 @@ p.card-text {
     margin-bottom: 25px;
 }
 
+.modal-header .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 1;
+}
+
 
 /* ---------------------------- Media Queries */
 
