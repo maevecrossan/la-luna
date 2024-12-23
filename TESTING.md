@@ -132,11 +132,9 @@
 * [Contact Form Am I Responsive](docs/testing/responsive-tests/air_contact.png)
 * [Contact Form Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_contact_mobile.jpeg)
 
-* [Sign In Am I Responsive](docs/testing/responsive-tests/air_sign_in.png)
-* [Sign In Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_sign_in_mobile.PNG)
+* [Sign In Am I Responsive](docs/testing/responsive-tests/air_signin.png)
 
-* [Sign Up Am I Responsive](docs/testing/responsive-tests/air_sign_up.png)
-* [Sign Up Am I Responsive Mobile Screenshot](docs/testing/responsive-tests/air_signup_mobile.jpeg)
+* [Sign Up Am I Responsive](docs/testing/responsive-tests/air_signup.png)
 
 * [Log Out Confirmation Am I Responsive Desktop Screenshot](docs/testing/responsive-tests/air_signout_desktop.png)
 * [Log Out Confirmation Am I Responsive Tablet Screenshot](docs/testing/responsive-tests/air_signout_tablet.PNG)
