@@ -7,11 +7,33 @@ Welcome to La Luna, the online gateway to an exceptional fine-dining experience.
 
 ## **Table of Contents**
 
-
+[* **Planning**](#planning)
+    [* Agile Planning](AGILE.md)
+    [* Strategy](#strategy)
+    [* Scope](#scope)
+    [* Structure](#structure)
+    [* Skeleton](#skeleton)
+    [* Surface](#surface)
+[* **Testing**](TESTING.md)
+[* **Features**](#features)
+    [* Base](#base)
+    [* Index/Homepage](#indexhomepage)
+    [* Menu](#menu)
+    [* Make Booking](#make-booking)
+    [* My Bookings](#my-bookings)
+    [* User Authentication](#user-authentication-pages-login-log-out-register)
+[* **Future Developments**](#future-development)
+[* **Deployment**](#deployment)
+[* **Tech Used**](#tech-used)
+[* **Credits**](#credits)
 
 ## **Planning**
 
-### Strategy
+### **Agile Development**
+
+Details of my agile development process can be found [here](AGILE.md).
+
+### **Strategy**
 
 #### Site Aims
 
@@ -50,7 +72,7 @@ Google Maps API. | 1 | 1
 **TOTAL** | **72** | **77**
 
 
-### Scope
+### **Scope**
 
 I divided these opportunities into categories under the MoSCoW headings for clarity.
 
@@ -82,7 +104,7 @@ I divided these opportunities into categories under the MoSCoW headings for clar
     * Google Maps API.
     * Newsletter distribution.
 
-### Structure
+### **Structure**
 
 #### User Stories
 
@@ -174,6 +196,9 @@ Below are the images I used for the hero image and in the gallery section.
     * [Gallery image: A man sprinkling flour on freshly cut pasta.](https://images.pexels.com/photos/4252779/pexels-photo-4252779.jpeg)
     * [Gallery image: Hands clapping to remove flour.](https://images.pexels.com/photos/784633/pexels-photo-784633.jpeg)
 
+## **Testing**
+Details of my testing can be found [here](TESTING.md).
+
 ## **Features**
 ### **Base**
 
@@ -251,7 +276,7 @@ Admin can also see a list of emails that are used to create an account and acces
 
 The bottom two sections ('sites' and 'social accounts') were required to make the apps work but hold no functionality at this time. In future iterations, I will make use of it. 
 
-## **Future Development**
+## **Future Developments**
 
 There were some features that were not implemented due to time, skill and project scope.
 
@@ -266,6 +291,19 @@ In the future, I would like to include:
 | Social Account Log In | Allowing users to login or signup through an existing social account would streamline the process. |
 | Deleted bookings | I would like to create a place on the admin dashboard where they can view deleted bookings. I will also consider if it is worth adding a similar display for the user to see. |
 | Reply to Contact submissions via dashboard | At the moment, admin users have to copy the email from the submission and go over to their gmail account to reply. I would like to allow admin to send emails from the dashboard in order to streamline the process and limit the resources needed. |
+| Real-time booking calender | It would be considerably more pleasant to look at a calender and list of times and see what one are available based on your group size. |
+| Waiting List | It would be ideal to include a waiting list for fully booked time slots. |
+| Multi-language support | Offer translations for more languages to cater to a broader audience. |
+| E-Commerce Integration | Add a shop for related products like gift cards, merchandise, or additional services. |
+| Referral Program | Encourage users to refer friends by offering discounts or other incentives. |
+| Admin Dashboard Analytics | Include analytics on bookings, user demographics, and service popularity. |
+| Automated Notifications | Send SMS or email reminders for bookings. Notify users of changes to their appointments in real-time. |
+| Performance Optimization | Optimize image loading and implement lazy loading. |
+| SEO Enhancements | Optimize metadata, schema markup, and improve page load speeds. Include blog content to attract organic traffic (e.g., tips on bookings, industry insights). |
+| Calendar Integrations | Allow users to sync their bookings with Google Calendar, Outlook, etc.|
+| Marketing Opportunities | Send birthday offers or seasonal discounts to registered users. |
+
+-----
 
 ## **Deployment**
 Below are the steps I took to prepare my project for deployment on Heroku.
@@ -414,7 +452,7 @@ The following steps were taken aftering signing into my Heroku account.
 You can now deploy your app and review the deployed app.
 
 
-## **Tech used**
+## **Tech Used**
 * Python
     * The project's dependencies can be seen in the `requirements.txt` file.
 
