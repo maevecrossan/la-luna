@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
             button.addEventListener("click", (e) => {
                 // Get the booking ID from the button's data-booking-id attribute
                 const bookingId = e.target.getAttribute("data-booking-id");
-                console.log("Booking ID to delete:", bookingId); // Debugging line
 
                 // Check if the booking ID is found
                 if (bookingId) {
