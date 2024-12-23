@@ -415,9 +415,46 @@ You can now deploy your app and review the deployed app.
 
 
 ## **Tech used**
+* Python
+    * The project's dependencies can be seen in the `requirements.txt` file.
+
+* Django
+    * The Python framework used for the project.
+    * Django AllAuth was used to handle all user authentication (sign up, sign in, sign out).
+
+* Heroku
+    * Heroku was used for deployment and publishing.
+
+* CSS
+    * Utilized both during development and in deployment.
+
+* HTML
+    * HTML formed the foundation for the layout of all templates.
+
+* JavaScript
+    * JavaScript was employed for DOM manipulation and backend communication to manage CRUD operations on the database.
+
+* Jinja
+    * Jinja was used as the templating engine to inject views.py logic and models.py data into templates for display.
+
+* Bootstrap
+    * Bootstrap was used to streamline styling code.
+
+* Font Awesome
+    * Social media icons in the footer come from Font Awesome.
 
 
 ## **Credits**
 
-
-### **Resources**
+* The app was built in VSCode and stored in a Github repository.
+* I used [this article](https://blog.shahryartayeb.com/post/automatically-generate-erd-of-your-django-models-21) to guide me through generating a diagram for my ERD.
+* [Am I Responsive?](https://ui.dev/amiresponsive) was used for taking responsive test screenshots in tandem with an iPhone, iPad and Macbook.
+* [Coolors.co](https://coolors.co/) was used to create my colour palette.
+* Timeline animation template from [codepen.io](https://codepen.io/chriswrightdesign/pen/XJzNBN/).
+* Fonts were taken from Google Fonts: [Italiana](https://fonts.google.com/specimen/Italiana?query=italiana) and [Lato](https://fonts.google.com/specimen/Lato).
+* All images were borrowed from [pexels.com](https://www.pexels.com/collections/italian-restaurant-sohwnnr/).
+* Procreate was used to draw up the wireframes. 
+* Miscellaneous References:
+    * [Django documentation](https://docs.djangoproject.com/en/5.1/)
+    * [Bootstrap documentation](https://getbootstrap.com/)
+    * [Code Institute Learning Platform](https://codeinstitute.net/ie/)
