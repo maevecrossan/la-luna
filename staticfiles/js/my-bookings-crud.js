@@ -84,3 +84,31 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+
+/**
+ * Prevents users from booking in the past (time slot)
+ */
+document.getElementById('time').addEventListener('focus', function () {
+    const dateField = document.getElementById('date');
+    const selectedDate = dateField.value;
+    const today = new Date().toISOString().split('T')[0]; // Get today's date
+    const currentTime = new Date();
+
+    if (selectedDate === today) {
+        const currentHours = currentTime.getHours();
+        const currentMinutes = currentTime.getMinutes();
+
+        // Disable past time slots
+        [...this.options].forEach(option => {
+            const [hours, minutes] = option.value.split(':').map(Number);
+            if (hours < currentHours || (hours === currentHours && minutes <= currentMinutes)) {
+                option.disabled = true; // Disable past times
+            } else {
+                option.disabled = false; // Enable future times
+            }
+        });
+    } else {
+        // Enable all options if the date is not today
+        [...this.options].forEach(option => (option.disabled = false));
+    }
+});

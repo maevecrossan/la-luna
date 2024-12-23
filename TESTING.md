@@ -26,6 +26,7 @@
 | ![testing screenshot](docs/testing/w3_signin.png) | The validator picked up four errors on the Sign Up page. The AllAuth elements causing the issues are not present in my local environment, and they seems to contradict each other. | I decided to override the deafult `form.as_p`template and explicitly expressed each element. This returned no errors. |
 | ![testing screenshot](docs/testing/delete-modal-fix.png) | W3 HTML validator said boodikng_id was an invalid attribute. | I used the `data-*` attribute and updated the delete functionality in the `my-booking-crud.js` file. |
 | ![testing screenshot](docs/testing/failed_build.png) | Heroku build failed due to missing 'static' file. | In my project, I have two sets of static files. One is used for development, and when the `collectstatic` command is run, the other is updated and used in deployment. When I tried to consolidate them into one, Heroku could not deploy the updated app. I tried on multiple ocassions to merge the files and adjust the settings, but this also caused errors in debug mode in my local environment. I made the decision to leave them both in to ensure the apps runs smoothly and appears as intended. |
+| ![testing screenshot](docs/testing/past_time_booking_prevention.png) | User could book at times in the past. | I greyed out the times that have expired, preventing users from selecting them. |
 
  
 ## Post Development Testing
