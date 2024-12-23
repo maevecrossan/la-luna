@@ -243,36 +243,39 @@ Below is a screenshot of how I ensured my colour combinations passed the contras
 ## WAVE Evaluation Tool
 The following are the results from my WAVE evaluations for each page. Notes explaining alerts are present under the relevant screenshot.
 
-### Base and Homepage (including Gallery and Our Story sections)
-![WAVE Evaluation Screenshot](docs/testing/wave/wave_home.png)
+[**1. Homepage WAVE Evaluation Screenshot**](docs/testing/wave/wave_home.png)
 
-* The above WAVE evalution raised the following alerts:
-
-![WAVE Evaluation Screenshot](docs/testing/wave/wave_home_expanded.png)
-1. Possible heading: This alert was raised for the copyright text in the footer. I decided this feature was not important enough to be awarded a heading.
-2. Redundant link: The tool is picking up the hidden burder icon for mobile navigation, and naturally thinks I have doubled up on links. It may also be raised by the 'home' link in the navigation. I have decided to ignore this alert as any changes would affect UX. (As this error appears on all pages, for the sake of brevity, it won't be addressed again.)
-
-### Menu
-![WAVE Evaluation Screenshot]()
-
-![WAVE Evaluation Screenshot]()
-
-### Make Booking (form)
-![WAVE Evaluation Screenshot]()
-
-### My Bookings
-![WAVE Evaluation Screenshot]()
-
-### Sign Up
-![WAVE Evaluation Screenshot]()
-
-### Sign In
-![WAVE Evaluation Screenshot]()
-
-### Logout
-![WAVE Evaluation Screenshot]()
-
-### Contact Us
-![WAVE Evaluation Screenshot]()
+* Only one alert (below) was raised for this page. It was questioning whether or not the copyright should be a heading. I decided to leave this alert as I didn't think making it a heading was necessary. This specific error will not be addressed again for the sake of brevity.
+    ![Homepage WAVE alert](docs/testing/wave/wave_home_error.png)
 
 
+[**2. Menu WAVE Evaluation Screenshot**](docs/testing/wave/wave_menu.png)
+
+* WAVE picked up on skipped heading levels on this page. As the menu uses the base template, headings will likely skip on occassion due to content (or lack there of) on each respective page. This specific error will not be addressed again for the sake of brevity.
+    ![Menu WAVE alert](docs/testing/wave/wave_menu_error.png)
+
+
+[**3.Make Booking (Form) WAVE Evaluation Screenshot**](docs/testing/wave/wave_booking_form.png)
+
+* No (additional) errors found.
+
+
+[**4.My Bookings WAVE Evaluation Screenshot**](docs/testing/wave/wave_my_bookings.png)
+
+* No (additional) errors found.
+ 
+[**5.Sign Up WAVE Evaluation Screenshot**](docs/testing/wave/wave_signup.png)
+
+* No (additional) errors found.
+ 
+[**6.Sign In WAVE Evaluation Screenshot**](docs/testing/wave/wave_signin.png)
+
+* No (additional) errors found.
+
+[**7.Logout WAVE Evaluation Screenshot**](docs/testing/wave/wave_signout.png)
+
+* No (additional) errors found.
+
+[**8.Contact Us WAVE Evaluation Screenshot**](docs/testing/wave/wave_contact.png)
+
+* No (additional) errors found.
