@@ -268,6 +268,145 @@ In the future, I would like to include:
 | Reply to Contact submissions via dashboard | At the moment, admin users have to copy the email from the submission and go over to their gmail account to reply. I would like to allow admin to send emails from the dashboard in order to streamline the process and limit the resources needed. |
 
 ## **Deployment**
+Below are the steps I took to prepare my project for deployment on Heroku.
+
+### 1. GitHub.
+I created a new repsitory based off the Code Institute template [here](https://github.com/Code-Institute-Org/ci-full-template).
+
+*If following the instructions below, please replace any all-cap words with names suitable for your project.*
+
+With my project environment opened locally , I began by local setup by doing the following:
+
+1. Added `env.py` to the `.gitignore` file to prevent it from being tracked.
+
+2. Installed Django using:
+    
+    * `pip3 install Django~=4.2.16`.
+
+3. Added requirements to `requirements.txt` with: 
+
+    * `pip3 freeze local > requirements.txt`
+
+4. I created my project with the built-in Django commands:
+
+    * `django-admin startproject PROJECT_NAME .`
+
+    * In my case: `django-admin startproject laluna .`
+
+5. Then, within the project just created, I created my first app in the root directory:
+
+    * `python3 manage.py startapp APP_NAME`
+    * In my case: `python3 manage.py startapp bookingsystem`
+
+6. Once created, I added 'bookingsystem' to th elist of installed apps in settings.py.
+
+7. Migrate changes:
+    * `python3 manage.py makemigrations --dry-run` is used to simulate what migrations would be created. It effectively is a preview. This step can be skipped.
+    * `python3 manage.py makemigrations` generates the migration files based on changes made to models. This step cannot be skipped.
+    * `python3 manage.py migrate` applies the migration files created in the previous step to the database, updating the schema. This step cannot be skipped.
+
+8. Create a `.env` file using the `touch env.py` command to house sensitive information. (Double check this file has been added to the .gitignore file.)
+
+9. In env.py, add the database URL. (In my case it was a PostgreSQL instance emailed to me by Code Institute.)
+    * `import os`
+
+        `os.environ.setdefault(`
+            `"DATABASE_URL", "<your-database-URL>")`
+
+10. Installed require packages:
+    * `pip3 install dj-database-url~=0.5 psycopg2~=2.9`
+    *  `pip3 freeze --local > requirements.txt`
+
+11. Update settings.py:
+    * `import os`
+    * `import dj_database_url`
+    * `if os.path.isfile('env.py'):`
+
+        `import env`
+
+12. Comment out default SQLite databse and replace with new database connection:
+    * `DATABASES = {'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))}`
+
+### Heroku
+
+The following steps were taken aftering signing into my Heroku account.
+
+**1. Create a New Heroku App**
+
+1. Navigate to the Heroku dashboard.
+2. In the top-right corner, click New, then select 'Create new app'.
+3. Provide a unique name for your app to be included in the URL.
+4. For this project, the app was named 'la-luna'.
+5. Choose the relevant region.
+
+
+**2. Configure the Heroku App's Config Vars**
+
+1. Locate the SECRET_KEY variable in your project’s settings.py file. 
+2. In my case, there was an insecure key present, so I replaced it. 
+    * Example: SECRET_KEY = 'SECRET_KEY'.
+3. I generated a SECRET_KEY value to store safely in my env.py file.
+4. In the Heroku dashboard, go to the Settings tab for your app.
+5. Scroll down to the Config Vars section and click Reveal Config Vars.
+6. Add a new config variable:
+    * **Key:** SECRET_KEY
+    * **Value:** The value you stored in your env.py file.
+
+
+**3. Add a Database to the Heroku App**
+
+1. In your Heroku dashboard, open your app and go to the Settings tab. Click Reveal Config Vars.
+2. If Heroku has automatically added a DATABASE_URL:
+    1. Go to the Resources tab.
+    2. Delete the Heroku Postgres add-on by selecting Delete Add-on.
+3. Add your PostgreSQL URL from env.py as a new config variable:
+    * **Key:** `DATABASE_URL`
+    * **Value:** `given-database-url`
+
+**4. Setting up settings.py**
+1. At the top of your settings, add the following:
+    * `import os`
+
+        `if os.path.isfile('env.py'):`
+
+        `import env`
+
+        `_ = env`
+    * `SECRET_KEY = os.environ.get("SECRET_KEY")`
+
+**5. Deployment Prep: Part 1**
+
+1. Install gunicorn (serves as a bridge between your Django application and Heroku):
+    * `pip3 install gunicorn~=20.1`
+2. Add Gunicorn to the requirements.txt file:
+    * `pip3 freeze --local > requirements.txt`
+3. At the root directory of your project, create a file named Procfile with no file extension:
+    * `touch Procfile`
+4. Open the Procfile and declare the process as web, specifying the start command:
+    * `web: gunicorn codestar.wsgi`
+5. Update settings for deployment:
+    * `DEBUG = False`
+    * `ALLOWED_HOSTS = ['local-environment-url', '.herokuapp.com']`
+
+**6. Deployment Prep: Part 2**
+
+1. Install and setup white noise:
+    * `pip3 install whitenoise~=5.3.0`
+2. Add WhiteNoise to `requirements.txt`:
+    * `pip3 freeze --local > requirements.txt`
+3. Open you settings.py file and add WhiteNoise Middleware in the `MIDDLEWARE` list **directly after `SecurityMiddleware`**:
+    * `'whitenoise.middleware.WhiteNoiseMiddleware',`
+3. Configure static files by setting a `STATIC_ROOT` path in settings.py.
+    * `STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')`
+    * Collect static files into the `staticfiles` directory by running:
+        
+        `python3 manage.py collectstatic`
+4. Check Pythin version by running this command:
+    * `python3 -V`
+    * Example output: `Python 3.9.17`.
+5. Create a .python-version File (instead of a runtime.txt file as recommended by Heroku). 
+6. Add your python verion into this file.
+    * `python 3.9.17`
 
 
 ## **Tech used**
