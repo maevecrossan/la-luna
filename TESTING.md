@@ -27,6 +27,7 @@
 | ![testing screenshot](docs/testing/delete-modal-fix.png) | W3 HTML validator said boodikng_id was an invalid attribute. | I used the `data-*` attribute and updated the delete functionality in the `my-booking-crud.js` file. |
 | ![testing screenshot](docs/testing/failed_build.png) | Heroku build failed due to missing 'static' file. | In my project, I have two sets of static files. One is used for development, and when the `collectstatic` command is run, the other is updated and used in deployment. When I tried to consolidate them into one, Heroku could not deploy the updated app. I tried on multiple ocassions to merge the files and adjust the settings, but this also caused errors in debug mode in my local environment. I made the decision to leave them both in to ensure the apps runs smoothly and appears as intended. |
 | ![testing screenshot](docs/testing/past_time_booking_prevention.png) | User could book at times in the past. | I greyed out the times that have expired (by adding the code in the screenshot to the crud javascript file), preventing users from selecting them. |
+| ![testing screenshot](docs/testing/updated_time_check.png) | User can select a time in the past, then select today's date, therefore making a booking in the past. | I updated to code (see first column) to be more robhust and prevent form submission if the time is in the past. ![testing screenshot](docs/testing/time_error.png)|
 
  
 ## Post Development Testing

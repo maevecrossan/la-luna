@@ -85,30 +85,80 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-/**
- * Prevents users from booking in the past (time slot)
- */
-document.getElementById('time').addEventListener('focus', function () {
-    const dateField = document.getElementById('date');
+// Prevents users from booking in the past (time slot)
+document.getElementById('id_time').addEventListener('focus', function () {
+    const dateField = document.getElementById('id_date');
     const selectedDate = dateField.value;
     const today = new Date().toISOString().split('T')[0]; // Get today's date
     const currentTime = new Date();
 
+    // When the date is selected, update the time options accordingly
+    updateTimeOptions(selectedDate, currentTime, today);
+});
+
+// Prevents users from booking in the past (time slot)
+document.getElementById('id_time').addEventListener('focus', function () {
+    const dateField = document.getElementById('id_date');
+    const selectedDate = dateField.value;
+    const today = new Date().toISOString().split('T')[0]; // Get today's date
+    const currentTime = new Date();
+
+    // When the date is selected, update the time options accordingly
+    updateTimeOptions(selectedDate, currentTime, today);
+});
+
+// This function is called whenever the date or time changes
+function updateTimeOptions(selectedDate, currentTime, today) {
+    const timeField = document.getElementById('id_time');
+    const selectedTime = timeField.value;  // Store the current time selection
+    const timeOptions = [...timeField.options];
+    
+    let isValidTime = false; // Flag to track if the selected time is still valid
+
+    // If the selected date is today, disable past time slots
     if (selectedDate === today) {
         const currentHours = currentTime.getHours();
         const currentMinutes = currentTime.getMinutes();
 
-        // Disable past time slots
-        [...this.options].forEach(option => {
+        // Disable past time slots and preserve the current selection if possible
+        timeOptions.forEach(option => {
             const [hours, minutes] = option.value.split(':').map(Number);
             if (hours < currentHours || (hours === currentHours && minutes <= currentMinutes)) {
                 option.disabled = true; // Disable past times
             } else {
                 option.disabled = false; // Enable future times
             }
+
+            // Check if the currently selected time is still valid
+            if (option.value === selectedTime && !option.disabled) {
+                isValidTime = true; // Mark as valid if the selected time is still enabled
+            }
         });
     } else {
-        // Enable all options if the date is not today
-        [...this.options].forEach(option => (option.disabled = false));
+        // Enable all options if the selected date is not today
+        timeOptions.forEach(option => {
+            option.disabled = false; // Enable all time options
+        });
+
+        // If the time field was previously reset due to invalid time, check if it's still valid
+        isValidTime = timeOptions.some(option => option.value === selectedTime);
     }
+
+    // Reset the time field if the selected time is no longer valid
+    if (!isValidTime) {
+        // Delay the reset to ensure the option list is updated
+        setTimeout(() => {
+            timeField.value = '';  // Reset time if the previously selected time is no longer valid
+        }, 100); // Slight delay to ensure DOM updates first
+    }
+}
+
+// Add event listener to the date field to update time options when the date is changed
+document.getElementById('id_date').addEventListener('change', function () {
+    const selectedDate = this.value;
+    const today = new Date().toISOString().split('T')[0]; // Get today's date
+    const currentTime = new Date();
+
+    // Update time options when the date is changed
+    updateTimeOptions(selectedDate, currentTime, today);
 });
