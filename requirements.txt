@@ -6,6 +6,7 @@ dj-database-url==0.5.0
 Django==4.2.16
 django-allauth==0.57.2
 django-crispy-forms==2.3
+django-extensions==3.2.3
 django-widget-tweaks==1.5.0
 gunicorn==20.1.0
 itsdangerous==2.2.0
@@ -14,6 +15,7 @@ psycopg2==2.9.10
 PyJWT==2.10.1
 pylint-django==2.6.1
 pylint-plugin-utils==0.8.2
+pyparsing==3.2.0
 python3-openid==3.2.0
 requests-oauthlib==2.0.0
 sqlparse==0.5.2
