@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load widget_tweaks %}
 {% load i18n %}
 {% load account socialaccount %}
 
@@ -24,7 +25,13 @@
 			<div class="col-md-8 mt-3 offset-md-2">
 				<form class="login formbold-form-label" method="POST" action="{% url 'account_login' %}">
 					{% csrf_token %}
-					{{ form.as_p }}
+
+					{{ form.login.label_tag }}
+					{{ form.login|add_class:"allauth-form-input" }}
+
+					{{ form.password.label_tag }}
+					{{ form.password|add_class:"allauth-form-input" }}
+
 					{% if redirect_field_value %}
 					<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" class="formbold-form-input" />
 					{% endif %}

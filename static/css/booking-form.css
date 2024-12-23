@@ -74,6 +74,20 @@ a.btn-delete {
     resize: none;
 }
 
+.allauth-form-input {
+    width: -webkit-fill-available;
+    padding: 12px 18px;
+    margin: 13px 0px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    font-weight: 500;
+    font-size: 18px;
+    color: black;
+    outline: none;
+    resize: none;
+}
+
 .formbold-error-message {
     margin-left: 15px;
     padding: 10px;

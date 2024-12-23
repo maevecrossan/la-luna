@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load widget_tweaks %}
 {% load i18n %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock head_title %}
@@ -25,13 +26,13 @@
 					{% csrf_token %}
 
 					{{ form.username.label_tag }}
-					{{ form.username }}
+					{{ form.username|add_class:"allauth-form-input" }}
 
 					{{ form.email.label_tag }}
-					{{ form.email }}
+					{{ form.email|add_class:"allauth-form-input" }}
 
 					{{ form.password1.label_tag }}
-					{{ form.password1 }}
+					{{ form.password1|add_class:"allauth-form-input" }}
 					<div class="helptext">
 						<ul>
 							<li>{% trans "Your password can’t be too similar to your other personal information." %}
@@ -43,7 +44,7 @@
 					</div>
 
 					{{ form.password2.label_tag }}
-					{{ form.password2 }}
+					{{ form.password2|add_class:"allauth-form-input" }}
 
 					{% if redirect_field_value %}
 					<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"
