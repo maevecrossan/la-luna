@@ -373,6 +373,8 @@ The following steps were taken aftering signing into my Heroku account.
 
         `_ = env`
     * `SECRET_KEY = os.environ.get("SECRET_KEY")`
+2. Include the following in the templates array:
+    * `'DIRS':[TEMPLATES_DIR],'`
 
 **5. Deployment Prep: Part 1**
 
@@ -387,6 +389,7 @@ The following steps were taken aftering signing into my Heroku account.
 5. Update settings for deployment:
     * `DEBUG = False`
     * `ALLOWED_HOSTS = ['local-environment-url', '.herokuapp.com']`
+        - Your GitHub local environment can be simply found by running your server locally using `python mange.py runserver` and copying the url.
 
 **6. Deployment Prep: Part 2**
 
@@ -407,6 +410,8 @@ The following steps were taken aftering signing into my Heroku account.
 5. Create a .python-version File (instead of a runtime.txt file as recommended by Heroku). 
 6. Add your python verion into this file.
     * `python 3.9.17`
+
+You can now deploy your app and review the deployed app.
 
 
 ## **Tech used**
