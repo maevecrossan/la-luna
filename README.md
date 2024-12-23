@@ -240,7 +240,7 @@ This page will not be visible to unathorised (logged out) users. Once the user i
 At the top of the form is a link suggesting the user visit the 'my bookings' page if they are looking to view or edit an exisitng booking. 
 
 The form itself has several inputs. The only one that is prepopulated is the email field for a more intuitve user experience. The field however is editable in case a user wants to make a booking for a third party. The name and phone fields are left blank for this reason too. 
-Users are prevented from making a booking in the past, entering an invalid phone number or email, or booking when the restaurant is at max capacity. Error messages appear under the respective field(s) where the error occurred. 
+Users are prevented from making a booking in the past (invalid times and dates greyed out), entering an invalid phone number or email, or booking when the restaurant is at max capacity. Error messages appear under the respective field(s) where the error occurred. 
 
 When the user enters valid data and clicks the submit button, the user is redirected to the 'my bookings' page where they will see a success message.
 
