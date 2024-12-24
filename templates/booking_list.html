@@ -10,8 +10,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2 upper lato off-white center">
                 {% for message in messages %}
-                <div class="alert {{ message.tags }} 
-		  fade show" role="alert">
+                <div class="alert {{ message.tags }} fade show" role="alert">
                     {{ message | safe }}
                 </div>
                 {% endfor %}
@@ -19,15 +18,13 @@
         </div>
     </div>
 
-    {% if bookings %}
-
+    {% if upcoming_bookings %}
     <!-- Upcoming Bookings Section -->
+    <h3 class="sub-heading off-white italiana center">
+        Upcoming Bookings
+    </h3>
 
-    <h3 class="sub-heading off-white italiana center">Upcoming Bookings</h3>
-
-    {% for booking in bookings %}
-
-    {% if booking.date >= today %}
+    {% for booking in upcoming_bookings %}
     <div class="container">
         <div class="row center">
             <div class="card mb-4 mt-3 left top">
@@ -50,34 +47,40 @@
                     <p class="card-text">
                         <strong>Guests:</strong> {{ booking.guests }}
                     </p>
+                    <span class="active">
+                        <strong>Active</strong>
+                    </span>
                 </div>
 
                 {% if user.is_authenticated and booking.user == user %}
-
-                <a href="{% url 'bookingsystem:booking-edit' booking.id %}" id="edit-booking"
+                <a href="{% url 'bookingsystem:booking-edit' booking.id %}" id="edit-booking-{{ booking.id }}"
                     class="btn btn-edit btn-outline-secondary">
                     Edit
                 </a>
-
-                <a href="#" id="delete-booking" class="btn btn-delete btn-outline-danger"
+                <a href="#" id="delete-booking-{{ booking.id }}" class="btn btn-delete btn-outline-danger"
                     data-booking-id="{{ booking.id }}">Delete</a>
-
                 {% endif %}
 
             </div>
         </div>
     </div>
 
-    {% endif %}
-
     {% endfor %}
+    {% else %}
+    <div class="container center">
+        <div class="no-bookings-container">
+            <p class="lato ta-center"> No upcoming bookings.</p>
+        </div>
+    </div>
+    {% endif %}
 
     <!-- Expired Bookings Section -->
+    {% if expired_bookings %}
+    <h3 class="sub-heading off-white italiana center">
+        Previous Bookings
+    </h3>
 
-    <h3 class="sub-heading off-white italiana center"> Previous Bookings </h3>
-
-    {% for booking in bookings %}
-    {% if booking.date|date:"Y-m-d" < today|date:"Y-m-d" %}
+    {% for booking in expired_bookings %}
     <div class="container">
         <div class="row center">
             <div class="card mb-4 mt-3 left top">
@@ -100,24 +103,33 @@
                     <p class="card-text">
                         <strong>Guests:</strong> {{ booking.guests }}
                     </p>
+                    <span class="expired">
+                        <strong>Expired</strong>
+                    </span>
                 </div>
 
                 {% if user.is_authenticated and booking.user == user %}
-                <a href="{% url 'bookingsystem:booking-edit' booking.id %}" id="edit-booking"
+                <a href="{% url 'bookingsystem:booking-edit' booking.id %}" id="edit-booking-{{ booking.id }}"
                     class="btn btn-edit btn-outline-secondary">
                     Edit
                 </a>
-
-                <a href="#" id="delete-booking" class="btn btn-delete btn-outline-danger"
+                <a href="#" id="delete-booking-{{ booking.id }}" class="btn btn-delete btn-outline-danger"
                     data-booking-id="{{ booking.id }}">Delete</a>
                 {% endif %}
             </div>
         </div>
     </div>
-    {% endif %}
     {% endfor %}
-
     {% else %}
+    <div class="container center">
+        <div class="no-bookings-container">
+            <p class="lato ta-center"> No previous bookings.</p>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Fallback message if there are no bookings at all -->
+    {% if not upcoming_bookings and not expired_bookings %}
     <div class="container center">
         <div class="no-bookings-container">
             <p class="lato ta-center"> No bookings available. Please <a href="{% url 'bookingsystem:bookings' %}"
@@ -135,9 +147,7 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="deleteModalLabel">Delete booking?</h5>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        &times;
-                    </span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
@@ -152,3 +162,7 @@
 </div>
 
 {% endblock content %}
+
+{% block scripts %}
+<script src="{% static 'js/my-bookings-crud.js' %}"></script>
+{% endblock %}

@@ -49,13 +49,22 @@ def booking_list(request):
     # Check if the user is authenticated before making a query
     # based on request.user
     if request.user.is_authenticated:
-        # Filter bookings
-        bookings = Booking.objects.filter(user=request.user).order_by('date')
+        # Get the user's bookings
+        bookings = Booking.objects.filter(
+            user=request.user).order_by('date', 'time')
 
-        # Add today's date to the context
+        # Separate bookings into upcoming and 
+        # expired using the `expired` property
+        upcoming_bookings = [
+            booking for booking in bookings if not booking.expired]
+        expired_bookings = [
+            booking for booking in bookings if booking.expired]
+
+        # Pass the bookings and current date to the template
         return render(request, 'booking_list.html', {
-            'bookings': bookings,
-            'today': date.today(),  # Passing current date to the template
+            'upcoming_bookings': upcoming_bookings,
+            'expired_bookings': expired_bookings,
+            'today': date.today(),  # Current date to use in the template
         })
     else:
         messages.error(request, "You must be logged in to view your bookings.")
