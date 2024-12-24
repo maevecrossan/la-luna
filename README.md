@@ -248,11 +248,12 @@ All fields on the form are required.
 
 ### **My Bookings**
 This page will not be visible to unathorised (logged out) users. 
-When the user is logged in, they will be able to view, edit and delete previously made bookings. The page separates bookings into two sections, upcoming and expired.
+When the user is logged in, they will be able to view, edit and delete previously made bookings. The page separates bookings into two sections, 'upcoming' and 'previous'. If no bookings are available in both/either section, a small box will be there to notify the user of this.
 
+If bookings are present, they will be able to view, edit or delete them as they please.
 The 'edit' button will return the user to a slightly modified version of the booking form. The form title and submit button prompt are modified to make it clear that the user is modifying a booking. When the edit is submitted, the user is returned to the 'my bookings' page with an sucess message alerting the user of the change. 
 
-The delete button triggers a confirmation modal to check if the user's click/tap was intentional. The user has the option to cancel or confirm the delete. If they confirm, the 'my bookings' page will refreshed with the successful deletion message. 
+The 'delete' button triggers a confirmation modal to check if the user's click/tap was intentional. The user has the option to cancel or confirm the delete. If they confirm, the 'my bookings' page will refreshed with the successful deletion message. 
 
 ### **Contact Us**
 The contact page gives users (authenticated and unauthenticated) the opportunity to get in touch with the restaurant. The decision was made to give unauthorised users access to this form in case they forgot their log in information, if there is a problem with the form, if there is a language barrier, or if users are uncomfortable making phone calls. 
