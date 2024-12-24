@@ -211,6 +211,8 @@ Mobile:
 ### 404/500 Error Page
 ![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lightouse_error_page.png)
 
+* Points were subtracted due to an error occuring (i.e. the error page appearing).
+
 ## PEP8
 
 To ensure all Python files were PEP8 compliant, I used the flake8 extension in VSCode. Post development, I tested each file with the CI Python Linter [here](https://pep8ci.herokuapp.com/) to double-check.
