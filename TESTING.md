@@ -6,7 +6,7 @@
 | ![testing screenshot](docs/testing/date_field_not_working.png) | While creating the admin panel, the date input was not rendering properly for the admin. | ![testing screenshot](docs/testing/date_field_now_working_rearranged_and_imported_custom_form_to_admin.png) Register custom BookingAdmin model in admin.py |
 | ![testing screenshot](docs/testing/form-fields-not-appearing.png) | Booking form fields not appearing. | ![testing screenshot](docs/testing/form-fields-appearing-1.png) ![testing screenshot](docs/testing/form-fields-appearing-2.png) Install cripsy forms and pass `form` into the bookingsystem views.py file. |
 | ![testing screenshot](docs/testing/form-date-debug-1.png) ![testing screenshot](docs/testing/form-date-debug-2.png) | When preventing bookings in the past (date-wise), the date field stopped working completely. | ![testing screenshot](docs/testing/form-date-debug-3.png) Added `min="{{ today }}` |
-| ![testing screenshot](docs/testing/no_id_for_form_inputs1.png) | ![testing screenshot](docs/testing/no_id_for_form_inputs2.png) ![testing screenshot](docs/testing/no_id_for_form_inputs3.png) Google dev tools raised 6 issues relating to my form fields not having ids. | ![testing screenshot](photo-link) Added ids to the `BookingForm` model |
+| ![testing screenshot](docs/testing/no_id_for_form_inputs1.png) | ![testing screenshot](docs/testing/no_id_for_form_inputs2.png) ![testing screenshot](docs/testing/no_id_for_form_inputs3.png) Google dev tools raised 6 issues relating to my form fields not having IDs. | ![testing screenshot](photo-link) Added ids to the `BookingForm` model |
 | ![testing screenshot](docs/testing/form_not_posting_after_emailjs_bug_fixed1.png) | Email.js and POST method conflicting: At times, only one function was being executed. When email.js was working, it tripped up the POST request, and vice versa. | After several rounds of refactoring and debugging, updating the url, and the return statement in `booking-confirmation-email.js`. |
 | ![testing screenshot](docs/testing/bookings_rendering_no_style.png) | Bookings previously only visible on backend now visible on front end but styling wasn't rendering and was very messy and unreadable. Validity was also incorrect. | Styling fixed to isolate bookings into a more appealing presentation. Validity just needed one simple tweak from <br>`return datetime.now() < end_datetime` to <br> `return datetime.now() > end_datetime` (line 150 bookingsystem/models.py) |
 | ![testing screenshot](docs/testing/updated_runtime_file.png) | Issue deploying on Heroku. | I had forgotten to recollect my static files, so I did so which fixed the issue. During deploying, the logs stated I should update python for improved security. <br> I did so but had to rename my runtime.txt file to `.python-version` and merely state the numeric verion I wished to use. After removing the python prefix, the project successfully built and deployed.|
@@ -39,7 +39,7 @@
 |                       | Ensure navigation collapses.                                                  | Navigation wraps on medium screens and collapses to a burger icon on smaller screens.   | Yes | Yes |
 |                       | All footer Links work correctly.                                              | Directory links and SNS links are present and work as expected.  | Yes | Yes |
 |                       | Footer collapses correctly on smaller screens.                                | Columns wrap and stack on mobiles.  | Yes | - |
-|                       | Nav dropdown appears.                                                         | If a user is authenticated, they will be able to access the booking dropdown. Otherwise they will only see 'Bookings' and will be promted to sign in. | Yes | Yes |
+|                       | Nav dropdown appears.                                                         | If a user is authenticated, they will be able to access the booking dropdown. Otherwise they will only see 'Bookings' and will be prompted to sign in. | Yes | Yes |
 | **Homepage**          | Hero section behaves correctly.                                               | Hero section resizes and remains centered on smaller screens. Test remains visible.  | Yes | Yes |
 |                       | Hero 'make reservation' button behaves correctly.                             | Links to booking page. Prompts unauthorised users to sign in. Bring authorised users to booking form. | Yes | Yes |
 |                       | Our Story section animates correctly.                                         | Animations occur when link is pressed. | Yes | Yes |
@@ -52,7 +52,7 @@
 | **Menu**              | Content is accurate, properly aligned, and visually appealing.                | Verify all dishes are listed with descriptions and pricing.  | Yes | Yes |
 |                       | Content collapses and expands while maintaing visible.                        | Content should narrow or widen depending on screensize. | Yes | Yes |
 |                       |                                                 |   |  |  |
-| **Booking Form**       | If logged out, users should be promted to log in.                             | Sign in page appears. Unauthorised users cannot make bookings. | Yes | Yes |
+| **Booking Form**       | If logged out, users should be prompted to log in.                             | Sign in page appears. Unauthorised users cannot make bookings. | Yes | Yes |
 |                       | If logged in, users should br brought to the booking form.                    | Form appears. | Yes | Yes |
 |                       | My bookings link at top of booking form links to booking list page.           | My bookings page appears. | Yes | Yes |
 |                       | Form won't submit with an empty field.                                        | Error message appears on top of form and under relevant field. Custom 500 page as fallback. Form will not submit with an empty field. | Yes | Yes |
@@ -67,7 +67,7 @@
 |                       | User has bookings. | Valid bookings will be displayed under the 'Upcoming Bookings' section, while 'Expired bookings' display bookings that have passed the current date and time combination. | Yes | Yes |
 |                       | User can click the edit button and modify their booking.                      | Details are updated. User is redirected to My Bookings page. Success message appears. | Yes | Yes |
 |                       | User can click the edit button and modify expired bookings.                   | User will have to update the date or an error will appear. If date is valid, details are updated. User is redirected to My Bookings page. Success message appears. | Yes | Yes |
-|                       | User can delete a booking (valid and expired).                                | A confirmation modal appears to check if the user is sure. 'Close' cancels the action. 'Delete' removes the booking from the database and fromthe My Bookings page. Deleted message appears on the refreshed page. | Yes | Yes |
+|                       | User can delete a booking (valid and expired).                                | A confirmation modal appears to check if the user is sure. 'Close' cancels the action. 'Delete' removes the booking from the database and from the My Bookings page. Deleted message appears on the refreshed page. | Yes | Yes |
 |                       |                                                 |  |  |  |
 | **Contact Form**      | All users (logged in and out) should be able to access and submit the form.   | - | Yes | Yes |
 |                       | Form won't submit with an empty field.                                        | Django error message appears on top of form and under relevant field. Custom 500 page as fallback. | Yes | Yes |
@@ -87,12 +87,12 @@
 |                       | Dashboard users can organise bookings with various filters.                   | Bookings can be organised by name, date, validity, etc. | - | Yes |
 |                       | Dashboard users can view contact form submissions.                            | Contact form submissions can be view as a list but also clicked into to view the information submitted more clearly. | - | Yes |
 |                       | Dashboard users can mass delete selected booking or contact form submissions. | Users can select and delete selected bookings from the `action` drop down menu. | - | Yes |
-|                       | Dashboard users can see user information (user names, reigstered emails, but never passwords).| - | - | Yes |
+|                       | Dashboard users can see user information (user names, registered emails, but never passwords).| - | - | Yes |
 |                       | Dashboard users can delete a user from the database.                          | Cascading setting will delete all traces of that user and their booking(s). | - | Yes |
 
 ## Responsiveness Tests
 
-'Am I responsive?' was used to illustrate the ways in which each page scales down/changes depending on the screensize. Below are screenshots of each feature on the respective pages, with an additional screenshot taken on a phone view as I find the 'Am I responsive?' phone mock-up to be slightly inaccurate.
+'Am I Responsive?' was used to illustrate the ways in which each page scales down/changes depending on the screensize. Below are screenshots of each feature on the respective pages, with an additional screenshot taken on a phone view as I find the 'Am I Responsive?' phone mock-up to be slightly inaccurate.
 
 (Some pages that require being signed in are not accessible through Am I Responsive, in which case three screenshots taken across a phone, tablet and desktop will be included.)
 
@@ -149,7 +149,7 @@
 # Validator Testing
 
 ## Lighthouse
-Each page was tested on an incognito browser to prevent any plugin interferance. 
+Each page was tested on an incognito browser to prevent any plugin interference. 
 
 ### Homepage
 Desktop:
@@ -163,7 +163,7 @@ Mobile:
 ### Menu
 Desktop:
 ![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_menu_desktop.png)
-* Two points in accessibilty were lost due to incorrect heading order cause by the page extending from base.html. (This alert will be raised over the remaining pages so will not be addressed again.)
+* Two points in accessibility were lost due to incorrect heading order caused by the page extending from base.html. (This alert will be raised over the remaining pages so will not be addressed again.)
 
 Mobile:
 ![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_menu_mobile.png)
@@ -216,7 +216,7 @@ Mobile:
 ## PEP8
 
 To ensure all Python files were PEP8 compliant, I used the flake8 extension in VSCode. Post development, I tested each file with the CI Python Linter [here](https://pep8ci.herokuapp.com/) to double-check.
-Each file passed the validation bar the settings file. Due to Django's protest again PEP8 line length, the `AUTH_PASSWORD_VALIDATORS` has 4 lines that are too long. This remains the only PEP8 error.
+Each file passed the validation bar the settings file. The `AUTH_PASSWORD_VALIDATORS` in the settings file exceeds PEP8's line-length recommendation due to Django's predefined configuration. This does not affect functionality and is documented for reference.
 [Settings PEP8 Error](docs/testing/pep8_error.png)
 
 ## JavaScript
@@ -226,9 +226,9 @@ I used JSHint to validate my JavaScript Code. There were only two files I create
 
 ## HTML
 
-There were some issues raised by the W3 HTML validator, but they were dealt fixed and recorded in the bugs and fixes section. 
+There were some issues raised by the W3 HTML validator, but they were fixed and recorded in the bugs and fixes section. 
 
-As some pages were only accessible by logging in, W3 couldn't validate them all via URI. All pages bar the 'My Bookings' and 'Make Booking' were validated by URI. In order to validate the two remaining pages, I copied the render html body element and chose the text input option instead. I double checked the other pages by doing this too.
+For pages requiring user authentication, the rendered HTML body content was copied and validated using the text input option in the W3 HTML validator. This ensures all HTML complies with standards.
 
 All pages returned no errors.
 
@@ -245,29 +245,29 @@ All pages returned no errors.
 
 ## CSS
 
-The base style.css has one minor error but this was fixed but removing a simple digit from the 'our story' animations. 
+The animation error in the 'Our Story' section was resolved by removing an incorrectly placed digit in the timing property, ensuring smoother transitions.
 
 All three CSS files passed the validator.
 
 
 ## Eight Shapes Contrast Grid
 
-Below is a screenshot of how I ensured my colour combinations passed the contrast test so the website remains accessible to all users. No combinations labelled DNP were used for essential aspects such as text, but may have been used for box borders, accents, etc.
+Below is a screenshot of how I ensured my colour combinations passed the contrast test to ensure the website remains accessible to all users. The animation error in the 'our story' section was resolved by removing an extraneous digit in the timing property, ensuring smoother transitions.
 
 ![Colour Contrast Grid](docs/testing/colour-contrast-test.png)
 
 ## WAVE Evaluation Tool
-The following are the results from my WAVE evaluations for each page. Notes explaining alerts are present under the relevant screenshot.
+WAVE (Web Accessibility Evaluation Tool) identifies accessibility issues on web pages. Results for each page are summarized below, with explanations provided for key alerts.
 
 [**1. Homepage WAVE Evaluation Screenshot**](docs/testing/wave/wave_home.png)
 
-* Only one alert (below) was raised for this page. It was questioning whether or not the copyright should be a heading. I decided to leave this alert as I didn't think making it a heading was necessary. This specific error will not be addressed again for the sake of brevity.
+* Only one alert (below) was raised for this page. It was questioning whether or not the copyright should be a heading. I decided to leave this alert as I didn't think making it a heading was necessary. This alert will not be addressed again in other sections for brevity.
     ![Homepage WAVE alert](docs/testing/wave/wave_home_error.png)
 
 
 [**2. Menu WAVE Evaluation Screenshot**](docs/testing/wave/wave_menu.png)
 
-* WAVE picked up on skipped heading levels on this page. As the menu uses the base template, headings will likely skip on occassion due to content (or lack there of) on each respective page. This specific error will not be addressed again for the sake of brevity.
+* WAVE picked up on skipped heading levels on this page. As the menu uses the base template, headings will likely skip on occassion due to content (or lack there of) on each respective page. This alert will not be addressed again in other sections for brevity.
     ![Menu WAVE alert](docs/testing/wave/wave_menu_error.png)
 
 

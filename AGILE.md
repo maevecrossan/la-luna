@@ -3,7 +3,7 @@
 
 To track my development, I used Github Boards and followed Agile methodology. I gave each user story acceptance criteria which helped focus me and encouraged efficient progress towards the MVP.
 
-Below is a table laying out the timeframe for each sprint. Following is a brief overview of each sprint. I limited each sprint by date, (rather than time) as it was most realistic with my schedule during developemt. 
+Below is a table laying out the timeframe for each sprint. Following is a brief overview of each sprint. I limited each sprint by date, (rather than time) as it was most realistic with my schedule during development. 
 
 *Any errors spoken about below will be included in the 'Bugs and Fixes' section of the TESTING.md file*
 
@@ -22,12 +22,12 @@ Below is a table laying out the timeframe for each sprint. Following is a brief 
 The following is an explanation of the epic labels attached to each user story.
 
 ### Epic 1: Basics
-The Epic 1 label was given to an user stories that were related to the surface-level (HTML & CSS) aspects of the project.
+The Epic 1 label was given to any user stories that were related to the surface-level (HTML & CSS) aspects of the project.
 **User Stories**
 * Displaying images.
     * See images on the homepage.
 * Display social media links.
-    * Access sns links from the footer of each page.
+    * Access social media links from the footer of each page.
 * Displaying contact info.
     * Access contact info from the footer of each page.
     * Access the contact page from the nav bar.
@@ -97,7 +97,7 @@ During this epic, I tidied up my MVP and decided to add on an extra feature.
 
 ## **Sprints**
 ### Sprint 0
-Very early on I had began coding when I saw the project brief using Flask as a way to practice using the framework. Therefore, I consider my inital sprint everything I did up until I installed Django and fully understood the assignemnt brief.
+Very early on I had began coding when I saw the project brief using Flask as a way to practice using the framework. Therefore, I consider my initial sprint everything I did up until I installed Django and fully understood the assingemnt brief.
 
 During this stage, I also reviewed my user stories and decided to drop some.
 
@@ -122,12 +122,12 @@ During this sprint I set up my project by completing the following:
 ----
 
 ### Sprint 2
-During this sprint I was concerned with setting up the 'C' in CRUD in relation to the booking model. I would like to note that I am aware that this sprint was longer than it should have been and is a lesson I learned. I underestimated the work that this user story would require and defiently could have separated the tasks into more manageable, bite-size chunks. 
+During this sprint I was concerned with setting up the 'C' in CRUD in relation to the booking model. I would like to note that I am aware that this sprint was longer than it should have been and is a lesson I learned. I underestimated the work that this user story would require and definitely could have separated the tasks into more manageable, bite-size chunks. 
 
 During this sprint, I planned on:
 
 * Set up booking form. (No POST functionality at this time.)
-    - Install cripsy forms.
+    - Install crispy forms.
     - Restrict times and dates on which users can make a booking.
     - Limit the capacity to 40 people. 
 * Organise admin view for bookings (add filters).
@@ -143,14 +143,14 @@ During this sprint, I planned on:
 
 During this sprint I was focused on:
 1) completing incomplete tasks from the previous sprint,
-2) building a html template for the user's 'my bookings' page
+2) building a HTML template for the user's 'my bookings' page
 3) enabling users to create an account. 
 
 I did this by:
 
 * Adding 'active/expired' checks to bookings.
-* Creating a html template to display bookings made by users. (Partially satisfied the 'R' aspect of CRUD, but all bookings were visible at once due to no AllAuth.)
-* Installing AllAuth and linking AllAuth user pages (log-in,log-out and register pages) to the booking form. 
+* Creating a HTML template to display bookings made by users. (Partially satisfied the 'R' aspect of CRUD, but all bookings were visible at once due to no AllAuth.)
+* Installing AllAuth and linking AllAuth user pages (log-in, log-out and register pages) to the booking form. 
 * Style AllAuth user pages. 
 * Add user status to top right of header to show logged in status. 
 
@@ -190,7 +190,7 @@ My tasks included:
 
 Given how quickly I had completed my MVP, I decided to extend my MVP to link the contact form to the admin page. This was originally categorised as a 'could have' feature.
 
-During this sprint I also did some 'housekeeping' by removing out debugging prints, making files PEP8 complaint, as well as adjusting styles to make website more accessible. 
+During this sprint I also did some 'housekeeping' by removing out debugging prints, making files PEP8 compliant, as well as adjusting styles to make website more accessible. 
 
 This sprint was wrapped up by the testing phase.
 
