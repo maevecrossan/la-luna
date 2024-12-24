@@ -227,7 +227,7 @@ As previously mentioned, users can take actions via the header and/or the footer
 This section provides a timeline which appears dynamically when the link is clicked. If the user scrolls down to this section, the information will be static as the animation only occurs when the page is refreshed (i.e. when the link at the top of the page is clicked). On smaller screens, the text wraps and stacks vertically.
 
 #### Gallery Section
-This section varies depending on screensize. On large screens, six images appear in two rows of three. On medium screens, the images reduce to three images vertically stacked with a more horizontal aspect ratio. On small screens, the images regain their vertical status but remain a vertically stacked set of three.
+This section varies depending on screensize. On large screens, six images appear in two rows of three. On medium and small screens, the images reduce to three images stacked vertically.
 
 The images are borrowed from [Pexels.com](https://www.pexels.com/).
 
