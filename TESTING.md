@@ -232,6 +232,16 @@ As some pages were only accessible by logging in, W3 couldn't validate them all 
 
 All pages returned no errors.
 
+[W3 index.html test](docs/testing/w3/w3_home.png)
+[W3 menu.html test](docs/testing/w3/w3_menu.png)
+[W3 bookings.html test](docs/testing/w3/w3_b_form.png)
+[W3 booking-list.html test](docs/testing/w3/w3_b_list.png)
+[W3 contact.html test](docs/testing/w3/w3_c_form.png)
+[W3 account/log-out.html test](docs/testing/w3/w3_sign_out.png)
+[W3 account/log-in.html test](docs/testing/w3/w3_signin.png)
+[W3 account/sign-up.html test](docs/testing/w3/w3_signup.png)
+[W3 404.html & 505.html test](docs/testing/w3/w3_error.png)
+
 
 ## CSS
 
