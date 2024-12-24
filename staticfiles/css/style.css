@@ -549,12 +549,13 @@ footer {
 
 footer .col {
     margin-top: 30px;
+    width: auto;
 }
 
 .footer-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Spread the columns evenly */
+    justify-content: space-around; /* Spread the columns evenly */
     align-items: flex-start;
     padding: 20px 40px; /* Add some padding inside the footer */
 }
@@ -579,8 +580,19 @@ footer .col {
     text-decoration: underline;
 }
 
+.footer-contact-info {
+    font-size: 1.3em;
+    padding: 0.4em;
+    text-decoration: none;
+    word-wrap: break-word; /* Prevent email from overflowing */
+    text-align: center; /* Ensure text stays centered */
+}
+
 .footer-email {
-    display: inline;
+    display: block; /* Ensure it respects layout */
+    max-width: 100%; /* Prevent it from exceeding its container */
+    word-wrap: break-word; /* Break long words or URLs */
+    overflow-wrap: break-word; 
 }
 
 .copyright-container {
@@ -734,10 +746,21 @@ footer .col {
     }
 
     /* Footer */
-    .directory {
-        display:inline-flex;
+    .footer-container {
         flex-direction: column;
-        margin: 10px 30px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-contact-info {
+        text-align: center; /* Ensure proper alignment on small screens */
+        padding: 0;
+        min-width: 80%;
+    }
+
+    .footer-email {
+        max-width: 90%; /* Prevents overflow on small screens */
+        margin: 0 auto; /* Centers the content */
     }
 
 }
