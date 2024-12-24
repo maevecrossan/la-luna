@@ -208,6 +208,9 @@ Desktop:
 Mobile:
 ![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lh_contact_mobile.png)
 
+### 404/500 Error Page
+![Lighthouse Evaluation Screenshot](docs/testing/lighthouse/lightouse_error_page.png)
+
 ## PEP8
 
 To ensure all Python files were PEP8 compliant, I used the flake8 extension in VSCode. Post development, I tested each file with the CI Python Linter [here](https://pep8ci.herokuapp.com/) to double-check.
@@ -280,3 +283,7 @@ The following are the results from my WAVE evaluations for each page. Notes expl
 [**8.Contact Us WAVE Evaluation Screenshot**](docs/testing/wave/wave_contact.png)
 
 * No (additional) errors found.
+
+[**9. 404/500**](docs/testing//wave/wave_error_page.png)
+
+* No additional errors were found. (Styling off due to WAVE results column)
