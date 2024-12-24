@@ -351,14 +351,21 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
+    <script src="{% static 'js/base.js' %}"></script>
+
+    {% block scripts %}
+    {% if request.path == '/my-bookings/' %}
+        <script src="{% static 'js/my-bookings-crud.js' %}"></script>
+    {% endif %}
+    {% endblock %}
+
+    <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
 
     <!-- Font Awesome kit -->
     <script src="https://kit.fontawesome.com/dc45154bc3.js" crossorigin="anonymous"></script>
-
-    <script src="{% static 'js/base.js' %}"></script>
 
 </body>
 
