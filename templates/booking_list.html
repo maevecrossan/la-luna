@@ -50,9 +50,6 @@
                     <p class="card-text">
                         <strong>Guests:</strong> {{ booking.guests }}
                     </p>
-                    <span class="active">
-                        <strong>ACTIVE</strong>
-                    </span>
                 </div>
 
                 {% if user.is_authenticated and booking.user == user %}
@@ -77,7 +74,7 @@
 
     <!-- Expired Bookings Section -->
 
-    <h3 class="sub-heading off-white italiana center"> Expired Bookings </h3>
+    <h3 class="sub-heading off-white italiana center"> Previous Bookings </h3>
 
     {% for booking in bookings %}
     {% if booking.date|date:"Y-m-d" < today|date:"Y-m-d" %}
@@ -103,9 +100,6 @@
                     <p class="card-text">
                         <strong>Guests:</strong> {{ booking.guests }}
                     </p>
-                    <span class="expired">
-                        <strong>EXPIRED</strong>
-                    </span>
                 </div>
 
                 {% if user.is_authenticated and booking.user == user %}
