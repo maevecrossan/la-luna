@@ -53,7 +53,7 @@ def booking_list(request):
         bookings = Booking.objects.filter(
             user=request.user).order_by('date', 'time')
 
-        # Separate bookings into upcoming and 
+        # Separate bookings into upcoming and
         # expired using the `expired` property
         upcoming_bookings = [
             booking for booking in bookings if not booking.expired]
